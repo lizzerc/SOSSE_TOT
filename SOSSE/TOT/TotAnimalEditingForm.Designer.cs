@@ -29,16 +29,6 @@
         private void InitializeComponent()
         {
             this.animalDataGridView = new System.Windows.Forms.DataGridView();
-            this.slotColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.speciesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.affectionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.heartsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personalityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.winsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthdayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.xpColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.levelColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maxAffectionButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.animalDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -52,106 +42,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.animalDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.animalDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.slotColumn,
-            this.speciesColumn,
-            this.nameColumn,
-            this.affectionColumn,
-            this.heartsColumn,
-            this.personalityColumn,
-            this.winsColumn,
-            this.birthdayColumn,
-            this.xpColumn,
-            this.levelColumn});
             this.animalDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.animalDataGridView.Location = new System.Drawing.Point(12, 12);
             this.animalDataGridView.Name = "animalDataGridView";
             this.animalDataGridView.RowHeadersVisible = false;
-            this.animalDataGridView.Size = new System.Drawing.Size(700, 320);
+            this.animalDataGridView.Size = new System.Drawing.Size(1010, 320);
             this.animalDataGridView.TabIndex = 0;
+            this.animalDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.animalDataGridView_CellClick);
             this.animalDataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.animalDataGridView_CellValidating);
-            // 
-            // slotColumn
-            // 
-            this.slotColumn.HeaderText = "Slot";
-            this.slotColumn.Name = "slotColumn";
-            this.slotColumn.ReadOnly = true;
-            this.slotColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.slotColumn.Width = 40;
-            // 
-            // speciesColumn
-            // 
-            this.speciesColumn.HeaderText = "Species";
-            this.speciesColumn.Name = "speciesColumn";
-            this.speciesColumn.ReadOnly = true;
-            this.speciesColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.speciesColumn.Width = 110;
-            // 
-            // nameColumn
-            // 
-            this.nameColumn.HeaderText = "Name";
-            this.nameColumn.Name = "nameColumn";
-            this.nameColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.nameColumn.Width = 110;
-            // 
-            // affectionColumn
-            // 
-            this.affectionColumn.HeaderText = "Affection";
-            this.affectionColumn.Name = "affectionColumn";
-            this.affectionColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.affectionColumn.Width = 65;
-            // 
-            // heartsColumn
-            // 
-            this.heartsColumn.HeaderText = "Hearts";
-            this.heartsColumn.Name = "heartsColumn";
-            this.heartsColumn.ReadOnly = true;
-            this.heartsColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.heartsColumn.Width = 50;
-            // 
-            // personalityColumn
-            // 
-            this.personalityColumn.HeaderText = "Personality";
-            this.personalityColumn.Name = "personalityColumn";
-            this.personalityColumn.ReadOnly = true;
-            this.personalityColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.personalityColumn.Width = 75;
-            // 
-            // winsColumn
-            // 
-            this.winsColumn.HeaderText = "Festival Wins";
-            this.winsColumn.Name = "winsColumn";
-            this.winsColumn.ReadOnly = true;
-            this.winsColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.winsColumn.Width = 80;
-            // 
-            // birthdayColumn
-            // 
-            this.birthdayColumn.HeaderText = "Birthday";
-            this.birthdayColumn.Name = "birthdayColumn";
-            this.birthdayColumn.ReadOnly = true;
-            this.birthdayColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.birthdayColumn.Width = 100;
-            // 
-            // xpColumn
-            // 
-            this.xpColumn.HeaderText = "XP";
-            this.xpColumn.Name = "xpColumn";
-            this.xpColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.xpColumn.Width = 60;
-            // 
-            // levelColumn
-            // 
-            this.levelColumn.HeaderText = "Level";
-            this.levelColumn.Name = "levelColumn";
-            this.levelColumn.ReadOnly = true;
-            this.levelColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.levelColumn.Width = 45;
+            this.animalDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.animalDataGridView_CellValueChanged);
+            this.animalDataGridView.CurrentCellDirtyStateChanged += new System.EventHandler(this.animalDataGridView_CurrentCellDirtyStateChanged);
+            this.animalDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.animalDataGridView_DataError);
             // 
             // maxAffectionButton
             // 
             this.maxAffectionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.maxAffectionButton.Location = new System.Drawing.Point(612, 338);
+            this.maxAffectionButton.Location = new System.Drawing.Point(922, 338);
             this.maxAffectionButton.Name = "maxAffectionButton";
             this.maxAffectionButton.Size = new System.Drawing.Size(100, 23);
             this.maxAffectionButton.TabIndex = 1;
@@ -163,7 +69,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(724, 373);
+            this.ClientSize = new System.Drawing.Size(1034, 373);
             this.Controls.Add(this.maxAffectionButton);
             this.Controls.Add(this.animalDataGridView);
             this.Name = "TotAnimalEditingForm";
@@ -178,16 +84,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView animalDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slotColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn speciesColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn affectionColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn heartsColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn personalityColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn winsColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn birthdayColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn xpColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn levelColumn;
         private System.Windows.Forms.Button maxAffectionButton;
     }
 }

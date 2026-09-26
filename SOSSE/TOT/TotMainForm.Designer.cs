@@ -35,140 +35,209 @@
             this.farmNameLabel = new System.Windows.Forms.Label();
             this.farmNameTextBox = new System.Windows.Forms.TextBox();
             this.splitGroupBox = new System.Windows.Forms.GroupBox();
+            this.split2GroupBox = new System.Windows.Forms.GroupBox();
+            this.openButton = new System.Windows.Forms.Button();
+            this.saveAsButton = new System.Windows.Forms.Button();
             this.itemButton = new System.Windows.Forms.Button();
             this.crownButton = new System.Windows.Forms.Button();
+            this.generalButton = new System.Windows.Forms.Button();
             this.animalButton = new System.Windows.Forms.Button();
             this.petButton = new System.Windows.Forms.Button();
-            this.saveAsButton = new System.Windows.Forms.Button();
+            this.npcButton = new System.Windows.Forms.Button();
+            this.recordButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // openButton
+            // 
+            this.openButton.Location = new System.Drawing.Point(12, 12);
+            this.openButton.Name = "openButton";
+            this.openButton.Size = new System.Drawing.Size(75, 23);
+            this.openButton.TabIndex = 0;
+            this.openButton.Text = "Open";
+            this.openButton.UseVisualStyleBackColor = true;
+            this.openButton.Click += new System.EventHandler(this.openButton_Click);
+            // 
+            // saveAsButton
+            // 
+            this.saveAsButton.Enabled = false;
+            this.saveAsButton.Location = new System.Drawing.Point(93, 12);
+            this.saveAsButton.Name = "saveAsButton";
+            this.saveAsButton.Size = new System.Drawing.Size(75, 23);
+            this.saveAsButton.TabIndex = 1;
+            this.saveAsButton.Text = "Save";
+            this.saveAsButton.UseVisualStyleBackColor = true;
+            this.saveAsButton.Click += new System.EventHandler(this.saveAsButton_Click);
+            // 
+            // splitGroupBox
+            // 
+            this.splitGroupBox.Location = new System.Drawing.Point(12, 41);
+            this.splitGroupBox.Name = "splitGroupBox";
+            this.splitGroupBox.Size = new System.Drawing.Size(238, 2);
+            this.splitGroupBox.TabIndex = 2;
+            this.splitGroupBox.TabStop = false;
+            // 
+            // split2GroupBox
+            // 
+            this.split2GroupBox.Location = new System.Drawing.Point(12, 129);
+            this.split2GroupBox.Name = "split2GroupBox";
+            this.split2GroupBox.Size = new System.Drawing.Size(238, 2);
+            this.split2GroupBox.TabIndex = 3;
+            this.split2GroupBox.TabStop = false;
             // 
             // playerNameLabel
             // 
             this.playerNameLabel.AutoSize = true;
-            this.playerNameLabel.Location = new System.Drawing.Point(12, 15);
+            this.playerNameLabel.Location = new System.Drawing.Point(12, 52);
             this.playerNameLabel.Name = "playerNameLabel";
-            this.playerNameLabel.Size = new System.Drawing.Size(36, 13);
-            this.playerNameLabel.TabIndex = 0;
+            this.playerNameLabel.Size = new System.Drawing.Size(49, 13);
+            this.playerNameLabel.TabIndex = 4;
             this.playerNameLabel.Text = "Player";
             // 
             // playerNameTextBox
             // 
-            this.playerNameTextBox.Location = new System.Drawing.Point(93, 12);
+            this.playerNameTextBox.Enabled = false;
+            this.playerNameTextBox.Location = new System.Drawing.Point(93, 49);
             this.playerNameTextBox.Name = "playerNameTextBox";
             this.playerNameTextBox.Size = new System.Drawing.Size(156, 20);
-            this.playerNameTextBox.TabIndex = 1;
+            this.playerNameTextBox.TabIndex = 5;
             // 
             // nicknameLabel
             // 
             this.nicknameLabel.AutoSize = true;
-            this.nicknameLabel.Location = new System.Drawing.Point(12, 41);
+            this.nicknameLabel.Location = new System.Drawing.Point(12, 78);
             this.nicknameLabel.Name = "nicknameLabel";
-            this.nicknameLabel.Size = new System.Drawing.Size(36, 13);
-            this.nicknameLabel.TabIndex = 2;
+            this.nicknameLabel.Size = new System.Drawing.Size(49, 13);
+            this.nicknameLabel.TabIndex = 6;
             this.nicknameLabel.Text = "Nickname";
             // 
             // nicknameTextBox
             // 
-            this.nicknameTextBox.Location = new System.Drawing.Point(93, 38);
+            this.nicknameTextBox.Enabled = false;
+            this.nicknameTextBox.Location = new System.Drawing.Point(93, 75);
             this.nicknameTextBox.Name = "nicknameTextBox";
             this.nicknameTextBox.Size = new System.Drawing.Size(156, 20);
-            this.nicknameTextBox.TabIndex = 3;
+            this.nicknameTextBox.TabIndex = 7;
             // 
             // farmNameLabel
             // 
             this.farmNameLabel.AutoSize = true;
-            this.farmNameLabel.Location = new System.Drawing.Point(12, 67);
+            this.farmNameLabel.Location = new System.Drawing.Point(12, 104);
             this.farmNameLabel.Name = "farmNameLabel";
-            this.farmNameLabel.Size = new System.Drawing.Size(36, 13);
-            this.farmNameLabel.TabIndex = 4;
+            this.farmNameLabel.Size = new System.Drawing.Size(49, 13);
+            this.farmNameLabel.TabIndex = 8;
             this.farmNameLabel.Text = "Farm";
             // 
             // farmNameTextBox
             // 
-            this.farmNameTextBox.Location = new System.Drawing.Point(93, 64);
+            this.farmNameTextBox.Enabled = false;
+            this.farmNameTextBox.Location = new System.Drawing.Point(93, 101);
             this.farmNameTextBox.Name = "farmNameTextBox";
             this.farmNameTextBox.Size = new System.Drawing.Size(156, 20);
-            this.farmNameTextBox.TabIndex = 5;
-            // 
-            // splitGroupBox
-            // 
-            this.splitGroupBox.Location = new System.Drawing.Point(12, 92);
-            this.splitGroupBox.Name = "splitGroupBox";
-            this.splitGroupBox.Size = new System.Drawing.Size(238, 2);
-            this.splitGroupBox.TabIndex = 6;
-            this.splitGroupBox.TabStop = false;
+            this.farmNameTextBox.TabIndex = 9;
             // 
             // itemButton
             // 
-            this.itemButton.Location = new System.Drawing.Point(12, 100);
+            this.itemButton.Enabled = false;
+            this.itemButton.Location = new System.Drawing.Point(12, 137);
             this.itemButton.Name = "itemButton";
             this.itemButton.Size = new System.Drawing.Size(75, 23);
-            this.itemButton.TabIndex = 7;
+            this.itemButton.TabIndex = 10;
             this.itemButton.Text = "Items";
             this.itemButton.UseVisualStyleBackColor = true;
             this.itemButton.Click += new System.EventHandler(this.itemButton_Click);
             // 
             // crownButton
             // 
-            this.crownButton.Location = new System.Drawing.Point(93, 100);
+            this.crownButton.Enabled = false;
+            this.crownButton.Location = new System.Drawing.Point(93, 137);
             this.crownButton.Name = "crownButton";
             this.crownButton.Size = new System.Drawing.Size(75, 23);
-            this.crownButton.TabIndex = 8;
+            this.crownButton.TabIndex = 11;
             this.crownButton.Text = "Crowns";
             this.crownButton.UseVisualStyleBackColor = true;
             this.crownButton.Click += new System.EventHandler(this.crownButton_Click);
             // 
+            // generalButton
+            // 
+            this.generalButton.Enabled = false;
+            this.generalButton.Location = new System.Drawing.Point(174, 137);
+            this.generalButton.Name = "generalButton";
+            this.generalButton.Size = new System.Drawing.Size(75, 23);
+            this.generalButton.TabIndex = 12;
+            this.generalButton.Text = "General";
+            this.generalButton.UseVisualStyleBackColor = true;
+            this.generalButton.Click += new System.EventHandler(this.generalButton_Click);
+            // 
             // animalButton
             // 
-            this.animalButton.Location = new System.Drawing.Point(174, 100);
+            this.animalButton.Enabled = false;
+            this.animalButton.Location = new System.Drawing.Point(12, 166);
             this.animalButton.Name = "animalButton";
             this.animalButton.Size = new System.Drawing.Size(75, 23);
-            this.animalButton.TabIndex = 9;
+            this.animalButton.TabIndex = 13;
             this.animalButton.Text = "Animals";
             this.animalButton.UseVisualStyleBackColor = true;
             this.animalButton.Click += new System.EventHandler(this.animalButton_Click);
             // 
             // petButton
             // 
-            this.petButton.Location = new System.Drawing.Point(12, 129);
+            this.petButton.Enabled = false;
+            this.petButton.Location = new System.Drawing.Point(93, 166);
             this.petButton.Name = "petButton";
             this.petButton.Size = new System.Drawing.Size(75, 23);
-            this.petButton.TabIndex = 10;
+            this.petButton.TabIndex = 14;
             this.petButton.Text = "Pets";
             this.petButton.UseVisualStyleBackColor = true;
             this.petButton.Click += new System.EventHandler(this.petButton_Click);
             // 
-            // saveAsButton
+            // npcButton
             // 
-            this.saveAsButton.Location = new System.Drawing.Point(174, 129);
-            this.saveAsButton.Name = "saveAsButton";
-            this.saveAsButton.Size = new System.Drawing.Size(75, 23);
-            this.saveAsButton.TabIndex = 11;
-            this.saveAsButton.Text = "Save";
-            this.saveAsButton.UseVisualStyleBackColor = true;
-            this.saveAsButton.Click += new System.EventHandler(this.saveAsButton_Click);
+            this.npcButton.Enabled = false;
+            this.npcButton.Location = new System.Drawing.Point(174, 166);
+            this.npcButton.Name = "npcButton";
+            this.npcButton.Size = new System.Drawing.Size(75, 23);
+            this.npcButton.TabIndex = 15;
+            this.npcButton.Text = "NPCs";
+            this.npcButton.UseVisualStyleBackColor = true;
+            this.npcButton.Click += new System.EventHandler(this.npcButton_Click);
+            // 
+            // recordButton
+            // 
+            this.recordButton.Enabled = false;
+            this.recordButton.Location = new System.Drawing.Point(12, 195);
+            this.recordButton.Name = "recordButton";
+            this.recordButton.Size = new System.Drawing.Size(75, 23);
+            this.recordButton.TabIndex = 16;
+            this.recordButton.Text = "Records";
+            this.recordButton.UseVisualStyleBackColor = true;
+            this.recordButton.Click += new System.EventHandler(this.recordButton_Click);
             // 
             // TotMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(261, 164);
-            this.Controls.Add(this.saveAsButton);
+            this.ClientSize = new System.Drawing.Size(261, 230);
+            this.Controls.Add(this.recordButton);
+            this.Controls.Add(this.npcButton);
             this.Controls.Add(this.petButton);
             this.Controls.Add(this.animalButton);
+            this.Controls.Add(this.generalButton);
             this.Controls.Add(this.crownButton);
             this.Controls.Add(this.itemButton);
-            this.Controls.Add(this.splitGroupBox);
+            this.Controls.Add(this.saveAsButton);
+            this.Controls.Add(this.openButton);
             this.Controls.Add(this.farmNameTextBox);
             this.Controls.Add(this.farmNameLabel);
             this.Controls.Add(this.nicknameTextBox);
             this.Controls.Add(this.nicknameLabel);
             this.Controls.Add(this.playerNameTextBox);
             this.Controls.Add(this.playerNameLabel);
+            this.Controls.Add(this.splitGroupBox);
+            this.Controls.Add(this.split2GroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "TotMainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SOSSE - Trio of Towns";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TotMainForm_FormClosing);
             this.ResumeLayout(false);
@@ -185,10 +254,15 @@
         private System.Windows.Forms.Label farmNameLabel;
         private System.Windows.Forms.TextBox farmNameTextBox;
         private System.Windows.Forms.GroupBox splitGroupBox;
+        private System.Windows.Forms.GroupBox split2GroupBox;
+        private System.Windows.Forms.Button openButton;
+        private System.Windows.Forms.Button saveAsButton;
         private System.Windows.Forms.Button itemButton;
         private System.Windows.Forms.Button crownButton;
+        private System.Windows.Forms.Button generalButton;
         private System.Windows.Forms.Button animalButton;
         private System.Windows.Forms.Button petButton;
-        private System.Windows.Forms.Button saveAsButton;
+        private System.Windows.Forms.Button npcButton;
+        private System.Windows.Forms.Button recordButton;
     }
 }

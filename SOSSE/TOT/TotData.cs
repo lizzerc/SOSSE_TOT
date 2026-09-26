@@ -25,6 +25,17 @@ namespace SOSSE.TOT
 
         public static readonly string[] RankList = { "None", "Bronze", "Silver", "Gold", "Rainbow" };
         public static readonly string[] SeasonList = { "Spring", "Summer", "Fall", "Winter" };
+        public static readonly string[] PetAbilityList = { "Herding / Recovery", "Finding Materials",
+            "Finding Fish", "Finding Ore", "Finding Plants", "Finding Misc." };
+
+        // NPC friendship records: 17 marriage candidates (0x60 bytes each), then 32 others (0x58 bytes each).
+        public static readonly string[] NPCLoverNameList = { "Wayne", "Ford", "Yuzuki", "Hinata", "Ludus",
+            "Lisette", "Komari", "Kasumi", "Iluka", "Siluka", "Inari", "Woofio", "Stephanie",
+            "(Unused 3)", "(Unused 4)", "(Unused 5)", "(Unused 6)" };
+        public static readonly string[] NPCOtherNameList = { "Marco", "Brad", "Carrie", "Megan", "Hector",
+            "Colin", "Frank", "Miranda", "Noel", "Umekichi", "Omiyo", "Moriya", "Sumomo", "Ginjiro", "Ittetsu",
+            "Shizu", "Tatsumi", "Yaichi", "Tototara", "Zahau", "Caolila", "Schalk", "Alma", "Mithra", "Lotus",
+            "Haulani", "Tigre", "Dessie", "Witchie", "Mother", "Sister", "Child" };
 
         // Item types with 4 property bars; other items store one quality value 4 times.
         private static readonly int[] propertyItemTypes = { 0, 1, 2, 3, 4, 5, 6, 7, 9 };

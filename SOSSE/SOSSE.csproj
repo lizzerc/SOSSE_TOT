@@ -149,6 +149,12 @@
     <Compile Include="ShipLogEditingForm.Designer.cs">
       <DependentUpon>ShipLogEditingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShopEditingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +169,24 @@
       <DependentUpon>VendorEditingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TOT\TotAnimal.cs" />
+    <Compile Include="TOT\TotGeneralEditingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOT\TotGeneralEditingForm.Designer.cs">
+      <DependentUpon>TotGeneralEditingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TOT\TotNPCEditingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOT\TotNPCEditingForm.Designer.cs">
+      <DependentUpon>TotNPCEditingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TOT\TotRecordEditingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOT\TotRecordEditingForm.Designer.cs">
+      <DependentUpon>TotRecordEditingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TOT\TotData.cs" />
     <Compile Include="TOT\TotItem.cs" />
     <Compile Include="TOT\TotSave.cs" />

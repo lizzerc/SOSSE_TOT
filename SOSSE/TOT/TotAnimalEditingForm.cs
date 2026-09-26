@@ -10,25 +10,80 @@ using System.Windows.Forms;
 namespace SOSSE.TOT
 {
     /// <summary>
-    /// Barn animals or pets. Editable: name, affection, and pet XP.
+    /// Barn animals or pets.
     /// </summary>
     public partial class TotAnimalEditingForm : Form
     {
-        private readonly bool isPet;
+        /// <summary>
+        /// One grid column. Editable number columns have Get/Set and a range;
+        /// list columns have a List; read-only columns only Get or Derive.
+        /// </summary>
+        private class AnimalColumn
+        {
+            public string Header;
+            public int Width;
+            public Func<TotAnimal, object> Get;
+            public Action<TotAnimal, int> Set;
+            public int Min;
+            public int Max;
+            public string[] List;
+            // Read-only column worked out from the value in the column before it
+            public Func<int, object> Derive;
+        }
+
         private List<TotAnimal> animals;
+        private AnimalColumn[] columns;
+        private int nameColumn;
+        private int affectionColumn;
 
         public TotAnimalEditingForm(bool isPet)
         {
             this.Font = SystemFonts.MessageBoxFont;
             InitializeComponent();
             TotData.LoadAnimalData();
-            this.isPet = isPet;
             this.Text = isPet ? "Pets" : "Animals";
 
-            personalityColumn.Visible = !isPet;
-            xpColumn.Visible = isPet;
-            levelColumn.Visible = isPet;
-            nameColumn.MaxInputLength = TotSave.MaxNameInput;
+            List<AnimalColumn> list = new List<AnimalColumn>();
+            list.Add(new AnimalColumn { Header = "Slot", Width = 40, Get = a => a.Slot + 1 });
+            list.Add(new AnimalColumn { Header = "Species", Width = 110, Get = a => TotData.GetAnimalName(a.Species) });
+            nameColumn = list.Count;
+            list.Add(new AnimalColumn { Header = "Name", Width = 70, Get = a => a.Name });
+            affectionColumn = list.Count;
+            list.Add(new AnimalColumn { Header = "Affection", Width = 65, Get = a => a.Affection,
+                Set = (a, v) => a.Affection = (ushort)v, Min = 0, Max = TotAnimal.MaxAffection });
+            list.Add(new AnimalColumn { Header = "Hearts", Width = 50, Derive = v => (v / 100.0).ToString("0.#") });
+            list.Add(new AnimalColumn { Header = "Stress %", Width = 60, Get = a => a.Stress,
+                Set = (a, v) => a.Stress = (ushort)v, Min = 0, Max = TotAnimal.MaxStress });
+            list.Add(new AnimalColumn { Header = "Festival Wins", Width = 60, Get = a => a.FestivalWins,
+                Set = (a, v) => a.FestivalWins = (byte)v, Min = 0, Max = Byte.MaxValue });
+            if (isPet)
+            {
+                list.Add(new AnimalColumn { Header = "Ability", Width = 130, Get = a => (int)a.Ability,
+                    Set = (a, v) => a.Ability = (byte)v, List = TotData.PetAbilityList });
+                list.Add(new AnimalColumn { Header = "XP", Width = 60, Get = a => a.XP,
+                    Set = (a, v) => a.XP = (ushort)v, Min = 0, Max = UInt16.MaxValue });
+                list.Add(new AnimalColumn { Header = "Level", Width = 45, Derive = v => TotAnimal.GetPetLevel(v) });
+            }
+            else
+            {
+                list.Add(new AnimalColumn { Header = "Personality", Width = 80, Get = a => (int)a.Personality,
+                    Set = (a, v) => a.Personality = (ushort)v, List = TotData.AnimalPersonalityList });
+                list.Add(new AnimalColumn { Header = "Coat", Width = 50, Get = a => a.Coat,
+                    Set = (a, v) => a.Coat = (ushort)v, Min = 0, Max = TotAnimal.MaxGrade });
+                list.Add(new AnimalColumn { Header = "Grade", Width = 45, Derive = v => TotAnimal.GetCoatGrade(v) });
+                list.Add(new AnimalColumn { Header = "Byprod. Amt Factor", Width = 70, Get = a => a.ByproductFactor,
+                    Set = (a, v) => a.ByproductFactor = (ushort)v, Min = 0, Max = TotAnimal.MaxGrade });
+                list.Add(new AnimalColumn { Header = "Byprod. Amt", Width = 55, Derive = v => TotAnimal.GetByproductAmount(v) });
+                list.Add(new AnimalColumn { Header = "Byprod. Level", Width = 60, Get = a => a.ByproductLevel,
+                    Set = (a, v) => a.ByproductLevel = (ushort)v, Min = 0, Max = TotAnimal.MaxGrade });
+                list.Add(new AnimalColumn { Header = "Grade", Width = 45, Derive = v => TotAnimal.GetByproductGrade(v) });
+            }
+            list.Add(new AnimalColumn { Header = "Birthday", Width = 120, Get = a => a.Birthday });
+            columns = list.ToArray();
+
+            foreach (AnimalColumn column in columns)
+                animalDataGridView.Columns.Add(createColumn(column));
+            ((DataGridViewTextBoxColumn)animalDataGridView.Columns[nameColumn]).MaxInputLength = TotSave.MaxNameInput;
 
             animals = new List<TotAnimal>();
             int count = isPet ? TotAnimal.PetCount : TotAnimal.AnimalCount;
@@ -37,64 +92,106 @@ namespace SOSSE.TOT
                 TotAnimal animal = new TotAnimal(isPet, i);
                 if (!animal.IsUsed) continue;
                 animals.Add(animal);
-
-                string personality = animal.Personality < TotData.AnimalPersonalityList.Length ?
-                    TotData.AnimalPersonalityList[animal.Personality] : "#" + animal.Personality;
-                animalDataGridView.Rows.Add(i + 1, TotData.GetAnimalName(animal.Species), animal.Name,
-                    animal.Affection, hearts(animal.Affection), personality, animal.FestivalWins,
-                    animal.Birthday, animal.XP, TotAnimal.GetPetLevel(animal.XP));
+                DataGridViewRow row = animalDataGridView.Rows[animalDataGridView.Rows.Add()];
+                for (int c = 0; c < columns.Length; c++)
+                {
+                    if (columns[c].Get != null)
+                        row.Cells[c].Value = displayValue(columns[c], columns[c].Get(animal));
+                    else
+                        updateDerived(row, c - 1);
+                }
             }
         }
 
-        private static string hearts(int affection)
+        private static DataGridViewColumn createColumn(AnimalColumn column)
         {
-            return (affection / 100.0).ToString("0.#");
+            DataGridViewColumn gridColumn;
+            if (column.List != null)
+            {
+                DataGridViewComboBoxColumn comboBoxColumn = new DataGridViewComboBoxColumn();
+                comboBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
+                comboBoxColumn.Items.AddRange(column.List);
+                gridColumn = comboBoxColumn;
+            }
+            else
+                gridColumn = new DataGridViewTextBoxColumn();
+            gridColumn.HeaderText = column.Header;
+            gridColumn.Width = column.Width;
+            gridColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
+            gridColumn.ReadOnly = column.Set == null && column.Header != "Name";
+            if (gridColumn.ReadOnly)
+                gridColumn.DefaultCellStyle.BackColor = Color.LightGray;
+            return gridColumn;
+        }
+
+        // List values are shown by name. Values outside the list are left blank and not changed.
+        private static object displayValue(AnimalColumn column, object value)
+        {
+            if (column.List == null) return value;
+            int index = Convert.ToInt32(value);
+            if (index >= 0 && index < column.List.Length) return column.List[index];
+            return null;
+        }
+
+        private void updateDerived(DataGridViewRow row, int sourceColumn)
+        {
+            int value;
+            if (Int32.TryParse(Convert.ToString(row.Cells[sourceColumn].Value), out value))
+                row.Cells[sourceColumn + 1].Value = columns[sourceColumn + 1].Derive(value);
         }
 
         // Validate new values; they are written to the save when the form closes.
         private void animalDataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             DataGridViewCell cell = animalDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            AnimalColumn column = columns[e.ColumnIndex];
             if (cell.ReadOnly || !animalDataGridView.IsCurrentCellInEditMode) return;
-            if (e.ColumnIndex == affectionColumn.Index)
+            if (column.Set == null || column.List != null) return;
+
+            int value;
+            bool isValid = Int32.TryParse(e.FormattedValue.ToString(), out value);
+            if (!isValid || value < column.Min || value > column.Max)
             {
-                int affection;
-                bool isValid = Int32.TryParse(e.FormattedValue.ToString(), out affection);
-                if (!isValid || affection < 0 || affection > TotAnimal.MaxAffection)
-                {
-                    cell.ErrorText = "Must be a valid number between 0 and " + TotAnimal.MaxAffection + " (100 per heart)";
-                    animalDataGridView.CancelEdit();
-                }
-                else
-                {
-                    cell.ErrorText = null;
-                    animalDataGridView.Rows[e.RowIndex].Cells[heartsColumn.Index].Value = hearts(affection);
-                }
+                cell.ErrorText = "Must be a valid number between " + column.Min + " and " + column.Max;
+                animalDataGridView.CancelEdit();
             }
-            else if (e.ColumnIndex == xpColumn.Index)
+            else
+                cell.ErrorText = null;
+        }
+
+        private void animalDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex + 1 >= columns.Length) return;
+            if (columns[e.ColumnIndex + 1].Derive != null)
+                updateDerived(animalDataGridView.Rows[e.RowIndex], e.ColumnIndex);
+        }
+
+        // Show dropdown list right after clicking into ComboBox cells.
+        private void animalDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || columns[e.ColumnIndex].List == null) return;
+            ComboBox cb = animalDataGridView.EditingControl as ComboBox;
+            if (cb != null) cb.DroppedDown = true;
+        }
+
+        private void animalDataGridView_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (animalDataGridView.IsCurrentCellDirty &&
+                columns[animalDataGridView.CurrentCell.ColumnIndex].List != null)
             {
-                ushort xp;
-                bool isValid = UInt16.TryParse(e.FormattedValue.ToString(), out xp);
-                if (!isValid)
-                {
-                    cell.ErrorText = "Must be a valid number between 0 and " + UInt16.MaxValue;
-                    animalDataGridView.CancelEdit();
-                }
-                else
-                {
-                    cell.ErrorText = null;
-                    animalDataGridView.Rows[e.RowIndex].Cells[levelColumn.Index].Value = TotAnimal.GetPetLevel(xp);
-                }
+                animalDataGridView.CommitEdit(DataGridViewDataErrorContexts.Commit);
             }
+        }
+
+        private void animalDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
         }
 
         private void maxAffectionButton_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in animalDataGridView.Rows)
-            {
-                row.Cells[affectionColumn.Index].Value = TotAnimal.MaxAffection;
-                row.Cells[heartsColumn.Index].Value = hearts(TotAnimal.MaxAffection);
-            }
+                row.Cells[affectionColumn].Value = TotAnimal.MaxAffection;
         }
 
         /// <summary>
@@ -108,19 +205,27 @@ namespace SOSSE.TOT
                 TotAnimal animal = animals[i];
                 DataGridViewRow row = animalDataGridView.Rows[i];
 
-                string name = Convert.ToString(row.Cells[nameColumn.Index].Value) ?? "";
+                string name = Convert.ToString(row.Cells[nameColumn].Value) ?? "";
                 if (name != animal.Name)
                     animal.Name = name;
 
-                ushort affection;
-                if (UInt16.TryParse(Convert.ToString(row.Cells[affectionColumn.Index].Value), out affection) &&
-                    affection <= TotAnimal.MaxAffection && affection != animal.Affection)
-                    animal.Affection = affection;
-
-                ushort xp;
-                if (isPet && UInt16.TryParse(Convert.ToString(row.Cells[xpColumn.Index].Value), out xp) &&
-                    xp != animal.XP)
-                    animal.XP = xp;
+                for (int c = 0; c < columns.Length; c++)
+                {
+                    AnimalColumn column = columns[c];
+                    if (column.Set == null) continue;
+                    object cellValue = row.Cells[c].Value;
+                    int value;
+                    if (column.List != null)
+                    {
+                        value = Array.IndexOf(column.List, cellValue);
+                        if (value < 0) continue;
+                    }
+                    else if (!Int32.TryParse(Convert.ToString(cellValue), out value) ||
+                        value < column.Min || value > column.Max)
+                        continue;
+                    if (value != Convert.ToInt32(column.Get(animal)))
+                        column.Set(animal, value);
+                }
             }
         }
 

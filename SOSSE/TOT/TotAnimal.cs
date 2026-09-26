@@ -21,6 +21,8 @@ namespace SOSSE.TOT
         public const byte PassedAway = 0xFF;
         public const byte StateInUse = 4;
         public const int MaxAffection = 1000;
+        public const int MaxStress = 100;
+        public const int MaxGrade = 1000;
         public const int MaxNameLength = 13;
 
         // Pet level is derived from XP: level N starts at PetLevelXP[N - 1].
@@ -166,6 +168,74 @@ namespace SOSSE.TOT
             }
         }
 
+        public ushort Stress
+        {
+            get
+            {
+                return readU16(0x6C);
+            }
+            set
+            {
+                writeU16(0x6C, value);
+            }
+        }
+        /// <summary>
+        /// Barn animals only. 0-1000, see GetCoatGrade.
+        /// </summary>
+        public ushort Coat
+        {
+            get
+            {
+                return readU16(0x7A);
+            }
+            set
+            {
+                writeU16(0x7A, value);
+            }
+        }
+        /// <summary>
+        /// Barn animals only. Byproduct amount shown in game = 20 * value / 1000.
+        /// </summary>
+        public ushort ByproductFactor
+        {
+            get
+            {
+                return readU16(0x7C);
+            }
+            set
+            {
+                writeU16(0x7C, value);
+            }
+        }
+        /// <summary>
+        /// Barn animals only. 0-1000, see GetByproductGrade.
+        /// </summary>
+        public ushort ByproductLevel
+        {
+            get
+            {
+                return readU16(0x7E);
+            }
+            set
+            {
+                writeU16(0x7E, value);
+            }
+        }
+        /// <summary>
+        /// Pets only. Index into TotData.PetAbilityList.
+        /// </summary>
+        public byte Ability
+        {
+            get
+            {
+                return data[offset + 0x7A];
+            }
+            set
+            {
+                data[offset + 0x7A] = value;
+            }
+        }
+
         public string Birthday
         {
             get
@@ -174,6 +244,37 @@ namespace SOSSE.TOT
                     TotData.SeasonList[BirthSeason] : "?";
                 return String.Format("{0} {1}, Year {2}", season, BirthDay, BirthYear);
             }
+        }
+
+        /// <summary>
+        /// Coat grade letter. A letter needs more than each 200 step:
+        /// 0-200 E, 201-400 D, 401-600 C, 601-800 B, 801-999 A, 1000 S.
+        /// </summary>
+        public static string GetCoatGrade(int value)
+        {
+            if (value >= 1000) return "S";
+            return "EDCBA".Substring(Math.Min(4, (Math.Max(value, 1) - 1) / 200), 1);
+        }
+
+        /// <summary>
+        /// Byproduct level letter: 0-350 E, 351-500 D, 501-700 C, 701-900 B, 901-999 A, 1000 S.
+        /// </summary>
+        public static string GetByproductGrade(int value)
+        {
+            if (value >= 1000) return "S";
+            if (value > 900) return "A";
+            if (value > 700) return "B";
+            if (value > 500) return "C";
+            if (value > 350) return "D";
+            return "E";
+        }
+
+        /// <summary>
+        /// Byproduct amount shown in game
+        /// </summary>
+        public static int GetByproductAmount(int factor)
+        {
+            return 20 * factor / 1000;
         }
 
         public static int GetPetLevel(int xp)

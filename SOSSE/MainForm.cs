@@ -60,15 +60,10 @@ namespace SOSSE
             openFileDialog.Filter = "Binary files (*.bin)|*.bin|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() != DialogResult.OK) return;
 
-            // Story of Seasons: Trio of Towns saves are handled in their own window
+            // Story of Seasons: Trio of Towns saves have their own editor
             if (TOT.TotSave.IsTotSave(openFileDialog.FileName))
             {
-                if (!TOT.TotSave.Load(openFileDialog.FileName))
-                {
-                    MessageBox.Show("Invalid save file", "Error");
-                    return;
-                }
-                new TOT.TotMainForm(openFileDialog.FileName).ShowDialog();
+                MessageBox.Show("This is a Trio of Towns save. Open it from the Trio of Towns editor.", "Error");
                 return;
             }
 
