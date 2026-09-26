@@ -80,8 +80,10 @@ namespace SOSSE.TOT
             new Record { Name = "Sheep ever owned", Offset = 0x2F078 },
             new Record { Name = "Birds ever owned", Offset = 0x2F07C },
             new Record { Name = "Rabbits ever owned", Offset = 0x2F080 },
+            new Record { Name = "Alpacas and llamas ever owned", Offset = 0x2F084 },
             new Record { Name = "Cow babies born", Offset = 0x2F204 },
             new Record { Name = "Sheep babies born", Offset = 0x2F208 },
+            new Record { Name = "Llama babies born", Offset = 0x2F210 },
             new Record { Name = "Rabbit babies born", Offset = 0x2F214 },
             new Record { Name = "Bird babies born", Offset = 0x2F218 },
             new Record { Name = "Mill uses (likely)", Offset = 0x2F018 },
@@ -99,10 +101,8 @@ namespace SOSSE.TOT
             new Record { Name = "Value shipped to Westown (likely)", Offset = 0x2F008 },
             new Record { Name = "Value shipped to Tsuyukusa (likely)", Offset = 0x2F00C },
             new Record { Name = "Value shipped to Lulukoko (likely)", Offset = 0x2F010 },
-            new Record { Name = "Alpacas ever owned (likely)", Offset = 0x2F084 },
-            // Alpaca and llama babies born, in an order not yet known.
-            new Record { Name = "Babies born, alpaca or llama 1", Offset = 0x2F20C, ReadOnly = true },
-            new Record { Name = "Babies born, alpaca or llama 2", Offset = 0x2F210, ReadOnly = true }
+            // 0 on every save seen so far: alpaca babies born or an unused slot.
+            new Record { Name = "Babies born, unknown (alpacas?)", Offset = 0x2F20C, ReadOnly = true }
         };
 
         // Harvest Details screen: each box is the sum of the per-item counts of some item types.
