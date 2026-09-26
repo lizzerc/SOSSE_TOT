@@ -42,7 +42,6 @@ namespace SOSSE.TOT
             wardrobeButton.Enabled = true;
             recipeButton.Enabled = true;
             trophyButton.Enabled = true;
-            farmCircleButton.Enabled = true;
             wildAnimalButton.Enabled = true;
         }
 
@@ -162,11 +161,6 @@ namespace SOSSE.TOT
         private void trophyButton_Click(object sender, EventArgs e)
         {
             new TotTrophyEditingForm().ShowDialog();
-        }
-
-        private void farmCircleButton_Click(object sender, EventArgs e)
-        {
-            new TotFarmCircleEditingForm().ShowDialog();
         }
 
         private void wildAnimalButton_Click(object sender, EventArgs e)

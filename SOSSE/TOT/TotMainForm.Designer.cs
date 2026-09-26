@@ -48,7 +48,6 @@
             this.wardrobeButton = new System.Windows.Forms.Button();
             this.recipeButton = new System.Windows.Forms.Button();
             this.trophyButton = new System.Windows.Forms.Button();
-            this.farmCircleButton = new System.Windows.Forms.Button();
             this.wildAnimalButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -250,25 +249,14 @@
             this.trophyButton.UseVisualStyleBackColor = true;
             this.trophyButton.Click += new System.EventHandler(this.trophyButton_Click);
             // 
-            // farmCircleButton
-            // 
-            this.farmCircleButton.Enabled = false;
-            this.farmCircleButton.Location = new System.Drawing.Point(93, 224);
-            this.farmCircleButton.Name = "farmCircleButton";
-            this.farmCircleButton.Size = new System.Drawing.Size(75, 23);
-            this.farmCircleButton.TabIndex = 20;
-            this.farmCircleButton.Text = "Circles";
-            this.farmCircleButton.UseVisualStyleBackColor = true;
-            this.farmCircleButton.Click += new System.EventHandler(this.farmCircleButton_Click);
-            // 
             // wildAnimalButton
             // 
             this.wildAnimalButton.Enabled = false;
-            this.wildAnimalButton.Location = new System.Drawing.Point(174, 224);
+            this.wildAnimalButton.Location = new System.Drawing.Point(93, 224);
             this.wildAnimalButton.Name = "wildAnimalButton";
-            this.wildAnimalButton.Size = new System.Drawing.Size(75, 23);
-            this.wildAnimalButton.TabIndex = 21;
-            this.wildAnimalButton.Text = "Wildlife";
+            this.wildAnimalButton.Size = new System.Drawing.Size(156, 23);
+            this.wildAnimalButton.TabIndex = 20;
+            this.wildAnimalButton.Text = "Wild Animals";
             this.wildAnimalButton.UseVisualStyleBackColor = true;
             this.wildAnimalButton.Click += new System.EventHandler(this.wildAnimalButton_Click);
             // 
@@ -278,7 +266,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(261, 259);
             this.Controls.Add(this.wildAnimalButton);
-            this.Controls.Add(this.farmCircleButton);
             this.Controls.Add(this.trophyButton);
             this.Controls.Add(this.recipeButton);
             this.Controls.Add(this.wardrobeButton);
@@ -332,7 +319,6 @@
         private System.Windows.Forms.Button wardrobeButton;
         private System.Windows.Forms.Button recipeButton;
         private System.Windows.Forms.Button trophyButton;
-        private System.Windows.Forms.Button farmCircleButton;
         private System.Windows.Forms.Button wildAnimalButton;
     }
 }

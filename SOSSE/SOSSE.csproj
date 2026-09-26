@@ -208,12 +208,6 @@
     <Compile Include="TOT\TotTrophyEditingForm.Designer.cs">
       <DependentUpon>TotTrophyEditingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TOT\TotFarmCircleEditingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TOT\TotFarmCircleEditingForm.Designer.cs">
-      <DependentUpon>TotFarmCircleEditingForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="TOT\TotWildAnimalEditingForm.cs">
       <SubType>Form</SubType>
     </Compile>
