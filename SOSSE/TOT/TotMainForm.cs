@@ -43,6 +43,7 @@ namespace SOSSE.TOT
             recipeButton.Enabled = true;
             trophyButton.Enabled = true;
             wildAnimalButton.Enabled = true;
+            farmCircleButton.Enabled = true;
         }
 
         private void openButton_Click(object sender, EventArgs e)
@@ -166,6 +167,11 @@ namespace SOSSE.TOT
         private void wildAnimalButton_Click(object sender, EventArgs e)
         {
             new TotWildAnimalEditingForm().ShowDialog();
+        }
+
+        private void farmCircleButton_Click(object sender, EventArgs e)
+        {
+            new TotFarmCircleEditingForm().ShowDialog();
         }
 
         private void TotMainForm_FormClosing(object sender, FormClosingEventArgs e)

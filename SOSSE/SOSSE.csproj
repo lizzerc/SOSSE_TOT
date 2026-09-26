@@ -190,6 +190,12 @@
     <Compile Include="TOT\TotData.cs" />
     <Compile Include="TOT\TotItem.cs" />
     <Compile Include="TOT\TotGrid.cs" />
+    <Compile Include="TOT\TotFarmCircleEditingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOT\TotFarmCircleEditingForm.Designer.cs">
+      <DependentUpon>TotFarmCircleEditingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TOT\TotWardrobeEditingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TOT\Resources\TotFarmCircles.txt">
       <LogicalName>SOSSE.TOT.Resources.TotFarmCircles.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOT\Resources\TotFarmCirclesCrafted.txt">
+      <LogicalName>SOSSE.TOT.Resources.TotFarmCirclesCrafted.txt</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="TOT\Resources\TotWildAnimals.txt">
       <LogicalName>SOSSE.TOT.Resources.TotWildAnimals.txt</LogicalName>

@@ -49,6 +49,7 @@
             this.recipeButton = new System.Windows.Forms.Button();
             this.trophyButton = new System.Windows.Forms.Button();
             this.wildAnimalButton = new System.Windows.Forms.Button();
+            this.farmCircleButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // openButton
@@ -260,11 +261,23 @@
             this.wildAnimalButton.UseVisualStyleBackColor = true;
             this.wildAnimalButton.Click += new System.EventHandler(this.wildAnimalButton_Click);
             // 
+            // farmCircleButton
+            // 
+            this.farmCircleButton.Enabled = false;
+            this.farmCircleButton.Location = new System.Drawing.Point(12, 253);
+            this.farmCircleButton.Name = "farmCircleButton";
+            this.farmCircleButton.Size = new System.Drawing.Size(116, 23);
+            this.farmCircleButton.TabIndex = 21;
+            this.farmCircleButton.Text = "Farm Circles";
+            this.farmCircleButton.UseVisualStyleBackColor = true;
+            this.farmCircleButton.Click += new System.EventHandler(this.farmCircleButton_Click);
+            // 
             // TotMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(261, 259);
+            this.ClientSize = new System.Drawing.Size(261, 288);
+            this.Controls.Add(this.farmCircleButton);
             this.Controls.Add(this.wildAnimalButton);
             this.Controls.Add(this.trophyButton);
             this.Controls.Add(this.recipeButton);
@@ -320,5 +333,6 @@
         private System.Windows.Forms.Button recipeButton;
         private System.Windows.Forms.Button trophyButton;
         private System.Windows.Forms.Button wildAnimalButton;
+        private System.Windows.Forms.Button farmCircleButton;
     }
 }

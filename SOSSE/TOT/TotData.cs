@@ -31,6 +31,8 @@ namespace SOSSE.TOT
         public static string[] TrophyNameList;
         // Indexed by farm circle (PanelData) ID.
         public static string[] FarmCircleNameList;
+        // Farm circles in the circle shop order, used by the times crafted list.
+        public static string[] FarmCircleCraftedNameList;
         public static string[] WildAnimalNameList;
 
         public static readonly string[] RankList = { "None", "Bronze", "Silver", "Gold", "Rainbow" };
@@ -138,6 +140,8 @@ namespace SOSSE.TOT
         {
             if (FarmCircleNameList == null)
                 FarmCircleNameList = loadLines("TotFarmCircles.txt");
+            if (FarmCircleCraftedNameList == null)
+                FarmCircleCraftedNameList = loadLines("TotFarmCirclesCrafted.txt");
         }
 
         public static void LoadWildAnimalData()
