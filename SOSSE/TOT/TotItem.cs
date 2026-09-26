@@ -8,7 +8,7 @@ namespace SOSSE.TOT
     /// <summary>
     /// A 16-byte Trio of Towns item slot:
     /// +0 u16 item ID, +2 u16 item ID (same), +4 4x u16 properties,
-    /// +0xC u16 unknown, +0xE u8 quantity, +0xF u8 unknown. Unknown bytes are kept as is.
+    /// +0xC u16 unknown, +0xE u8 quantity, +0xF u8 quick-list flag. Both are kept as is.
     /// </summary>
     public class TotItem
     {
@@ -45,9 +45,9 @@ namespace SOSSE.TOT
             }
         }
         /// <summary>
-        /// Unknown byte at +0xF (read-only). Not the dish "+" flag.
+        /// Quick-list flag at +0xF (read-only): 1 if the item is registered to the quick-use list.
         /// </summary>
-        public byte Unknown0F
+        public byte QuickList
         {
             get
             {
