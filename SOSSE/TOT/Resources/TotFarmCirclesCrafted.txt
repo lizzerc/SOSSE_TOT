@@ -1,0 +1,266 @@
+Field
+Soft Field
+Paddy
+Beehive
+Mushroom Log
+Pet Fun Zone 1
+Pet Fun Zone 2
+Pet Fun Zone 3
+FishPreserve
+Water Source
+Western Water Source
+Eastern Water Source
+Tropical Water Source
+Western Toolbox
+Eastern Toolbox
+Tropical Toolbox
+Western Storage Box
+Eastern Storage Box
+Tropical Storage Box
+Barn
+Wooden Barn
+Thatched Barn
+Tribal Barn
+Large Barn
+Large Wooden Barn
+Large Thatched Barn
+Large Tribal Barn
+Coop
+Wooden Coop
+Thatched Coop
+Tribal Coop
+Large Coop
+Large Wooden Coop
+Large Thatched Coop
+Large Tribal Coop
+Pet House
+Grinder
+Textile Mill
+Seed Maker
+Jam Factory
+Fermenter
+Dairy Factory
+Winery
+Fertilizer Factory
+Feed Maker
+FertilizerWaterTank
+Silo
+Hay Bales
+Milk Cans and Boxes
+Farm Shed
+Clothesline
+Relaxing Bench
+Wheelbarrow
+Garden Bench
+Farm Arch
+Flower Lattice Gate
+Overgrown Log
+Scarecrows and Stump
+Wooden Slide
+Tree House
+Watchtower
+Cacti
+Barrels and Boxes
+Hay Bales and Wheel
+Brick Pile
+Lantern Arch
+Frontier Arch
+Welcoming Arch
+White Fountain
+Fancy White Fountain
+Flowery Fence
+Garden Fence
+Wood Fence
+Barrel Planter
+Horse Cart Planter
+Mine Cart Planter
+Brick Planter
+Cow Garden
+Horse Garden
+Cactus Garden
+Western Lamp
+Wooden Swing
+Horsey Toys
+Pizza Oven
+Wine Barrels
+Outdoor BBQ Set
+Band Set
+Windmill
+Water Tower
+Clock Tower
+Mine Cart
+Boxes of Gold
+Gold Mine
+Saddle Fence
+Western Signboard
+Western Signpost
+Old Tool Shed
+Old Bench
+Last Station Bench
+Wheel and Boards
+Western Tricycle
+Native Tent
+Big Bell
+Movie-Set Town
+Sunflower Garden
+Prairie Scene
+Prairie Monument
+Pumpkin Horror
+Colorful Eggs
+Winter Night
+Animal Mountain
+Fallen Star
+Steam Locomotive
+Stone Plinth
+Cowboy Statue
+Scarecrow Family
+Bucket and Hydrangeas
+Stone Lantern
+Tile Arch
+Bamboo Arch
+Red Lantern Arch
+Bamboo Fence
+Stone Fence
+Red Fence
+Bamboo Fountain
+Large Bamboo Fountain
+Water Wheel
+House Porch
+Garden Pavilion
+Bamboo Path
+Wisteria Trellis
+Gingko Dry Landscape
+Pine Dry Landscape
+Cherry Dry Landscape
+Plum Bonsai
+Pine Bonsai
+Bonsai Shelves
+Hydrangea Garden
+Bonsai Garden
+Stone Garden
+Golden Pagoda
+New Year's Set
+Moon Viewing Set
+Star Festival Tree
+Flower Viewing Set
+Red and Black Lanterns
+Festival Masks
+Food Stand
+Taiko Drum
+Eastern Umbrellas
+Bobble Head Hippos
+Coin Boxes
+Outdoor Tea Set
+Giant Fan
+Snow Fort
+Eastern Table
+Japan_parts_11
+Daruma Doll
+Sumo Bears
+Eastern Fable
+Bamboo Princess
+Tanuki Teapot
+Turtle Legend
+Eastern Castle
+Eastern Tower
+Mount Fujili
+Fujin Statue
+Raijin Statue
+Tengu Statue
+Fox Statue
+Inari's Shrine Replica
+Hammock
+Sofa and Veil
+Parasol and Chair
+Blue and White Table
+Tree and Parrots
+Palm Tree Fence
+Stone Relic Fence
+Hibiscus Fence
+Jungle Fence
+Tropical Arch
+Stone Arch
+Anchor Arch
+Ruins Path
+Stone Flowerpot
+Flower Fountain
+Large Flower Fountain
+Canoe Planter
+Wild Mushrooms
+Hibiscus Garden
+Succulent Garden
+Sago Palm Tree
+Curtain Fig Tree
+Tropical Garden
+Pineapple Table
+Orange Table
+Pineapple Altar
+Orange Altar
+Fruit Sofa
+Banana Sofa
+Turtle Statue
+Penjor
+Tropical Lantern
+Incense
+Tropical Umbrella
+Totem Pole
+Tropical Tent
+Tribal Cooking Set
+Djembes
+Food Cart
+Fruit Cart
+Frog Statue
+Giraffe Statue
+Flamingo Statue
+Seated Elephant
+Elephant Statue
+Whale Statue
+Dolphin Statue
+Clownfish Habitat
+Coral Reef
+Mouth of Truth
+Stone Relief
+Mini Sunken City
+Mini Stone Temple
+Stone Relic
+Giant Sand Palace
+Captain's Room
+Treasure Room
+Deserted Island
+Shipwreck
+Tropical Boat
+Giant Pearl
+Tropical Tower
+Surf's Up
+Banana Canoe
+Marine Fountain
+Stone Bust
+Globe
+Model Solar System
+Topiary Plaza
+Planter Garden
+House of Horror
+Giant Mushroom
+Night Sky Sculpture
+Hot Spring
+Volcano
+Snowman
+Ice Lamp
+Lion Topiary
+Mammoth Topiary
+Rabbit and Fox Topiary
+Penguin Topiary
+Phoenix Topiary
+Strawberry Parfait
+Strawberry Cake
+Three-Tiered Cake
+Balloon Art
+Maiden with Spear
+Maiden with Shield
+Sun Tower
+Cow King Statue
+Chicken King Statue
+Rabbit King Statue
+Dog King Statue
+Cat King Statue
+Horse King Statue

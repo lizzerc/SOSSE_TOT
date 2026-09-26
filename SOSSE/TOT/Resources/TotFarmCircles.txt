@@ -1,0 +1,460 @@
+Field
+DUMMY
+Soft Field
+Paddy
+DUMMY
+Beehive
+Mushroom Log
+Pet Fun Zone 1
+Pet Fun Zone 2
+Pet Fun Zone 3
+Hay Bales
+Water Source
+Milk Cans and Boxes
+Farm Shed
+Relaxing Bench
+Wheelbarrow
+Garden Bench
+Farm Arch
+Outdoor BBQ Set
+Pizza Oven
+Flower Lattice Gate
+Overgrown Log
+Scarecrows and Stump
+Wooden Slide
+Tree House
+Watchtower
+Cacti
+Western Water Source
+Barrels and Boxes
+Hay Bales and Wheel
+Lantern Arch
+Frontier Arch
+White Fountain
+Movie-Set Town
+Prairie Scene
+Fancy White Fountain
+Flowery Fence
+Barrel Planter
+Horse Cart Planter
+Mine Cart Planter
+Brick Planter
+Welcoming Arch
+Cow Garden
+Horse Garden
+Sunflower Garden
+Cactus Garden
+Pumpkin Horror
+Colorful Eggs
+Winter Night
+Stone Plinth
+Horsey Toys
+Windmill
+Garden Fence
+Mine Cart
+Saddle Fence
+Western Signboard
+Western Signpost
+Old Tool Shed
+Old Bench
+Wood Fence
+Western Tricycle
+Wheel and Boards
+Water Tower
+Native Tent
+Boxes of Gold
+Big Bell
+Western Lamp
+Animal Mountain
+Gold Mine
+Fallen Star
+Steam Locomotive
+Cowboy Statue
+Prairie Monument
+Wooden Swing
+Wine Barrels
+Clock Tower
+Band Set
+Last Station Bench
+Scarecrow Family
+Eastern Water Source
+Bucket and Hydrangeas
+Stone Lantern
+Tile Arch
+Outdoor Tea Set
+Water Wheel
+Bamboo Path
+Wisteria Trellis
+Mount Fujili
+Japan_other_8
+Gingko Dry Landscape
+Pine Dry Landscape
+Cherry Dry Landscape
+Plum Bonsai
+Pine Bonsai
+Hydrangea Garden
+Bonsai Garden
+Fox Statue
+Stone Garden
+Golden Pagoda
+New Year's Set
+Moon Viewing Set
+Star Festival Tree
+Flower Viewing Set
+Red and Black Lanterns
+Bonsai Shelves
+Festival Masks
+Food Stand
+Taiko Drum
+Bobble Head Hippos
+Coin Boxes
+Bamboo Fountain
+Snow Fort
+Eastern Table
+Sumo Bears
+Large Bamboo Fountain
+Bamboo Arch
+Eastern Umbrellas
+Red Lantern Arch
+Eastern Fable
+Bamboo Princess
+Daruma Doll
+Tanuki Teapot
+Turtle Legend
+Eastern Castle
+Eastern Tower
+Inari's Shrine Replica
+Fujin Statue
+Tengu Statue
+Giant Fan
+House Porch
+Garden Pavilion
+Bamboo Fence
+Stone Fence
+Red Fence
+Raijin Statue
+Hammock
+Tropical Water Source
+Sofa and Veil
+Seated Elephant
+Ruins Path
+Parasol and Chair
+Jungle Fence
+Blue and White Table
+Stone Relic
+Giant Sand Palace
+Sago Palm Tree
+Stone Flowerpot
+Frog Statue
+Canoe Planter
+Wild Mushrooms
+Hibiscus Garden
+Succulent Garden
+Curtain Fig Tree
+Tropical Garden
+Whale Statue
+Dolphin Statue
+Clownfish Habitat
+Coral Reef
+Mini Sunken City
+Flower Fountain
+Captain's Room
+Treasure Room
+Deserted Island
+Shipwreck
+Pineapple Table
+Orange Table
+Pineapple Altar
+Orange Altar
+Fruit Sofa
+Penjor
+Tropical Boat
+Tropical Lantern
+Incense
+Giraffe Statue
+Flamingo Statue
+Elephant Statue
+Mouth of Truth
+Tropical Umbrella
+Totem Pole
+Stone Relief
+Mini Stone Temple
+Tropical Tent
+Tribal Cooking Set
+Banana Sofa
+Djembes
+Food Cart
+Fruit Cart
+Large Flower Fountain
+Giant Pearl
+Tropical Tower
+Surf's Up
+Marine Fountain
+Stone Bust
+Turtle Statue
+Tree and Parrots
+Palm Tree Fence
+Stone Relic Fence
+Hibiscus Fence
+Tropical Arch
+Stone Arch
+Anchor Arch
+Globe
+Model Solar System
+Topiary Plaza
+Planter Garden
+House of Horror
+Sun Tower
+Cow King Statue
+Chicken King Statue
+Rabbit King Statue
+Dog King Statue
+Cat King Statue
+Horse King Statue
+Brick Pile
+Clothesline
+Giant Mushroom
+Banana Canoe
+Night Sky Sculpture
+Hot Spring
+Volcano
+Snowman
+Ice Lamp
+Lion Topiary
+Mammoth Topiary
+Rabbit and Fox Topiary
+Penguin Topiary
+Phoenix Topiary
+Strawberry Parfait
+Strawberry Cake
+Three-Tiered Cake
+Balloon Art
+Maiden with Spear
+Maiden with Shield
+FishPreserve_Plain
+FertilizerWaterTank_Plain
+Silo
+Barn
+Wooden Barn
+Thatched Barn
+Tribal Barn
+Large Barn
+Large Wooden Barn
+Large Thatched Barn
+Large Tribal Barn
+Coop
+Wooden Coop
+Thatched Coop
+Tribal Coop
+Large Coop
+Large Wooden Coop
+Large Thatched Coop
+Large Tribal Coop
+Pet House
+Grinder
+Textile Mill
+Seed Maker
+Jam Factory
+Fermenter
+Dairy Factory
+Winery
+Fertilizer Factory
+Feed Maker
+Western Toolbox
+Eastern Toolbox
+Tropical Toolbox
+Western Storage Box
+Eastern Storage Box
+Tropical Storage Box
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY
+DUMMY

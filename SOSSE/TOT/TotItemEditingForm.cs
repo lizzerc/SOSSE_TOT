@@ -27,6 +27,16 @@ namespace SOSSE.TOT
         private enum Column { Slot, Item, Quantity, Property1, Property2, Property3, Property4, Stars, Golden, QuickList };
 
         // Item names shown in the item column, "None" first, then sorted by name.
+        // Farm circle storage: 999 x (u16 farm circle ID, u16 count in storage), 0xFFFF = empty.
+        // Only the count of circles already stored can be changed.
+        private const int circleOffset = 0x26550;
+        private const int circleCount = 999;
+        private const ushort emptyCircle = 0xFFFF;
+        private DataGridView circleDataGridView;
+        private DataGridViewTextBoxColumn circleCountColumn;
+        // Save offset of each circle row's count
+        private List<int> circleRowOffsets = new List<int>();
+
         private string[] itemChoices;
         private Dictionary<string, ushort> itemIndexByName;
 
@@ -46,6 +56,54 @@ namespace SOSSE.TOT
             };
 
             LoadItemData();
+            loadFarmCircles();
+        }
+
+        private void loadFarmCircles()
+        {
+            TotData.LoadFarmCircleData();
+            circleDataGridView = new DataGridView();
+            circleDataGridView.Dock = DockStyle.Fill;
+            circleDataGridView.AllowUserToAddRows = false;
+            circleDataGridView.AllowUserToDeleteRows = false;
+            circleDataGridView.AllowUserToResizeRows = false;
+            circleDataGridView.RowHeadersVisible = false;
+            circleDataGridView.EditMode = DataGridViewEditMode.EditOnEnter;
+            circleDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TotGrid.AddTextColumn(circleDataGridView, "Farm circle", 200, true);
+            circleCountColumn = TotGrid.AddTextColumn(circleDataGridView, "In storage", 80, false);
+            circleDataGridView.CellValidating += circleDataGridView_CellValidating;
+
+            for (int i = 0; i < circleCount; i++)
+            {
+                int offset = circleOffset + 4 * i;
+                ushort id = BitConverter.ToUInt16(TotSave.SaveData, offset);
+                if (id == emptyCircle) continue;
+                string name = id < TotData.FarmCircleNameList.Length ? TotData.FarmCircleNameList[id] : "#" + id;
+                circleDataGridView.Rows.Add(name, BitConverter.ToUInt16(TotSave.SaveData, offset + 2));
+                circleRowOffsets.Add(offset + 2);
+            }
+
+            TabPage tab = new TabPage("Farm Circles");
+            tab.Controls.Add(circleDataGridView);
+            itemTabControl.TabPages.Add(tab);
+        }
+
+        private void circleDataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            TotGrid.ValidateRange(circleDataGridView, e, circleCountColumn.Index, 1, UInt16.MaxValue);
+        }
+
+        private void saveFarmCircles()
+        {
+            circleDataGridView.EndEdit();
+            for (int i = 0; i < circleRowOffsets.Count; i++)
+            {
+                int count;
+                if (!TotGrid.TryGetInt(circleDataGridView.Rows[i].Cells[circleCountColumn.Index], out count)) continue;
+                if (count != BitConverter.ToUInt16(TotSave.SaveData, circleRowOffsets[i]))
+                    Array.Copy(BitConverter.GetBytes((ushort)count), 0, TotSave.SaveData, circleRowOffsets[i], 2);
+            }
         }
 
         private void LoadItemData()
@@ -336,14 +394,16 @@ namespace SOSSE.TOT
 
         private ItemContainer selectedContainer()
         {
-            return containers[itemTabControl.SelectedIndex];
+            // The farm circle tab comes after the item containers.
+            int index = itemTabControl.SelectedIndex;
+            return index < containers.Length ? containers[index] : null;
         }
 
         // Increase quantity of all items to 99.
         private void itemx99Button_Click(object sender, EventArgs e)
         {
             ItemContainer container = selectedContainer();
-            if (container.ReadOnly) return;
+            if (container == null || container.ReadOnly) return;
             for (int i = 0; i < container.Count; i++)
             {
                 if (container.Items[i].IsEmpty) continue;
@@ -356,7 +416,7 @@ namespace SOSSE.TOT
         private void maxQualityButton_Click(object sender, EventArgs e)
         {
             ItemContainer container = selectedContainer();
-            if (container.ReadOnly) return;
+            if (container == null || container.ReadOnly) return;
             for (int i = 0; i < container.Count; i++)
             {
                 if (container.Items[i].IsEmpty) continue;
@@ -367,7 +427,8 @@ namespace SOSSE.TOT
 
         private void itemTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bool editable = !selectedContainer().ReadOnly;
+            ItemContainer container = selectedContainer();
+            bool editable = container != null && !container.ReadOnly;
             itemx99Button.Enabled = editable;
             maxQualityButton.Enabled = editable;
         }
@@ -380,6 +441,7 @@ namespace SOSSE.TOT
                     container.ContainerDataGridView.EndEdit();
                 saveItems(container);
             }
+            saveFarmCircles();
         }
     }
 }

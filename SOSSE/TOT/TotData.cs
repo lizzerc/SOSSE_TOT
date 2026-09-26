@@ -23,6 +23,21 @@ namespace SOSSE.TOT
         public static string[] AnimalNameList;
         public static string[] AnimalPersonalityList;
 
+        // Wardrobe items in AvatarData order: clothes, then hats, then glasses.
+        public static string[] ClothesNameList;
+        public static string[] HatNameList;
+        public static string[] GlassesNameList;
+        public static string[] RecipeNameList;
+        public static string[] TrophyNameList;
+        // Save offset and target of the counter behind each trophy, where it is confirmed or likely; -1 otherwise.
+        public static int[] TrophyCounterOffset;
+        public static int[] TrophyCounterTarget;
+        // Indexed by farm circle (PanelData) ID.
+        public static string[] FarmCircleNameList;
+        // Farm circles in the circle shop order, used by the times crafted list.
+        public static string[] FarmCircleCraftedNameList;
+        public static string[] WildAnimalNameList;
+
         public static readonly string[] RankList = { "None", "Bronze", "Silver", "Gold", "Rainbow" };
         public static readonly string[] SeasonList = { "Spring", "Summer", "Fall", "Winter" };
         public static readonly string[] PetAbilityList = { "Herding / Recovery", "Finding Materials",
@@ -102,6 +117,51 @@ namespace SOSSE.TOT
                 AnimalNameList = loadLines("TotAnimalName.txt");
             if (AnimalPersonalityList == null)
                 AnimalPersonalityList = loadLines("TotPersonality.txt");
+        }
+
+        public static void LoadWardrobeData()
+        {
+            if (ClothesNameList != null) return;
+            ClothesNameList = loadLines("TotClothes.txt");
+            HatNameList = loadLines("TotHats.txt");
+            GlassesNameList = loadLines("TotGlasses.txt");
+        }
+
+        public static void LoadRecipeData()
+        {
+            if (RecipeNameList == null)
+                RecipeNameList = loadLines("TotRecipes.txt");
+        }
+
+        public static void LoadTrophyData()
+        {
+            if (TrophyNameList != null) return;
+            // Each line: name, then optionally a tab, the counter offset (hex), a tab and the target.
+            string[] lines = loadLines("TotTrophies.txt");
+            TrophyNameList = new string[lines.Length];
+            TrophyCounterOffset = new int[lines.Length];
+            TrophyCounterTarget = new int[lines.Length];
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string[] fields = lines[i].Split('\t');
+                TrophyNameList[i] = fields[0];
+                TrophyCounterOffset[i] = fields.Length > 2 ? Convert.ToInt32(fields[1], 16) : -1;
+                TrophyCounterTarget[i] = fields.Length > 2 ? Int32.Parse(fields[2]) : -1;
+            }
+        }
+
+        public static void LoadFarmCircleData()
+        {
+            if (FarmCircleNameList == null)
+                FarmCircleNameList = loadLines("TotFarmCircles.txt");
+            if (FarmCircleCraftedNameList == null)
+                FarmCircleCraftedNameList = loadLines("TotFarmCirclesCrafted.txt");
+        }
+
+        public static void LoadWildAnimalData()
+        {
+            if (WildAnimalNameList == null)
+                WildAnimalNameList = loadLines("TotWildAnimals.txt");
         }
 
         public static bool IsValidItem(int index)

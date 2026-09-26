@@ -1,0 +1,320 @@
+Good Ol' Country Livin' (Bronze)
+Wedding Bells (Bronze)
+Birth Certificate (Silver)
+One Year on the Range (Bronze)
+Two Years on the Range (Bronze)
+At Home on the Range (Silver)
+Good Neighbor to Westown (Bronze)
+Westown's Idol (Silver)
+Good Neighbor to Tsuyukusa (Bronze)
+Tsuyukusa's Idol (Silver)
+Good Neighbor to Lulukoko (Bronze)
+Lulukoko's Idol (Silver)
+Most Eligible Farmer (Silver)
+Everyone's Favorite (Silver)
+Novice Greeter (Bronze)
+Veteran Greeter (Bronze)
+Master Greeter (Silver)
+Legendary Greeter (Silver)
+Dessie's Supporter (Gold)
+Inari's Devotee (Gold)
+Witchie's Minion (Gold)
+Trophy Collector (Gold)
+Trophy Hoarder (Rainbow)
+Trophy Master (Rainbow)
+Westown Rank D Ribbon (Bronze)
+Westown Rank C Ribbon (Bronze)
+Westown Rank B Ribbon (Silver)
+Westown Rank A Ribbon (Silver)
+Westown Rank S Ribbon (Gold)
+Tsuyukusa Rank D Ribbon (Bronze)
+Tsuyukusa Rank C Ribbon (Bronze)
+Tsuyukusa Rank B Ribbon (Silver)
+Tsuyukusa Rank A Ribbon (Silver)
+Tsuyukusa Rank S Ribbon (Gold)
+Lulukoko Rank D Ribbon (Bronze)
+Lulukoko Rank C Ribbon (Bronze)
+Lulukoko Rank B Ribbon (Silver)
+Lulukoko Rank A Ribbon (Silver)
+Lulukoko Rank S Ribbon (Gold)
+Novice Competitor (Bronze)	0x2F048	10
+Veteran Competitor (Bronze)	0x2F048	30
+Master Competitor (Silver)	0x2F048	50
+Legendary Competitor (Silver)	0x2F048	100
+My First Blue Ribbon (Bronze)	0x2F04C	1
+Favored to Win (Silver)	0x2F04C	10
+Accustomed to Winning (Gold)	0x2F04C	30
+Legendary Champion (Rainbow)	0x2F04C	50
+Westown Crop Master (Silver)
+Tsuyukusa Crop Master (Silver)
+Lulukoko Crop Master (Silver)
+Glorious Farmer (Gold)
+Grand Farmer (Gold)
+Field Crop Novice (Bronze)
+Field Crop Veteran (Silver)
+Field Crop Master (Silver)
+Field Crop Legend (Gold)
+Tree Crop Novice (Bronze)
+Tree Crop Veteran (Silver)
+Tree Crop Master (Silver)
+Tree Crop Legend (Gold)
+Flower-Growing Novice (Bronze)
+Flower-Growing Veteran (Silver)
+Flower-Growing Master (Silver)
+Flower-Growing Legend (Gold)
+Textile Novice (Bronze)
+Textile Veteran (Silver)
+Textile Master (Silver)
+Textile Legend (Gold)
+Grain-Growing Novice (Bronze)
+Grain-Growing Veteran (Silver)
+Grain-Growing Master (Silver)
+Grain-Growing Legend (Gold)
+Paddy-Growing Novice (Bronze)
+Paddy-Growing Veteran (Silver)
+Paddy-Growing Master (Silver)
+Paddy-Growing Legend (Gold)
+Spice-Growing Novice (Bronze)
+Spice-Growing Veteran (Silver)
+Spice-Growing Master (Silver)
+Spice-Growing Legend (Gold)
+Tea-Growing Novice (Bronze)
+Tea-Growing Veteran (Silver)
+Tea-Growing Master (Silver)
+Tea-Growing Legend (Gold)
+Lumber-Harvesting Novice (Bronze)
+Lumber-Harvesting Veteran (Silver)
+Lumber-Harvesting Master (Silver)
+Lumber-Harvesting Legend (Gold)
+Gold-Crop Novice (Silver)
+Gold-Crop Veteran (Gold)
+Gold-Crop Master (Gold)
+Gold-Crop Legend (Rainbow)
+Giant-Crop Novice (Silver)
+Giant-Crop Veteran (Gold)
+Giant-Crop Master (Gold)
+Giant-Crop Legend (Rainbow)
+Kindred of the Cows (Bronze)
+Kindred of the Sheep (Bronze)
+Kindred of the Birds (Bronze)
+Kindred of the Rabbits (Bronze)
+Kindred of the Alpacas (Bronze)
+Master Livestock Raiser (Bronze)
+Master Livestock Breeder (Bronze)
+Novice Milker (Bronze)
+Veteran Milker (Bronze)
+Master Milker (Silver)
+Legendary Milker (Gold)
+Novice Egg Gatherer (Bronze)
+Veteran Egg Gatherer (Bronze)
+Master Egg Gatherer (Silver)
+Legendary Egg Gatherer (Gold)
+Novice Wool Collector (Bronze)
+Veteran Wool Collector (Bronze)
+Master Wool Collector (Silver)
+Legendary Wool Collector (Gold)
+Novice Alpaca Wool Collector (Bronze)
+Veteran Alpaca Wool Collector (Bronze)
+Master Alpaca Wool Collector (Silver)
+Legendary Alpaca Wool Collector (Gold)
+Novice Rabbit Fur Collector (Bronze)
+Veteran Rabbit Fur Collector (Bronze)
+Master Rabbit Fur Collector (Silver)
+Legendary Rabbit Fur Collector (Gold)
+Novice Llama Wool Collector (Silver)
+Veteran Llama Wool Collector (Silver)
+Master Llama Wool Collector (Gold)
+Legendary Llama Wool Collector (Rainbow)
+Novice Item+ Collector (Silver)
+Veteran Item+ Collector (Gold)
+Master Item+ Collector (Rainbow)
+Legendary Item+ Collector (Rainbow)
+Crazy Pet Person (Bronze)
+Pet Fancier (Silver)
+Pet Trainer (Gold)
+Animal Menagerie (Bronze)
+Wild Thing (Gold)
+Novice Westown Trader (Bronze)	0x2F008	100000
+Veteran Westown Trader (Silver)	0x2F008	1000000
+Master Westown Trader (Gold)	0x2F008	10000000
+Legendary Westown Trader (Rainbow)	0x2F008	100000000
+Novice Tsuyukusa Trader (Bronze)	0x2F00C	100000
+Veteran Tsuyukusa Trader (Silver)	0x2F00C	1000000
+Master Tsuyukusa Trader (Gold)	0x2F00C	10000000
+Legendary Tsuyukusa Trader (Rainbow)	0x2F00C	100000000
+Novice Lulukoko Trader (Bronze)	0x2F010	100000
+Veteran Lulukoko Trader (Silver)	0x2F010	1000000
+Master Lulukoko Trader (Gold)	0x2F010	10000000
+Legendary Lulukoko Trader (Rainbow)	0x2F010	100000000
+Novice Landscaper (Bronze)
+Veteran Landscaper (Gold)
+Master Landscaper (Rainbow)
+Beginner Vine Grower (Bronze)
+Novice Vine Grower (Bronze)
+Average Vine Grower (Silver)
+Veteran Vine Grower (Silver)
+Legendary Vine Grower (Gold)
+Beginner Shoot Hunter (Bronze)
+Novice Shoot Hunter (Bronze)
+Average Shoot Hunter (Silver)
+Veteran Shoot Hunter (Silver)
+Master Shoot Hunter (Silver)
+Legendary Shoot Hunter (Gold)
+Beginner Syrup Tapper (Bronze)
+Novice Syrup Tapper (Bronze)
+Average Syrup Tapper (Silver)
+Veteran Syrup Tapper (Silver)
+Master Syrup Tapper (Silver)
+Legendary Syrup Tapper (Gold)
+Beginner Beekeeper (Bronze)
+Novice Beekeeper (Bronze)
+Average Beekeeper (Silver)
+Veteran Beekeeper (Silver)
+Master Beekeeper (Silver)
+Legendary Beekeeper (Gold)
+Beginner Mushroom Hunter (Bronze)
+Novice Mushroom Hunter (Bronze)
+Average Mushroom Hunter (Silver)
+Veteran Mushroom Hunter (Silver)
+Master Mushroom Hunter (Silver)
+Legendary Mushroom Hunter (Gold)
+Beginner Fish Breeder (Bronze)
+Novice Fish Breeder (Bronze)
+Average Fish Breeder (Silver)
+Veteran Fish Breeder (Silver)
+Master Fish Breeder (Silver)
+Legendary Fish Breeder (Gold)
+Beginner Pearl Grower (Bronze)
+Novice Pearl Grower (Bronze)
+Average Pearl Grower (Silver)
+Veteran Pearl Grower (Silver)
+Master Pearl Grower (Silver)
+Legendary Pearl Grower (Gold)
+Novice Miller (Bronze)	0x2F018	50
+Veteran Miller (Bronze)	0x2F018	100
+Master Miller (Silver)	0x2F018	500
+Legendary Miller (Gold)	0x2F018	1000
+Novice Weaver (Bronze)	0x2F01C	50
+Veteran Weaver (Bronze)	0x2F01C	100
+Master Weaver (Silver)	0x2F01C	500
+Legendary Weaver (Gold)	0x2F01C	1000
+Novice Seed Maker (Bronze)	0x2F020	50
+Veteran Seed Maker (Bronze)	0x2F020	100
+Master Seed Maker (Silver)	0x2F020	500
+Legendary Seed Maker (Gold)	0x2F020	1000
+Novice Jam Maker (Bronze)	0x2F024	50
+Veteran Jam Maker (Bronze)	0x2F024	100
+Master Jam Maker (Silver)	0x2F024	500
+Legendary Jam Maker (Gold)	0x2F024	1000
+Novice Pickle Maker (Bronze)	0x2F028	50
+Veteran Pickle Maker (Bronze)	0x2F028	100
+Master Pickle Maker (Silver)	0x2F028	500
+Legendary Pickle Maker (Gold)	0x2F028	1000
+Novice Vintner (Bronze)	0x2F02C	50
+Veteran Vintner (Bronze)	0x2F02C	100
+Master Vintner (Silver)	0x2F02C	500
+Legendary Vintner (Gold)	0x2F02C	1000
+Novice Dairy Maker (Bronze)	0x2F030	50
+Veteran Dairy Maker (Bronze)	0x2F030	100
+Master Dairy Maker (Silver)	0x2F030	500
+Legendary Dairy Maker (Gold)	0x2F030	1000
+Novice Fertilizer Maker (Bronze)	0x2F034	50
+Veteran Fertilizer Maker (Bronze)	0x2F034	100
+Master Fertilizer Maker (Silver)	0x2F034	500
+Legendary Fertilizer Maker (Gold)	0x2F034	1000
+Novice Feed Maker (Bronze)	0x2F038	50
+Veteran Feed Maker (Bronze)	0x2F038	100
+Master Feed Maker (Silver)	0x2F038	500
+Legendary Feed Maker (Gold)	0x2F038	1000
+On the Road to Riches (Bronze)
+Fiscally Fearsome (Silver)
+My First Million (Gold)
+Multi-Millionaire (Rainbow)
+Amateur Chef (Bronze)	0x275BC	1
+Fledgling Chef (Bronze)	0x275BC	10
+Short-Order Chef (Bronze)	0x275BC	100
+Buffet Chef (Bronze)	0x275BC	300
+Seasoned Chef (Bronze)	0x275BC	500
+Veteran Chef (Bronze)	0x275BC	700
+Gourmet Chef (Bronze)	0x275BC	1000
+Sous Chef (Silver)	0x275BC	4000
+Executive Chef (Silver)	0x275BC	7000
+Master Chef (Gold)	0x275BC	10000
+Novice Recipe Collector (Bronze)
+Veteran Recipe Collector (Silver)
+Master Recipe Collector (Gold)
+Beginner Trapper (Bronze)	0x2DB64	1
+Novice Trapper (Bronze)	0x2DB64	10
+Amateur Trapper (Bronze)	0x2DB64	50
+Fledgling Trapper (Bronze)	0x2DB64	100
+Average Trapper (Bronze)	0x2DB64	200
+Seasoned Trapper (Bronze)	0x2DB64	400
+Veteran Trapper (Bronze)	0x2DB64	800
+Expert Trapper (Silver)	0x2DB64	1300
+Master Trapper (Silver)	0x2DB64	1900
+Legendary Trapper (Gold)	0x2DB64	3000
+Amateur Angler (Bronze)	0x2D9C8	1
+Fledgling Fisher (Bronze)	0x2D9C8	10
+Fly Fisher (Bronze)	0x2D9C8	50
+Piscene Pro (Bronze)	0x2D9C8	100
+Hot Rod (Bronze)	0x2D9C8	200
+The Reel Deal (Bronze)	0x2D9C8	400
+Al-lure-ing (Bronze)	0x2D9C8	800
+Fish Whisperer (Silver)	0x2D9C8	1300
+Dr. Fishgood (Silver)	0x2D9C8	1900
+Fisher King (Gold)	0x2D9C8	3000
+Novice Fish Collector (Bronze)	0x2F0AC	20
+Veteran Fish Collector (Silver)	0x2F0AC	50
+Master Fish Collector (Gold)
+Novice Large-Fish Collector (Silver)
+Veteran Large-Fish Collector (Gold)
+Master Large-Fish Collector (Rainbow)
+Novice Ore Collector (Bronze)
+Veteran Ore Collector (Silver)
+Master Ore Collector (Gold)
+Novice Miner (Bronze)
+Veteran Miner (Bronze)
+Master Miner (Silver)
+Legendary Miner (Gold)
+Novice Clothing Collector (Bronze)
+Veteran Clothing Collector (Gold)
+Master Clothing Collector (Rainbow)
+Novice Headgear Collector (Bronze)
+Veteran Headgear Collector (Bronze)
+Master Headgear Collector (Gold)
+Novice Eyewear Collector (Bronze)
+Veteran Eyewear Collector (Bronze)
+Master Eyewear Collector (Gold)
+Novice Forager (Bronze)	0x2F044	50
+Veteran Forager (Bronze)	0x2F044	100
+Master Forager (Silver)	0x2F044	500
+Legendary Forager (Gold)	0x2F044	1000
+Entry-Level Employee (Bronze)
+Job Intern (Bronze)
+Job Trainee (Bronze)
+Office Drone (Bronze)
+Cubicle Farm Resident (Bronze)
+Low-Level Management (Bronze)
+Mid-Tier Management (Bronze)
+Executive Manager (Silver)
+Board of Directors (Silver)
+Company President (Gold)
+Spa Novice (Bronze)	0x2F088	1
+Spa Veteran (Bronze)	0x2F088	10
+Spa Master (Silver)	0x2F088	50
+Spa Legend (Gold)	0x2F088	100
+Inn New Visitor (Bronze)	0x2F08C	1
+Inn Regular (Bronze)	0x2F08C	10
+Inn Preferred Customer (Silver)	0x2F08C	50
+Inn Gold Club Member (Gold)	0x2F08C	100
+Restaurant New Visitor (Bronze)	0x2F090	1
+Restaurant Regular (Bronze)	0x2F090	10
+Restaurant Preferred Customer (Silver)	0x2F090	50
+Restaurant Gold Club Member (Gold)	0x2F090	100
+Teahouse New Visitor (Bronze)	0x2F094	1
+Teahouse Regular (Bronze)	0x2F094	10
+Teahouse Preferred Customer (Silver)	0x2F094	50
+Teahouse Gold Club Member (Gold)	0x2F094	100
+Seaside Cafe New Visitor (Bronze)	0x2F098	1
+Seaside Cafe Regular (Bronze)	0x2F098	10
+Seaside Cafe Preferred Customer (Silver)	0x2F098	50

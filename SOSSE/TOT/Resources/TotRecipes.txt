@@ -1,0 +1,437 @@
+Potato Salad
+Mashed Potatoes
+Onion Salad
+Tomato Salad
+Mimosa Salad
+Milk Salad
+Herb Salad
+Mixed Salad
+Soybean Salad
+Pasta Salad
+Coleslaw
+Pumpkin Salad
+Spinach Salad
+Burdock Salad
+Mushroom Salad
+Plum-Cucumber Salad
+Plum Shiso Salad
+Seaweed Salad
+Wasabi Octopus
+Sashimi
+Tofu Skin
+Fritter Salad
+Taramasalata
+Corn Salad
+Paprika Salad
+Classy Carpaccio
+Summer Veggie Salad
+Coconut Salad
+Tropical Salad
+Scallop Salad
+Fruit Salad
+Lomi Lomi Salmon
+Salad Roll
+Octopus Kelaguen
+Achaar
+Couscous Salad
+Kokonda
+Italian Salad
+Caprese Salad
+Curry Salad
+Bagna Cauda
+Gratin Soup
+Potato Potage
+Corn Potage
+Carrot Soup
+Cheese Soup
+Herb Soup
+Pistou Soup
+Spaghetti Soup
+Bouillon Soup
+Gumbo
+Ultimate Soup
+Mushroom Soup
+Spinach Soup
+Turnip Soup
+Egg Drop Soup
+Miso Soup
+Burdock Soup
+Mitten Crab Soup
+Osumashi Soup
+Keiji Salmon Stew
+Kenchin Soup
+Clam Miso Soup
+Supreme Soup
+Acqua Pazza
+Gazpacho
+Pho
+Sturgeon Soup
+Coconut Soup
+Loi Feke
+Tom Yum Goong
+Ika Vakamiti
+Delicious Soup
+Minestrone
+Fish Chowder
+Vichyssoise
+Clam Chowder
+Potato Pancakes
+Mushroom Pie
+Fish Pie
+Grilled Tomato
+Vegetable Stir Fry
+Grilled Cheese
+Buttered Turnip
+Gratin
+Quiche
+Pizza
+Buttered Corn
+Stir-Fried Broccoli
+Omelet
+Mini Omelet
+Raclette
+Hasty Pudding
+Cornmeal Flatbread
+Baked Beans
+Candied Carrots
+French Fries
+Baked Sweet Potato
+Fried Egg
+Roasted Mushrooms
+Grilled Fish
+Teriyaki Pumpkin
+Chop Suey
+Okonomiyaki
+Kinpira Burdock
+Tofu Burger
+Gyoza
+Three Fried Eggs
+Grilled Horned Turbans
+Spicy Stir-Fried Squid
+Steamed Breadfruit
+Roasted Corn
+Marlin Steak
+Farofa
+Shredded Carrots
+Banh Xeo
+Meuniere
+Terrine
+Pissaladiere
+Chili Shrimp
+Cabbage Rolls
+Stuffed Tomatoes
+Spanish Omelet
+Croquette
+Cream Croquette
+Creamy Hot Pot
+Cheese Fondue
+Stew
+Succotash
+Shredded Radish
+Oden
+Boiled Pumpkin
+Turnip Stew
+Simmered Potato
+Boiled Egg
+Egg Custard
+Deep-Fried Monkfish
+Spring Rolls
+Deep-Fried Catfish
+Kakiage
+Turtle Stew
+Puffer Stew
+Miso-Sauce Mackerel
+Mackerel with Radish
+Fried Shrimp
+New Year's Dish
+Shimotsukare
+Fried Tofu
+Houtou
+Fried Tofu Fritter
+Tempura
+Tsukudani
+Doji Hot Pot
+Vegetable Etuver
+Moqueca
+Corn Stew
+Caponata
+Boiled Corn
+Samosa
+Grouper Stew
+Monkfish Stew
+Red King Crab Stew
+Ahi Poke Salad
+Lau Lau
+Deep-Fried Fish Cakes
+Piperade
+Bouillabaisse
+Pot-Au-Feu
+Rosti
+Ratatouille
+Onion Rice
+Doria
+Pumpkin Doria
+Risotto
+Tomato Risotto
+Dolma
+Curd Rice
+Buttered Rice
+Milk Porridge
+Omelet Rice
+Seafood Omelet Rice
+White Rice
+Mixed Vegetable Rice
+Sweet Potato Rice
+Chestnut Rice
+Mushroom Rice
+Fried Rice
+Fried Onigiri
+Squid Rice
+Egg Bowl
+Eel Rice Bowl
+Sea Urchin Rice Bowl
+Seafood Rice Bowl
+Oshinko Roll
+Cucumber Roll
+Chirashi Sushi
+Sea Bream Chazuke
+Shiso Onigiri
+Kakinoha-Zushi
+Zongzi
+Rice Porridge
+Eggs Over Rice
+Tuna Roll
+Inarizushi
+Sekihan Rice
+Octopus Rice
+Tea Rice Porridge
+Uzume Rice
+Herb Rice Porridge
+Fukagawa Rice
+Kiritanpo
+Curry Rice
+Spicy Curry
+Dry Curry
+Rice Pilaf
+Herb Pilaf
+Coconut Curry
+Nasi Goreng
+Lontong
+Thieboudienne
+Biryani
+Kushari
+Makloubeh
+Nasi Lemak
+Loco Moco
+Arancini
+Bibimbap
+Paella
+Bread
+Potato Bread
+Corn Bread
+Walnut Bread
+Vegetable Bread
+Fruit Bread
+French Toast
+Yogurt Bread
+Buttered Bread
+Basil Cheese Bread
+Melon Bread
+Herb Pasta
+Mushroom Spaghetti
+Macaroni and Cheese
+Eggs Benedict
+Raisin Bread
+Cinnamon Roll
+Crackers
+Gingerbread
+Cold Noodles
+Kitsune Udon
+Stir-Fried Udon
+Udon with Egg
+Anpan Sweet Roll
+Cold Udon Soup
+Octopus Pasta
+Sea Urchin Pasta
+Corn Pasta
+Naan Bread
+Pita Bread
+Saimin Noodles
+Fufu
+Tropical Sandwich
+Toasted Sandwich
+Pescatore
+Focaccia
+Carbonara
+Lasagna
+Spaghetti Aglio e Olio
+Macaroni Medley
+Napolitan
+Cream Pasta
+Genovese Pasta
+Candied Sweet Potato
+Crepes
+Peach Tart
+Orange Tart
+Cherry Tart
+Pumpkin Pie
+Apple Pie
+Blueberry Pie
+Yogurt Pie
+Vegetable Cake
+Grape Cake
+Apricot Cake
+Pancakes
+Chocolate Cookies
+Almond Cookies
+Cheesecake
+Pudding
+Pumpkin Pudding
+Chocolate Pudding
+Almond Caramel
+Chocolate Mousse
+Pumpkin Ice Cream
+Chocolate Ice Cream
+Corn Muffins
+Soft-Serve Ice Cream
+Coffee Jelly
+Cornflakes
+Doughnuts
+Persimmon Pudding
+Berry Pudding
+Apple Jelly
+Maple Candies
+Vinegar Pie
+Custard Pie
+Hush Puppies
+Popcorn
+Mince Pie
+Decorated Cake
+Rice Flour Pancakes
+Soy Milk Cookie
+Soy Milk Pudding
+Herb Ice Cream
+Monaka
+Daifuku
+Yomogi Dumplings
+Mitarashi Dumplings
+Millet Dumplings
+Rice Cracker
+Dorayaki
+Youkan
+Mizore Shaved Ice
+Ujikintoki Shaved Ice
+Strawberry Shaved Ice
+Castella
+Fruit Punch
+Pineapple Cake
+Lemon Tart
+Fruit Gratin
+Mango Cake
+Melon Cake
+Malasada
+Vanilla Ice Cream
+Strawberry Ice Cream
+Pineapple Ice Cream
+Peach Ice Cream
+Cherry Ice Cream
+Banana Ice Cream
+Mango Ice Cream
+Apple Ice Cream
+Grape Ice Cream
+Melon Ice Cream
+Blueberry Ice Cream
+Watermelon Sherbet
+Kiwi Sherbet
+Lemon Sherbet
+Orange Sherbet
+Panipuri
+Nata De Coco
+Aloe Yogurt
+Barfi
+Sata Andagi
+Coconut-Milk Bananas
+Frozen Yogurt
+Chocolate Fondue
+Macaron
+Ice Cream Crepe
+Mont Blanc
+Clafoutis
+Cannoli
+Shortcake
+Mille-Feuille
+Chiffon Cake
+Chocolate Cake
+Cream Puff
+Madeleine
+Bavarian Cream
+Baklava
+Tomato Juice
+Carrot Juice
+Grape Juice
+Ginger Ale
+Apple Juice
+Cheese Drink
+Iced Cocoa
+Vegetable Tea
+Strawberry Tea
+Peach Tea
+Cherry Tea
+Apple Tea
+Blueberry Tea
+Earl Grey
+Herb Tea
+Milk Tea
+Spring Milk Tea
+Summer Milk Tea
+Fall Milk Tea
+Spring Herb Tea
+Summer Herb Tea
+Fall Herb Tea
+Cappuccino
+Cafe Mocha
+Coffee
+Hot Milk
+Lemon Tea
+Eggnog
+Lemonade
+Grass Drink
+Shiso Juice
+Matcha
+Green Tea
+Matcha Milk
+Amazake
+Green Plum Tea
+Ceremonial Tea
+Ginger Drink
+Pineapple Juice
+Watermelon Juice
+Kiwi Juice
+Lychee Juice
+Mango Juice
+Orange Juice
+Melon Juice
+Banana au Lait
+Vanilla Shake
+Soy Milk Banana Shake
+Pina Colada Shake
+Cherry Peach Shake
+Mixed Berry Shake
+Sunrise Shake
+Gin Apple Shake
+Watermelon Shake
+Honey Lemon Shake
+Melon Soda
+Kiwi Grape Shake
+Orange Cacao Shake
+Smoothie
+Green Smoothie
+Coconut Milk
+Tapioca Juice
+Tropical Punch
+Tapioca Milk Tea
+Chai Tea
+Hibiscus Tea
+Lassi
+Yogurt Drink
+Tiramisu Shake
