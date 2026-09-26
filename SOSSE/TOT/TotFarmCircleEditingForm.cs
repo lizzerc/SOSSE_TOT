@@ -10,15 +10,20 @@ using System.Windows.Forms;
 namespace SOSSE.TOT
 {
     /// <summary>
-    /// Farm circles times crafted: u32 per circle at 0x2F28C, in the game's circle shop order.
-    /// A circle crafted at least once has a count above 0. The circles in storage are in the Items window.
+    /// Farm circles unlocked (4 bits per circle at 0x34E44) and times crafted (u32 per circle at 0x2F28C),
+    /// both in the game's circle shop order. The circles in storage are in the Items window.
     /// </summary>
     public partial class TotFarmCircleEditingForm : Form
     {
         private const int craftedOffset = 0x2F28C;
         // Total circles crafted; goes up by one with each craft.
         private const int craftedTotalOffset = 0x2F0A0;
+        // 4 bits per circle, low nibble first
+        private const int unlockedOffset = 0x34E44;
+        private const int unlocked = 5;
+        private const int locked = 0;
 
+        private DataGridViewCheckBoxColumn unlockedColumn;
         private DataGridViewTextBoxColumn countColumn;
 
         public TotFarmCircleEditingForm()
@@ -28,11 +33,43 @@ namespace SOSSE.TOT
             TotData.LoadFarmCircleData();
 
             TotGrid.AddTextColumn(farmCircleDataGridView, "Farm circle", 200, true);
+            unlockedColumn = TotGrid.AddCheckColumn(farmCircleDataGridView, "Unlocked", 60);
             countColumn = TotGrid.AddTextColumn(farmCircleDataGridView, "Times crafted", 90, false);
             farmCircleDataGridView.CellValidating += farmCircleDataGridView_CellValidating;
 
             for (int i = 0; i < TotData.FarmCircleCraftedNameList.Length; i++)
-                farmCircleDataGridView.Rows.Add(TotData.FarmCircleCraftedNameList[i], readCount(i));
+            {
+                int state = GetUnlockState(i);
+                int row = farmCircleDataGridView.Rows.Add(TotData.FarmCircleCraftedNameList[i], state == unlocked, readCount(i));
+                // Only "unlocked" and "locked" are known; other values are kept as they are.
+                if (state != unlocked && state != locked)
+                {
+                    DataGridViewCell cell = farmCircleDataGridView.Rows[row].Cells[unlockedColumn.Index];
+                    cell.ReadOnly = true;
+                    cell.Style.BackColor = Color.LightGray;
+                }
+            }
+        }
+
+        public static int GetUnlockState(int circle)
+        {
+            return (TotSave.SaveData[unlockedOffset + circle / 2] >> (4 * (circle % 2))) & 0xF;
+        }
+
+        private static void setUnlockState(int circle, int state)
+        {
+            int shift = 4 * (circle % 2);
+            byte value = TotSave.SaveData[unlockedOffset + circle / 2];
+            TotSave.SaveData[unlockedOffset + circle / 2] = (byte)((value & ~(0xF << shift)) | (state << shift));
+        }
+
+        private void unlockAllButton_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in farmCircleDataGridView.Rows)
+            {
+                if (!row.Cells[unlockedColumn.Index].ReadOnly)
+                    row.Cells[unlockedColumn.Index].Value = true;
+            }
         }
 
         private static uint readCount(int circle)
@@ -54,6 +91,14 @@ namespace SOSSE.TOT
             long difference = 0;
             for (int i = 0; i < TotData.FarmCircleCraftedNameList.Length; i++)
             {
+                DataGridViewCell unlockedCell = farmCircleDataGridView.Rows[i].Cells[unlockedColumn.Index];
+                if (!unlockedCell.ReadOnly)
+                {
+                    int state = TotGrid.IsChecked(unlockedCell) ? unlocked : locked;
+                    if (state != GetUnlockState(i))
+                        setUnlockState(i, state);
+                }
+
                 int count;
                 if (!TotGrid.TryGetInt(farmCircleDataGridView.Rows[i].Cells[countColumn.Index], out count)) continue;
                 uint oldCount = readCount(i);
