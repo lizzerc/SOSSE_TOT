@@ -11,7 +11,8 @@ namespace SOSSE.TOT
 {
     /// <summary>
     /// Trophies: 320 x 3 bits packed from 0x2EF88, read as one little-endian number
-    /// (trophy k = bits 3k to 3k+2).
+    /// (trophy k = bits 3k to 3k+2). Earning a trophy also raises its counter to the trophy's
+    /// target, where the counter is known, so that they match.
     /// </summary>
     public partial class TotTrophyEditingForm : Form
     {
@@ -29,15 +30,23 @@ namespace SOSSE.TOT
 
             TotGrid.AddTextColumn(trophyDataGridView, "Trophy", 250, true);
             earnedColumn = TotGrid.AddCheckColumn(trophyDataGridView, "Earned", 60);
+            TotGrid.AddTextColumn(trophyDataGridView, "Counter", 110, true);
 
             for (int i = 0; i < TotData.TrophyNameList.Length; i++)
             {
                 int state = GetState(i);
-                int row = trophyDataGridView.Rows.Add(TotData.TrophyNameList[i], state == earned);
+                int row = trophyDataGridView.Rows.Add(TotData.TrophyNameList[i], state == earned, counterText(i));
                 // Only "earned" and "not earned" are known; other states are kept as they are.
                 if (state != earned && state != notEarned)
                     TotGrid.LockRow(trophyDataGridView.Rows[row]);
             }
+        }
+
+        private static string counterText(int trophy)
+        {
+            int offset = TotData.TrophyCounterOffset[trophy];
+            if (offset < 0) return "";
+            return BitConverter.ToUInt32(TotSave.SaveData, offset) + " / " + TotData.TrophyCounterTarget[trophy];
         }
 
         public static int GetState(int trophy)
@@ -84,8 +93,13 @@ namespace SOSSE.TOT
             {
                 if (trophyDataGridView.Rows[i].ReadOnly) continue;
                 int state = TotGrid.IsChecked(trophyDataGridView.Rows[i].Cells[earnedColumn.Index]) ? earned : notEarned;
-                if (state != GetState(i))
-                    SetState(i, state);
+                if (state == GetState(i)) continue;
+                SetState(i, state);
+                // Raise the counter to the target of a newly earned trophy; never lower it.
+                int offset = TotData.TrophyCounterOffset[i];
+                if (state == earned && offset >= 0 &&
+                    BitConverter.ToUInt32(TotSave.SaveData, offset) < TotData.TrophyCounterTarget[i])
+                    Array.Copy(BitConverter.GetBytes((uint)TotData.TrophyCounterTarget[i]), 0, TotSave.SaveData, offset, 4);
             }
         }
 

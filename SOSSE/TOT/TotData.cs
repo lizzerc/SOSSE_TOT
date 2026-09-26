@@ -29,6 +29,9 @@ namespace SOSSE.TOT
         public static string[] GlassesNameList;
         public static string[] RecipeNameList;
         public static string[] TrophyNameList;
+        // Save offset and target of the counter behind each trophy, where it is confirmed; -1 otherwise.
+        public static int[] TrophyCounterOffset;
+        public static int[] TrophyCounterTarget;
         // Indexed by farm circle (PanelData) ID.
         public static string[] FarmCircleNameList;
         // Farm circles in the circle shop order, used by the times crafted list.
@@ -132,8 +135,19 @@ namespace SOSSE.TOT
 
         public static void LoadTrophyData()
         {
-            if (TrophyNameList == null)
-                TrophyNameList = loadLines("TotTrophies.txt");
+            if (TrophyNameList != null) return;
+            // Each line: name, then optionally a tab, the counter offset (hex), a tab and the target.
+            string[] lines = loadLines("TotTrophies.txt");
+            TrophyNameList = new string[lines.Length];
+            TrophyCounterOffset = new int[lines.Length];
+            TrophyCounterTarget = new int[lines.Length];
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string[] fields = lines[i].Split('\t');
+                TrophyNameList[i] = fields[0];
+                TrophyCounterOffset[i] = fields.Length > 2 ? Convert.ToInt32(fields[1], 16) : -1;
+                TrophyCounterTarget[i] = fields.Length > 2 ? Int32.Parse(fields[2]) : -1;
+            }
         }
 
         public static void LoadFarmCircleData()
