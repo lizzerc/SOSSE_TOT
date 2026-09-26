@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace SOSSE.TOT
 {
     /// <summary>
-    /// Records screens: festival counters, count shipped per town and per-item harvest/produce counts (all u32).
+    /// Records screens: festival counters, count shipped per town, times fished and per-item harvest/produce counts (all u32).
     /// </summary>
     public partial class TotRecordEditingForm : Form
     {
@@ -22,6 +22,16 @@ namespace SOSSE.TOT
             public int Offset;
             // Records made of several u32 parts show their sum and can't be edited.
             public int Parts = 1;
+            // Records that are the sum of other records on the same tab; can't be edited.
+            public int[] SumOf;
+
+            public bool IsSum
+            {
+                get
+                {
+                    return Parts > 1 || SumOf != null;
+                }
+            }
         }
         private static readonly Record[] festivalRecords = {
             new Record { Name = "Festivals entered", Offset = 0x2F048 },
@@ -38,6 +48,15 @@ namespace SOSSE.TOT
             new Record { Name = "Tsuyukusa", Offset = 0x2F118, Parts = 6 },
             new Record { Name = "Lulukoko", Offset = 0x2F130, Parts = 6 }
         };
+        // Times Fished on the Records screen is the sum of these two counters. Which one is the
+        // fish trap is inferred from trophy counts.
+        private const int rodCatchOffset = 0x2D9C8;
+        private const int fishTrapOffset = 0x2DB64;
+        private static readonly Record[] fishingRecords = {
+            new Record { Name = "Times Fished", SumOf = new[] { rodCatchOffset, fishTrapOffset } },
+            new Record { Name = "Rod catches", Offset = rodCatchOffset },
+            new Record { Name = "Fish trap uses", Offset = fishTrapOffset }
+        };
         private Record[] produceRecords;
 
         public TotRecordEditingForm()
@@ -52,6 +71,7 @@ namespace SOSSE.TOT
 
             addTab("Festivals", festivalRecords, 180);
             addTab("Count Shipped", shippingRecords, 180);
+            addTab("Fishing", fishingRecords, 180);
             addTab("Harvest / Produce", produceRecords, 180);
         }
 
@@ -82,10 +102,11 @@ namespace SOSSE.TOT
             foreach (Record record in records)
             {
                 int row = dataGridView.Rows.Add(record.Name, readRecord(record));
-                if (record.Parts > 1)
+                if (record.IsSum)
                     TotGrid.LockRow(dataGridView.Rows[row]);
             }
             dataGridView.CellValidating += dataGridView_CellValidating;
+            dataGridView.CellValueChanged += dataGridView_CellValueChanged;
 
             TabPage tab = new TabPage(title);
             tab.Controls.Add(dataGridView);
@@ -94,10 +115,34 @@ namespace SOSSE.TOT
 
         private static ulong readRecord(Record record)
         {
+            if (record.SumOf != null)
+                return (ulong)record.SumOf.Sum(offset => (long)BitConverter.ToUInt32(TotSave.SaveData, offset));
             ulong sum = 0;
             for (int i = 0; i < record.Parts; i++)
                 sum += BitConverter.ToUInt32(TotSave.SaveData, record.Offset + 4 * i);
             return sum;
+        }
+
+        // Update sums when one of their records changes
+        private void dataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dataGridView = (DataGridView)sender;
+            if (e.RowIndex < 0 || e.ColumnIndex != 1) return;
+            Record[] records = (Record[])dataGridView.Tag;
+            for (int i = 0; i < records.Length; i++)
+            {
+                if (records[i].SumOf == null) continue;
+                ulong sum = 0;
+                for (int j = 0; j < records.Length; j++)
+                {
+                    uint value;
+                    if (records[i].SumOf.Contains(records[j].Offset) && !records[j].IsSum &&
+                        UInt32.TryParse(Convert.ToString(dataGridView.Rows[j].Cells[1].Value), out value))
+                        sum += value;
+                }
+                if (Convert.ToString(dataGridView.Rows[i].Cells[1].Value) != sum.ToString())
+                    dataGridView.Rows[i].Cells[1].Value = sum;
+            }
         }
 
         private void dataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
@@ -127,7 +172,7 @@ namespace SOSSE.TOT
                 Record[] records = (Record[])dataGridView.Tag;
                 for (int i = 0; i < records.Length; i++)
                 {
-                    if (records[i].Parts > 1) continue;
+                    if (records[i].IsSum) continue;
                     uint value;
                     if (!UInt32.TryParse(Convert.ToString(dataGridView.Rows[i].Cells[1].Value), out value))
                         continue;
