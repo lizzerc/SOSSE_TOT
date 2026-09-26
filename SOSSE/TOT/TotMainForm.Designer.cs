@@ -30,10 +30,10 @@
         {
             this.playerNameLabel = new System.Windows.Forms.Label();
             this.playerNameTextBox = new System.Windows.Forms.TextBox();
+            this.nicknameLabel = new System.Windows.Forms.Label();
+            this.nicknameTextBox = new System.Windows.Forms.TextBox();
             this.farmNameLabel = new System.Windows.Forms.Label();
             this.farmNameTextBox = new System.Windows.Forms.TextBox();
-            this.petNameLabel = new System.Windows.Forms.Label();
-            this.petNameTextBox = new System.Windows.Forms.TextBox();
             this.splitGroupBox = new System.Windows.Forms.GroupBox();
             this.itemButton = new System.Windows.Forms.Button();
             this.crownButton = new System.Windows.Forms.Button();
@@ -58,37 +58,37 @@
             this.playerNameTextBox.Size = new System.Drawing.Size(156, 20);
             this.playerNameTextBox.TabIndex = 1;
             // 
+            // nicknameLabel
+            // 
+            this.nicknameLabel.AutoSize = true;
+            this.nicknameLabel.Location = new System.Drawing.Point(12, 41);
+            this.nicknameLabel.Name = "nicknameLabel";
+            this.nicknameLabel.Size = new System.Drawing.Size(36, 13);
+            this.nicknameLabel.TabIndex = 2;
+            this.nicknameLabel.Text = "Nickname";
+            // 
+            // nicknameTextBox
+            // 
+            this.nicknameTextBox.Location = new System.Drawing.Point(93, 38);
+            this.nicknameTextBox.Name = "nicknameTextBox";
+            this.nicknameTextBox.Size = new System.Drawing.Size(156, 20);
+            this.nicknameTextBox.TabIndex = 3;
+            // 
             // farmNameLabel
             // 
             this.farmNameLabel.AutoSize = true;
-            this.farmNameLabel.Location = new System.Drawing.Point(12, 41);
+            this.farmNameLabel.Location = new System.Drawing.Point(12, 67);
             this.farmNameLabel.Name = "farmNameLabel";
             this.farmNameLabel.Size = new System.Drawing.Size(36, 13);
-            this.farmNameLabel.TabIndex = 2;
+            this.farmNameLabel.TabIndex = 4;
             this.farmNameLabel.Text = "Farm";
             // 
             // farmNameTextBox
             // 
-            this.farmNameTextBox.Location = new System.Drawing.Point(93, 38);
+            this.farmNameTextBox.Location = new System.Drawing.Point(93, 64);
             this.farmNameTextBox.Name = "farmNameTextBox";
             this.farmNameTextBox.Size = new System.Drawing.Size(156, 20);
-            this.farmNameTextBox.TabIndex = 3;
-            // 
-            // petNameLabel
-            // 
-            this.petNameLabel.AutoSize = true;
-            this.petNameLabel.Location = new System.Drawing.Point(12, 67);
-            this.petNameLabel.Name = "petNameLabel";
-            this.petNameLabel.Size = new System.Drawing.Size(36, 13);
-            this.petNameLabel.TabIndex = 4;
-            this.petNameLabel.Text = "Pet";
-            // 
-            // petNameTextBox
-            // 
-            this.petNameTextBox.Location = new System.Drawing.Point(93, 64);
-            this.petNameTextBox.Name = "petNameTextBox";
-            this.petNameTextBox.Size = new System.Drawing.Size(156, 20);
-            this.petNameTextBox.TabIndex = 5;
+            this.farmNameTextBox.TabIndex = 5;
             // 
             // splitGroupBox
             // 
@@ -159,10 +159,10 @@
             this.Controls.Add(this.crownButton);
             this.Controls.Add(this.itemButton);
             this.Controls.Add(this.splitGroupBox);
-            this.Controls.Add(this.petNameTextBox);
-            this.Controls.Add(this.petNameLabel);
             this.Controls.Add(this.farmNameTextBox);
             this.Controls.Add(this.farmNameLabel);
+            this.Controls.Add(this.nicknameTextBox);
+            this.Controls.Add(this.nicknameLabel);
             this.Controls.Add(this.playerNameTextBox);
             this.Controls.Add(this.playerNameLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -180,10 +180,10 @@
 
         private System.Windows.Forms.Label playerNameLabel;
         private System.Windows.Forms.TextBox playerNameTextBox;
+        private System.Windows.Forms.Label nicknameLabel;
+        private System.Windows.Forms.TextBox nicknameTextBox;
         private System.Windows.Forms.Label farmNameLabel;
         private System.Windows.Forms.TextBox farmNameTextBox;
-        private System.Windows.Forms.Label petNameLabel;
-        private System.Windows.Forms.TextBox petNameTextBox;
         private System.Windows.Forms.GroupBox splitGroupBox;
         private System.Windows.Forms.Button itemButton;
         private System.Windows.Forms.Button crownButton;

@@ -25,11 +25,11 @@ namespace SOSSE.TOT
             this.Text = "SOSSE - Trio of Towns - " + Path.GetFileName(fileName);
 
             playerNameTextBox.MaxLength = TotSave.MaxNameLength;
+            nicknameTextBox.MaxLength = TotSave.MaxNameLength;
             farmNameTextBox.MaxLength = TotSave.MaxNameLength;
-            petNameTextBox.MaxLength = TotSave.MaxNameLength;
             playerNameTextBox.Text = TotSave.ReadString(TotSave.SaveData, TotSave.PlayerNameOffset, TotSave.MaxNameLength);
+            nicknameTextBox.Text = TotSave.ReadString(TotSave.SaveData, TotSave.NicknameOffset, TotSave.MaxNameLength);
             farmNameTextBox.Text = TotSave.ReadString(TotSave.SaveData, TotSave.FarmNameOffset, TotSave.MaxNameLength);
-            petNameTextBox.Text = TotSave.ReadString(TotSave.SaveData, TotSave.PetNameOffset, TotSave.MaxNameLength);
         }
 
         /// <summary>
@@ -38,8 +38,8 @@ namespace SOSSE.TOT
         private void saveNames()
         {
             TotSave.WriteString(TotSave.SaveData, TotSave.PlayerNameOffset, TotSave.MaxNameLength, playerNameTextBox.Text);
+            TotSave.WriteString(TotSave.SaveData, TotSave.NicknameOffset, TotSave.MaxNameLength, nicknameTextBox.Text);
             TotSave.WriteString(TotSave.SaveData, TotSave.FarmNameOffset, TotSave.MaxNameLength, farmNameTextBox.Text);
-            TotSave.WriteString(TotSave.SaveData, TotSave.PetNameOffset, TotSave.MaxNameLength, petNameTextBox.Text);
         }
 
         private void saveAsButton_Click(object sender, EventArgs e)

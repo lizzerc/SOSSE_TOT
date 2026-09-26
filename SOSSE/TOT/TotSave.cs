@@ -19,15 +19,16 @@ namespace SOSSE.TOT
         private const int headerSizeOffset = 0x84;
 
         // Save-select preview in the header, refreshed from the save data on writing.
+        // 0x1A is the name the spouse calls the player; 0x34 is the farm name.
         private const int headerDateOffset = 0x88;
         private const int headerPlayerNameOffset = 0x94;
-        private const int headerPetNameOffset = 0xAE;
+        private const int headerFarmNameOffset = 0xAE;
         private const int dateOffset = 0x4B68;
         private const int dateLength = 8;
 
         public const int PlayerNameOffset = 0x00;
-        public const int FarmNameOffset = 0x1A;
-        public const int PetNameOffset = 0x34;
+        public const int NicknameOffset = 0x1A;
+        public const int FarmNameOffset = 0x34;
         public const int MaxNameLength = 13;
 
         // Save
@@ -106,7 +107,7 @@ namespace SOSSE.TOT
                 byte[] header = (byte[])Header.Clone();
                 Array.Copy(SaveData, dateOffset, header, headerDateOffset, dateLength);
                 Array.Copy(SaveData, PlayerNameOffset, header, headerPlayerNameOffset, MaxNameLength * 2);
-                Array.Copy(SaveData, PetNameOffset, header, headerPetNameOffset, MaxNameLength * 2);
+                Array.Copy(SaveData, FarmNameOffset, header, headerFarmNameOffset, MaxNameLength * 2);
 
                 output = new byte[header.Length + compressed.Length];
                 Array.Copy(header, output, header.Length);
