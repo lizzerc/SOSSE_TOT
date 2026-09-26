@@ -23,6 +23,16 @@ namespace SOSSE.TOT
         public static string[] AnimalNameList;
         public static string[] AnimalPersonalityList;
 
+        // Wardrobe items in AvatarData order: clothes, then hats, then glasses.
+        public static string[] ClothesNameList;
+        public static string[] HatNameList;
+        public static string[] GlassesNameList;
+        public static string[] RecipeNameList;
+        public static string[] TrophyNameList;
+        // Indexed by farm circle (PanelData) ID.
+        public static string[] FarmCircleNameList;
+        public static string[] WildAnimalNameList;
+
         public static readonly string[] RankList = { "None", "Bronze", "Silver", "Gold", "Rainbow" };
         public static readonly string[] SeasonList = { "Spring", "Summer", "Fall", "Winter" };
         public static readonly string[] PetAbilityList = { "Herding / Recovery", "Finding Materials",
@@ -102,6 +112,38 @@ namespace SOSSE.TOT
                 AnimalNameList = loadLines("TotAnimalName.txt");
             if (AnimalPersonalityList == null)
                 AnimalPersonalityList = loadLines("TotPersonality.txt");
+        }
+
+        public static void LoadWardrobeData()
+        {
+            if (ClothesNameList != null) return;
+            ClothesNameList = loadLines("TotClothes.txt");
+            HatNameList = loadLines("TotHats.txt");
+            GlassesNameList = loadLines("TotGlasses.txt");
+        }
+
+        public static void LoadRecipeData()
+        {
+            if (RecipeNameList == null)
+                RecipeNameList = loadLines("TotRecipes.txt");
+        }
+
+        public static void LoadTrophyData()
+        {
+            if (TrophyNameList == null)
+                TrophyNameList = loadLines("TotTrophies.txt");
+        }
+
+        public static void LoadFarmCircleData()
+        {
+            if (FarmCircleNameList == null)
+                FarmCircleNameList = loadLines("TotFarmCircles.txt");
+        }
+
+        public static void LoadWildAnimalData()
+        {
+            if (WildAnimalNameList == null)
+                WildAnimalNameList = loadLines("TotWildAnimals.txt");
         }
 
         public static bool IsValidItem(int index)

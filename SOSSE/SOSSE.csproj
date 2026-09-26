@@ -189,6 +189,37 @@
     </Compile>
     <Compile Include="TOT\TotData.cs" />
     <Compile Include="TOT\TotItem.cs" />
+    <Compile Include="TOT\TotGrid.cs" />
+    <Compile Include="TOT\TotWardrobeEditingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOT\TotWardrobeEditingForm.Designer.cs">
+      <DependentUpon>TotWardrobeEditingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TOT\TotRecipeEditingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOT\TotRecipeEditingForm.Designer.cs">
+      <DependentUpon>TotRecipeEditingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TOT\TotTrophyEditingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOT\TotTrophyEditingForm.Designer.cs">
+      <DependentUpon>TotTrophyEditingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TOT\TotFarmCircleEditingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOT\TotFarmCircleEditingForm.Designer.cs">
+      <DependentUpon>TotFarmCircleEditingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TOT\TotWildAnimalEditingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOT\TotWildAnimalEditingForm.Designer.cs">
+      <DependentUpon>TotWildAnimalEditingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TOT\TotSave.cs" />
     <Compile Include="TOT\TotAnimalEditingForm.cs">
       <SubType>Form</SubType>
@@ -314,6 +345,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TOT\Resources\TotPersonality.txt">
       <LogicalName>SOSSE.TOT.Resources.TotPersonality.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOT\Resources\TotClothes.txt">
+      <LogicalName>SOSSE.TOT.Resources.TotClothes.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOT\Resources\TotHats.txt">
+      <LogicalName>SOSSE.TOT.Resources.TotHats.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOT\Resources\TotGlasses.txt">
+      <LogicalName>SOSSE.TOT.Resources.TotGlasses.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOT\Resources\TotRecipes.txt">
+      <LogicalName>SOSSE.TOT.Resources.TotRecipes.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOT\Resources\TotTrophies.txt">
+      <LogicalName>SOSSE.TOT.Resources.TotTrophies.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOT\Resources\TotFarmCircles.txt">
+      <LogicalName>SOSSE.TOT.Resources.TotFarmCircles.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOT\Resources\TotWildAnimals.txt">
+      <LogicalName>SOSSE.TOT.Resources.TotWildAnimals.txt</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

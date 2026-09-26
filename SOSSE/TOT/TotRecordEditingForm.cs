@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace SOSSE.TOT
 {
     /// <summary>
-    /// Records screens: festival counters and per-item harvest/produce counts (all u32).
+    /// Records screens: festival counters, count shipped per town and per-item harvest/produce counts (all u32).
     /// </summary>
     public partial class TotRecordEditingForm : Form
     {
@@ -20,6 +20,8 @@ namespace SOSSE.TOT
         {
             public string Name;
             public int Offset;
+            // Records made of several u32 parts show their sum and can't be edited.
+            public int Parts = 1;
         }
         private static readonly Record[] festivalRecords = {
             new Record { Name = "Festivals entered", Offset = 0x2F048 },
@@ -29,6 +31,12 @@ namespace SOSSE.TOT
             new Record { Name = "Pet Promenade victories", Offset = 0x2F064 },
             new Record { Name = "Cooking Festival victories", Offset = 0x2F068 },
             new Record { Name = "Fashion Festival victories", Offset = 0x2F070 }
+        };
+        // Each town's count shipped is the sum of 6 parts; what each part counts is unknown.
+        private static readonly Record[] shippingRecords = {
+            new Record { Name = "Westown", Offset = 0x2F100, Parts = 6 },
+            new Record { Name = "Tsuyukusa", Offset = 0x2F118, Parts = 6 },
+            new Record { Name = "Lulukoko", Offset = 0x2F130, Parts = 6 }
         };
         private Record[] produceRecords;
 
@@ -43,6 +51,7 @@ namespace SOSSE.TOT
                 produceRecords[i] = new Record { Name = TotData.ItemNameList[i], Offset = produceCountOffset + 4 * i };
 
             addTab("Festivals", festivalRecords, 180);
+            addTab("Count Shipped", shippingRecords, 180);
             addTab("Harvest / Produce", produceRecords, 180);
         }
 
@@ -71,12 +80,24 @@ namespace SOSSE.TOT
             dataGridView.Columns.Add(valueColumn);
 
             foreach (Record record in records)
-                dataGridView.Rows.Add(record.Name, BitConverter.ToUInt32(TotSave.SaveData, record.Offset));
+            {
+                int row = dataGridView.Rows.Add(record.Name, readRecord(record));
+                if (record.Parts > 1)
+                    TotGrid.LockRow(dataGridView.Rows[row]);
+            }
             dataGridView.CellValidating += dataGridView_CellValidating;
 
             TabPage tab = new TabPage(title);
             tab.Controls.Add(dataGridView);
             recordTabControl.TabPages.Add(tab);
+        }
+
+        private static ulong readRecord(Record record)
+        {
+            ulong sum = 0;
+            for (int i = 0; i < record.Parts; i++)
+                sum += BitConverter.ToUInt32(TotSave.SaveData, record.Offset + 4 * i);
+            return sum;
         }
 
         private void dataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
@@ -106,6 +127,7 @@ namespace SOSSE.TOT
                 Record[] records = (Record[])dataGridView.Tag;
                 for (int i = 0; i < records.Length; i++)
                 {
+                    if (records[i].Parts > 1) continue;
                     uint value;
                     if (!UInt32.TryParse(Convert.ToString(dataGridView.Rows[i].Cells[1].Value), out value))
                         continue;
