@@ -66,6 +66,7 @@ namespace SOSSE.TOT
             new Record { Name = "Loom uses", Offset = 0x2F01C },
             new Record { Name = "Seed maker uses", Offset = 0x2F020 },
             new Record { Name = "Dairy maker uses", Offset = 0x2F030 },
+            new Record { Name = "Cows ever owned", Offset = 0x2F074 },
             new Record { Name = "Mill uses (likely)", Offset = 0x2F018 },
             new Record { Name = "Pot uses (likely)", Offset = 0x2F024 },
             new Record { Name = "Jar uses (likely)", Offset = 0x2F028 },
@@ -80,7 +81,11 @@ namespace SOSSE.TOT
             new Record { Name = "Fish species caught (likely)", Offset = 0x2F0AC },
             new Record { Name = "Value shipped to Westown (likely)", Offset = 0x2F008 },
             new Record { Name = "Value shipped to Tsuyukusa (likely)", Offset = 0x2F00C },
-            new Record { Name = "Value shipped to Lulukoko (likely)", Offset = 0x2F010 }
+            new Record { Name = "Value shipped to Lulukoko (likely)", Offset = 0x2F010 },
+            new Record { Name = "Sheep ever owned (likely)", Offset = 0x2F078 },
+            new Record { Name = "Birds ever owned (likely)", Offset = 0x2F07C },
+            new Record { Name = "Rabbits ever owned (likely)", Offset = 0x2F080 },
+            new Record { Name = "Alpacas ever owned (likely)", Offset = 0x2F084 }
         };
 
         // Harvest Details screen: each box is the sum of the per-item counts of some item types.

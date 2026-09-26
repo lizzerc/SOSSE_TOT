@@ -94,11 +94,11 @@ Giant-Crop Novice (Silver)
 Giant-Crop Veteran (Gold)
 Giant-Crop Master (Gold)
 Giant-Crop Legend (Rainbow)
-Kindred of the Cows (Bronze)
-Kindred of the Sheep (Bronze)
-Kindred of the Birds (Bronze)
-Kindred of the Rabbits (Bronze)
-Kindred of the Alpacas (Bronze)
+Kindred of the Cows (Bronze)	0x2F074	20
+Kindred of the Sheep (Bronze)	0x2F078	20
+Kindred of the Birds (Bronze)	0x2F07C	20
+Kindred of the Rabbits (Bronze)	0x2F080	20
+Kindred of the Alpacas (Bronze)	0x2F084	20
 Master Livestock Raiser (Bronze)
 Master Livestock Breeder (Bronze)
 Novice Milker (Bronze)
