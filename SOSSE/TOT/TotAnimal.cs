@@ -73,13 +73,16 @@ namespace SOSSE.TOT
             }
         }
         /// <summary>
-        /// True if this slot holds an animal. Barn animals use the state byte;
-        /// pets have no known state byte, so a pet is used when it has a name.
+        /// True if this slot holds a living animal. Passed-away animals keep their record
+        /// but are not counted. Barn animals use the state byte; pets have no known
+        /// state byte, so a pet is used when it has a name.
         /// </summary>
         public bool IsUsed
         {
             get
             {
+                if (Species == PassedAway)
+                    return false;
                 if (IsPet)
                     return Name.Length > 0;
                 return State == StateInUse;
