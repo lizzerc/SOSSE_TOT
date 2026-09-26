@@ -25,12 +25,22 @@ namespace SOSSE.TOT
             public int Parts = 1;
             // Records that are the sum of other records on the same tab; can't be edited.
             public int[] SumOf;
+            // Records whose meaning isn't confirmed in game; shown but can't be edited.
+            public bool ReadOnly;
 
             public bool IsSum
             {
                 get
                 {
                     return Parts > 1 || SumOf != null;
+                }
+            }
+
+            public bool Locked
+            {
+                get
+                {
+                    return IsSum || ReadOnly;
                 }
             }
         }
@@ -67,6 +77,7 @@ namespace SOSSE.TOT
             new Record { Name = "Seed maker uses", Offset = 0x2F020 },
             new Record { Name = "Dairy maker uses", Offset = 0x2F030 },
             new Record { Name = "Cows ever owned", Offset = 0x2F074 },
+            new Record { Name = "Cow babies born", Offset = 0x2F204 },
             new Record { Name = "Mill uses (likely)", Offset = 0x2F018 },
             new Record { Name = "Pot uses (likely)", Offset = 0x2F024 },
             new Record { Name = "Jar uses (likely)", Offset = 0x2F028 },
@@ -85,7 +96,11 @@ namespace SOSSE.TOT
             new Record { Name = "Sheep ever owned (likely)", Offset = 0x2F078 },
             new Record { Name = "Birds ever owned (likely)", Offset = 0x2F07C },
             new Record { Name = "Rabbits ever owned (likely)", Offset = 0x2F080 },
-            new Record { Name = "Alpacas ever owned (likely)", Offset = 0x2F084 }
+            new Record { Name = "Alpacas ever owned (likely)", Offset = 0x2F084 },
+            new Record { Name = "Babies born, animal type unknown 1", Offset = 0x2F208, ReadOnly = true },
+            new Record { Name = "Babies born, animal type unknown 2", Offset = 0x2F20C, ReadOnly = true },
+            new Record { Name = "Babies born, animal type unknown 3", Offset = 0x2F210, ReadOnly = true },
+            new Record { Name = "Babies born, animal type unknown 4", Offset = 0x2F214, ReadOnly = true }
         };
 
         // Harvest Details screen: each box is the sum of the per-item counts of some item types.
@@ -178,7 +193,7 @@ namespace SOSSE.TOT
             foreach (Record record in records)
             {
                 int row = dataGridView.Rows.Add(record.Name, readRecord(record));
-                if (record.IsSum)
+                if (record.Locked)
                     TotGrid.LockRow(dataGridView.Rows[row]);
             }
             dataGridView.CellValidating += dataGridView_CellValidating;
@@ -248,7 +263,7 @@ namespace SOSSE.TOT
                 Record[] records = (Record[])dataGridView.Tag;
                 for (int i = 0; i < records.Length; i++)
                 {
-                    if (records[i].IsSum) continue;
+                    if (records[i].Locked) continue;
                     uint value;
                     if (!UInt32.TryParse(Convert.ToString(dataGridView.Rows[i].Cells[1].Value), out value))
                         continue;
