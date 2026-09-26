@@ -29,7 +29,7 @@ namespace SOSSE.TOT
         public static string[] GlassesNameList;
         public static string[] RecipeNameList;
         public static string[] TrophyNameList;
-        // Save offset and target of the counter behind each trophy, where it is confirmed; -1 otherwise.
+        // Save offset and target of the counter behind each trophy, where it is confirmed or likely; -1 otherwise.
         public static int[] TrophyCounterOffset;
         public static int[] TrophyCounterTarget;
         // Indexed by farm circle (PanelData) ID.

@@ -134,18 +134,18 @@ Pet Fancier (Silver)
 Pet Trainer (Gold)
 Animal Menagerie (Bronze)
 Wild Thing (Gold)
-Novice Westown Trader (Bronze)
-Veteran Westown Trader (Silver)
-Master Westown Trader (Gold)
-Legendary Westown Trader (Rainbow)
-Novice Tsuyukusa Trader (Bronze)
-Veteran Tsuyukusa Trader (Silver)
-Master Tsuyukusa Trader (Gold)
-Legendary Tsuyukusa Trader (Rainbow)
-Novice Lulukoko Trader (Bronze)
-Veteran Lulukoko Trader (Silver)
-Master Lulukoko Trader (Gold)
-Legendary Lulukoko Trader (Rainbow)
+Novice Westown Trader (Bronze)	0x2F008	100000
+Veteran Westown Trader (Silver)	0x2F008	1000000
+Master Westown Trader (Gold)	0x2F008	10000000
+Legendary Westown Trader (Rainbow)	0x2F008	100000000
+Novice Tsuyukusa Trader (Bronze)	0x2F00C	100000
+Veteran Tsuyukusa Trader (Silver)	0x2F00C	1000000
+Master Tsuyukusa Trader (Gold)	0x2F00C	10000000
+Legendary Tsuyukusa Trader (Rainbow)	0x2F00C	100000000
+Novice Lulukoko Trader (Bronze)	0x2F010	100000
+Veteran Lulukoko Trader (Silver)	0x2F010	1000000
+Master Lulukoko Trader (Gold)	0x2F010	10000000
+Legendary Lulukoko Trader (Rainbow)	0x2F010	100000000
 Novice Landscaper (Bronze)
 Veteran Landscaper (Gold)
 Master Landscaper (Rainbow)
@@ -190,10 +190,10 @@ Average Pearl Grower (Silver)
 Veteran Pearl Grower (Silver)
 Master Pearl Grower (Silver)
 Legendary Pearl Grower (Gold)
-Novice Miller (Bronze)
-Veteran Miller (Bronze)
-Master Miller (Silver)
-Legendary Miller (Gold)
+Novice Miller (Bronze)	0x2F018	50
+Veteran Miller (Bronze)	0x2F018	100
+Master Miller (Silver)	0x2F018	500
+Legendary Miller (Gold)	0x2F018	1000
 Novice Weaver (Bronze)	0x2F01C	50
 Veteran Weaver (Bronze)	0x2F01C	100
 Master Weaver (Silver)	0x2F01C	500
@@ -202,30 +202,30 @@ Novice Seed Maker (Bronze)	0x2F020	50
 Veteran Seed Maker (Bronze)	0x2F020	100
 Master Seed Maker (Silver)	0x2F020	500
 Legendary Seed Maker (Gold)	0x2F020	1000
-Novice Jam Maker (Bronze)
-Veteran Jam Maker (Bronze)
-Master Jam Maker (Silver)
-Legendary Jam Maker (Gold)
-Novice Pickle Maker (Bronze)
-Veteran Pickle Maker (Bronze)
-Master Pickle Maker (Silver)
-Legendary Pickle Maker (Gold)
-Novice Vintner (Bronze)
-Veteran Vintner (Bronze)
-Master Vintner (Silver)
-Legendary Vintner (Gold)
+Novice Jam Maker (Bronze)	0x2F024	50
+Veteran Jam Maker (Bronze)	0x2F024	100
+Master Jam Maker (Silver)	0x2F024	500
+Legendary Jam Maker (Gold)	0x2F024	1000
+Novice Pickle Maker (Bronze)	0x2F028	50
+Veteran Pickle Maker (Bronze)	0x2F028	100
+Master Pickle Maker (Silver)	0x2F028	500
+Legendary Pickle Maker (Gold)	0x2F028	1000
+Novice Vintner (Bronze)	0x2F02C	50
+Veteran Vintner (Bronze)	0x2F02C	100
+Master Vintner (Silver)	0x2F02C	500
+Legendary Vintner (Gold)	0x2F02C	1000
 Novice Dairy Maker (Bronze)	0x2F030	50
 Veteran Dairy Maker (Bronze)	0x2F030	100
 Master Dairy Maker (Silver)	0x2F030	500
 Legendary Dairy Maker (Gold)	0x2F030	1000
-Novice Fertilizer Maker (Bronze)
-Veteran Fertilizer Maker (Bronze)
-Master Fertilizer Maker (Silver)
-Legendary Fertilizer Maker (Gold)
-Novice Feed Maker (Bronze)
-Veteran Feed Maker (Bronze)
-Master Feed Maker (Silver)
-Legendary Feed Maker (Gold)
+Novice Fertilizer Maker (Bronze)	0x2F034	50
+Veteran Fertilizer Maker (Bronze)	0x2F034	100
+Master Fertilizer Maker (Silver)	0x2F034	500
+Legendary Fertilizer Maker (Gold)	0x2F034	1000
+Novice Feed Maker (Bronze)	0x2F038	50
+Veteran Feed Maker (Bronze)	0x2F038	100
+Master Feed Maker (Silver)	0x2F038	500
+Legendary Feed Maker (Gold)	0x2F038	1000
 On the Road to Riches (Bronze)
 Fiscally Fearsome (Silver)
 My First Million (Gold)
@@ -263,8 +263,8 @@ Al-lure-ing (Bronze)	0x2D9C8	800
 Fish Whisperer (Silver)	0x2D9C8	1300
 Dr. Fishgood (Silver)	0x2D9C8	1900
 Fisher King (Gold)	0x2D9C8	3000
-Novice Fish Collector (Bronze)
-Veteran Fish Collector (Silver)
+Novice Fish Collector (Bronze)	0x2F0AC	20
+Veteran Fish Collector (Silver)	0x2F0AC	50
 Master Fish Collector (Gold)
 Novice Large-Fish Collector (Silver)
 Veteran Large-Fish Collector (Gold)
@@ -285,10 +285,10 @@ Master Headgear Collector (Gold)
 Novice Eyewear Collector (Bronze)
 Veteran Eyewear Collector (Bronze)
 Master Eyewear Collector (Gold)
-Novice Forager (Bronze)
-Veteran Forager (Bronze)
-Master Forager (Silver)
-Legendary Forager (Gold)
+Novice Forager (Bronze)	0x2F044	50
+Veteran Forager (Bronze)	0x2F044	100
+Master Forager (Silver)	0x2F044	500
+Legendary Forager (Gold)	0x2F044	1000
 Entry-Level Employee (Bronze)
 Job Intern (Bronze)
 Job Trainee (Bronze)
@@ -299,22 +299,22 @@ Mid-Tier Management (Bronze)
 Executive Manager (Silver)
 Board of Directors (Silver)
 Company President (Gold)
-Spa Novice (Bronze)
-Spa Veteran (Bronze)
-Spa Master (Silver)
-Spa Legend (Gold)
+Spa Novice (Bronze)	0x2F088	1
+Spa Veteran (Bronze)	0x2F088	10
+Spa Master (Silver)	0x2F088	50
+Spa Legend (Gold)	0x2F088	100
 Inn New Visitor (Bronze)	0x2F08C	1
 Inn Regular (Bronze)	0x2F08C	10
 Inn Preferred Customer (Silver)	0x2F08C	50
 Inn Gold Club Member (Gold)	0x2F08C	100
-Restaurant New Visitor (Bronze)
-Restaurant Regular (Bronze)
-Restaurant Preferred Customer (Silver)
-Restaurant Gold Club Member (Gold)
-Teahouse New Visitor (Bronze)
-Teahouse Regular (Bronze)
-Teahouse Preferred Customer (Silver)
-Teahouse Gold Club Member (Gold)
-Seaside Cafe New Visitor (Bronze)
-Seaside Cafe Regular (Bronze)
-Seaside Cafe Preferred Customer (Silver)
+Restaurant New Visitor (Bronze)	0x2F090	1
+Restaurant Regular (Bronze)	0x2F090	10
+Restaurant Preferred Customer (Silver)	0x2F090	50
+Restaurant Gold Club Member (Gold)	0x2F090	100
+Teahouse New Visitor (Bronze)	0x2F094	1
+Teahouse Regular (Bronze)	0x2F094	10
+Teahouse Preferred Customer (Silver)	0x2F094	50
+Teahouse Gold Club Member (Gold)	0x2F094	100
+Seaside Cafe New Visitor (Bronze)	0x2F098	1
+Seaside Cafe Regular (Bronze)	0x2F098	10
+Seaside Cafe Preferred Customer (Silver)	0x2F098	50

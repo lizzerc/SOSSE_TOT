@@ -25,21 +25,12 @@ namespace SOSSE.TOT
             public int Parts = 1;
             // Records that are the sum of other records on the same tab; can't be edited.
             public int[] SumOf;
-            // Records not confirmed in game are shown but can't be edited.
-            public bool ReadOnly;
 
             public bool IsSum
             {
                 get
                 {
                     return Parts > 1 || SumOf != null;
-                }
-            }
-            public bool IsLocked
-            {
-                get
-                {
-                    return IsSum || ReadOnly;
                 }
             }
         }
@@ -67,25 +58,29 @@ namespace SOSSE.TOT
             new Record { Name = "Rod catches", Offset = rodCatchOffset },
             new Record { Name = "Fish trap uses", Offset = fishTrapOffset }
         };
-        // Activity counters used by trophies. "(likely)" ones match the trophies but aren't tested in game.
+        // Activity counters used by trophies. "(likely)" ones match the trophy thresholds on several saves
+        // but aren't tested in game.
         private static readonly Record[] counterRecords = {
             new Record { Name = "Times slept at the inn", Offset = 0x2F08C },
             new Record { Name = "Times cooked", Offset = 0x275BC },
             new Record { Name = "Loom uses", Offset = 0x2F01C },
             new Record { Name = "Seed maker uses", Offset = 0x2F020 },
             new Record { Name = "Dairy maker uses", Offset = 0x2F030 },
-            new Record { Name = "Mill uses (likely)", Offset = 0x2F018, ReadOnly = true },
-            new Record { Name = "Pot uses (likely)", Offset = 0x2F024, ReadOnly = true },
-            new Record { Name = "Jar uses (likely)", Offset = 0x2F028, ReadOnly = true },
-            new Record { Name = "Wine maker uses (likely)", Offset = 0x2F02C, ReadOnly = true },
-            new Record { Name = "Fertilizer maker uses (likely)", Offset = 0x2F034, ReadOnly = true },
-            new Record { Name = "Feed maker uses (likely)", Offset = 0x2F038, ReadOnly = true },
-            new Record { Name = "Spa baths (likely)", Offset = 0x2F088, ReadOnly = true },
-            new Record { Name = "Westown restaurant meals (likely)", Offset = 0x2F090, ReadOnly = true },
-            new Record { Name = "Teahouse meals (likely)", Offset = 0x2F094, ReadOnly = true },
-            new Record { Name = "Seaside cafe meals (likely)", Offset = 0x2F098, ReadOnly = true },
-            new Record { Name = "Wild plants foraged (likely)", Offset = 0x2F044, ReadOnly = true },
-            new Record { Name = "Fish species caught (likely)", Offset = 0x2F0AC, ReadOnly = true }
+            new Record { Name = "Mill uses (likely)", Offset = 0x2F018 },
+            new Record { Name = "Pot uses (likely)", Offset = 0x2F024 },
+            new Record { Name = "Jar uses (likely)", Offset = 0x2F028 },
+            new Record { Name = "Wine maker uses (likely)", Offset = 0x2F02C },
+            new Record { Name = "Fertilizer maker uses (likely)", Offset = 0x2F034 },
+            new Record { Name = "Feed maker uses (likely)", Offset = 0x2F038 },
+            new Record { Name = "Spa baths (likely)", Offset = 0x2F088 },
+            new Record { Name = "Westown restaurant meals (likely)", Offset = 0x2F090 },
+            new Record { Name = "Teahouse meals (likely)", Offset = 0x2F094 },
+            new Record { Name = "Seaside cafe meals (likely)", Offset = 0x2F098 },
+            new Record { Name = "Wild plants foraged (likely)", Offset = 0x2F044 },
+            new Record { Name = "Fish species caught (likely)", Offset = 0x2F0AC },
+            new Record { Name = "Value shipped to Westown (likely)", Offset = 0x2F008 },
+            new Record { Name = "Value shipped to Tsuyukusa (likely)", Offset = 0x2F00C },
+            new Record { Name = "Value shipped to Lulukoko (likely)", Offset = 0x2F010 }
         };
 
         // Harvest Details screen: each box is the sum of the per-item counts of some item types.
@@ -178,7 +173,7 @@ namespace SOSSE.TOT
             foreach (Record record in records)
             {
                 int row = dataGridView.Rows.Add(record.Name, readRecord(record));
-                if (record.IsLocked)
+                if (record.IsSum)
                     TotGrid.LockRow(dataGridView.Rows[row]);
             }
             dataGridView.CellValidating += dataGridView_CellValidating;
@@ -248,7 +243,7 @@ namespace SOSSE.TOT
                 Record[] records = (Record[])dataGridView.Tag;
                 for (int i = 0; i < records.Length; i++)
                 {
-                    if (records[i].IsLocked) continue;
+                    if (records[i].IsSum) continue;
                     uint value;
                     if (!UInt32.TryParse(Convert.ToString(dataGridView.Rows[i].Cells[1].Value), out value))
                         continue;

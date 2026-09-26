@@ -12,7 +12,7 @@ namespace SOSSE.TOT
     /// <summary>
     /// Trophies: 320 x 3 bits packed from 0x2EF88, read as one little-endian number
     /// (trophy k = bits 3k to 3k+2). Earning a trophy also raises its counter to the trophy's
-    /// target, where the counter is known, so that they match.
+    /// target, where the counter is confirmed or highly likely, so that they match.
     /// </summary>
     public partial class TotTrophyEditingForm : Form
     {
