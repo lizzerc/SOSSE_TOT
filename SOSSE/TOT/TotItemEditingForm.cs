@@ -24,7 +24,7 @@ namespace SOSSE.TOT
         }
         private ItemContainer[] containers;
 
-        private enum Column { Slot, Item, Quantity, Property1, Property2, Property3, Property4, Stars, Golden, Plus };
+        private enum Column { Slot, Item, Quantity, Property1, Property2, Property3, Property4, Stars, Golden, Unknown0F };
 
         // Item names shown in the item column, "None" first, then sorted by name.
         private string[] itemChoices;
@@ -125,7 +125,7 @@ namespace SOSSE.TOT
                 dataGridView.Columns.Add(textColumn("Property " + i, 65, false));
             dataGridView.Columns.Add(textColumn("Stars", 45, true));
             dataGridView.Columns.Add(textColumn("Golden", 50, true));
-            dataGridView.Columns.Add(textColumn("+", 30, true));
+            dataGridView.Columns.Add(textColumn("+0xF (?)", 55, true));
 
             dataGridView.CellValueNeeded += dataGridView_CellValueNeeded;
             dataGridView.CellValuePushed += dataGridView_CellValuePushed;
@@ -195,8 +195,8 @@ namespace SOSSE.TOT
                 case Column.Golden:
                     e.Value = item.IsGolden ? "Yes" : "";
                     break;
-                case Column.Plus:
-                    e.Value = item.Plus ? "+" : "";
+                case Column.Unknown0F:
+                    e.Value = item.IsEmpty ? "" : item.Unknown0F.ToString();
                     break;
             }
         }

@@ -8,7 +8,7 @@ namespace SOSSE.TOT
     /// <summary>
     /// A 16-byte Trio of Towns item slot:
     /// +0 u16 item ID, +2 u16 item ID (same), +4 4x u16 properties,
-    /// +0xC u16 unknown (kept as is), +0xE u8 quantity, +0xF u8 "+" flag (dishes).
+    /// +0xC u16 unknown, +0xE u8 quantity, +0xF u8 unknown. Unknown bytes are kept as is.
     /// </summary>
     public class TotItem
     {
@@ -44,15 +44,14 @@ namespace SOSSE.TOT
                 itemBytes[0xE] = value;
             }
         }
-        public bool Plus
+        /// <summary>
+        /// Unknown byte at +0xF (read-only). Not the dish "+" flag.
+        /// </summary>
+        public byte Unknown0F
         {
             get
             {
-                return itemBytes[0xF] != 0;
-            }
-            set
-            {
-                itemBytes[0xF] = (byte)(value ? 1 : 0);
+                return itemBytes[0xF];
             }
         }
         public bool IsEmpty
@@ -132,7 +131,7 @@ namespace SOSSE.TOT
         }
 
         /// <summary>
-        /// Replace the item in this slot. Properties are reset, +0xC is kept.
+        /// Replace the item in this slot. Properties are reset, +0xC and +0xF are kept.
         /// </summary>
         public void SetItem(ushort index)
         {
@@ -142,7 +141,6 @@ namespace SOSSE.TOT
                 itemBytes[0x4 + 2 * i] = 0;
                 itemBytes[0x5 + 2 * i] = 0;
             }
-            Plus = false;
             if (index == Empty)
                 Quantity = 0;
             else
