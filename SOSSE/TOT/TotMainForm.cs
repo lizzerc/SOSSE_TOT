@@ -24,9 +24,9 @@ namespace SOSSE.TOT
             this.fileName = fileName;
             this.Text = "SOSSE - Trio of Towns - " + Path.GetFileName(fileName);
 
-            playerNameTextBox.MaxLength = TotSave.MaxNameLength;
-            nicknameTextBox.MaxLength = TotSave.MaxNameLength;
-            farmNameTextBox.MaxLength = TotSave.MaxNameLength;
+            playerNameTextBox.MaxLength = TotSave.MaxNameInput;
+            nicknameTextBox.MaxLength = TotSave.MaxNameInput;
+            farmNameTextBox.MaxLength = TotSave.MaxNameInput;
             playerNameTextBox.Text = TotSave.ReadString(TotSave.SaveData, TotSave.PlayerNameOffset, TotSave.MaxNameLength);
             nicknameTextBox.Text = TotSave.ReadString(TotSave.SaveData, TotSave.NicknameOffset, TotSave.MaxNameLength);
             farmNameTextBox.Text = TotSave.ReadString(TotSave.SaveData, TotSave.FarmNameOffset, TotSave.MaxNameLength);

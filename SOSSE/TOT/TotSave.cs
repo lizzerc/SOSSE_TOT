@@ -30,6 +30,8 @@ namespace SOSSE.TOT
         public const int NicknameOffset = 0x1A;
         public const int FarmNameOffset = 0x34;
         public const int MaxNameLength = 13;
+        // Longest name the game lets the player enter
+        public const int MaxNameInput = 6;
 
         // Save
         public static byte[] Header;

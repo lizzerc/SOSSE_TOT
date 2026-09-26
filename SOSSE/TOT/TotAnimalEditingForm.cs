@@ -28,7 +28,7 @@ namespace SOSSE.TOT
             personalityColumn.Visible = !isPet;
             xpColumn.Visible = isPet;
             levelColumn.Visible = isPet;
-            nameColumn.MaxInputLength = TotAnimal.MaxNameLength;
+            nameColumn.MaxInputLength = TotSave.MaxNameInput;
 
             animals = new List<TotAnimal>();
             int count = isPet ? TotAnimal.PetCount : TotAnimal.AnimalCount;
