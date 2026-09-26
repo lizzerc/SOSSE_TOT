@@ -36,13 +36,11 @@ namespace SOSSE.TOT
             crownButton.Enabled = true;
             generalButton.Enabled = true;
             animalButton.Enabled = true;
-            petButton.Enabled = true;
             npcButton.Enabled = true;
             recordButton.Enabled = true;
             wardrobeButton.Enabled = true;
             recipeButton.Enabled = true;
             trophyButton.Enabled = true;
-            wildAnimalButton.Enabled = true;
             farmCircleButton.Enabled = true;
         }
 
@@ -131,12 +129,7 @@ namespace SOSSE.TOT
 
         private void animalButton_Click(object sender, EventArgs e)
         {
-            new TotAnimalEditingForm(false).ShowDialog();
-        }
-
-        private void petButton_Click(object sender, EventArgs e)
-        {
-            new TotAnimalEditingForm(true).ShowDialog();
+            new TotAnimalEditingForm().ShowDialog();
         }
 
         private void npcButton_Click(object sender, EventArgs e)
@@ -162,11 +155,6 @@ namespace SOSSE.TOT
         private void trophyButton_Click(object sender, EventArgs e)
         {
             new TotTrophyEditingForm().ShowDialog();
-        }
-
-        private void wildAnimalButton_Click(object sender, EventArgs e)
-        {
-            new TotWildAnimalEditingForm().ShowDialog();
         }
 
         private void farmCircleButton_Click(object sender, EventArgs e)

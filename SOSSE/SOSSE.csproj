@@ -214,11 +214,17 @@
     <Compile Include="TOT\TotTrophyEditingForm.Designer.cs">
       <DependentUpon>TotTrophyEditingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TOT\TotWildAnimalEditingForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="TOT\TotWildAnimalPanel.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TOT\TotWildAnimalEditingForm.Designer.cs">
-      <DependentUpon>TotWildAnimalEditingForm.cs</DependentUpon>
+    <Compile Include="TOT\TotWildAnimalPanel.Designer.cs">
+      <DependentUpon>TotWildAnimalPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TOT\TotAnimalPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TOT\TotAnimalPanel.Designer.cs">
+      <DependentUpon>TotAnimalPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="TOT\TotSave.cs" />
     <Compile Include="TOT\TotAnimalEditingForm.cs">

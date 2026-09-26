@@ -42,13 +42,11 @@
             this.crownButton = new System.Windows.Forms.Button();
             this.generalButton = new System.Windows.Forms.Button();
             this.animalButton = new System.Windows.Forms.Button();
-            this.petButton = new System.Windows.Forms.Button();
             this.npcButton = new System.Windows.Forms.Button();
             this.recordButton = new System.Windows.Forms.Button();
             this.wardrobeButton = new System.Windows.Forms.Button();
             this.recipeButton = new System.Windows.Forms.Button();
             this.trophyButton = new System.Windows.Forms.Button();
-            this.wildAnimalButton = new System.Windows.Forms.Button();
             this.farmCircleButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -184,21 +182,10 @@
             this.animalButton.UseVisualStyleBackColor = true;
             this.animalButton.Click += new System.EventHandler(this.animalButton_Click);
             // 
-            // petButton
-            // 
-            this.petButton.Enabled = false;
-            this.petButton.Location = new System.Drawing.Point(93, 166);
-            this.petButton.Name = "petButton";
-            this.petButton.Size = new System.Drawing.Size(75, 23);
-            this.petButton.TabIndex = 14;
-            this.petButton.Text = "Pets";
-            this.petButton.UseVisualStyleBackColor = true;
-            this.petButton.Click += new System.EventHandler(this.petButton_Click);
-            // 
             // npcButton
             // 
             this.npcButton.Enabled = false;
-            this.npcButton.Location = new System.Drawing.Point(174, 166);
+            this.npcButton.Location = new System.Drawing.Point(93, 166);
             this.npcButton.Name = "npcButton";
             this.npcButton.Size = new System.Drawing.Size(75, 23);
             this.npcButton.TabIndex = 15;
@@ -209,7 +196,7 @@
             // recordButton
             // 
             this.recordButton.Enabled = false;
-            this.recordButton.Location = new System.Drawing.Point(12, 195);
+            this.recordButton.Location = new System.Drawing.Point(174, 166);
             this.recordButton.Name = "recordButton";
             this.recordButton.Size = new System.Drawing.Size(75, 23);
             this.recordButton.TabIndex = 16;
@@ -220,7 +207,7 @@
             // wardrobeButton
             // 
             this.wardrobeButton.Enabled = false;
-            this.wardrobeButton.Location = new System.Drawing.Point(93, 195);
+            this.wardrobeButton.Location = new System.Drawing.Point(12, 195);
             this.wardrobeButton.Name = "wardrobeButton";
             this.wardrobeButton.Size = new System.Drawing.Size(75, 23);
             this.wardrobeButton.TabIndex = 17;
@@ -231,7 +218,7 @@
             // recipeButton
             // 
             this.recipeButton.Enabled = false;
-            this.recipeButton.Location = new System.Drawing.Point(174, 195);
+            this.recipeButton.Location = new System.Drawing.Point(93, 195);
             this.recipeButton.Name = "recipeButton";
             this.recipeButton.Size = new System.Drawing.Size(75, 23);
             this.recipeButton.TabIndex = 18;
@@ -242,7 +229,7 @@
             // trophyButton
             // 
             this.trophyButton.Enabled = false;
-            this.trophyButton.Location = new System.Drawing.Point(12, 224);
+            this.trophyButton.Location = new System.Drawing.Point(174, 195);
             this.trophyButton.Name = "trophyButton";
             this.trophyButton.Size = new System.Drawing.Size(75, 23);
             this.trophyButton.TabIndex = 19;
@@ -250,21 +237,10 @@
             this.trophyButton.UseVisualStyleBackColor = true;
             this.trophyButton.Click += new System.EventHandler(this.trophyButton_Click);
             // 
-            // wildAnimalButton
-            // 
-            this.wildAnimalButton.Enabled = false;
-            this.wildAnimalButton.Location = new System.Drawing.Point(93, 224);
-            this.wildAnimalButton.Name = "wildAnimalButton";
-            this.wildAnimalButton.Size = new System.Drawing.Size(156, 23);
-            this.wildAnimalButton.TabIndex = 20;
-            this.wildAnimalButton.Text = "Wild Animals";
-            this.wildAnimalButton.UseVisualStyleBackColor = true;
-            this.wildAnimalButton.Click += new System.EventHandler(this.wildAnimalButton_Click);
-            // 
             // farmCircleButton
             // 
             this.farmCircleButton.Enabled = false;
-            this.farmCircleButton.Location = new System.Drawing.Point(12, 253);
+            this.farmCircleButton.Location = new System.Drawing.Point(12, 224);
             this.farmCircleButton.Name = "farmCircleButton";
             this.farmCircleButton.Size = new System.Drawing.Size(116, 23);
             this.farmCircleButton.TabIndex = 21;
@@ -276,15 +252,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(261, 288);
+            this.ClientSize = new System.Drawing.Size(261, 259);
             this.Controls.Add(this.farmCircleButton);
-            this.Controls.Add(this.wildAnimalButton);
             this.Controls.Add(this.trophyButton);
             this.Controls.Add(this.recipeButton);
             this.Controls.Add(this.wardrobeButton);
             this.Controls.Add(this.recordButton);
             this.Controls.Add(this.npcButton);
-            this.Controls.Add(this.petButton);
             this.Controls.Add(this.animalButton);
             this.Controls.Add(this.generalButton);
             this.Controls.Add(this.crownButton);
@@ -326,13 +300,11 @@
         private System.Windows.Forms.Button crownButton;
         private System.Windows.Forms.Button generalButton;
         private System.Windows.Forms.Button animalButton;
-        private System.Windows.Forms.Button petButton;
         private System.Windows.Forms.Button npcButton;
         private System.Windows.Forms.Button recordButton;
         private System.Windows.Forms.Button wardrobeButton;
         private System.Windows.Forms.Button recipeButton;
         private System.Windows.Forms.Button trophyButton;
-        private System.Windows.Forms.Button wildAnimalButton;
         private System.Windows.Forms.Button farmCircleButton;
     }
 }

@@ -10,18 +10,17 @@ using System.Windows.Forms;
 namespace SOSSE.TOT
 {
     /// <summary>
-    /// Wild animal friendship: 22 x (u16 points, u16 flag) at 0xA328. The flag's meaning is unknown.
+    /// Wild animals tab of the Animals window. Friendship: 22 x (u16 points, u16 flag) at 0xA328. The flag's meaning is unknown.
     /// </summary>
-    public partial class TotWildAnimalEditingForm : Form
+    public partial class TotWildAnimalPanel : UserControl
     {
         private const int wildAnimalOffset = 0xA328;
         private const int maxPoints = 1000;
 
         private DataGridViewTextBoxColumn pointsColumn;
 
-        public TotWildAnimalEditingForm()
+        public TotWildAnimalPanel()
         {
-            this.Font = SystemFonts.MessageBoxFont;
             InitializeComponent();
             TotData.LoadWildAnimalData();
 
@@ -63,11 +62,6 @@ namespace SOSSE.TOT
                 if (points != BitConverter.ToUInt16(TotSave.SaveData, offset))
                     Array.Copy(BitConverter.GetBytes((ushort)points), 0, TotSave.SaveData, offset, 2);
             }
-        }
-
-        private void TotWildAnimalEditingForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            SaveWildAnimals();
         }
     }
 }

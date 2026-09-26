@@ -1,6 +1,6 @@
 ﻿namespace SOSSE.TOT
 {
-    partial class TotWildAnimalEditingForm
+    partial class TotWildAnimalPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@
             this.wildAnimalDataGridView.AllowUserToAddRows = false;
             this.wildAnimalDataGridView.AllowUserToDeleteRows = false;
             this.wildAnimalDataGridView.AllowUserToResizeRows = false;
-            this.wildAnimalDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.wildAnimalDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
             this.wildAnimalDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.wildAnimalDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.wildAnimalDataGridView.RowHeadersVisible = false;
@@ -53,22 +53,19 @@
             this.maxAllButton.Name = "maxAllButton";
             this.maxAllButton.Size = new System.Drawing.Size(90, 23);
             this.maxAllButton.TabIndex = 1;
-            this.maxAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.maxAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.maxAllButton.Text = "Max All";
             this.maxAllButton.UseVisualStyleBackColor = true;
             this.maxAllButton.Click += new System.EventHandler(this.maxAllButton_Click);
             // 
-            // TotWildAnimalEditingForm
+            // TotWildAnimalPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(344, 453);
+            this.Size = new System.Drawing.Size(344, 453);
             this.Controls.Add(this.maxAllButton);
             this.Controls.Add(this.wildAnimalDataGridView);
-            this.Name = "TotWildAnimalEditingForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Wild Animals";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TotWildAnimalEditingForm_FormClosing);
+            this.Name = "TotWildAnimalPanel";
             ((System.ComponentModel.ISupportInitialize)(this.wildAnimalDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
