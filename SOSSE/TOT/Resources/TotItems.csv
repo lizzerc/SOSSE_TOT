@@ -1,0 +1,1133 @@
+id,hex,name,rank_category,item_type
+0,0x0000,Turnip Seeds,-1,-1
+1,0x0001,Radish Seeds,-1,-1
+2,0x0002,Potato Seeds,-1,-1
+3,0x0003,Cabbage Seeds,-1,-1
+4,0x0004,Cucumber Seeds,-1,-1
+5,0x0005,Strawberry Seeds,-1,-1
+6,0x0006,Onion Seeds,-1,-1
+7,0x0007,Tomato Seeds,-1,-1
+8,0x0008,Corn Seeds,-1,-1
+9,0x0009,Shiso Seeds,-1,-1
+10,0x000A,Pumpkin Seeds,-1,-1
+11,0x000B,Watermelon Seeds,-1,-1
+12,0x000C,Melon Seeds,-1,-1
+13,0x000D,Paprika Seeds,-1,-1
+14,0x000E,Pineapple Seeds,-1,-1
+15,0x000F,Cassava Seeds,-1,-1
+16,0x0010,Spinach Seeds,-1,-1
+17,0x0011,Carrot Seeds,-1,-1
+18,0x0012,Burdock Seeds,-1,-1
+19,0x0013,Sweet Potato Seeds,-1,-1
+20,0x0014,Eggplant Seeds,-1,-1
+21,0x0015,Bell Pepper Seeds,-1,-1
+22,0x0016,Daikon Radish Seeds,-1,-1
+23,0x0017,Napa Cabbage Seeds,-1,-1
+24,0x0018,Broccoli Seeds,-1,-1
+25,0x0019,Marguerite Seeds,-1,-1
+26,0x001A,Pink Rose Seeds,-1,-1
+27,0x001B,Bellflower Seeds,-1,-1
+28,0x001C,Carnation Seeds,-1,-1
+29,0x001D,Hibiscus Seeds,-1,-1
+30,0x001E,Red Rose Seeds,-1,-1
+31,0x001F,Lily Seeds,-1,-1
+32,0x0020,Sunflower Seeds,-1,-1
+33,0x0021,Plumeria Seeds,-1,-1
+34,0x0022,Morning Glory Seeds,-1,-1
+35,0x0023,Pink Carnation Seeds,-1,-1
+36,0x0024,Hilton Daisy Seeds,-1,-1
+37,0x0025,Dahlia Seeds,-1,-1
+38,0x0026,White Rose Seeds,-1,-1
+39,0x0027,Chrysanthemum Seeds,-1,-1
+40,0x0028,Gentian Seeds,-1,-1
+41,0x0029,Snowdrop Seeds,-1,-1
+42,0x002A,Blue Rose Seeds,-1,-1
+43,0x002B,Wasabi Seedlings,-1,-1
+44,0x002C,Rice Seedlings,-1,-1
+45,0x002D,Sticky Rice Seedlings,-1,-1
+46,0x002E,Wheat Seeds,-1,-1
+47,0x002F,Soybean Seeds,-1,-1
+48,0x0030,Adzuki Bean Seeds,-1,-1
+49,0x0031,Chili Pepper Seeds,-1,-1
+50,0x0032,Sugar Cane Seeds,-1,-1
+51,0x0033,Cherry Seedling,-1,-1
+52,0x0034,Almond Seedling,-1,-1
+53,0x0035,Peach Seedling,-1,-1
+54,0x0036,Kiwi Seedling,-1,-1
+55,0x0037,Lemon Seedling,-1,-1
+56,0x0038,Lychee Seedling,-1,-1
+57,0x0039,Orange Seedling,-1,-1
+58,0x003A,Mango Seedling,-1,-1
+59,0x003B,Starfruit Seedling,-1,-1
+60,0x003C,Coconut Seedling,-1,-1
+61,0x003D,Banana Seedling,-1,-1
+62,0x003E,Cacao Seedling,-1,-1
+63,0x003F,Apple Seedling,-1,-1
+64,0x0040,Grape Seedling,-1,-1
+65,0x0041,Olive Seedling,-1,-1
+66,0x0042,Persimmon Seedling,-1,-1
+67,0x0043,Tea Seeds,-1,-1
+68,0x0044,Grass Seeds,-1,-1
+69,0x0045,Cotton Seeds,-1,-1
+70,0x0046,Flax Seeds,-1,-1
+71,0x0047,Maple Seedling,-1,-1
+72,0x0048,Bamboo Seedling,-1,-1
+73,0x0049,Broadleaf Seedling,-1,-1
+74,0x004A,Softwood Seedling,-1,-1
+75,0x004B,Shiitake Spores,-1,-1
+76,0x004C,Matsutake Spores,-1,-1
+77,0x004D,Shimeji Spores,-1,-1
+78,0x004E,Trumpet Mshrm Spores,-1,-1
+79,0x004F,Coral Mushroom Spores,-1,-1
+80,0x0050,Common Mshrm Spores,-1,-1
+81,0x0051,Pearl Oyster,-1,-1
+82,0x0052,Turnip,0,0
+83,0x0053,Radish,1,0
+84,0x0054,Potato,2,0
+85,0x0055,Cabbage,3,0
+86,0x0056,Cucumber,4,0
+87,0x0057,Strawberry,5,0
+88,0x0058,Onion,6,0
+89,0x0059,Tomato,7,0
+90,0x005A,Corn,8,0
+91,0x005B,Shiso,9,0
+92,0x005C,Pumpkin,10,0
+93,0x005D,Watermelon,11,0
+94,0x005E,Melon,12,0
+95,0x005F,Paprika,13,0
+96,0x0060,Pineapple,14,0
+97,0x0061,Cassava,15,0
+98,0x0062,Spinach,16,0
+99,0x0063,Carrot,17,0
+100,0x0064,Burdock,18,0
+101,0x0065,Sweet Potato,19,0
+102,0x0066,Eggplant,20,0
+103,0x0067,Bell Pepper,21,0
+104,0x0068,Daikon Radish,22,0
+105,0x0069,Napa Cabbage,23,0
+106,0x006A,Broccoli,24,0
+107,0x006B,Marguerite,25,2
+108,0x006C,Pink Rose,26,2
+109,0x006D,Bellflower,27,2
+110,0x006E,Carnation,28,2
+111,0x006F,Hibiscus,29,2
+112,0x0070,Red Rose,30,2
+113,0x0071,Lily,31,2
+114,0x0072,Sunflower,32,2
+115,0x0073,Plumeria,33,2
+116,0x0074,Morning Glory,34,2
+117,0x0075,Pink Carnation,35,2
+118,0x0076,Hilton Daisy,36,2
+119,0x0077,Dahlia,37,2
+120,0x0078,White Rose,38,2
+121,0x0079,Chrysanthemum,39,2
+122,0x007A,Gentian,40,2
+123,0x007B,Snowdrop,41,2
+124,0x007C,Blue Rose,42,2
+125,0x007D,Wasabi,43,5
+126,0x007E,Rice,44,5
+127,0x007F,Sticky Rice,45,5
+128,0x0080,Wheat,46,4
+129,0x0081,Soybeans,47,4
+130,0x0082,Adzuki Beans,48,4
+131,0x0083,Chili Pepper,49,6
+132,0x0084,Sugar Cane,50,6
+133,0x0085,Cherry,51,1
+134,0x0086,Almond,52,1
+135,0x0087,Peach,53,1
+136,0x0088,Kiwi,54,1
+137,0x0089,Lemon,55,1
+138,0x008A,Lychee,56,1
+139,0x008B,Orange,57,1
+140,0x008C,Mango,58,1
+141,0x008D,Starfruit,59,1
+142,0x008E,Coconut,60,1
+143,0x008F,Bananas,61,1
+144,0x0090,Cacao,62,1
+145,0x0091,Apple,63,1
+146,0x0092,Grapes,64,1
+147,0x0093,Olive,65,1
+148,0x0094,Persimmon,66,1
+149,0x0095,Spring Tea Leaves,67,7
+150,0x0096,Summer Tea Leaves,67,7
+151,0x0097,Fall Tea Leaves,67,7
+152,0x0098,Cotton,68,3
+153,0x0099,Flax,69,3
+154,0x009A,Bamboo Shoot,-1,16
+155,0x009B,Shiitake Mushroom,70,9
+156,0x009C,Matsutake Mushroom,70,9
+157,0x009D,Shimeji Mushroom,70,9
+158,0x009E,Trumpet Mushroom,70,9
+159,0x009F,Coral Mushroom,70,9
+160,0x00A0,Common Mushroom,70,9
+161,0x00A1,Milk,71,13
+162,0x00A2,Milk +,71,13
+163,0x00A3,Jersey Milk,72,13
+164,0x00A4,Jersey Milk +,72,13
+165,0x00A5,Buffalo Milk,73,13
+166,0x00A6,Buffalo Milk +,73,13
+167,0x00A7,Wool,74,17
+168,0x00A8,Wool +,74,17
+169,0x00A9,Suffolk Wool,75,17
+170,0x00AA,Suffolk Wool +,75,17
+171,0x00AB,Alpaca Wool,76,18
+172,0x00AC,Alpaca Wool +,76,18
+173,0x00AD,Brown Alpaca Wool,76,18
+174,0x00AE,Brown Alpaca Wool +,76,18
+175,0x00AF,Llama Wool,77,20
+176,0x00B0,Llama Wool +,77,20
+177,0x00B1,Rabbit Fur,78,19
+178,0x00B2,Rabbit Fur +,78,19
+179,0x00B3,Gray Rabbit Fur,78,19
+180,0x00B4,Gray Rabbit Fur +,78,19
+181,0x00B5,Egg,79,14
+182,0x00B6,Golden Egg,79,14
+183,0x00B7,Silkie Egg,80,14
+184,0x00B8,Golden Silkie Egg,80,14
+185,0x00B9,Quail Egg,81,14
+186,0x00BA,Golden Quail Egg,81,14
+187,0x00BB,Honey,82,8
+188,0x00BC,Royal Jelly,82,8
+189,0x00BD,Comb Honey,82,8
+190,0x00BE,Maple Syrup,83,6
+191,0x00BF,Potato Salad,84,-1
+192,0x00C0,Mashed Potatoes,84,-1
+193,0x00C1,Onion Salad,84,-1
+194,0x00C2,Tomato Salad,84,-1
+195,0x00C3,Mimosa Salad,84,-1
+196,0x00C4,Milk Salad,84,-1
+197,0x00C5,Herb Salad,84,-1
+198,0x00C6,Mixed Salad,84,-1
+199,0x00C7,Soybean Salad,84,-1
+200,0x00C8,Pasta Salad,84,-1
+201,0x00C9,Coleslaw,84,-1
+202,0x00CA,Pumpkin Salad,84,-1
+203,0x00CB,Spinach Salad,84,-1
+204,0x00CC,Burdock Salad,84,-1
+205,0x00CD,Mushroom Salad,84,-1
+206,0x00CE,Plum-Cucumber Salad,84,-1
+207,0x00CF,Plum Shiso Salad,84,-1
+208,0x00D0,Seaweed Salad,84,-1
+209,0x00D1,Wasabi Octopus,84,-1
+210,0x00D2,Sashimi,84,-1
+211,0x00D3,Tofu Skin,84,-1
+212,0x00D4,Fritter Salad,84,-1
+213,0x00D5,Taramasalata,84,-1
+214,0x00D6,Corn Salad,84,-1
+215,0x00D7,Paprika Salad,84,-1
+216,0x00D8,Classy Carpaccio,84,-1
+217,0x00D9,Summer Veggie Salad,84,-1
+218,0x00DA,Coconut Salad,84,-1
+219,0x00DB,Tropical Salad,84,-1
+220,0x00DC,Scallop Salad,84,-1
+221,0x00DD,Fruit Salad,84,-1
+222,0x00DE,Lomi Lomi Salmon,84,-1
+223,0x00DF,Salad Roll,84,-1
+224,0x00E0,Octopus Kelaguen,84,-1
+225,0x00E1,Achaar,84,-1
+226,0x00E2,Couscous Salad,84,-1
+227,0x00E3,Kokonda,84,-1
+228,0x00E4,Italian Salad,84,-1
+229,0x00E5,Caprese Salad,84,-1
+230,0x00E6,Curry Salad,84,-1
+231,0x00E7,Bagna Cauda,84,-1
+232,0x00E8,Gratin Soup,85,-1
+233,0x00E9,Potato Potage,85,-1
+234,0x00EA,Corn Potage,85,-1
+235,0x00EB,Carrot Soup,85,-1
+236,0x00EC,Cheese Soup,85,-1
+237,0x00ED,Herb Soup,85,-1
+238,0x00EE,Pistou Soup,85,-1
+239,0x00EF,Spaghetti Soup,85,-1
+240,0x00F0,Bouillon Soup,85,-1
+241,0x00F1,Gumbo,85,-1
+242,0x00F2,Ultimate Soup,85,-1
+243,0x00F3,Mushroom Soup,85,-1
+244,0x00F4,Spinach Soup,85,-1
+245,0x00F5,Turnip Soup,85,-1
+246,0x00F6,Egg Drop Soup,85,-1
+247,0x00F7,Miso Soup,85,-1
+248,0x00F8,Burdock Soup,85,-1
+249,0x00F9,Mitten Crab Soup,85,-1
+250,0x00FA,Osumashi Soup,85,-1
+251,0x00FB,Keiji Salmon Stew,85,-1
+252,0x00FC,Kenchin Soup,85,-1
+253,0x00FD,Clam Miso Soup,85,-1
+254,0x00FE,Supreme Soup,85,-1
+255,0x00FF,Acqua Pazza,85,-1
+256,0x0100,Gazpacho,85,-1
+257,0x0101,Pho,85,-1
+258,0x0102,Sturgeon Soup,85,-1
+259,0x0103,Coconut Soup,85,-1
+260,0x0104,Loi Feke,85,-1
+261,0x0105,Tom Yum Goong,85,-1
+262,0x0106,Ika Vakamiti,85,-1
+263,0x0107,Delicious Soup,85,-1
+264,0x0108,Minestrone,85,-1
+265,0x0109,Fish Chowder,85,-1
+266,0x010A,Vichyssoise,85,-1
+267,0x010B,Clam Chowder,85,-1
+268,0x010C,Potato Pancakes,86,-1
+269,0x010D,Mushroom Pie,86,-1
+270,0x010E,Fish Pie,86,-1
+271,0x010F,Grilled Tomato,86,-1
+272,0x0110,Vegetable Stir Fry,86,-1
+273,0x0111,Grilled Cheese,86,-1
+274,0x0112,Buttered Turnip,86,-1
+275,0x0113,Gratin,86,-1
+276,0x0114,Quiche,86,-1
+277,0x0115,Pizza,86,-1
+278,0x0116,Buttered Corn,86,-1
+279,0x0117,Stir-Fried Broccoli,86,-1
+280,0x0118,Omelet,86,-1
+281,0x0119,Mini Omelet,86,-1
+282,0x011A,Raclette,86,-1
+283,0x011B,Hasty Pudding,86,-1
+284,0x011C,Cornmeal Flatbread,86,-1
+285,0x011D,Baked Beans,86,-1
+286,0x011E,Candied Carrots,86,-1
+287,0x011F,French Fries,86,-1
+288,0x0120,Baked Sweet Potato,86,-1
+289,0x0121,Fried Egg,86,-1
+290,0x0122,Roasted Mushrooms,86,-1
+291,0x0123,Grilled Fish,86,-1
+292,0x0124,Teriyaki Pumpkin,86,-1
+293,0x0125,Chop Suey,86,-1
+294,0x0126,Okonomiyaki,86,-1
+295,0x0127,Kinpira Burdock,86,-1
+296,0x0128,Tofu Burger,86,-1
+297,0x0129,Gyoza,86,-1
+298,0x012A,Three Fried Eggs,86,-1
+299,0x012B,Grilled Horned Turbans,86,-1
+300,0x012C,Spicy Stir-Fried Squid,86,-1
+301,0x012D,Steamed Breadfruit,86,-1
+302,0x012E,Roasted Corn,86,-1
+303,0x012F,Marlin Steak,86,-1
+304,0x0130,Farofa,86,-1
+305,0x0131,Shredded Carrots,86,-1
+306,0x0132,Banh Xeo,86,-1
+307,0x0133,Meuniere,86,-1
+308,0x0134,Terrine,86,-1
+309,0x0135,Pissaladiere,86,-1
+310,0x0136,Chili Shrimp,86,-1
+311,0x0137,Cabbage Rolls,87,-1
+312,0x0138,Stuffed Tomatoes,87,-1
+313,0x0139,Spanish Omelet,87,-1
+314,0x013A,Croquette,87,-1
+315,0x013B,Cream Croquette,87,-1
+316,0x013C,Creamy Hot Pot,87,-1
+317,0x013D,Cheese Fondue,87,-1
+318,0x013E,Stew,87,-1
+319,0x013F,Succotash,87,-1
+320,0x0140,Shredded Radish,87,-1
+321,0x0141,Oden,87,-1
+322,0x0142,Boiled Pumpkin,87,-1
+323,0x0143,Turnip Stew,87,-1
+324,0x0144,Simmered Potato,87,-1
+325,0x0145,Boiled Egg,87,-1
+326,0x0146,Egg Custard,87,-1
+327,0x0147,Deep-Fried Monkfish,87,-1
+328,0x0148,Spring Rolls,87,-1
+329,0x0149,Deep-Fried Catfish,87,-1
+330,0x014A,Kakiage,87,-1
+331,0x014B,Turtle Stew,87,-1
+332,0x014C,Puffer Stew,87,-1
+333,0x014D,Miso-Sauce Mackerel,87,-1
+334,0x014E,Mackerel with Radish,87,-1
+335,0x014F,Fried Shrimp,87,-1
+336,0x0150,New Year's Dish,87,-1
+337,0x0151,Shimotsukare,87,-1
+338,0x0152,Fried Tofu,87,-1
+339,0x0153,Houtou,87,-1
+340,0x0154,Fried Tofu Fritter,87,-1
+341,0x0155,Tempura,87,-1
+342,0x0156,Tsukudani,87,-1
+343,0x0157,Doji Hot Pot,87,-1
+344,0x0158,Vegetable Etuver,87,-1
+345,0x0159,Moqueca,87,-1
+346,0x015A,Corn Stew,87,-1
+347,0x015B,Caponata,87,-1
+348,0x015C,Boiled Corn,87,-1
+349,0x015D,Samosa,87,-1
+350,0x015E,Grouper Stew,87,-1
+351,0x015F,Monkfish Stew,87,-1
+352,0x0160,Red King Crab Stew,87,-1
+353,0x0161,Ahi Poke Salad,87,-1
+354,0x0162,Lau Lau,87,-1
+355,0x0163,Deep-Fried Fish Cakes,87,-1
+356,0x0164,Piperade,87,-1
+357,0x0165,Bouillabaisse,87,-1
+358,0x0166,Pot-Au-Feu,87,-1
+359,0x0167,Rosti,87,-1
+360,0x0168,Ratatouille,87,-1
+361,0x0169,Onion Rice,88,-1
+362,0x016A,Doria,88,-1
+363,0x016B,Pumpkin Doria,88,-1
+364,0x016C,Risotto,88,-1
+365,0x016D,Tomato Risotto,88,-1
+366,0x016E,Dolma,88,-1
+367,0x016F,Curd Rice,88,-1
+368,0x0170,Buttered Rice,88,-1
+369,0x0171,Milk Porridge,88,-1
+370,0x0172,Omelet Rice,88,-1
+371,0x0173,Seafood Omelet Rice,88,-1
+372,0x0174,White Rice,88,-1
+373,0x0175,Mixed Vegetable Rice,88,-1
+374,0x0176,Sweet Potato Rice,88,-1
+375,0x0177,Chestnut Rice,88,-1
+376,0x0178,Mushroom Rice,88,-1
+377,0x0179,Fried Rice,88,-1
+378,0x017A,Fried Onigiri,88,-1
+379,0x017B,Squid Rice,88,-1
+380,0x017C,Egg Bowl,88,-1
+381,0x017D,Eel Rice Bowl,88,-1
+382,0x017E,Sea Urchin Rice Bowl,88,-1
+383,0x017F,Seafood Rice Bowl,88,-1
+384,0x0180,Oshinko Roll,88,-1
+385,0x0181,Cucumber Roll,88,-1
+386,0x0182,Chirashi Sushi,88,-1
+387,0x0183,Sea Bream Chazuke,88,-1
+388,0x0184,Shiso Onigiri,88,-1
+389,0x0185,Kakinoha-Zushi,88,-1
+390,0x0186,Zongzi,88,-1
+391,0x0187,Rice Porridge,88,-1
+392,0x0188,Eggs Over Rice,88,-1
+393,0x0189,Tuna Roll,88,-1
+394,0x018A,Inarizushi,88,-1
+395,0x018B,Sekihan Rice,88,-1
+396,0x018C,Octopus Rice,88,-1
+397,0x018D,Tea Rice Porridge,88,-1
+398,0x018E,Uzume Rice,88,-1
+399,0x018F,Herb Rice Porridge,88,-1
+400,0x0190,Fukagawa Rice,88,-1
+401,0x0191,Kiritanpo,88,-1
+402,0x0192,Curry Rice,88,-1
+403,0x0193,Spicy Curry,88,-1
+404,0x0194,Dry Curry,88,-1
+405,0x0195,Rice Pilaf,88,-1
+406,0x0196,Herb Pilaf,88,-1
+407,0x0197,Coconut Curry,88,-1
+408,0x0198,Nasi Goreng,88,-1
+409,0x0199,Lontong,88,-1
+410,0x019A,Thieboudienne,88,-1
+411,0x019B,Biryani,88,-1
+412,0x019C,Kushari,88,-1
+413,0x019D,Makloubeh,88,-1
+414,0x019E,Nasi Lemak,88,-1
+415,0x019F,Loco Moco,88,-1
+416,0x01A0,Arancini,88,-1
+417,0x01A1,Bibimbap,88,-1
+418,0x01A2,Paella,88,-1
+419,0x01A3,Bread,89,-1
+420,0x01A4,Potato Bread,89,-1
+421,0x01A5,Corn Bread,89,-1
+422,0x01A6,Walnut Bread,89,-1
+423,0x01A7,Vegetable Bread,89,-1
+424,0x01A8,Fruit Bread,89,-1
+425,0x01A9,French Toast,89,-1
+426,0x01AA,Yogurt Bread,89,-1
+427,0x01AB,Buttered Bread,89,-1
+428,0x01AC,Basil Cheese Bread,89,-1
+429,0x01AD,Melon Bread,89,-1
+430,0x01AE,Herb Pasta,89,-1
+431,0x01AF,Mushroom Spaghetti,89,-1
+432,0x01B0,Macaroni and Cheese,89,-1
+433,0x01B1,Eggs Benedict,89,-1
+434,0x01B2,Raisin Bread,89,-1
+435,0x01B3,Cinnamon Roll,89,-1
+436,0x01B4,Crackers,89,-1
+437,0x01B5,Gingerbread,89,-1
+438,0x01B6,Cold Noodles,89,-1
+439,0x01B7,Kitsune Udon,89,-1
+440,0x01B8,Stir-Fried Udon,89,-1
+441,0x01B9,Udon with Egg,89,-1
+442,0x01BA,Anpan Sweet Roll,89,-1
+443,0x01BB,Cold Udon Soup,89,-1
+444,0x01BC,Octopus Pasta,89,-1
+445,0x01BD,Sea Urchin Pasta,89,-1
+446,0x01BE,Corn Pasta,89,-1
+447,0x01BF,Naan Bread,89,-1
+448,0x01C0,Pita Bread,89,-1
+449,0x01C1,Saimin Noodles,89,-1
+450,0x01C2,Fufu,89,-1
+451,0x01C3,Tropical Sandwich,89,-1
+452,0x01C4,Toasted Sandwich,89,-1
+453,0x01C5,Pescatore,89,-1
+454,0x01C6,Focaccia,89,-1
+455,0x01C7,Carbonara,89,-1
+456,0x01C8,Lasagna,89,-1
+457,0x01C9,Spaghetti Aglio e Olio,89,-1
+458,0x01CA,Macaroni Medley,89,-1
+459,0x01CB,Napolitan,89,-1
+460,0x01CC,Cream Pasta,89,-1
+461,0x01CD,Genovese Pasta,89,-1
+462,0x01CE,Candied Sweet Potato,90,-1
+463,0x01CF,Crepes,90,-1
+464,0x01D0,Peach Tart,90,-1
+465,0x01D1,Orange Tart,90,-1
+466,0x01D2,Cherry Tart,90,-1
+467,0x01D3,Pumpkin Pie,90,-1
+468,0x01D4,Apple Pie,90,-1
+469,0x01D5,Blueberry Pie,90,-1
+470,0x01D6,Yogurt Pie,90,-1
+471,0x01D7,Vegetable Cake,90,-1
+472,0x01D8,Grape Cake,90,-1
+473,0x01D9,Apricot Cake,90,-1
+474,0x01DA,Pancakes,90,-1
+475,0x01DB,Chocolate Cookies,90,-1
+476,0x01DC,Almond Cookies,90,-1
+477,0x01DD,Cheesecake,90,-1
+478,0x01DE,Pudding,90,-1
+479,0x01DF,Pumpkin Pudding,90,-1
+480,0x01E0,Chocolate Pudding,90,-1
+481,0x01E1,Almond Caramel,90,-1
+482,0x01E2,Chocolate Mousse,90,-1
+483,0x01E3,Pumpkin Ice Cream,90,-1
+484,0x01E4,Chocolate Ice Cream,90,-1
+485,0x01E5,Corn Muffins,90,-1
+486,0x01E6,Soft-Serve Ice Cream,90,-1
+487,0x01E7,Coffee Jelly,90,-1
+488,0x01E8,Cornflakes,90,-1
+489,0x01E9,Doughnuts,90,-1
+490,0x01EA,Persimmon Pudding,90,-1
+491,0x01EB,Berry Pudding,90,-1
+492,0x01EC,Apple Jelly,90,-1
+493,0x01ED,Maple Candies,90,-1
+494,0x01EE,Vinegar Pie,90,-1
+495,0x01EF,Custard Pie,90,-1
+496,0x01F0,Hush Puppies,90,-1
+497,0x01F1,Popcorn,90,-1
+498,0x01F2,Mince Pie,90,-1
+499,0x01F3,Decorated Cake,90,-1
+500,0x01F4,Rice Flour Pancakes,90,-1
+501,0x01F5,Soy Milk Cookie,90,-1
+502,0x01F6,Soy Milk Pudding,90,-1
+503,0x01F7,Herb Ice Cream,90,-1
+504,0x01F8,Monaka,90,-1
+505,0x01F9,Daifuku,90,-1
+506,0x01FA,Yomogi Dumplings,90,-1
+507,0x01FB,Mitarashi Dumplings,90,-1
+508,0x01FC,Millet Dumplings,90,-1
+509,0x01FD,Rice Cracker,90,-1
+510,0x01FE,Dorayaki,90,-1
+511,0x01FF,Youkan,90,-1
+512,0x0200,Mizore Shaved Ice,90,-1
+513,0x0201,Ujikintoki Shaved Ice,90,-1
+514,0x0202,Strawberry Shaved Ice,90,-1
+515,0x0203,Castella,90,-1
+516,0x0204,Fruit Punch,90,-1
+517,0x0205,Pineapple Cake,90,-1
+518,0x0206,Lemon Tart,90,-1
+519,0x0207,Fruit Gratin,90,-1
+520,0x0208,Mango Cake,90,-1
+521,0x0209,Melon Cake,90,-1
+522,0x020A,Malasada,90,-1
+523,0x020B,Vanilla Ice Cream,90,-1
+524,0x020C,Strawberry Ice Cream,90,-1
+525,0x020D,Pineapple Ice Cream,90,-1
+526,0x020E,Peach Ice Cream,90,-1
+527,0x020F,Cherry Ice Cream,90,-1
+528,0x0210,Banana Ice Cream,90,-1
+529,0x0211,Mango Ice Cream,90,-1
+530,0x0212,Apple Ice Cream,90,-1
+531,0x0213,Grape Ice Cream,90,-1
+532,0x0214,Melon Ice Cream,90,-1
+533,0x0215,Blueberry Ice Cream,90,-1
+534,0x0216,Watermelon Sherbet,90,-1
+535,0x0217,Kiwi Sherbet,90,-1
+536,0x0218,Lemon Sherbet,90,-1
+537,0x0219,Orange Sherbet,90,-1
+538,0x021A,Panipuri,90,-1
+539,0x021B,Nata De Coco,90,-1
+540,0x021C,Aloe Yogurt,90,-1
+541,0x021D,Barfi,90,-1
+542,0x021E,Sata Andagi,90,-1
+543,0x021F,Coconut-Milk Bananas,90,-1
+544,0x0220,Frozen Yogurt,90,-1
+545,0x0221,Chocolate Fondue,90,-1
+546,0x0222,Macaron,90,-1
+547,0x0223,Ice Cream Crepe,90,-1
+548,0x0224,Mont Blanc,90,-1
+549,0x0225,Clafoutis,90,-1
+550,0x0226,Cannoli,90,-1
+551,0x0227,Shortcake,90,-1
+552,0x0228,Mille-Feuille,90,-1
+553,0x0229,Chiffon Cake,90,-1
+554,0x022A,Chocolate Cake,90,-1
+555,0x022B,Cream Puff,90,-1
+556,0x022C,Madeleine,90,-1
+557,0x022D,Bavarian Cream,90,-1
+558,0x022E,Baklava,90,-1
+559,0x022F,Tomato Juice,91,-1
+560,0x0230,Carrot Juice,91,-1
+561,0x0231,Grape Juice,91,-1
+562,0x0232,Ginger Ale,91,-1
+563,0x0233,Apple Juice,91,-1
+564,0x0234,Cheese Drink,91,-1
+565,0x0235,Iced Cocoa,91,-1
+566,0x0236,Vegetable Tea,91,-1
+567,0x0237,Strawberry Tea,91,-1
+568,0x0238,Peach Tea,91,-1
+569,0x0239,Cherry Tea,91,-1
+570,0x023A,Apple Tea,91,-1
+571,0x023B,Blueberry Tea,91,-1
+572,0x023C,Earl Grey,91,-1
+573,0x023D,Herb Tea,91,-1
+574,0x023E,Milk Tea,91,-1
+575,0x023F,Spring Milk Tea,91,-1
+576,0x0240,Summer Milk Tea,91,-1
+577,0x0241,Fall Milk Tea,91,-1
+578,0x0242,Spring Herb Tea,91,-1
+579,0x0243,Summer Herb Tea,91,-1
+580,0x0244,Fall Herb Tea,91,-1
+581,0x0245,Cappuccino,91,-1
+582,0x0246,Cafe Mocha,91,-1
+583,0x0247,Coffee,91,-1
+584,0x0248,Hot Milk,91,-1
+585,0x0249,Lemon Tea,91,-1
+586,0x024A,Eggnog,91,-1
+587,0x024B,Lemonade,91,-1
+588,0x024C,Grass Drink,91,-1
+589,0x024D,Shiso Juice,91,-1
+590,0x024E,Matcha,91,-1
+591,0x024F,Green Tea,91,-1
+592,0x0250,Matcha Milk,91,-1
+593,0x0251,Amazake,91,-1
+594,0x0252,Green Plum Tea,91,-1
+595,0x0253,Ceremonial Tea,91,-1
+596,0x0254,Ginger Drink,91,-1
+597,0x0255,Pineapple Juice,91,-1
+598,0x0256,Watermelon Juice,91,-1
+599,0x0257,Kiwi Juice,91,-1
+600,0x0258,Lychee Juice,91,-1
+601,0x0259,Mango Juice,91,-1
+602,0x025A,Orange Juice,91,-1
+603,0x025B,Melon Juice,91,-1
+604,0x025C,Banana au Lait,91,-1
+605,0x025D,Vanilla Shake,91,-1
+606,0x025E,Soy Milk Banana Shake,91,-1
+607,0x025F,Pina Colada Shake,91,-1
+608,0x0260,Cherry Peach Shake,91,-1
+609,0x0261,Mixed Berry Shake,91,-1
+610,0x0262,Sunrise Shake,91,-1
+611,0x0263,Gin Apple Shake,91,-1
+612,0x0264,Watermelon Shake,91,-1
+613,0x0265,Honey Lemon Shake,91,-1
+614,0x0266,Melon Soda,91,-1
+615,0x0267,Kiwi Grape Shake,91,-1
+616,0x0268,Orange Cacao Shake,91,-1
+617,0x0269,Smoothie,91,-1
+618,0x026A,Green Smoothie,91,-1
+619,0x026B,Coconut Milk,91,-1
+620,0x026C,Tapioca Juice,91,-1
+621,0x026D,Tropical Punch,91,-1
+622,0x026E,Tapioca Milk Tea,91,-1
+623,0x026F,Chai Tea,91,-1
+624,0x0270,Hibiscus Tea,91,-1
+625,0x0271,Lassi,91,-1
+626,0x0272,Yogurt Drink,91,-1
+627,0x0273,Tiramisu Shake,91,-1
+628,0x0274,Cheese,71,-1
+629,0x0275,Cheese +,71,-1
+630,0x0276,Jersey Cheese,72,-1
+631,0x0277,Jersey Cheese +,72,-1
+632,0x0278,Buffalo Cheese,73,-1
+633,0x0279,Buffalo Cheese +,73,-1
+634,0x027A,Herb Cheese,71,-1
+635,0x027B,Gold Cheese,73,-1
+636,0x027C,Butter,71,-1
+637,0x027D,Butter +,71,-1
+638,0x027E,Jersey Butter,72,-1
+639,0x027F,Jersey Butter +,72,-1
+640,0x0280,Buffalo Butter,73,-1
+641,0x0281,Buffalo Butter +,73,-1
+642,0x0282,Almond Butter,52,-1
+643,0x0283,Cocoa Butter,62,-1
+644,0x0284,Maple Butter,83,-1
+645,0x0285,Gold Butter,73,-1
+646,0x0286,Yogurt,71,-1
+647,0x0287,Yogurt +,71,-1
+648,0x0288,Jersey Yogurt,72,-1
+649,0x0289,Jersey Yogurt +,72,-1
+650,0x028A,Buffalo Yogurt,73,-1
+651,0x028B,Buffalo Yogurt +,73,-1
+652,0x028C,Fruit Yogurt,72,-1
+653,0x028D,Gold Yogurt,73,-1
+654,0x028E,Corn Meal,8,-1
+655,0x028F,Flour,46,-1
+656,0x0290,Bread Crumbs,-1,-1
+657,0x0291,Rice,44,-1
+658,0x0292,Sticky Rice,45,-1
+659,0x0293,Rice Flour,44,-1
+660,0x0294,Sugar,50,-1
+661,0x0295,Salt,-1,-1
+662,0x0296,Spice,49,-1
+663,0x0297,Cocoa Pack,62,-1
+664,0x0298,Tapioca,15,-1
+665,0x0299,Mayonnaise,79,-1
+666,0x029A,Mayonnaise +,79,-1
+667,0x029B,Silkie Mayonnaise,80,-1
+668,0x029C,Silkie Mayonnaise +,80,-1
+669,0x029D,Quail Mayonnaise,81,-1
+670,0x029E,Quail Mayonnaise +,81,-1
+671,0x029F,Herb Mayonnaise,79,-1
+672,0x02A0,Gold Mayonnaise,80,-1
+673,0x02A1,Dried Fruit,58,-1
+674,0x02A2,Vanilla Extract,-1,-1
+675,0x02A3,Vinegar,-1,-1
+676,0x02A4,Oil,65,-1
+677,0x02A5,Vegetable Jam,0,-1
+678,0x02A6,Strawberry Jam,5,-1
+679,0x02A7,Pineapple Jam,14,-1
+680,0x02A8,Watermelon Jam,11,-1
+681,0x02A9,Melon Jam,12,-1
+682,0x02AA,Cherry Jam,51,-1
+683,0x02AB,Peach Jam,53,-1
+684,0x02AC,Banana Jam,61,-1
+685,0x02AD,Mango Jam,58,-1
+686,0x02AE,Apple Jam,63,-1
+687,0x02AF,Grape Jam,64,-1
+688,0x02B0,Kiwi Jam,54,-1
+689,0x02B1,Lemon Jam,55,-1
+690,0x02B2,Orange Jam,57,-1
+691,0x02B3,Persimmon Jam,66,-1
+692,0x02B4,Starfruit Jam,59,-1
+693,0x02B5,Lychee Jam,56,-1
+694,0x02B6,Apricot Jam,-1,-1
+695,0x02B7,Blueberry Jam,-1,-1
+696,0x02B8,Chocolate Spread,62,-1
+697,0x02B9,Milk Spread,-1,-1
+698,0x02BA,Herb Spread,-1,-1
+699,0x02BB,Pickled Turnip,0,-1
+700,0x02BC,Pickled Cucumber,4,-1
+701,0x02BD,Pickled Radish,22,-1
+702,0x02BE,Pickled Eggplant,20,-1
+703,0x02BF,Pickled Plum,-1,-1
+704,0x02C0,Pickles,4,-1
+705,0x02C1,Kimchi,23,-1
+706,0x02C2,Soy Sauce,47,-1
+707,0x02C3,Miso,47,-1
+708,0x02C4,Soy Milk,47,-1
+709,0x02C5,Tofu,47,-1
+710,0x02C6,Strawberry Wine,5,-1
+711,0x02C7,Pineapple Wine,14,-1
+712,0x02C8,Watermelon Wine,11,-1
+713,0x02C9,Melon Wine,12,-1
+714,0x02CA,Cherry Wine,51,-1
+715,0x02CB,Peach Wine,53,-1
+716,0x02CC,Banana Wine,61,-1
+717,0x02CD,Mango Wine,58,-1
+718,0x02CE,Apple Wine,63,-1
+719,0x02CF,Grape Wine,64,-1
+720,0x02D0,Kiwi Wine,54,-1
+721,0x02D1,Lemon Wine,55,-1
+722,0x02D2,Orange Wine,57,-1
+723,0x02D3,Persimmon Wine,66,-1
+724,0x02D4,Starfruit Wine,59,-1
+725,0x02D5,Lychee Wine,56,-1
+726,0x02D6,Blueberry Wine,-1,-1
+727,0x02D7,White Cloth,74,-1
+728,0x02D8,Black Cloth,74,-1
+729,0x02D9,Brown Cloth,74,-1
+730,0x02DA,Red Cloth,74,-1
+731,0x02DB,Yellow Cloth,74,-1
+732,0x02DC,Green Cloth,74,-1
+733,0x02DD,Blue Cloth,74,-1
+734,0x02DE,White Cloth +,74,-1
+735,0x02DF,Black Cloth +,74,-1
+736,0x02E0,Brown Cloth +,74,-1
+737,0x02E1,Red Cloth +,74,-1
+738,0x02E2,Yellow Cloth +,74,-1
+739,0x02E3,Green Cloth +,74,-1
+740,0x02E4,Blue Cloth +,74,-1
+741,0x02E5,Silver Cloth +,74,-1
+742,0x02E6,Gold Cloth +,74,-1
+743,0x02E7,White Suffolk Cloth,75,-1
+744,0x02E8,Black Suffolk Cloth,75,-1
+745,0x02E9,Brown Suffolk Cloth,75,-1
+746,0x02EA,Red Suffolk Cloth,75,-1
+747,0x02EB,Yellow Suffolk Cloth,75,-1
+748,0x02EC,Green Suffolk Cloth,75,-1
+749,0x02ED,Blue Suffolk Cloth,75,-1
+750,0x02EE,White Suffolk Cloth +,75,-1
+751,0x02EF,Black Suffolk Cloth +,75,-1
+752,0x02F0,Brown Suffolk Cloth +,75,-1
+753,0x02F1,Red Suffolk Cloth +,75,-1
+754,0x02F2,Yellow Suffolk Cloth +,75,-1
+755,0x02F3,Green Suffolk Cloth +,75,-1
+756,0x02F4,Blue Suffolk Cloth +,75,-1
+757,0x02F5,Silver Suffolk Cloth +,75,-1
+758,0x02F6,Gold Suffolk Cloth +,75,-1
+759,0x02F7,White Alpaca Cloth,76,-1
+760,0x02F8,Black Alpaca Cloth,76,-1
+761,0x02F9,Red Alpaca Cloth,76,-1
+762,0x02FA,Yellow Alpaca Cloth,76,-1
+763,0x02FB,Green Alpaca Cloth,76,-1
+764,0x02FC,Blue Alpaca Cloth,76,-1
+765,0x02FD,White Alpaca Cloth +,76,-1
+766,0x02FE,Black Alpaca Cloth +,76,-1
+767,0x02FF,Red Alpaca Cloth +,76,-1
+768,0x0300,Yellow Alpaca Cloth +,76,-1
+769,0x0301,Green Alpaca Cloth +,76,-1
+770,0x0302,Blue Alpaca Cloth +,76,-1
+771,0x0303,Brown Alpaca Cloth,76,-1
+772,0x0304,Brown Alpaca Cloth +,76,-1
+773,0x0305,Black Llama Cloth,77,-1
+774,0x0306,Black Llama Cloth +,77,-1
+775,0x0307,Silver Llama Cloth +,77,-1
+776,0x0308,Gold Llama Cloth +,77,-1
+777,0x0309,White Rabbit Cloth,78,-1
+778,0x030A,Black Rabbit Cloth,78,-1
+779,0x030B,Brown Rabbit Cloth,78,-1
+780,0x030C,Red Rabbit Cloth,78,-1
+781,0x030D,Yellow Rabbit Cloth,78,-1
+782,0x030E,Green Rabbit Cloth,78,-1
+783,0x030F,Blue Rabbit Cloth,78,-1
+784,0x0310,White Rabbit Cloth +,78,-1
+785,0x0311,Black Rabbit Cloth +,78,-1
+786,0x0312,Brown Rabbit Cloth +,78,-1
+787,0x0313,Red Rabbit Cloth +,78,-1
+788,0x0314,Yellow Rabbit Cloth +,78,-1
+789,0x0315,Green Rabbit Cloth +,78,-1
+790,0x0316,Blue Rabbit Cloth +,78,-1
+791,0x0317,Silver Rabbit Cloth +,78,-1
+792,0x0318,Gold Rabbit Cloth +,78,-1
+793,0x0319,Gray Rabbit Cloth,78,-1
+794,0x031A,Gray Rabbit Cloth +,78,-1
+795,0x031B,White Cotton Cloth,68,-1
+796,0x031C,Black Cotton Cloth,68,-1
+797,0x031D,Brown Cotton Cloth,68,-1
+798,0x031E,Red Cotton Cloth,68,-1
+799,0x031F,Yellow Cotton Cloth,68,-1
+800,0x0320,Green Cotton Cloth,68,-1
+801,0x0321,Blue Cotton Cloth,68,-1
+802,0x0322,Silver Cotton Cloth,68,-1
+803,0x0323,Gold Cotton Cloth,68,-1
+804,0x0324,White Linen Cloth,69,-1
+805,0x0325,Black Linen Cloth,69,-1
+806,0x0326,Brown Linen Cloth,69,-1
+807,0x0327,Red Linen Cloth,69,-1
+808,0x0328,Yellow Linen Cloth,69,-1
+809,0x0329,Green Linen Cloth,69,-1
+810,0x032A,Blue Linen Cloth,69,-1
+811,0x032B,Silver Linen Cloth,69,-1
+812,0x032C,Gold Linen Cloth,69,-1
+813,0x032D,White Cotton Thread,68,-1
+814,0x032E,Black Cotton Thread,68,-1
+815,0x032F,Brown Cotton Thread,68,-1
+816,0x0330,Red Cotton Thread,68,-1
+817,0x0331,Yellow Cotton Thread,68,-1
+818,0x0332,Green Cotton Thread,68,-1
+819,0x0333,Blue Cotton Thread,68,-1
+820,0x0334,Silver Cotton Thread,68,-1
+821,0x0335,Gold Cotton Thread,68,-1
+822,0x0336,White Flax Thread,69,-1
+823,0x0337,Black Flax Thread,69,-1
+824,0x0338,Brown Flax Thread,69,-1
+825,0x0339,Red Flax Thread,69,-1
+826,0x033A,Yellow Flax Thread,69,-1
+827,0x033B,Green Flax Thread,69,-1
+828,0x033C,Blue Flax Thread,69,-1
+829,0x033D,Silver Flax Thread,69,-1
+830,0x033E,Gold Flax Thread,69,-1
+831,0x033F,Conger Eel,-1,15
+832,0x0340,Cherry Salmon,-1,15
+833,0x0341,Sweetfish,-1,15
+834,0x0342,Sardine,-1,15
+835,0x0343,Char,-1,15
+836,0x0344,Minnow,-1,15
+837,0x0345,Moray Eel,-1,15
+838,0x0346,Ray,-1,15
+839,0x0347,Pale Chub,-1,15
+840,0x0348,Sculpin,-1,15
+841,0x0349,Bonito,-1,15
+842,0x034A,Flounder,-1,15
+843,0x034B,Bullhead Catfish,-1,15
+844,0x034C,Grouper,-1,15
+845,0x034D,Carp,-1,15
+846,0x034E,Salmon,-1,15
+847,0x034F,Mackerel,-1,15
+848,0x0350,Needlefish,-1,15
+849,0x0351,Pike,-1,15
+850,0x0352,Crayfish,-1,15
+851,0x0353,Mahi Mahi,-1,15
+852,0x0354,Willowfish,-1,15
+853,0x0355,Icefish,-1,15
+854,0x0356,Pollock,-1,15
+855,0x0357,Sea Bass,-1,15
+856,0x0358,Sea Bream,-1,15
+857,0x0359,Black-tip Fusilier,-1,15
+858,0x035A,Beltfish,-1,15
+859,0x035B,Seahorse,-1,15
+860,0x035C,Loach,-1,15
+861,0x035D,Flying Fish,-1,15
+862,0x035E,Rainbow Trout,-1,15
+863,0x035F,Three-Lips,-1,15
+864,0x0360,Goby,-1,15
+865,0x0361,Starfish,-1,15
+866,0x0362,Sockeye Salmon,-1,15
+867,0x0363,Halibut,-1,15
+868,0x0364,Pufferfish,-1,15
+869,0x0365,Crucian Carp,-1,15
+870,0x0366,Black Bass,-1,15
+871,0x0367,Bluegill,-1,15
+872,0x0368,Whiptail,-1,15
+873,0x0369,Mullet,-1,15
+874,0x036A,White Bass,-1,15
+875,0x036B,Honmoroko,-1,15
+876,0x036C,Tuna,-1,15
+877,0x036D,Trout,-1,15
+878,0x036E,Ocean Sunfish,-1,15
+879,0x036F,Killifish,-1,15
+880,0x0370,Cherry Trout,-1,15
+881,0x0371,Snakehead,-1,15
+882,0x0372,Mackinaw,-1,15
+883,0x0373,Smelt,-1,15
+884,0x0374,Spear Squid,-1,15
+885,0x0375,Firefly Squid,-1,15
+886,0x0376,Octopus,-1,15
+887,0x0377,Red Freshwater Crab,-1,15
+888,0x0378,Blue Freshwater Crab,-1,15
+889,0x0379,Spiny Lobster,-1,15
+890,0x037A,Tiger Prawn,-1,15
+891,0x037B,Lake Prawn,-1,15
+892,0x037C,Freshwater Prawn,-1,15
+893,0x037D,Marsh Shrimp,-1,15
+894,0x037E,Steamer Clam,-1,15
+895,0x037F,Horned Turban,-1,15
+896,0x0380,Basket Clam,-1,15
+897,0x0381,Oriental Clam,-1,15
+898,0x0382,Scallop,-1,15
+899,0x0383,Sea Urchin,-1,15
+900,0x0384,Keiji Salmon,-1,15
+901,0x0385,Arowana,-1,15
+902,0x0386,Alligator Gar,-1,15
+903,0x0387,Huchen,-1,15
+904,0x0388,Catfish,-1,15
+905,0x0389,Monkfish,-1,15
+906,0x038A,Marlin,-1,15
+907,0x038B,Koi,-1,15
+908,0x038C,Sturgeon,-1,15
+909,0x038D,Softshell Turtle,-1,15
+910,0x038E,Mitten Crab,-1,15
+911,0x038F,Eel,-1,15
+912,0x0390,Red King Crab,-1,15
+913,0x0391,Giant Squid,-1,15
+914,0x0392,Pocket Calendar,-1,-1
+915,0x0393,Pendant,-1,-1
+916,0x0394,Wedding Ring,-1,-1
+917,0x0395,Comb,-1,-1
+918,0x0396,Blue Feather,-1,-1
+919,0x0397,Sparkly Fertilizer,-1,-1
+920,0x0398,Sugary Fertilizer,-1,-1
+921,0x0399,Juicy Fertilizer,-1,-1
+922,0x039A,Uniform Fertilizer,-1,-1
+923,0x039B,Propagating Fertilizer,-1,-1
+924,0x039C,Super Fertilizer,-1,-1
+925,0x039D,Mega-Sparkly Fertiliz.,-1,-1
+926,0x039E,Mega-Sugary Fertiliz.,-1,-1
+927,0x039F,Mega-Juicy Fertilizer,-1,-1
+928,0x03A0,Mega-Uniform Fert.,-1,-1
+929,0x03A1,Mega-Propag. Fertiliz.,-1,-1
+930,0x03A2,Medicine,-1,-1
+931,0x03A3,Fodder,-1,-1
+932,0x03A4,Spicy Fodder,-1,-1
+933,0x03A5,Sweet Fodder,-1,-1
+934,0x03A6,Deluxe Fodder,-1,-1
+935,0x03A7,Chicken Feed,-1,-1
+936,0x03A8,Spicy Chicken Feed,-1,-1
+937,0x03A9,Sweet Chicken Feed,-1,-1
+938,0x03AA,Deluxe Chicken Feed,-1,-1
+939,0x03AB,Rabbit Feed,-1,-1
+940,0x03AC,Spicy Rabbit Feed,-1,-1
+941,0x03AD,Sweet Rabbit Feed,-1,-1
+942,0x03AE,Deluxe Rabbit Feed,-1,-1
+943,0x03AF,Pet Food,-1,-1
+944,0x03B0,Soft Treat,-1,-1
+945,0x03B1,Fluffy Treat,-1,-1
+946,0x03B2,Velvety Treat,-1,-1
+947,0x03B3,Crispy Treat,-1,-1
+948,0x03B4,Chewy Treat,-1,-1
+949,0x03B5,Bait,-1,22
+950,0x03B6,Refined Bait,-1,22
+951,0x03B7,King Bait,-1,22
+952,0x03B8,Magic Bait,-1,22
+953,0x03B9,Fish Food,-1,-1
+954,0x03BA,Fish Trap,-1,-1
+955,0x03BB,Sap Bucket,-1,-1
+956,0x03BC,Dog Bone,-1,-1
+957,0x03BD,Cat Bell,-1,-1
+958,0x03BE,Curry Powder,-1,-1
+959,0x03BF,Seaweed,-1,-1
+960,0x03C0,Truffle,-1,-1
+961,0x03C1,Coffee Pack,-1,-1
+962,0x03C2,Pepper,-1,-1
+963,0x03C3,Ice,-1,-1
+964,0x03C4,Rock Salt,-1,-1
+965,0x03C5,Cinnamon,-1,16
+966,0x03C6,Mint,-1,16
+967,0x03C7,Chamomile,-1,16
+968,0x03C8,Lavender,-1,16
+969,0x03C9,Rosemary,-1,16
+970,0x03CA,Sage,-1,16
+971,0x03CB,Aloe,-1,16
+972,0x03CC,Basil,-1,16
+973,0x03CD,Bay Leaf,-1,16
+974,0x03CE,Bergamot,-1,16
+975,0x03CF,Thyme,-1,16
+976,0x03D0,Elli Leaves,-1,16
+977,0x03D1,Walnut,-1,16
+978,0x03D2,Chestnut,-1,16
+979,0x03D3,Blueberry,-1,16
+980,0x03D4,Ume Plum,-1,16
+981,0x03D5,Apricot,-1,16
+982,0x03D6,Ginger,-1,16
+983,0x03D7,Plum,-1,16
+984,0x03D8,Berry,-1,16
+985,0x03D9,Mugwort,-1,16
+986,0x03DA,Flowering Fern,-1,16
+987,0x03DB,Horsetail,-1,16
+988,0x03DC,Giant Butterbur,-1,16
+989,0x03DD,Avocado,-1,16
+990,0x03DE,Breadfruit,-1,16
+991,0x03DF,Vanilla,-1,16
+992,0x03E0,Caffeine Tonic,-1,-1
+993,0x03E1,Mighty Tonic,-1,-1
+994,0x03E2,Miracle Drink,-1,-1
+995,0x03E3,Angler's Luck,-1,-1
+996,0x03E4,Cat Essence,-1,-1
+997,0x03E5,Dog Essence,-1,-1
+998,0x03E6,Animal Magnetism,-1,-1
+999,0x03E7,Spring Sun,-1,-1
+1000,0x03E8,Summer Sun,-1,-1
+1001,0x03E9,Fall Sun,-1,-1
+1002,0x03EA,Winter Sun,-1,-1
+1003,0x03EB,Twig,-1,-1
+1004,0x03EC,Branch,-1,-1
+1005,0x03ED,Black Branch,-1,-1
+1006,0x03EE,Pine Branch,-1,-1
+1007,0x03EF,Cherry Branch,-1,-1
+1008,0x03F0,Maidenhair Branch,-1,-1
+1009,0x03F1,Bamboo,-1,10
+1010,0x03F2,Maple Branch,-1,10
+1011,0x03F3,Pebble,-1,-1
+1012,0x03F4,Rock,-1,-1
+1013,0x03F5,Black Rock,-1,-1
+1014,0x03F6,Small Lumber,-1,10
+1015,0x03F7,Lumber,-1,10
+1016,0x03F8,Black Lumber,-1,10
+1017,0x03F9,Small Stone,-1,11
+1018,0x03FA,Stone,-1,11
+1019,0x03FB,Black Stone,-1,11
+1020,0x03FC,Glittering Stone,-1,21
+1021,0x03FD,Copper,-1,21
+1022,0x03FE,Silver,-1,21
+1023,0x03FF,Gold,-1,21
+1024,0x0400,Scrap Ore,-1,21
+1025,0x0401,Brick,-1,21
+1026,0x0402,Glass Stone,-1,21
+1027,0x0403,Iron,-1,21
+1028,0x0404,Crystal,-1,21
+1029,0x0405,Ruby,-1,21
+1030,0x0406,Jade,-1,21
+1031,0x0407,Topaz,-1,21
+1032,0x0408,Moonstone,-1,21
+1033,0x0409,Diamond,-1,21
+1034,0x040A,Amethyst,-1,21
+1035,0x040B,Emerald,-1,21
+1036,0x040C,Agate,-1,21
+1037,0x040D,Peridot,-1,21
+1038,0x040E,Sand Rose,-1,21
+1039,0x040F,Fluorite,-1,21
+1040,0x0410,Adamantite,-1,21
+1041,0x0411,Orichalcum,-1,21
+1042,0x0412,Mithril,-1,21
+1043,0x0413,Platinum,-1,21
+1044,0x0414,Pink Diamond,-1,21
+1045,0x0415,Pearl,-1,12
+1046,0x0416,Yellow Pearl,-1,12
+1047,0x0417,Green Pearl,-1,12
+1048,0x0418,Red Pearl,-1,12
+1049,0x0419,Blue Pearl,-1,12
+1050,0x041A,Golden Pearl,-1,12
+1051,0x041B,Philosopher's Stone,-1,21
+1052,0x041C,Coin,-1,-1
+1053,0x041D,Old Coin,-1,-1
+1054,0x041E,Shiny Coin,-1,-1
+1055,0x041F,Old Clay Doll,-1,-1
+1056,0x0420,Ancient Fish Fossil,-1,-1
+1057,0x0421,Dry Soil,-1,-1
+1058,0x0422,Soft Soil,-1,-1
+1059,0x0423,Solid Soil,-1,-1
+1060,0x0424,Weeds,-1,-1
+1061,0x0425,Moondrop Flower,-1,16
+1062,0x0426,Blue Magic Flower,-1,16
+1063,0x0427,Red Magic Flower,-1,16
+1064,0x0428,Prickly Pear Cactus,-1,16
+1065,0x0429,Pink Lupine,-1,16
+1066,0x042A,Purple Lupine,-1,16
+1067,0x042B,Hydrangea,-1,16
+1068,0x042C,Red Spider Lily,-1,16
+1069,0x042D,Calla Lily,-1,16
+1070,0x042E,Ocean Primrose,-1,16
+1071,0x042F,Beach Vitex,-1,16
+1072,0x0430,Red Quill,-1,-1
+1073,0x0431,Green Quill,-1,-1
+1074,0x0432,Blue Quill,-1,-1
+1075,0x0433,Yellow Quill,-1,-1
+1076,0x0434,Orange Quill,-1,-1
+1077,0x0435,Purple Quill,-1,-1
+1078,0x0436,Snowball,-1,-1
+1079,0x0437,Coral,-1,-1
+1080,0x0438,Venus Comb Murex,-1,-1
+1081,0x0439,Triton's Trumpet,-1,-1
+1082,0x043A,Empty Can,-1,-1
+1083,0x043B,Fish Bone,-1,-1
+1084,0x043C,Boot,-1,-1
+1085,0x043D,Poison Mushroom,-1,-1
+1086,0x043E,Maiden's Crush,-1,24
+1087,0x043F,Tranquil Glade,-1,24
+1088,0x0440,Young Blooms,-1,24
+1089,0x0441,Dawn Sky,-1,24
+1090,0x0442,Little Adventure,-1,24
+1091,0x0443,Ephemeral Dream,-1,24
+1092,0x0444,Springtime March,-1,23
+1093,0x0445,Blazing Waltz,-1,23
+1094,0x0446,Moonlight Nocturne,-1,23
+1095,0x0447,Winter Bloom Rondo,-1,23
+1096,0x0448,Prairie Symphony,-1,23
+1097,0x0449,Lakeside Sonata,-1,23
+1098,0x044A,Paradise Rhapsody,-1,23
+1099,0x044B,Pure Love Serenade,-1,23
+1100,0x044C,Earth Concerto,-1,23
+1101,0x044D,Simple Wrapping Paper,-1,-1
+1102,0x044E,Cute Wrapping Paper,-1,-1
+1103,0x044F,Stylish Wrapping Paper,-1,-1
+1104,0x0450,Retro Wrapping Paper,-1,-1
+1105,0x0451,Cool Wrapping Paper,-1,-1
+1106,0x0452,Bold Wrapping Paper,-1,-1
+1107,0x0453,Plain Wrapping Cloth,-1,-1
+1108,0x0454,Cute Wrapping Cloth,-1,-1
+1109,0x0455,Luxury Wrapping Cloth,-1,-1
+1110,0x0456,Stylish Wrapping Cloth,-1,-1
+1111,0x0457,Classy Wrapping Cloth,-1,-1
+1112,0x0458,Colorful Wrapping Cloth,-1,-1
+1113,0x0459,Simple Wrapping Box,-1,-1
+1114,0x045A,Cute Wrapping Box,-1,-1
+1115,0x045B,Stylish Wrapping Box,-1,-1
+1116,0x045C,Retro Wrapping Box,-1,-1
+1117,0x045D,Cool Wrapping Box,-1,-1
+1118,0x045E,Popular Wrapping Box,-1,-1
+1119,0x045F,Flower Fair Wrapping,-1,-1
+1120,0x0460,Fest. of Longevity Cloth,-1,-1
+1121,0x0461,Fruit Fiesta Box,-1,-1
+1122,0x0462,Easter Egg 1,-1,-1
+1123,0x0463,Easter Egg 2,-1,-1
+1124,0x0464,Easter Egg 3,-1,-1
+1125,0x0465,Easter Egg 4,-1,-1
+1126,0x0466,Easter Egg 5,-1,-1
+1127,0x0467,Daruma 1,-1,-1
+1128,0x0468,Daruma 2,-1,-1
+1129,0x0469,Daruma 3,-1,-1
+1130,0x046A,Daruma 4,-1,-1
+1131,0x046B,Daruma 5,-1,-1
