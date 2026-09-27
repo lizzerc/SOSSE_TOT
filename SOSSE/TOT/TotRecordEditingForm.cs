@@ -106,7 +106,7 @@ namespace SOSSE.TOT
             new Record { Name = "Times mined", Offset = 0x2F040 },
             new Record { Name = "Offerings to Dessie", Offset = 0x24372, U16 = true },
             new Record { Name = "Offerings to Witchie", Offset = 0x243CA, U16 = true },
-            new Record { Name = "Offerings to Inari (likely)", Offset = 0x2378A, U16 = true },
+            new Record { Name = "Offerings to Inari", Offset = 0x2378A, U16 = true },
             new Record { Name = "Unknown", Offset = 0x2F014, ReadOnly = true },
             // 0 on every save seen so far: alpaca babies born or an unused slot.
             new Record { Name = "Babies born, unknown (alpacas?)", Offset = 0x2F20C, ReadOnly = true }
