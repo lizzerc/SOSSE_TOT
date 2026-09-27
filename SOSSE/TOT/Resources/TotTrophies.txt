@@ -86,14 +86,14 @@ Lumber-Harvesting Novice (Bronze)
 Lumber-Harvesting Veteran (Silver)
 Lumber-Harvesting Master (Silver)
 Lumber-Harvesting Legend (Gold)
-Gold-Crop Novice (Silver)
-Gold-Crop Veteran (Gold)
-Gold-Crop Master (Gold)
-Gold-Crop Legend (Rainbow)
-Giant-Crop Novice (Silver)	0x34F38	10
-Giant-Crop Veteran (Gold)	0x34F38	50
-Giant-Crop Master (Gold)	0x34F38	100
-Giant-Crop Legend (Rainbow)	0x34F38	200
+Gold-Crop Novice (Silver)	0x34F3C	10
+Gold-Crop Veteran (Gold)	0x34F3C	50
+Gold-Crop Master (Gold)	0x34F3C	100
+Gold-Crop Legend (Rainbow)	0x34F3C	200
+Giant-Crop Novice (Silver)	0x34F3C	10
+Giant-Crop Veteran (Gold)	0x34F3C	50
+Giant-Crop Master (Gold)	0x34F3C	100
+Giant-Crop Legend (Rainbow)	0x34F3C	200
 Kindred of the Cows (Bronze)	0x2F074	20
 Kindred of the Sheep (Bronze)	0x2F078	20
 Kindred of the Birds (Bronze)	0x2F07C	20
