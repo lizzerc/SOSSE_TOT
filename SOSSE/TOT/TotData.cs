@@ -27,6 +27,8 @@ namespace SOSSE.TOT
         public static string[] ClothesNameList;
         public static string[] HatNameList;
         public static string[] GlassesNameList;
+        // Wardrobe rows (clothes, then hats, then glasses) that are unused placeholders, even with the DLC.
+        private static readonly int[][] unusedWardrobeRanges = { new[] { 171, 173 }, new[] { 252, 257 }, new[] { 283, 292 } };
         public static string[] RecipeNameList;
         public static string[] TrophyNameList;
         // Save offset and target of the counter behind each trophy, where it is confirmed or likely; -1 otherwise.
@@ -46,6 +48,8 @@ namespace SOSSE.TOT
         public static bool[] TrophyCounterSlotIsU16;
         // Counter is how many fish have a record size of at least their largest size.
         public static bool[] TrophyCounterIsLargeFish;
+        // Counter is how many wardrobe rows in this range (first, last) are owned; null if not a wardrobe counter.
+        public static int[][] TrophyCounterWardrobe;
 
         // Per fish u16 lists, from Conger Eel: record size in cm, and times caught (likely).
         // Slots 82 and 83 aren't fish.
@@ -151,6 +155,14 @@ namespace SOSSE.TOT
             GlassesNameList = loadLines("TotGlasses.txt");
         }
 
+        /// <summary>
+        /// True if the wardrobe row is an unused placeholder
+        /// </summary>
+        public static bool IsUnusedWardrobe(int row)
+        {
+            return unusedWardrobeRanges.Any(range => row >= range[0] && row <= range[1]);
+        }
+
         public static void LoadRecipeData()
         {
             if (RecipeNameList == null)
@@ -164,7 +176,8 @@ namespace SOSSE.TOT
             // (total harvested of that type), or "sum:" or "count:" ("sum16:" or "count16:" for a u16 list) then a
             // list offset ":" and slots, slot
             // ranges ("75-99") or alternatives ("2|3", counted once) separated by commas (their sum or how many are
-            // non-zero), or "largefish" (fish at their largest size), a tab and the target, then
+            // non-zero), or "largefish" (fish at their largest size), or "wardrobe:" and a row range (owned items), a
+            // tab and the target, then
             // optionally a tab and "u16" or "likely".
             string[] lines = loadLines("TotTrophies.txt");
             TrophyNameList = new string[lines.Length];
@@ -177,6 +190,7 @@ namespace SOSSE.TOT
             TrophyCounterCountsNonZero = new bool[lines.Length];
             TrophyCounterIsLargeFish = new bool[lines.Length];
             TrophyCounterSlotIsU16 = new bool[lines.Length];
+            TrophyCounterWardrobe = new int[lines.Length][];
             for (int i = 0; i < lines.Length; i++)
             {
                 string[] fields = lines[i].Split('\t');
@@ -184,8 +198,10 @@ namespace SOSSE.TOT
                 bool isItemType = fields.Length > 2 && fields[1].StartsWith("type");
                 bool isSlots = fields.Length > 2 && (fields[1].StartsWith("sum") || fields[1].StartsWith("count"));
                 TrophyCounterIsLargeFish[i] = fields.Length > 2 && fields[1] == "largefish";
-                TrophyCounterOffset[i] = fields.Length > 2 && !isItemType && !isSlots && !TrophyCounterIsLargeFish[i]
-                    ? Convert.ToInt32(fields[1], 16) : -1;
+                if (fields.Length > 2 && fields[1].StartsWith("wardrobe:"))
+                    TrophyCounterWardrobe[i] = fields[1].Substring(9).Split('-').Select(Int32.Parse).ToArray();
+                TrophyCounterOffset[i] = fields.Length > 2 && !isItemType && !isSlots && !TrophyCounterIsLargeFish[i] &&
+                    TrophyCounterWardrobe[i] == null ? Convert.ToInt32(fields[1], 16) : -1;
                 if (isSlots)
                 {
                     string[] slots = fields[1].Split(':');

@@ -276,15 +276,15 @@ Novice Miner (Bronze)	0x2F040	100
 Veteran Miner (Bronze)	0x2F040	500
 Master Miner (Silver)	0x2F040	1000
 Legendary Miner (Gold)	0x2F040	2000
-Novice Clothing Collector (Bronze)
-Veteran Clothing Collector (Gold)
-Master Clothing Collector (Rainbow)
-Novice Headgear Collector (Bronze)
-Veteran Headgear Collector (Bronze)
-Master Headgear Collector (Gold)
-Novice Eyewear Collector (Bronze)
-Veteran Eyewear Collector (Bronze)
-Master Eyewear Collector (Gold)
+Novice Clothing Collector (Bronze)	wardrobe:0-173	50
+Veteran Clothing Collector (Gold)	wardrobe:0-173	100
+Master Clothing Collector (Rainbow)	wardrobe:0-173	171
+Novice Headgear Collector (Bronze)	wardrobe:174-257	10
+Veteran Headgear Collector (Bronze)	wardrobe:174-257	30
+Master Headgear Collector (Gold)	wardrobe:174-257	78
+Novice Eyewear Collector (Bronze)	wardrobe:258-292	5
+Veteran Eyewear Collector (Bronze)	wardrobe:258-292	10
+Master Eyewear Collector (Gold)	wardrobe:258-292	25
 Novice Forager (Bronze)	type16	50
 Veteran Forager (Bronze)	type16	100
 Master Forager (Silver)	type16	500
