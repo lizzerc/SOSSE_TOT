@@ -99,12 +99,12 @@ namespace SOSSE.TOT
         }
 
         /// <summary>
-        /// Number of owned items in wardrobe rows first to last, not counting unused placeholders
+        /// Number of owned items in wardrobe rows first to last that are in the in-game collection list
         /// </summary>
         public static int OwnedCount(int first, int last)
         {
             return Enumerable.Range(first, last - first + 1).Count(item =>
-                !TotData.IsUnusedWardrobe(item) && (getState(item) == owned || getState(item) == ownedTailor));
+                TotData.IsCollectedWardrobe(item) && (getState(item) == owned || getState(item) == ownedTailor));
         }
 
         private void ownAllButton_Click(object sender, EventArgs e)

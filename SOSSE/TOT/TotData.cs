@@ -29,6 +29,8 @@ namespace SOSSE.TOT
         public static string[] GlassesNameList;
         // Wardrobe rows (clothes, then hats, then glasses) that are unused placeholders, even with the DLC.
         private static readonly int[][] unusedWardrobeRanges = { new[] { 171, 173 }, new[] { 252, 257 }, new[] { 283, 292 } };
+        // Wedding outfits and headpieces: real items, but not in the in-game collection list.
+        private static readonly int[][] uncollectedWardrobeRanges = { new[] { 158, 163 }, new[] { 244, 247 } };
         public static string[] RecipeNameList;
         public static string[] TrophyNameList;
         // Save offset and target of the counter behind each trophy, where it is confirmed or likely; -1 otherwise.
@@ -161,6 +163,14 @@ namespace SOSSE.TOT
         public static bool IsUnusedWardrobe(int row)
         {
             return unusedWardrobeRanges.Any(range => row >= range[0] && row <= range[1]);
+        }
+
+        /// <summary>
+        /// True if the wardrobe row counts toward the collector trophies
+        /// </summary>
+        public static bool IsCollectedWardrobe(int row)
+        {
+            return !IsUnusedWardrobe(row) && !uncollectedWardrobeRanges.Any(range => row >= range[0] && row <= range[1]);
         }
 
         public static void LoadRecipeData()
