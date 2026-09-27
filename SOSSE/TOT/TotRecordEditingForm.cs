@@ -87,7 +87,7 @@ namespace SOSSE.TOT
             new Record { Name = "Rabbit babies born", Offset = 0x2F214 },
             new Record { Name = "Bird babies born", Offset = 0x2F218 },
             new Record { Name = "Mill uses", Offset = 0x2F018 },
-            new Record { Name = "Jam pot count (+10 per use)", Offset = 0x2F024 },
+            new Record { Name = "Jam pot jars made", Offset = 0x2F024 },
             new Record { Name = "Pickle jar uses", Offset = 0x2F028 },
             new Record { Name = "Wine maker uses", Offset = 0x2F02C },
             new Record { Name = "Fertilizer maker uses", Offset = 0x2F034 },
