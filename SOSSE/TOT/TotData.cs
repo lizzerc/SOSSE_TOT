@@ -53,7 +53,7 @@ namespace SOSSE.TOT
         public const int FirstFishItem = 831;
         public static string[] FishNameList;
         // Largest size each fish can have (from a save with every Large-Fish Collector trophy);
-        // 0 = no record size (last slot).
+        // 0 = no record size (last slot, not a fish in the game's list).
         public static int[] FishMaxSize;
         // Indexed by farm circle (PanelData) ID.
         public static string[] FarmCircleNameList;

@@ -66,18 +66,18 @@ Horned Turban	30
 Basket Clam	20
 Oriental Clam	30
 Scallop	30
-Sea Urchin	420
-Keiji Salmon	370
-Arowana	326
-Alligator Gar	400
-Huchen	143
-Catfish	380
-Monkfish	524
-Marlin	111
-Koi	553
+Fish slot 68 (name unverified)	420
+Fish slot 69 (name unverified)	370
+Fish slot 70 (name unverified)	326
+Fish slot 71 (name unverified)	400
+Fish slot 72 (name unverified)	143
+Fish slot 73 (name unverified)	380
+Fish slot 74 (name unverified)	524
+Fish slot 75 (name unverified)	111
+Fish slot 76 (name unverified)	553
 Fish slot 77 (name unverified)	60
 Fish slot 78 (name unverified)	60
 Fish slot 79 (name unverified)	350
 Fish slot 80 (name unverified)	130
-Fish slot 81 (name unverified)	550
-Fish slot 82 (name unverified)	0
+Giant Squid	550
+Unknown (not in fish list)	0
