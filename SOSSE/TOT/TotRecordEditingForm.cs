@@ -96,13 +96,13 @@ namespace SOSSE.TOT
             new Record { Name = "Westown restaurant meals", Offset = 0x2F090 },
             new Record { Name = "Teahouse meals", Offset = 0x2F094 },
             new Record { Name = "Seaside cafe meals", Offset = 0x2F098 },
-            new Record { Name = "Wild plants foraged (likely)", Offset = 0x2F044 },
+            new Record { Name = "Part-time jobs", Offset = 0x2F044 },
             new Record { Name = "Fish species caught (likely)", Offset = 0x2F0AC },
             new Record { Name = "Value shipped to Westown (likely)", Offset = 0x2F008 },
             new Record { Name = "Value shipped to Tsuyukusa (likely)", Offset = 0x2F00C },
             new Record { Name = "Value shipped to Lulukoko (likely)", Offset = 0x2F010 },
             new Record { Name = "Times mined", Offset = 0x2F040 },
-            new Record { Name = "Part-time jobs (likely)", Offset = 0x2F014 },
+            new Record { Name = "Unknown", Offset = 0x2F014, ReadOnly = true },
             // 0 on every save seen so far: alpaca babies born or an unused slot.
             new Record { Name = "Babies born, unknown (alpacas?)", Offset = 0x2F20C, ReadOnly = true }
         };
