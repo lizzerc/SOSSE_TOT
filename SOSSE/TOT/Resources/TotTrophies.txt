@@ -226,10 +226,10 @@ Novice Feed Maker (Bronze)	0x2F038	50
 Veteran Feed Maker (Bronze)	0x2F038	100
 Master Feed Maker (Silver)	0x2F038	500
 Legendary Feed Maker (Gold)	0x2F038	1000
-On the Road to Riches (Bronze)
-Fiscally Fearsome (Silver)
-My First Million (Gold)
-Multi-Millionaire (Rainbow)
+On the Road to Riches (Bronze)	0x88	50000
+Fiscally Fearsome (Silver)	0x88	100000
+My First Million (Gold)	0x88	500000
+Multi-Millionaire (Rainbow)	0x88	1000000
 Amateur Chef (Bronze)	0x275BC	1
 Fledgling Chef (Bronze)	0x275BC	10
 Short-Order Chef (Bronze)	0x275BC	100
