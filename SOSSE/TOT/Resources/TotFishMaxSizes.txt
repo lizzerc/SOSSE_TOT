@@ -75,9 +75,9 @@ Catfish	380
 Monkfish	524
 Marlin	111
 Koi	553
-Sturgeon	60
-Softshell Turtle	60
-Mitten Crab	350
-Eel	130
-Red King Crab	550
-Giant Squid	0
+Fish slot 77 (name unverified)	60
+Fish slot 78 (name unverified)	60
+Fish slot 79 (name unverified)	350
+Fish slot 80 (name unverified)	130
+Fish slot 81 (name unverified)	550
+Fish slot 82 (name unverified)	0
