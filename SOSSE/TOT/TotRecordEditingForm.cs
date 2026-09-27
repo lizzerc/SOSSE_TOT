@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace SOSSE.TOT
 {
     /// <summary>
-    /// Records screens: festival and activity counters, count shipped per town, times fished, harvest details
+    /// Records screens: festival and activity counters, count shipped per town, times fished, fish sizes, harvest details
     /// and per-item harvest/produce counts (all u32).
     /// </summary>
     public partial class TotRecordEditingForm : Form
@@ -164,6 +164,7 @@ namespace SOSSE.TOT
             return sum;
         }
         private Record[] produceRecords;
+        private DataGridView fishDataGridView;
 
         public TotRecordEditingForm()
         {
@@ -194,6 +195,7 @@ namespace SOSSE.TOT
             addTab("Festivals", festivalRecords, 180);
             addTab("Count Shipped", shippingRecords, 180);
             addTab("Fishing", fishingRecords, 180);
+            addFishTab();
             addTab("Counters", counterRecords, 260);
             addTab("Harvest Details", harvestDetailRecords, 180);
             addTab("Harvest / Produce", produceRecords, 180);
@@ -234,6 +236,34 @@ namespace SOSSE.TOT
 
             TabPage tab = new TabPage(title);
             tab.Controls.Add(dataGridView);
+            recordTabControl.TabPages.Add(tab);
+        }
+
+        // Per fish: times caught (not confirmed, so read-only) and record size in cm (u16 each).
+        private void addFishTab()
+        {
+            TotData.LoadFishData();
+            fishDataGridView = new DataGridView();
+            fishDataGridView.Dock = DockStyle.Fill;
+            fishDataGridView.AllowUserToAddRows = false;
+            fishDataGridView.AllowUserToDeleteRows = false;
+            fishDataGridView.AllowUserToResizeRows = false;
+            fishDataGridView.RowHeadersVisible = false;
+            fishDataGridView.EditMode = DataGridViewEditMode.EditOnEnter;
+            fishDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TotGrid.AddTextColumn(fishDataGridView, "Fish", 150, true);
+            DataGridViewTextBoxColumn caughtColumn = TotGrid.AddTextColumn(fishDataGridView, "Caught (likely)", 90, true);
+            caughtColumn.DefaultCellStyle.BackColor = Color.LightGray;
+            TotGrid.AddTextColumn(fishDataGridView, "Record size (cm)", 100, false);
+            for (int i = 0; i < TotData.FishNameList.Length; i++)
+                fishDataGridView.Rows.Add(TotData.FishNameList[i],
+                    BitConverter.ToUInt16(TotSave.SaveData, TotData.FishCaughtOffset + 2 * i),
+                    BitConverter.ToUInt16(TotSave.SaveData, TotData.FishSizeOffset + 2 * i));
+            fishDataGridView.CellValidating += (sender, e) =>
+                TotGrid.ValidateRange(fishDataGridView, e, 2, 0, UInt16.MaxValue);
+
+            TabPage tab = new TabPage("Fish");
+            tab.Controls.Add(fishDataGridView);
             recordTabControl.TabPages.Add(tab);
         }
 
@@ -296,7 +326,8 @@ namespace SOSSE.TOT
             {
                 DataGridView dataGridView = (DataGridView)tab.Controls[0];
                 dataGridView.EndEdit();
-                Record[] records = (Record[])dataGridView.Tag;
+                Record[] records = dataGridView.Tag as Record[];
+                if (records == null) continue;
                 for (int i = 0; i < records.Length; i++)
                 {
                     if (records[i].Locked) continue;
@@ -311,6 +342,14 @@ namespace SOSSE.TOT
                     else if (value != BitConverter.ToUInt32(TotSave.SaveData, records[i].Offset))
                         Array.Copy(BitConverter.GetBytes(value), 0, TotSave.SaveData, records[i].Offset, 4);
                 }
+            }
+            for (int i = 0; i < fishDataGridView.Rows.Count; i++)
+            {
+                ushort size;
+                int offset = TotData.FishSizeOffset + 2 * i;
+                if (UInt16.TryParse(Convert.ToString(fishDataGridView.Rows[i].Cells[2].Value), out size) &&
+                    size != BitConverter.ToUInt16(TotSave.SaveData, offset))
+                    Array.Copy(BitConverter.GetBytes(size), 0, TotSave.SaveData, offset, 2);
             }
         }
 

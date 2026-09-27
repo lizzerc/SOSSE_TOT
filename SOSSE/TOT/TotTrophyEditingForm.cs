@@ -48,6 +48,8 @@ namespace SOSSE.TOT
             int itemType = TotData.TrophyCounterItemType[trophy];
             if (itemType >= 0)
                 return TotRecordEditingForm.HarvestedOfType(itemType) + " / " + TotData.TrophyCounterTarget[trophy];
+            if (TotData.TrophyCounterIsLargeFish[trophy])
+                return TotData.LargeFishCount() + " / " + TotData.TrophyCounterTarget[trophy] + " (likely)";
             if (TotData.TrophyCounterSlots[trophy] != null)
             {
                 ulong sum = 0;

@@ -266,9 +266,9 @@ Fisher King (Gold)	0x2D9C8	3000
 Novice Fish Collector (Bronze)	0x2F0AC	20
 Veteran Fish Collector (Silver)	0x2F0AC	50
 Master Fish Collector (Gold)
-Novice Large-Fish Collector (Silver)
-Veteran Large-Fish Collector (Gold)
-Master Large-Fish Collector (Rainbow)
+Novice Large-Fish Collector (Silver)	largefish	20
+Veteran Large-Fish Collector (Gold)	largefish	50
+Master Large-Fish Collector (Rainbow)	largefish	82
 Novice Ore Collector (Bronze)
 Veteran Ore Collector (Silver)
 Master Ore Collector (Gold)
