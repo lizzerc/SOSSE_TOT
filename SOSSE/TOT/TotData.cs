@@ -47,13 +47,14 @@ namespace SOSSE.TOT
         // Counter is how many fish have a record size of at least their largest size.
         public static bool[] TrophyCounterIsLargeFish;
 
-        // Per fish u16 lists, in item order from Conger Eel: record size in cm, and times caught (likely).
+        // Per fish u16 lists, mostly in item order from Conger Eel: record size in cm, and times caught (likely).
+        // Slots 82 and 83 aren't fish.
         public const int FishSizeOffset = 0x2D9CC;
         public const int FishCaughtOffset = 0x2DA90;
         public const int FirstFishItem = 831;
         public static string[] FishNameList;
         // Largest size each fish can have (from a save with every Large-Fish Collector trophy);
-        // 0 = no record size (Sea Urchin, likely).
+        // -1 = the slot isn't a fish.
         public static int[] FishMaxSize;
         // Indexed by farm circle (PanelData) ID.
         public static string[] FarmCircleNameList;

@@ -257,12 +257,15 @@ namespace SOSSE.TOT
             TotGrid.AddTextColumn(fishDataGridView, "Record size (cm)", 100, false);
             for (int i = 0; i < TotData.FishNameList.Length; i++)
             {
-                bool sizeKnown = TotData.FishMaxSize[i] > 0;
                 int row = fishDataGridView.Rows.Add(TotData.FishNameList[i],
                     BitConverter.ToUInt16(TotSave.SaveData, TotData.FishCaughtOffset + 2 * i),
-                    sizeKnown ? (object)BitConverter.ToUInt16(TotSave.SaveData, TotData.FishSizeOffset + 2 * i) : "");
-                if (!sizeKnown)
+                    BitConverter.ToUInt16(TotSave.SaveData, TotData.FishSizeOffset + 2 * i));
+                // Slots that aren't fish are kept (rows match slots) but hidden and never saved.
+                if (TotData.FishMaxSize[i] <= 0)
+                {
                     TotGrid.LockRow(fishDataGridView.Rows[row]);
+                    fishDataGridView.Rows[row].Visible = false;
+                }
             }
             fishDataGridView.CellValidating += (sender, e) =>
                 TotGrid.ValidateRange(fishDataGridView, e, 2, 0, UInt16.MaxValue);
