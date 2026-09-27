@@ -101,6 +101,8 @@ namespace SOSSE.TOT
             new Record { Name = "Value shipped to Westown (likely)", Offset = 0x2F008 },
             new Record { Name = "Value shipped to Tsuyukusa (likely)", Offset = 0x2F00C },
             new Record { Name = "Value shipped to Lulukoko (likely)", Offset = 0x2F010 },
+            new Record { Name = "Times mined", Offset = 0x2F040 },
+            new Record { Name = "Part-time jobs (likely)", Offset = 0x2F014 },
             // 0 on every save seen so far: alpaca babies born or an unused slot.
             new Record { Name = "Babies born, unknown (alpacas?)", Offset = 0x2F20C, ReadOnly = true }
         };
