@@ -86,10 +86,10 @@ Lumber-Harvesting Novice (Bronze)
 Lumber-Harvesting Veteran (Silver)
 Lumber-Harvesting Master (Silver)
 Lumber-Harvesting Legend (Gold)
-Gold-Crop Novice (Silver)	0x34F3C	10
-Gold-Crop Veteran (Gold)	0x34F3C	50
-Gold-Crop Master (Gold)	0x34F3C	100
-Gold-Crop Legend (Rainbow)	0x34F3C	200
+Gold-Crop Novice (Silver)
+Gold-Crop Veteran (Gold)
+Gold-Crop Master (Gold)
+Gold-Crop Legend (Rainbow)
 Giant-Crop Novice (Silver)	0x34F3C	10
 Giant-Crop Veteran (Gold)	0x34F3C	50
 Giant-Crop Master (Gold)	0x34F3C	100
