@@ -36,6 +36,9 @@ namespace SOSSE.TOT
         public static bool[] TrophyCounterIsU16;
         // Item type whose total harvest count is shown as the counter of a trophy, or -1. Display only.
         public static int[] TrophyCounterItemType;
+        // Start offset and length of a u32 list whose sum is shown as the counter of a trophy, or -1. Display only.
+        public static int[] TrophyCounterSumOffset;
+        public static int[] TrophyCounterSumCount;
         // Indexed by farm circle (PanelData) ID.
         public static string[] FarmCircleNameList;
         // Farm circles in the circle shop order, used by the times crafted list.
@@ -140,20 +143,27 @@ namespace SOSSE.TOT
         public static void LoadTrophyData()
         {
             if (TrophyNameList != null) return;
-            // Each line: name, then optionally a tab, the counter offset (hex) or "type" and an item type
-            // (total harvested of that type), a tab and the target, then optionally a tab and "u16".
+            // Each line: name, then optionally a tab, the counter offset (hex), "type" and an item type
+            // (total harvested of that type) or "sum:" offset ":" count (sum of a u32 list), a tab and
+            // the target, then optionally a tab and "u16".
             string[] lines = loadLines("TotTrophies.txt");
             TrophyNameList = new string[lines.Length];
             TrophyCounterOffset = new int[lines.Length];
             TrophyCounterTarget = new int[lines.Length];
             TrophyCounterItemType = new int[lines.Length];
             TrophyCounterIsU16 = new bool[lines.Length];
+            TrophyCounterSumOffset = new int[lines.Length];
+            TrophyCounterSumCount = new int[lines.Length];
             for (int i = 0; i < lines.Length; i++)
             {
                 string[] fields = lines[i].Split('\t');
                 TrophyNameList[i] = fields[0];
                 bool isItemType = fields.Length > 2 && fields[1].StartsWith("type");
-                TrophyCounterOffset[i] = fields.Length > 2 && !isItemType ? Convert.ToInt32(fields[1], 16) : -1;
+                bool isSum = fields.Length > 2 && fields[1].StartsWith("sum:");
+                TrophyCounterOffset[i] = fields.Length > 2 && !isItemType && !isSum ? Convert.ToInt32(fields[1], 16) : -1;
+                string[] sum = isSum ? fields[1].Split(':') : null;
+                TrophyCounterSumOffset[i] = isSum ? Convert.ToInt32(sum[1], 16) : -1;
+                TrophyCounterSumCount[i] = isSum ? Int32.Parse(sum[2]) : 0;
                 TrophyCounterItemType[i] = isItemType ? Int32.Parse(fields[1].Substring(4)) : -1;
                 TrophyCounterTarget[i] = fields.Length > 2 ? Int32.Parse(fields[2]) : -1;
                 TrophyCounterIsU16[i] = fields.Length > 3 && fields[3] == "u16";
