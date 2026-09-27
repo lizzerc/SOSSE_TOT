@@ -137,6 +137,25 @@ namespace SOSSE.TOT
             new HarvestCategory { Name = "Other", Types = new int[0] }
         };
         private Record[] harvestDetailRecords;
+        private const int wildPlantType = 16;
+
+        private static int[] itemOffsetsOfType(int itemType)
+        {
+            return Enumerable.Range(0, TotData.ItemNameList.Length).Where(i => TotData.ItemType[i] == itemType)
+                .Select(i => produceCountOffset + 4 * i).ToArray();
+        }
+
+        /// <summary>
+        /// Total harvest count of all items of a type
+        /// </summary>
+        public static ulong HarvestedOfType(int itemType)
+        {
+            TotData.LoadItemData();
+            ulong sum = 0;
+            foreach (int offset in itemOffsetsOfType(itemType))
+                sum += BitConverter.ToUInt32(TotSave.SaveData, offset);
+            return sum;
+        }
         private Record[] produceRecords;
 
         public TotRecordEditingForm()
@@ -161,6 +180,9 @@ namespace SOSSE.TOT
             }
             harvestDetailRecords = harvestCategories.Select((c, i) =>
                 new Record { Name = c.Name, SumOf = categoryOffsets[i].ToArray() }).ToArray();
+            // Likely what the Forager trophies count: every wild plant, including those in other boxes above.
+            harvestDetailRecords = harvestDetailRecords.Concat(new[] {
+                new Record { Name = "Wild plants (likely)", SumOf = itemOffsetsOfType(wildPlantType) } }).ToArray();
 
             addTab("Festivals", festivalRecords, 180);
             addTab("Count Shipped", shippingRecords, 180);

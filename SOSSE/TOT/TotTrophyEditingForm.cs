@@ -45,6 +45,9 @@ namespace SOSSE.TOT
         private static string counterText(int trophy)
         {
             int offset = TotData.TrophyCounterOffset[trophy];
+            int itemType = TotData.TrophyCounterItemType[trophy];
+            if (itemType >= 0)
+                return TotRecordEditingForm.HarvestedOfType(itemType) + " / " + TotData.TrophyCounterTarget[trophy];
             if (offset < 0) return "";
             return BitConverter.ToUInt32(TotSave.SaveData, offset) + " / " + TotData.TrophyCounterTarget[trophy];
         }

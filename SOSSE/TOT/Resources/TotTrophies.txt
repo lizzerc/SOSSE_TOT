@@ -285,10 +285,10 @@ Master Headgear Collector (Gold)
 Novice Eyewear Collector (Bronze)
 Veteran Eyewear Collector (Bronze)
 Master Eyewear Collector (Gold)
-Novice Forager (Bronze)
-Veteran Forager (Bronze)
-Master Forager (Silver)
-Legendary Forager (Gold)
+Novice Forager (Bronze)	type16	50
+Veteran Forager (Bronze)	type16	100
+Master Forager (Silver)	type16	500
+Legendary Forager (Gold)	type16	1000
 Entry-Level Employee (Bronze)	0x2F044	1
 Job Intern (Bronze)	0x2F044	10
 Job Trainee (Bronze)	0x2F044	50
