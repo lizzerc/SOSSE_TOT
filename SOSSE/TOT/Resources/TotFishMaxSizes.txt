@@ -66,19 +66,19 @@ Horned Turban	30
 Basket Clam	20
 Oriental Clam	30
 Scallop	30
-Fish slot 68 (name unverified)	420
-Fish slot 69 (name unverified)	370
-Fish slot 70 (name unverified)	326
-Fish slot 71 (name unverified)	400
-Fish slot 72 (name unverified)	143
-Fish slot 73 (name unverified)	380
-Fish slot 74 (name unverified)	524
-Fish slot 75 (name unverified)	111
-Fish slot 76 (name unverified)	553
-Fish slot 77 (name unverified)	60
-Fish slot 78 (name unverified)	60
-Fish slot 79 (name unverified)	350
-Fish slot 80 (name unverified)	130
+Keiji Salmon	420
+Arowana	370
+Alligator Gar	326
+Huchen	400
+Catfish	143
+Monkfish	380
+Marlin	524
+Koi	111
+Sturgeon	553
+Softshell Turtle	60
+Mitten Crab	60
+Eel	350
+Red King Crab	130
 Giant Squid	550
 Not a fish (slot 82)	-1
 Not a fish (slot 83)	-1

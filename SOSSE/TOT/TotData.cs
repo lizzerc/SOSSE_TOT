@@ -47,7 +47,7 @@ namespace SOSSE.TOT
         // Counter is how many fish have a record size of at least their largest size.
         public static bool[] TrophyCounterIsLargeFish;
 
-        // Per fish u16 lists, mostly in item order from Conger Eel: record size in cm, and times caught (likely).
+        // Per fish u16 lists, from Conger Eel: record size in cm, and times caught (likely).
         // Slots 82 and 83 aren't fish.
         public const int FishSizeOffset = 0x2D9CC;
         public const int FishCaughtOffset = 0x2DA90;
