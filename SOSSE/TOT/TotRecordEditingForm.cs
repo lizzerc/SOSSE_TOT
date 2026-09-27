@@ -180,9 +180,9 @@ namespace SOSSE.TOT
             }
             harvestDetailRecords = harvestCategories.Select((c, i) =>
                 new Record { Name = c.Name, SumOf = categoryOffsets[i].ToArray() }).ToArray();
-            // Likely what the Forager trophies count: every wild plant, including those in other boxes above.
+            // What the Forager trophies count: every wild plant, including those in other boxes above.
             harvestDetailRecords = harvestDetailRecords.Concat(new[] {
-                new Record { Name = "Wild plants (likely)", SumOf = itemOffsetsOfType(wildPlantType) } }).ToArray();
+                new Record { Name = "Wild plants", SumOf = itemOffsetsOfType(wildPlantType) } }).ToArray();
 
             addTab("Festivals", festivalRecords, 180);
             addTab("Count Shipped", shippingRecords, 180);
