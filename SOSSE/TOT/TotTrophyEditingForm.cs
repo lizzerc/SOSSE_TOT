@@ -55,7 +55,8 @@ namespace SOSSE.TOT
                 ulong sum = 0;
                 foreach (int[] group in TotData.TrophyCounterSlots[trophy])
                 {
-                    uint[] values = group.Select(slotOffset => BitConverter.ToUInt32(TotSave.SaveData, slotOffset)).ToArray();
+                    uint[] values = group.Select(slotOffset => TotData.TrophyCounterSlotIsU16[trophy]
+                        ? BitConverter.ToUInt16(TotSave.SaveData, slotOffset) : BitConverter.ToUInt32(TotSave.SaveData, slotOffset)).ToArray();
                     if (TotData.TrophyCounterCountsNonZero[trophy])
                         sum += values.Any(value => value > 0) ? 1u : 0u;
                     else

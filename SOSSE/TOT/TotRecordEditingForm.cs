@@ -99,7 +99,7 @@ namespace SOSSE.TOT
             new Record { Name = "Teahouse meals", Offset = 0x2F094 },
             new Record { Name = "Seaside cafe meals", Offset = 0x2F098 },
             new Record { Name = "Part-time jobs", Offset = 0x2F044 },
-            new Record { Name = "Fish species caught (likely)", Offset = 0x2F0AC },
+            new Record { Name = "Fish counter (unknown use)", Offset = 0x2F0AC, ReadOnly = true },
             new Record { Name = "Value shipped to Westown", Offset = 0x2F008 },
             new Record { Name = "Value shipped to Tsuyukusa", Offset = 0x2F00C },
             new Record { Name = "Value shipped to Lulukoko", Offset = 0x2F010 },
@@ -256,9 +256,14 @@ namespace SOSSE.TOT
             caughtColumn.DefaultCellStyle.BackColor = Color.LightGray;
             TotGrid.AddTextColumn(fishDataGridView, "Record size (cm)", 100, false);
             for (int i = 0; i < TotData.FishNameList.Length; i++)
-                fishDataGridView.Rows.Add(TotData.FishNameList[i],
+            {
+                bool sizeKnown = TotData.FishMaxSize[i] > 0;
+                int row = fishDataGridView.Rows.Add(TotData.FishNameList[i],
                     BitConverter.ToUInt16(TotSave.SaveData, TotData.FishCaughtOffset + 2 * i),
-                    BitConverter.ToUInt16(TotSave.SaveData, TotData.FishSizeOffset + 2 * i));
+                    sizeKnown ? (object)BitConverter.ToUInt16(TotSave.SaveData, TotData.FishSizeOffset + 2 * i) : "");
+                if (!sizeKnown)
+                    TotGrid.LockRow(fishDataGridView.Rows[row]);
+            }
             fishDataGridView.CellValidating += (sender, e) =>
                 TotGrid.ValidateRange(fishDataGridView, e, 2, 0, UInt16.MaxValue);
 
@@ -347,7 +352,7 @@ namespace SOSSE.TOT
             {
                 ushort size;
                 int offset = TotData.FishSizeOffset + 2 * i;
-                if (UInt16.TryParse(Convert.ToString(fishDataGridView.Rows[i].Cells[2].Value), out size) &&
+                if (TotData.FishMaxSize[i] > 0 && UInt16.TryParse(Convert.ToString(fishDataGridView.Rows[i].Cells[2].Value), out size) &&
                     size != BitConverter.ToUInt16(TotSave.SaveData, offset))
                     Array.Copy(BitConverter.GetBytes(size), 0, TotSave.SaveData, offset, 2);
             }

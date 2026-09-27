@@ -42,6 +42,8 @@ namespace SOSSE.TOT
         // trophy, or null. Display only.
         public static int[][][] TrophyCounterSlots;
         public static bool[] TrophyCounterCountsNonZero;
+        // The slot list holds u16 values instead of u32.
+        public static bool[] TrophyCounterSlotIsU16;
         // Counter is how many fish have a record size of at least their largest size.
         public static bool[] TrophyCounterIsLargeFish;
 
@@ -50,7 +52,8 @@ namespace SOSSE.TOT
         public const int FishCaughtOffset = 0x2DA90;
         public const int FirstFishItem = 831;
         public static string[] FishNameList;
-        // Largest size each fish can have (from a save with every Large-Fish Collector trophy); 0 = not counted.
+        // Largest size each fish can have (from a save with every Large-Fish Collector trophy);
+        // 0 = its record size isn't in the size list (Giant Squid).
         public static int[] FishMaxSize;
         // Indexed by farm circle (PanelData) ID.
         public static string[] FarmCircleNameList;
@@ -157,7 +160,8 @@ namespace SOSSE.TOT
         {
             if (TrophyNameList != null) return;
             // Each line: name, then optionally a tab, the counter offset (hex), "type" and an item type
-            // (total harvested of that type), or "sum:" or "count:" then a u32 list offset ":" and slots, slot
+            // (total harvested of that type), or "sum:" or "count:" ("sum16:" or "count16:" for a u16 list) then a
+            // list offset ":" and slots, slot
             // ranges ("75-99") or alternatives ("2|3", counted once) separated by commas (their sum or how many are
             // non-zero), or "largefish" (fish at their largest size), a tab and the target, then
             // optionally a tab and "u16" or "likely".
@@ -171,12 +175,13 @@ namespace SOSSE.TOT
             TrophyCounterSlots = new int[lines.Length][][];
             TrophyCounterCountsNonZero = new bool[lines.Length];
             TrophyCounterIsLargeFish = new bool[lines.Length];
+            TrophyCounterSlotIsU16 = new bool[lines.Length];
             for (int i = 0; i < lines.Length; i++)
             {
                 string[] fields = lines[i].Split('\t');
                 TrophyNameList[i] = fields[0];
                 bool isItemType = fields.Length > 2 && fields[1].StartsWith("type");
-                bool isSlots = fields.Length > 2 && (fields[1].StartsWith("sum:") || fields[1].StartsWith("count:"));
+                bool isSlots = fields.Length > 2 && (fields[1].StartsWith("sum") || fields[1].StartsWith("count"));
                 TrophyCounterIsLargeFish[i] = fields.Length > 2 && fields[1] == "largefish";
                 TrophyCounterOffset[i] = fields.Length > 2 && !isItemType && !isSlots && !TrophyCounterIsLargeFish[i]
                     ? Convert.ToInt32(fields[1], 16) : -1;
@@ -184,16 +189,18 @@ namespace SOSSE.TOT
                 {
                     string[] slots = fields[1].Split(':');
                     int listOffset = Convert.ToInt32(slots[1], 16);
+                    TrophyCounterSlotIsU16[i] = slots[0].EndsWith("16");
+                    int slotSize = TrophyCounterSlotIsU16[i] ? 2 : 4;
                     TrophyCounterSlots[i] = slots[2].Split(',').SelectMany(item =>
                     {
                         if (item.Contains('|'))
-                            return new[] { item.Split('|').Select(slot => listOffset + 4 * Int32.Parse(slot)).ToArray() };
+                            return new[] { item.Split('|').Select(slot => listOffset + slotSize * Int32.Parse(slot)).ToArray() };
                         string[] ends = item.Split('-');
                         int first = Int32.Parse(ends[0]);
                         int last = Int32.Parse(ends[ends.Length - 1]);
-                        return Enumerable.Range(first, last - first + 1).Select(slot => new[] { listOffset + 4 * slot });
+                        return Enumerable.Range(first, last - first + 1).Select(slot => new[] { listOffset + slotSize * slot });
                     }).ToArray();
-                    TrophyCounterCountsNonZero[i] = slots[0] == "count";
+                    TrophyCounterCountsNonZero[i] = slots[0].StartsWith("count");
                 }
                 TrophyCounterItemType[i] = isItemType ? Int32.Parse(fields[1].Substring(4)) : -1;
                 TrophyCounterTarget[i] = fields.Length > 2 ? Int32.Parse(fields[2]) : -1;
