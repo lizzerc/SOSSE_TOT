@@ -12,10 +12,10 @@ Good Neighbor to Lulukoko (Bronze)
 Lulukoko's Idol (Silver)
 Most Eligible Farmer (Silver)
 Everyone's Favorite (Silver)
-Novice Greeter (Bronze)
-Veteran Greeter (Bronze)
-Master Greeter (Silver)
-Legendary Greeter (Silver)
+Novice Greeter (Bronze)	0x2F014	100
+Veteran Greeter (Bronze)	0x2F014	300
+Master Greeter (Silver)	0x2F014	500
+Legendary Greeter (Silver)	0x2F014	1000
 Dessie's Supporter (Gold)	0x24372	300	u16
 Inari's Devotee (Gold)	0x2378A	300	u16
 Witchie's Minion (Gold)	0x243CA	300	u16

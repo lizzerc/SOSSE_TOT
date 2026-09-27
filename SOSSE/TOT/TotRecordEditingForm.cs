@@ -110,7 +110,7 @@ namespace SOSSE.TOT
             new Record { Name = "Vine crops harvested (likely)", Offset = 0x34F40 },
             new Record { Name = "Giant crop counter 1 (unknown use)", Offset = 0x34F38, ReadOnly = true },
             new Record { Name = "Giant crop counter 2 (unknown use)", Offset = 0x34F3C, ReadOnly = true },
-            new Record { Name = "Unknown", Offset = 0x2F014, ReadOnly = true },
+            new Record { Name = "Villagers greeted", Offset = 0x2F014 },
             new Record { Name = "Alpaca babies born", Offset = 0x2F20C }
         };
 
