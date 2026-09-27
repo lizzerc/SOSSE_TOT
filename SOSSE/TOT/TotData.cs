@@ -34,6 +34,8 @@ namespace SOSSE.TOT
         public static int[] TrophyCounterTarget;
         // Whether the counter of a trophy is a u16 instead of a u32.
         public static bool[] TrophyCounterIsU16;
+        // Whether the counter of a trophy is only likely, and shown as such.
+        public static bool[] TrophyCounterIsLikely;
         // Item type whose total harvest count is shown as the counter of a trophy, or -1. Display only.
         public static int[] TrophyCounterItemType;
         // Offsets of u32s whose sum (or count of non-zero values) is shown as the counter of a trophy, or null.
@@ -147,13 +149,14 @@ namespace SOSSE.TOT
             // Each line: name, then optionally a tab, the counter offset (hex), "type" and an item type
             // (total harvested of that type), or "sum:" or "count:" then a u32 list offset ":" and slots or
             // slot ranges ("75-99") separated by commas (their sum or how many are non-zero), a tab and the target, then
-            // optionally a tab and "u16".
+            // optionally a tab and "u16" or "likely".
             string[] lines = loadLines("TotTrophies.txt");
             TrophyNameList = new string[lines.Length];
             TrophyCounterOffset = new int[lines.Length];
             TrophyCounterTarget = new int[lines.Length];
             TrophyCounterItemType = new int[lines.Length];
             TrophyCounterIsU16 = new bool[lines.Length];
+            TrophyCounterIsLikely = new bool[lines.Length];
             TrophyCounterSlots = new int[lines.Length][];
             TrophyCounterCountsNonZero = new bool[lines.Length];
             for (int i = 0; i < lines.Length; i++)
@@ -179,6 +182,7 @@ namespace SOSSE.TOT
                 TrophyCounterItemType[i] = isItemType ? Int32.Parse(fields[1].Substring(4)) : -1;
                 TrophyCounterTarget[i] = fields.Length > 2 ? Int32.Parse(fields[2]) : -1;
                 TrophyCounterIsU16[i] = fields.Length > 3 && fields[3] == "u16";
+                TrophyCounterIsLikely[i] = fields.Length > 3 && fields[3] == "likely";
             }
         }
 

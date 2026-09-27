@@ -30,7 +30,7 @@ namespace SOSSE.TOT
 
             TotGrid.AddTextColumn(trophyDataGridView, "Trophy", 250, true);
             earnedColumn = TotGrid.AddCheckColumn(trophyDataGridView, "Earned", 60);
-            TotGrid.AddTextColumn(trophyDataGridView, "Counter", 110, true);
+            TotGrid.AddTextColumn(trophyDataGridView, "Counter", 140, true);
 
             for (int i = 0; i < TotData.TrophyNameList.Length; i++)
             {
@@ -56,7 +56,7 @@ namespace SOSSE.TOT
                     uint value = BitConverter.ToUInt32(TotSave.SaveData, slotOffset);
                     sum += TotData.TrophyCounterCountsNonZero[trophy] ? (value > 0 ? 1u : 0u) : value;
                 }
-                return sum + " / " + TotData.TrophyCounterTarget[trophy];
+                return sum + " / " + TotData.TrophyCounterTarget[trophy] + (TotData.TrophyCounterIsLikely[trophy] ? " (likely)" : "");
             }
             if (offset < 0) return "";
             return readCounter(trophy) + " / " + TotData.TrophyCounterTarget[trophy];
