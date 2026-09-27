@@ -48,11 +48,14 @@ namespace SOSSE.TOT
             int itemType = TotData.TrophyCounterItemType[trophy];
             if (itemType >= 0)
                 return TotRecordEditingForm.HarvestedOfType(itemType) + " / " + TotData.TrophyCounterTarget[trophy];
-            if (TotData.TrophyCounterSumOffset[trophy] >= 0)
+            if (TotData.TrophyCounterSlots[trophy] != null)
             {
                 ulong sum = 0;
-                for (int i = 0; i < TotData.TrophyCounterSumCount[trophy]; i++)
-                    sum += BitConverter.ToUInt32(TotSave.SaveData, TotData.TrophyCounterSumOffset[trophy] + 4 * i);
+                foreach (int slotOffset in TotData.TrophyCounterSlots[trophy])
+                {
+                    uint value = BitConverter.ToUInt32(TotSave.SaveData, slotOffset);
+                    sum += TotData.TrophyCounterCountsNonZero[trophy] ? (value > 0 ? 1u : 0u) : value;
+                }
                 return sum + " / " + TotData.TrophyCounterTarget[trophy];
             }
             if (offset < 0) return "";
