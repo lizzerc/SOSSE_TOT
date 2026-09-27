@@ -80,4 +80,4 @@ Fish slot 78 (name unverified)	60
 Fish slot 79 (name unverified)	350
 Fish slot 80 (name unverified)	130
 Giant Squid	550
-Fish slot 82 (name unverified)	0
+Sea Urchin (likely)	0
