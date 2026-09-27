@@ -149,11 +149,11 @@ Legendary Lulukoko Trader (Rainbow)	0x2F010	100000000
 Novice Landscaper (Bronze)
 Veteran Landscaper (Gold)
 Master Landscaper (Rainbow)
-Beginner Vine Grower (Bronze)
-Novice Vine Grower (Bronze)
-Average Vine Grower (Silver)
-Veteran Vine Grower (Silver)
-Legendary Vine Grower (Gold)
+Beginner Vine Grower (Bronze)	0x34F40	1
+Novice Vine Grower (Bronze)	0x34F40	100
+Average Vine Grower (Silver)	0x34F40	300
+Veteran Vine Grower (Silver)	0x34F40	500
+Legendary Vine Grower (Gold)	0x34F40	1200
 Beginner Shoot Hunter (Bronze)	0x2F91C	1
 Novice Shoot Hunter (Bronze)	0x2F91C	10
 Average Shoot Hunter (Silver)	0x2F91C	30

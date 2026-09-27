@@ -107,6 +107,7 @@ namespace SOSSE.TOT
             new Record { Name = "Offerings to Dessie", Offset = 0x24372, U16 = true },
             new Record { Name = "Offerings to Witchie", Offset = 0x243CA, U16 = true },
             new Record { Name = "Offerings to Inari", Offset = 0x2378A, U16 = true },
+            new Record { Name = "Vine crops harvested (likely)", Offset = 0x34F40 },
             new Record { Name = "Giant crop counter 1 (unknown use)", Offset = 0x34F38, ReadOnly = true },
             new Record { Name = "Giant crop counter 2 (unknown use)", Offset = 0x34F3C, ReadOnly = true },
             new Record { Name = "Unknown", Offset = 0x2F014, ReadOnly = true },
