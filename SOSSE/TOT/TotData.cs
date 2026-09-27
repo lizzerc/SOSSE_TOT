@@ -32,6 +32,8 @@ namespace SOSSE.TOT
         // Save offset and target of the counter behind each trophy, where it is confirmed or likely; -1 otherwise.
         public static int[] TrophyCounterOffset;
         public static int[] TrophyCounterTarget;
+        // Whether the counter of a trophy is a u16 instead of a u32.
+        public static bool[] TrophyCounterIsU16;
         // Item type whose total harvest count is shown as the counter of a trophy, or -1. Display only.
         public static int[] TrophyCounterItemType;
         // Indexed by farm circle (PanelData) ID.
@@ -139,12 +141,13 @@ namespace SOSSE.TOT
         {
             if (TrophyNameList != null) return;
             // Each line: name, then optionally a tab, the counter offset (hex) or "type" and an item type
-            // (total harvested of that type), a tab and the target.
+            // (total harvested of that type), a tab and the target, then optionally a tab and "u16".
             string[] lines = loadLines("TotTrophies.txt");
             TrophyNameList = new string[lines.Length];
             TrophyCounterOffset = new int[lines.Length];
             TrophyCounterTarget = new int[lines.Length];
             TrophyCounterItemType = new int[lines.Length];
+            TrophyCounterIsU16 = new bool[lines.Length];
             for (int i = 0; i < lines.Length; i++)
             {
                 string[] fields = lines[i].Split('\t');
@@ -153,6 +156,7 @@ namespace SOSSE.TOT
                 TrophyCounterOffset[i] = fields.Length > 2 && !isItemType ? Convert.ToInt32(fields[1], 16) : -1;
                 TrophyCounterItemType[i] = isItemType ? Int32.Parse(fields[1].Substring(4)) : -1;
                 TrophyCounterTarget[i] = fields.Length > 2 ? Int32.Parse(fields[2]) : -1;
+                TrophyCounterIsU16[i] = fields.Length > 3 && fields[3] == "u16";
             }
         }
 

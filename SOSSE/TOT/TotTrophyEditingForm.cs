@@ -49,7 +49,14 @@ namespace SOSSE.TOT
             if (itemType >= 0)
                 return TotRecordEditingForm.HarvestedOfType(itemType) + " / " + TotData.TrophyCounterTarget[trophy];
             if (offset < 0) return "";
-            return BitConverter.ToUInt32(TotSave.SaveData, offset) + " / " + TotData.TrophyCounterTarget[trophy];
+            return readCounter(trophy) + " / " + TotData.TrophyCounterTarget[trophy];
+        }
+
+        private static uint readCounter(int trophy)
+        {
+            int offset = TotData.TrophyCounterOffset[trophy];
+            return TotData.TrophyCounterIsU16[trophy] ? BitConverter.ToUInt16(TotSave.SaveData, offset)
+                : BitConverter.ToUInt32(TotSave.SaveData, offset);
         }
 
         public static int GetState(int trophy)
@@ -100,9 +107,13 @@ namespace SOSSE.TOT
                 SetState(i, state);
                 // Raise the counter to the target of a newly earned trophy; never lower it.
                 int offset = TotData.TrophyCounterOffset[i];
-                if (state == earned && offset >= 0 &&
-                    BitConverter.ToUInt32(TotSave.SaveData, offset) < TotData.TrophyCounterTarget[i])
-                    Array.Copy(BitConverter.GetBytes((uint)TotData.TrophyCounterTarget[i]), 0, TotSave.SaveData, offset, 4);
+                if (state == earned && offset >= 0 && readCounter(i) < TotData.TrophyCounterTarget[i])
+                {
+                    if (TotData.TrophyCounterIsU16[i])
+                        Array.Copy(BitConverter.GetBytes((ushort)TotData.TrophyCounterTarget[i]), 0, TotSave.SaveData, offset, 2);
+                    else
+                        Array.Copy(BitConverter.GetBytes((uint)TotData.TrophyCounterTarget[i]), 0, TotSave.SaveData, offset, 4);
+                }
             }
         }
 

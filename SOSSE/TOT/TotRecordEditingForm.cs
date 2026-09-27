@@ -27,6 +27,8 @@ namespace SOSSE.TOT
             public int[] SumOf;
             // Records whose meaning isn't confirmed in game; shown but can't be edited.
             public bool ReadOnly;
+            // Stored as a u16 instead of a u32.
+            public bool U16;
 
             public bool IsSum
             {
@@ -102,6 +104,9 @@ namespace SOSSE.TOT
             new Record { Name = "Value shipped to Tsuyukusa (likely)", Offset = 0x2F00C },
             new Record { Name = "Value shipped to Lulukoko (likely)", Offset = 0x2F010 },
             new Record { Name = "Times mined", Offset = 0x2F040 },
+            new Record { Name = "Offerings to Dessie", Offset = 0x24372, U16 = true },
+            new Record { Name = "Offerings to Witchie", Offset = 0x243CA, U16 = true },
+            new Record { Name = "Offerings to Inari (likely)", Offset = 0x2378A, U16 = true },
             new Record { Name = "Unknown", Offset = 0x2F014, ReadOnly = true },
             // 0 on every save seen so far: alpaca babies born or an unused slot.
             new Record { Name = "Babies born, unknown (alpacas?)", Offset = 0x2F20C, ReadOnly = true }
@@ -234,6 +239,8 @@ namespace SOSSE.TOT
         {
             if (record.SumOf != null)
                 return (ulong)record.SumOf.Sum(offset => (long)BitConverter.ToUInt32(TotSave.SaveData, offset));
+            if (record.U16)
+                return BitConverter.ToUInt16(TotSave.SaveData, record.Offset);
             ulong sum = 0;
             for (int i = 0; i < record.Parts; i++)
                 sum += BitConverter.ToUInt32(TotSave.SaveData, record.Offset + 4 * i);
@@ -267,10 +274,11 @@ namespace SOSSE.TOT
             DataGridView dataGridView = (DataGridView)sender;
             if (e.ColumnIndex != 1 || !dataGridView.IsCurrentCellInEditMode) return;
             DataGridViewCell cell = dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            uint max = ((Record[])dataGridView.Tag)[e.RowIndex].U16 ? UInt16.MaxValue : UInt32.MaxValue;
             uint value;
-            if (!UInt32.TryParse(e.FormattedValue.ToString(), out value))
+            if (!UInt32.TryParse(e.FormattedValue.ToString(), out value) || value > max)
             {
-                cell.ErrorText = "Must be a valid number between 0 and " + UInt32.MaxValue;
+                cell.ErrorText = "Must be a valid number between 0 and " + max;
                 dataGridView.CancelEdit();
             }
             else
@@ -293,7 +301,12 @@ namespace SOSSE.TOT
                     uint value;
                     if (!UInt32.TryParse(Convert.ToString(dataGridView.Rows[i].Cells[1].Value), out value))
                         continue;
-                    if (value != BitConverter.ToUInt32(TotSave.SaveData, records[i].Offset))
+                    if (records[i].U16)
+                    {
+                        if (value <= UInt16.MaxValue && value != BitConverter.ToUInt16(TotSave.SaveData, records[i].Offset))
+                            Array.Copy(BitConverter.GetBytes((ushort)value), 0, TotSave.SaveData, records[i].Offset, 2);
+                    }
+                    else if (value != BitConverter.ToUInt32(TotSave.SaveData, records[i].Offset))
                         Array.Copy(BitConverter.GetBytes(value), 0, TotSave.SaveData, records[i].Offset, 4);
                 }
             }

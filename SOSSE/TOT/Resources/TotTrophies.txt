@@ -16,9 +16,9 @@ Novice Greeter (Bronze)
 Veteran Greeter (Bronze)
 Master Greeter (Silver)
 Legendary Greeter (Silver)
-Dessie's Supporter (Gold)
-Inari's Devotee (Gold)
-Witchie's Minion (Gold)
+Dessie's Supporter (Gold)	0x24372	300	u16
+Inari's Devotee (Gold)	0x2378A	300	u16
+Witchie's Minion (Gold)	0x243CA	300	u16
 Trophy Collector (Gold)
 Trophy Hoarder (Rainbow)
 Trophy Master (Rainbow)
