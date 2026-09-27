@@ -263,9 +263,9 @@ Al-lure-ing (Bronze)	0x2D9C8	800
 Fish Whisperer (Silver)	0x2D9C8	1300
 Dr. Fishgood (Silver)	0x2D9C8	1900
 Fisher King (Gold)	0x2D9C8	3000
-Novice Fish Collector (Bronze)	count16:0x2DA90:0-81	20	likely
-Veteran Fish Collector (Silver)	count16:0x2DA90:0-81	50	likely
-Master Fish Collector (Gold)	count16:0x2DA90:0-81	82	likely
+Novice Fish Collector (Bronze)	count16:0x2DA90:0-82	20	likely
+Veteran Fish Collector (Silver)	count16:0x2DA90:0-82	50	likely
+Master Fish Collector (Gold)	count16:0x2DA90:0-82	83	likely
 Novice Large-Fish Collector (Silver)	largefish	20
 Veteran Large-Fish Collector (Gold)	largefish	50
 Master Large-Fish Collector (Rainbow)	largefish	82
