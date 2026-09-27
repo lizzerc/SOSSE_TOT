@@ -38,9 +38,9 @@ namespace SOSSE.TOT
         public static bool[] TrophyCounterIsLikely;
         // Item type whose total harvest count is shown as the counter of a trophy, or -1. Display only.
         public static int[] TrophyCounterItemType;
-        // Offsets of u32s whose sum (or count of non-zero values) is shown as the counter of a trophy, or null.
-        // Display only.
-        public static int[][] TrophyCounterSlots;
+        // Groups of u32 offsets whose sum (or count of groups with a non-zero value) is shown as the counter of a
+        // trophy, or null. Display only.
+        public static int[][][] TrophyCounterSlots;
         public static bool[] TrophyCounterCountsNonZero;
         // Indexed by farm circle (PanelData) ID.
         public static string[] FarmCircleNameList;
@@ -147,8 +147,9 @@ namespace SOSSE.TOT
         {
             if (TrophyNameList != null) return;
             // Each line: name, then optionally a tab, the counter offset (hex), "type" and an item type
-            // (total harvested of that type), or "sum:" or "count:" then a u32 list offset ":" and slots or
-            // slot ranges ("75-99") separated by commas (their sum or how many are non-zero), a tab and the target, then
+            // (total harvested of that type), or "sum:" or "count:" then a u32 list offset ":" and slots, slot
+            // ranges ("75-99") or alternatives ("2|3", counted once) separated by commas (their sum or how many are
+            // non-zero), a tab and the target, then
             // optionally a tab and "u16" or "likely".
             string[] lines = loadLines("TotTrophies.txt");
             TrophyNameList = new string[lines.Length];
@@ -157,7 +158,7 @@ namespace SOSSE.TOT
             TrophyCounterItemType = new int[lines.Length];
             TrophyCounterIsU16 = new bool[lines.Length];
             TrophyCounterIsLikely = new bool[lines.Length];
-            TrophyCounterSlots = new int[lines.Length][];
+            TrophyCounterSlots = new int[lines.Length][][];
             TrophyCounterCountsNonZero = new bool[lines.Length];
             for (int i = 0; i < lines.Length; i++)
             {
@@ -170,13 +171,15 @@ namespace SOSSE.TOT
                 {
                     string[] slots = fields[1].Split(':');
                     int listOffset = Convert.ToInt32(slots[1], 16);
-                    TrophyCounterSlots[i] = slots[2].Split(',').SelectMany(range =>
+                    TrophyCounterSlots[i] = slots[2].Split(',').SelectMany(item =>
                     {
-                        string[] ends = range.Split('-');
+                        if (item.Contains('|'))
+                            return new[] { item.Split('|').Select(slot => listOffset + 4 * Int32.Parse(slot)).ToArray() };
+                        string[] ends = item.Split('-');
                         int first = Int32.Parse(ends[0]);
                         int last = Int32.Parse(ends[ends.Length - 1]);
-                        return Enumerable.Range(first, last - first + 1);
-                    }).Select(slot => listOffset + 4 * slot).ToArray();
+                        return Enumerable.Range(first, last - first + 1).Select(slot => new[] { listOffset + 4 * slot });
+                    }).ToArray();
                     TrophyCounterCountsNonZero[i] = slots[0] == "count";
                 }
                 TrophyCounterItemType[i] = isItemType ? Int32.Parse(fields[1].Substring(4)) : -1;

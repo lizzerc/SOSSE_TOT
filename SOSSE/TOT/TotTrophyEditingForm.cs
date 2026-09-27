@@ -51,10 +51,13 @@ namespace SOSSE.TOT
             if (TotData.TrophyCounterSlots[trophy] != null)
             {
                 ulong sum = 0;
-                foreach (int slotOffset in TotData.TrophyCounterSlots[trophy])
+                foreach (int[] group in TotData.TrophyCounterSlots[trophy])
                 {
-                    uint value = BitConverter.ToUInt32(TotSave.SaveData, slotOffset);
-                    sum += TotData.TrophyCounterCountsNonZero[trophy] ? (value > 0 ? 1u : 0u) : value;
+                    uint[] values = group.Select(slotOffset => BitConverter.ToUInt32(TotSave.SaveData, slotOffset)).ToArray();
+                    if (TotData.TrophyCounterCountsNonZero[trophy])
+                        sum += values.Any(value => value > 0) ? 1u : 0u;
+                    else
+                        sum += (ulong)values.Sum(value => (long)value);
                 }
                 return sum + " / " + TotData.TrophyCounterTarget[trophy] + (TotData.TrophyCounterIsLikely[trophy] ? " (likely)" : "");
             }

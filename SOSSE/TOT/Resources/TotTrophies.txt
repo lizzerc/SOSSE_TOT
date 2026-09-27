@@ -100,7 +100,7 @@ Kindred of the Birds (Bronze)	0x2F07C	20
 Kindred of the Rabbits (Bronze)	0x2F080	20
 Kindred of the Alpacas (Bronze)	0x2F084	20
 Master Livestock Raiser (Bronze)
-Master Livestock Breeder (Bronze)
+Master Livestock Breeder (Bronze)	count:0x2F204:0,1,2|3,4,5	5	likely
 Novice Milker (Bronze)
 Veteran Milker (Bronze)
 Master Milker (Silver)
