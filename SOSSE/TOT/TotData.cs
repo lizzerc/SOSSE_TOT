@@ -145,8 +145,8 @@ namespace SOSSE.TOT
         {
             if (TrophyNameList != null) return;
             // Each line: name, then optionally a tab, the counter offset (hex), "type" and an item type
-            // (total harvested of that type), or "sum:" or "count:" then a u32 list offset ":" and slots
-            // separated by commas (their sum or how many are non-zero), a tab and the target, then
+            // (total harvested of that type), or "sum:" or "count:" then a u32 list offset ":" and slots or
+            // slot ranges ("75-99") separated by commas (their sum or how many are non-zero), a tab and the target, then
             // optionally a tab and "u16".
             string[] lines = loadLines("TotTrophies.txt");
             TrophyNameList = new string[lines.Length];
@@ -167,7 +167,13 @@ namespace SOSSE.TOT
                 {
                     string[] slots = fields[1].Split(':');
                     int listOffset = Convert.ToInt32(slots[1], 16);
-                    TrophyCounterSlots[i] = slots[2].Split(',').Select(slot => listOffset + 4 * Int32.Parse(slot)).ToArray();
+                    TrophyCounterSlots[i] = slots[2].Split(',').SelectMany(range =>
+                    {
+                        string[] ends = range.Split('-');
+                        int first = Int32.Parse(ends[0]);
+                        int last = Int32.Parse(ends[ends.Length - 1]);
+                        return Enumerable.Range(first, last - first + 1);
+                    }).Select(slot => listOffset + 4 * slot).ToArray();
                     TrophyCounterCountsNonZero[i] = slots[0] == "count";
                 }
                 TrophyCounterItemType[i] = isItemType ? Int32.Parse(fields[1].Substring(4)) : -1;

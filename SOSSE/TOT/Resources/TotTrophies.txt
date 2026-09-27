@@ -49,7 +49,7 @@ Westown Crop Master (Silver)
 Tsuyukusa Crop Master (Silver)
 Lulukoko Crop Master (Silver)
 Glorious Farmer (Gold)	count:0x30864:4,7,8,12,13,20	6
-Grand Farmer (Gold)
+Grand Farmer (Gold)	count:0x30864:75-99,130-145	41
 Field Crop Novice (Bronze)
 Field Crop Veteran (Silver)
 Field Crop Master (Silver)
@@ -90,10 +90,10 @@ Gold-Crop Novice (Silver)	sum:0x30864:4,7,8,12,13,20	10
 Gold-Crop Veteran (Gold)	sum:0x30864:4,7,8,12,13,20	50
 Gold-Crop Master (Gold)	sum:0x30864:4,7,8,12,13,20	100
 Gold-Crop Legend (Rainbow)	sum:0x30864:4,7,8,12,13,20	200
-Giant-Crop Novice (Silver)
-Giant-Crop Veteran (Gold)
-Giant-Crop Master (Gold)
-Giant-Crop Legend (Rainbow)
+Giant-Crop Novice (Silver)	sum:0x30864:75-99,130-145	10
+Giant-Crop Veteran (Gold)	sum:0x30864:75-99,130-145	50
+Giant-Crop Master (Gold)	sum:0x30864:75-99,130-145	100
+Giant-Crop Legend (Rainbow)	sum:0x30864:75-99,130-145	200
 Kindred of the Cows (Bronze)	0x2F074	20
 Kindred of the Sheep (Bronze)	0x2F078	20
 Kindred of the Birds (Bronze)	0x2F07C	20
