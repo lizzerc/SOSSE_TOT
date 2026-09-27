@@ -90,10 +90,10 @@ Gold-Crop Novice (Silver)
 Gold-Crop Veteran (Gold)
 Gold-Crop Master (Gold)
 Gold-Crop Legend (Rainbow)
-Giant-Crop Novice (Silver)
-Giant-Crop Veteran (Gold)
-Giant-Crop Master (Gold)
-Giant-Crop Legend (Rainbow)
+Giant-Crop Novice (Silver)	0x34F38	10
+Giant-Crop Veteran (Gold)	0x34F38	50
+Giant-Crop Master (Gold)	0x34F38	100
+Giant-Crop Legend (Rainbow)	0x34F38	200
 Kindred of the Cows (Bronze)	0x2F074	20
 Kindred of the Sheep (Bronze)	0x2F078	20
 Kindred of the Birds (Bronze)	0x2F07C	20
@@ -154,18 +154,18 @@ Novice Vine Grower (Bronze)
 Average Vine Grower (Silver)
 Veteran Vine Grower (Silver)
 Legendary Vine Grower (Gold)
-Beginner Shoot Hunter (Bronze)
-Novice Shoot Hunter (Bronze)
-Average Shoot Hunter (Silver)
-Veteran Shoot Hunter (Silver)
-Master Shoot Hunter (Silver)
-Legendary Shoot Hunter (Gold)
-Beginner Syrup Tapper (Bronze)
-Novice Syrup Tapper (Bronze)
-Average Syrup Tapper (Silver)
-Veteran Syrup Tapper (Silver)
-Master Syrup Tapper (Silver)
-Legendary Syrup Tapper (Gold)
+Beginner Shoot Hunter (Bronze)	0x2F91C	1
+Novice Shoot Hunter (Bronze)	0x2F91C	10
+Average Shoot Hunter (Silver)	0x2F91C	30
+Veteran Shoot Hunter (Silver)	0x2F91C	50
+Master Shoot Hunter (Silver)	0x2F91C	80
+Legendary Shoot Hunter (Gold)	0x2F91C	150
+Beginner Syrup Tapper (Bronze)	0x2F9AC	1
+Novice Syrup Tapper (Bronze)	0x2F9AC	10
+Average Syrup Tapper (Silver)	0x2F9AC	30
+Veteran Syrup Tapper (Silver)	0x2F9AC	50
+Master Syrup Tapper (Silver)	0x2F9AC	80
+Legendary Syrup Tapper (Gold)	0x2F9AC	150
 Beginner Beekeeper (Bronze)
 Novice Beekeeper (Bronze)
 Average Beekeeper (Silver)
