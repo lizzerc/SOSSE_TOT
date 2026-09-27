@@ -90,10 +90,10 @@ Gold-Crop Novice (Silver)	sum:0x30864:82	10
 Gold-Crop Veteran (Gold)	sum:0x30864:82	50
 Gold-Crop Master (Gold)	sum:0x30864:82	100
 Gold-Crop Legend (Rainbow)	sum:0x30864:82	200
-Giant-Crop Novice (Silver)	sum:0x309AC:1050	10
-Giant-Crop Veteran (Gold)	sum:0x309AC:1050	50
-Giant-Crop Master (Gold)	sum:0x309AC:1050	100
-Giant-Crop Legend (Rainbow)	sum:0x309AC:1050	200
+Giant-Crop Novice (Silver)
+Giant-Crop Veteran (Gold)
+Giant-Crop Master (Gold)
+Giant-Crop Legend (Rainbow)
 Kindred of the Cows (Bronze)	0x2F074	20
 Kindred of the Sheep (Bronze)	0x2F078	20
 Kindred of the Birds (Bronze)	0x2F07C	20
