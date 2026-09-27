@@ -45,9 +45,9 @@ My First Blue Ribbon (Bronze)	0x2F04C	1
 Favored to Win (Silver)	0x2F04C	10
 Accustomed to Winning (Gold)	0x2F04C	30
 Legendary Champion (Rainbow)	0x2F04C	50
-Westown Crop Master (Silver)	count:0x2F6B4:83,84,85,87,88,90,89,99,103,106,107,108,109,110,112,118,119,120,123,124,128,129,133,134,145,146,147,149,190,160,931	31	likely
-Tsuyukusa Crop Master (Silver)	count:0x2F6B4:82,86,91,92,93,98,100,102,101,104,105,113,114,116,117,121,122,130,131,132,152,153,135,148,154,126,127,125,155,156,157,159	32	likely
-Lulukoko Crop Master (Silver)	count:0x2F6B4:95,96,97,94,111,115,136,137,138,139,140,141,142,143,144,158	16	likely
+Westown Crop Master (Silver)	count:0x2F6B4:83,84,85,87,88,90,89,99,103,106,107,108,109,110,112,118,119,120,123,124,128,129,133,134,145,146,147,149,931	29	likely
+Tsuyukusa Crop Master (Silver)	count:0x2F6B4:82,86,91,92,93,98,100,102,101,104,105,113,114,116,117,121,122,130,131,132,152,153,135,148,154,126,127,125,155,156,157	31	likely
+Lulukoko Crop Master (Silver)	count:0x2F6B4:95,96,97,94,111,115,136,137,138,139,140,141,142,143,144	15	likely
 Glorious Farmer (Gold)	count:0x30864:4,7,8,12,13,20	6
 Grand Farmer (Gold)	count:0x30864:75-99,130-145	41
 Field Crop Novice (Bronze)
