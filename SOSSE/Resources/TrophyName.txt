@@ -6,7 +6,7 @@ Wedding Bells	0
 Birth Certificate	0
 10th Time's the Charm	10
 30 Winters, 30 Springs	30
-Good Neighbor	65535
+Good Neighbor	all
 Conqueror	0
 Trading Post with the Most	0
 Fledgling Farmer	20
@@ -165,83 +165,83 @@ Pet Promenade 10-Time Winner	10
 Pet Promenade 30-Time Winner	30
 Dessie's Devotee	500
 Witchie's Devotee	500
-Small Sweetfish Master	15
-Sardine Master	20
-Small Char Master	22
-Pale Chub Master	22
-Willowfish Master	15
-Pike Master	27
-Three-Lips Master	23
-Icefish Master	18
-Bluegill Master	24
-Small Willowfish Master	10
-Small Trout Master	20
-Smelt Master	15
-Killifish Master	14
-Honmoroko Master	30
-Small Cherry Trout Master	30
-Small Crucian Carp Master	30
-Sculpin Master	26
-Small Carp Master	25
-Loach Master	27
-Small Loach Master	20
-Goby Master	24
-Small Goby Master	17
-Pufferfish Master	53
-Mackerel Master	57
-Flying Fish Master	54
-Needlefish Master	58
-Sweetfish Master	59
-Cherry Trout Master	60
-Char Master	60
-Minnow Master	55
-Crucian Carp Master	53
-Black Bass Master	60
-Flounder Master	59
-Large Loach Master	60
-Halibut Master	54
-Sea Bream Master	60
-Carp Master	56
-Conger Eel Master	57
-Bonito Master	93
-Salmon Master	99
-Sea Bass Master	120
-Large Sea Bass Master	150
-Trout Master	98
-Beltfish Master	88
-Large Crucian Carp Master	96
-Longtooth Grouper Master	130
-Snakehead Master	100
-Pollock Master	115
-Tuna Master	230
-Large Trout Master	222
-Ocean Sunfish Master	360
-Moray Eel Master	200
-Large Snakehead Master	325
-Spiny Lobster Master	60
-Tiger Prawn Master	23
-Freshwater Prawn Master	23
-Lake Prawn Master	23
-Marsh Shrimp Master	23
-Steamer Clam Master	20
-Basket Clam Master	20
-Oriental Clam Master	30
-Squid Master	60
-Octopus Master	60
-Horned Turban Master	30
-Red Freshwater Crab Master	25
-Blue Freshwater Crab Master	25
-Alligator Gar Master	326
-Arowana Master	370
-Anglerfish Master	380
-Huchen Master	400
-Eel Master	350
-Marlin Master	524
-Keiji Salmon Master	420
-Mitten Crab Master	60
-Softshelled Turtle Master	60
-Red King Crab Master	130
-Ray Master	140
-Sturgeon Master	553
-Catfish Master	143
-Koi Master	111
+Small Sweetfish Master	15 cm
+Sardine Master	20 cm
+Small Char Master	22 cm
+Pale Chub Master	22 cm
+Willowfish Master	15 cm
+Pike Master	27 cm
+Three-Lips Master	23 cm
+Icefish Master	18 cm
+Bluegill Master	24 cm
+Small Willowfish Master	10 cm
+Small Trout Master	20 cm
+Smelt Master	15 cm
+Killifish Master	14 cm
+Honmoroko Master	30 cm
+Small Cherry Trout Master	30 cm
+Small Crucian Carp Master	30 cm
+Sculpin Master	26 cm
+Small Carp Master	25 cm
+Loach Master	27 cm
+Small Loach Master	20 cm
+Goby Master	24 cm
+Small Goby Master	17 cm
+Pufferfish Master	53 cm
+Mackerel Master	57 cm
+Flying Fish Master	54 cm
+Needlefish Master	58 cm
+Sweetfish Master	59 cm
+Cherry Trout Master	60 cm
+Char Master	60 cm
+Minnow Master	55 cm
+Crucian Carp Master	53 cm
+Black Bass Master	60 cm
+Flounder Master	59 cm
+Large Loach Master	60 cm
+Halibut Master	54 cm
+Sea Bream Master	60 cm
+Carp Master	56 cm
+Conger Eel Master	57 cm
+Bonito Master	93 cm
+Salmon Master	99 cm
+Sea Bass Master	120 cm
+Large Sea Bass Master	150 cm
+Trout Master	98 cm
+Beltfish Master	88 cm
+Large Crucian Carp Master	96 cm
+Longtooth Grouper Master	130 cm
+Snakehead Master	100 cm
+Pollock Master	115 cm
+Tuna Master	230 cm
+Large Trout Master	222 cm
+Ocean Sunfish Master	360 cm
+Moray Eel Master	200 cm
+Large Snakehead Master	325 cm
+Spiny Lobster Master	60 cm
+Tiger Prawn Master	23 cm
+Freshwater Prawn Master	23 cm
+Lake Prawn Master	23 cm
+Marsh Shrimp Master	23 cm
+Steamer Clam Master	20 cm
+Basket Clam Master	20 cm
+Oriental Clam Master	30 cm
+Squid Master	60 cm
+Octopus Master	60 cm
+Horned Turban Master	30 cm
+Red Freshwater Crab Master	25 cm
+Blue Freshwater Crab Master	25 cm
+Alligator Gar Master	326 cm
+Arowana Master	370 cm
+Anglerfish Master	380 cm
+Huchen Master	400 cm
+Eel Master	350 cm
+Marlin Master	524 cm
+Keiji Salmon Master	420 cm
+Mitten Crab Master	60 cm
+Softshelled Turtle Master	60 cm
+Red King Crab Master	130 cm
+Ray Master	140 cm
+Sturgeon Master	553 cm
+Catfish Master	143 cm
+Koi Master	111 cm
