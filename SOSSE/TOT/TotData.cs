@@ -27,11 +27,41 @@ namespace SOSSE.TOT
         public static string[] ClothesNameList;
         public static string[] HatNameList;
         public static string[] GlassesNameList;
+        // Wardrobe rows (clothes, then hats, then glasses) that are unused placeholders, even with the DLC.
+        private static readonly int[][] unusedWardrobeRanges = { new[] { 171, 173 }, new[] { 252, 257 }, new[] { 283, 292 } };
+        // Wedding outfits and headpieces: real items, but not in the in-game collection list.
+        private static readonly int[][] uncollectedWardrobeRanges = { new[] { 158, 163 }, new[] { 244, 247 } };
         public static string[] RecipeNameList;
         public static string[] TrophyNameList;
         // Save offset and target of the counter behind each trophy, where it is confirmed or likely; -1 otherwise.
         public static int[] TrophyCounterOffset;
         public static int[] TrophyCounterTarget;
+        // Whether the counter of a trophy is a u16 instead of a u32.
+        public static bool[] TrophyCounterIsU16;
+        // Whether the counter of a trophy is only likely, and shown as such.
+        public static bool[] TrophyCounterIsLikely;
+        // Item type whose total harvest count is shown as the counter of a trophy, or -1. Display only.
+        public static int[] TrophyCounterItemType;
+        // Groups of u32 offsets whose sum (or count of groups with a non-zero value) is shown as the counter of a
+        // trophy, or null. Display only.
+        public static int[][][] TrophyCounterSlots;
+        public static bool[] TrophyCounterCountsNonZero;
+        // The slot list holds u16 values instead of u32.
+        public static bool[] TrophyCounterSlotIsU16;
+        // Counter is how many fish have a record size of at least their largest size.
+        public static bool[] TrophyCounterIsLargeFish;
+        // Counter is how many wardrobe rows in this range (first, last) are owned; null if not a wardrobe counter.
+        public static int[][] TrophyCounterWardrobe;
+
+        // Per fish u16 lists, from Conger Eel: record size in cm, and times caught (likely).
+        // Slots 82 and 83 aren't fish.
+        public const int FishSizeOffset = 0x2D9CC;
+        public const int FishCaughtOffset = 0x2DA90;
+        public const int FirstFishItem = 831;
+        public static string[] FishNameList;
+        // Largest size each fish can have (from a save with every Large-Fish Collector trophy);
+        // -1 = the slot isn't a fish.
+        public static int[] FishMaxSize;
         // Indexed by farm circle (PanelData) ID.
         public static string[] FarmCircleNameList;
         // Farm circles in the circle shop order, used by the times crafted list.
@@ -127,6 +157,22 @@ namespace SOSSE.TOT
             GlassesNameList = loadLines("TotGlasses.txt");
         }
 
+        /// <summary>
+        /// True if the wardrobe row is an unused placeholder
+        /// </summary>
+        public static bool IsUnusedWardrobe(int row)
+        {
+            return unusedWardrobeRanges.Any(range => row >= range[0] && row <= range[1]);
+        }
+
+        /// <summary>
+        /// True if the wardrobe row counts toward the collector trophies
+        /// </summary>
+        public static bool IsCollectedWardrobe(int row)
+        {
+            return !IsUnusedWardrobe(row) && !uncollectedWardrobeRanges.Any(range => row >= range[0] && row <= range[1]);
+        }
+
         public static void LoadRecipeData()
         {
             if (RecipeNameList == null)
@@ -136,18 +182,77 @@ namespace SOSSE.TOT
         public static void LoadTrophyData()
         {
             if (TrophyNameList != null) return;
-            // Each line: name, then optionally a tab, the counter offset (hex), a tab and the target.
+            // Each line: name, then optionally a tab, the counter offset (hex), "type" and an item type
+            // (total harvested of that type), or "sum:" or "count:" ("sum16:" or "count16:" for a u16 list) then a
+            // list offset ":" and slots, slot
+            // ranges ("75-99") or alternatives ("2|3", counted once) separated by commas (their sum or how many are
+            // non-zero), or "largefish" (fish at their largest size), or "wardrobe:" and a row range (owned items), a
+            // tab and the target, then
+            // optionally a tab and "u16" or "likely".
             string[] lines = loadLines("TotTrophies.txt");
             TrophyNameList = new string[lines.Length];
             TrophyCounterOffset = new int[lines.Length];
             TrophyCounterTarget = new int[lines.Length];
+            TrophyCounterItemType = new int[lines.Length];
+            TrophyCounterIsU16 = new bool[lines.Length];
+            TrophyCounterIsLikely = new bool[lines.Length];
+            TrophyCounterSlots = new int[lines.Length][][];
+            TrophyCounterCountsNonZero = new bool[lines.Length];
+            TrophyCounterIsLargeFish = new bool[lines.Length];
+            TrophyCounterSlotIsU16 = new bool[lines.Length];
+            TrophyCounterWardrobe = new int[lines.Length][];
             for (int i = 0; i < lines.Length; i++)
             {
                 string[] fields = lines[i].Split('\t');
                 TrophyNameList[i] = fields[0];
-                TrophyCounterOffset[i] = fields.Length > 2 ? Convert.ToInt32(fields[1], 16) : -1;
+                bool isItemType = fields.Length > 2 && fields[1].StartsWith("type");
+                bool isSlots = fields.Length > 2 && (fields[1].StartsWith("sum") || fields[1].StartsWith("count"));
+                TrophyCounterIsLargeFish[i] = fields.Length > 2 && fields[1] == "largefish";
+                if (fields.Length > 2 && fields[1].StartsWith("wardrobe:"))
+                    TrophyCounterWardrobe[i] = fields[1].Substring(9).Split('-').Select(Int32.Parse).ToArray();
+                TrophyCounterOffset[i] = fields.Length > 2 && !isItemType && !isSlots && !TrophyCounterIsLargeFish[i] &&
+                    TrophyCounterWardrobe[i] == null ? Convert.ToInt32(fields[1], 16) : -1;
+                if (isSlots)
+                {
+                    string[] slots = fields[1].Split(':');
+                    int listOffset = Convert.ToInt32(slots[1], 16);
+                    TrophyCounterSlotIsU16[i] = slots[0].EndsWith("16");
+                    int slotSize = TrophyCounterSlotIsU16[i] ? 2 : 4;
+                    TrophyCounterSlots[i] = slots[2].Split(',').SelectMany(item =>
+                    {
+                        if (item.Contains('|'))
+                            return new[] { item.Split('|').Select(slot => listOffset + slotSize * Int32.Parse(slot)).ToArray() };
+                        string[] ends = item.Split('-');
+                        int first = Int32.Parse(ends[0]);
+                        int last = Int32.Parse(ends[ends.Length - 1]);
+                        return Enumerable.Range(first, last - first + 1).Select(slot => new[] { listOffset + slotSize * slot });
+                    }).ToArray();
+                    TrophyCounterCountsNonZero[i] = slots[0].StartsWith("count");
+                }
+                TrophyCounterItemType[i] = isItemType ? Int32.Parse(fields[1].Substring(4)) : -1;
                 TrophyCounterTarget[i] = fields.Length > 2 ? Int32.Parse(fields[2]) : -1;
+                TrophyCounterIsU16[i] = fields.Length > 3 && fields[3] == "u16";
+                TrophyCounterIsLikely[i] = fields.Length > 3 && fields[3] == "likely";
             }
+        }
+
+        public static void LoadFishData()
+        {
+            if (FishNameList != null) return;
+            // Each line: fish name, a tab and its largest size in cm.
+            string[] lines = loadLines("TotFishMaxSizes.txt").Where(line => line.Length > 0).ToArray();
+            FishNameList = lines.Select(line => line.Split('\t')[0]).ToArray();
+            FishMaxSize = lines.Select(line => Int32.Parse(line.Split('\t')[1])).ToArray();
+        }
+
+        /// <summary>
+        /// Number of fish whose record size is at least their largest size
+        /// </summary>
+        public static int LargeFishCount()
+        {
+            LoadFishData();
+            return Enumerable.Range(0, FishMaxSize.Length).Count(i => FishMaxSize[i] > 0 &&
+                BitConverter.ToUInt16(TotSave.SaveData, FishSizeOffset + 2 * i) >= FishMaxSize[i]);
         }
 
         public static void LoadFarmCircleData()

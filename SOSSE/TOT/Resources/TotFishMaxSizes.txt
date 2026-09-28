@@ -1,0 +1,85 @@
+﻿Conger Eel	57
+Cherry Salmon	50
+Sweetfish	60
+Sardine	20
+Char	60
+Minnow	55
+Moray Eel	200
+Ray	140
+Pale Chub	22
+Sculpin	26
+Bonito	93
+Flounder	60
+Bullhead Catfish	30
+Grouper	130
+Carp	56
+Salmon	99
+Mackerel	57
+Needlefish	58
+Pike	27
+Crayfish	20
+Mahi Mahi	200
+Willowfish	15
+Icefish	18
+Pollock	115
+Sea Bass	120
+Sea Bream	60
+Black-tip Fusilier	30
+Beltfish	88
+Seahorse	30
+Loach	27
+Flying Fish	54
+Rainbow Trout	60
+Three-Lips	23
+Goby	24
+Starfish	30
+Sockeye Salmon	50
+Halibut	54
+Pufferfish	53
+Crucian Carp	53
+Black Bass	60
+Bluegill	24
+Whiptail	120
+Mullet	40
+White Bass	50
+Honmoroko	30
+Tuna	230
+Trout	98
+Ocean Sunfish	360
+Killifish	14
+Cherry Trout	60
+Snakehead	100
+Mackinaw	120
+Smelt	15
+Spear Squid	55
+Firefly Squid	10
+Octopus	60
+Red Freshwater Crab	25
+Blue Freshwater Crab	25
+Spiny Lobster	60
+Tiger Prawn	23
+Lake Prawn	23
+Freshwater Prawn	23
+Marsh Shrimp	23
+Steamer Clam	20
+Horned Turban	30
+Basket Clam	20
+Oriental Clam	30
+Scallop	30
+Keiji Salmon	420
+Arowana	370
+Alligator Gar	326
+Huchen	400
+Catfish	143
+Monkfish	380
+Marlin	524
+Koi	111
+Sturgeon	553
+Softshell Turtle	60
+Mitten Crab	60
+Eel	350
+Red King Crab	130
+Giant Squid	550
+Not a fish (slot 82)	-1
+Not a fish (slot 83)	-1
+Sea Urchin	20

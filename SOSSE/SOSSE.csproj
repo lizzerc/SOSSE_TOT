@@ -385,6 +385,9 @@
     <EmbeddedResource Include="TOT\Resources\TotWildAnimals.txt">
       <LogicalName>SOSSE.TOT.Resources.TotWildAnimals.txt</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="TOT\Resources\TotFishMaxSizes.txt">
+      <LogicalName>SOSSE.TOT.Resources.TotFishMaxSizes.txt</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ItemName.txt" />

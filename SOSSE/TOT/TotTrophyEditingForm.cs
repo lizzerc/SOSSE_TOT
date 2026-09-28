@@ -30,7 +30,7 @@ namespace SOSSE.TOT
 
             TotGrid.AddTextColumn(trophyDataGridView, "Trophy", 250, true);
             earnedColumn = TotGrid.AddCheckColumn(trophyDataGridView, "Earned", 60);
-            TotGrid.AddTextColumn(trophyDataGridView, "Counter", 110, true);
+            TotGrid.AddTextColumn(trophyDataGridView, "Counter", 140, true);
 
             for (int i = 0; i < TotData.TrophyNameList.Length; i++)
             {
@@ -45,8 +45,37 @@ namespace SOSSE.TOT
         private static string counterText(int trophy)
         {
             int offset = TotData.TrophyCounterOffset[trophy];
+            int itemType = TotData.TrophyCounterItemType[trophy];
+            if (itemType >= 0)
+                return TotRecordEditingForm.HarvestedOfType(itemType) + " / " + TotData.TrophyCounterTarget[trophy];
+            int[] wardrobe = TotData.TrophyCounterWardrobe[trophy];
+            if (wardrobe != null)
+                return TotWardrobeEditingForm.OwnedCount(wardrobe[0], wardrobe[1]) + " / " + TotData.TrophyCounterTarget[trophy] + " (likely)";
+            if (TotData.TrophyCounterIsLargeFish[trophy])
+                return TotData.LargeFishCount() + " / " + TotData.TrophyCounterTarget[trophy] + " (likely)";
+            if (TotData.TrophyCounterSlots[trophy] != null)
+            {
+                ulong sum = 0;
+                foreach (int[] group in TotData.TrophyCounterSlots[trophy])
+                {
+                    uint[] values = group.Select(slotOffset => TotData.TrophyCounterSlotIsU16[trophy]
+                        ? BitConverter.ToUInt16(TotSave.SaveData, slotOffset) : BitConverter.ToUInt32(TotSave.SaveData, slotOffset)).ToArray();
+                    if (TotData.TrophyCounterCountsNonZero[trophy])
+                        sum += values.Any(value => value > 0) ? 1u : 0u;
+                    else
+                        sum += (ulong)values.Sum(value => (long)value);
+                }
+                return sum + " / " + TotData.TrophyCounterTarget[trophy] + (TotData.TrophyCounterIsLikely[trophy] ? " (likely)" : "");
+            }
             if (offset < 0) return "";
-            return BitConverter.ToUInt32(TotSave.SaveData, offset) + " / " + TotData.TrophyCounterTarget[trophy];
+            return readCounter(trophy) + " / " + TotData.TrophyCounterTarget[trophy];
+        }
+
+        private static uint readCounter(int trophy)
+        {
+            int offset = TotData.TrophyCounterOffset[trophy];
+            return TotData.TrophyCounterIsU16[trophy] ? BitConverter.ToUInt16(TotSave.SaveData, offset)
+                : BitConverter.ToUInt32(TotSave.SaveData, offset);
         }
 
         public static int GetState(int trophy)
@@ -97,9 +126,13 @@ namespace SOSSE.TOT
                 SetState(i, state);
                 // Raise the counter to the target of a newly earned trophy; never lower it.
                 int offset = TotData.TrophyCounterOffset[i];
-                if (state == earned && offset >= 0 &&
-                    BitConverter.ToUInt32(TotSave.SaveData, offset) < TotData.TrophyCounterTarget[i])
-                    Array.Copy(BitConverter.GetBytes((uint)TotData.TrophyCounterTarget[i]), 0, TotSave.SaveData, offset, 4);
+                if (state == earned && offset >= 0 && readCounter(i) < TotData.TrophyCounterTarget[i])
+                {
+                    if (TotData.TrophyCounterIsU16[i])
+                        Array.Copy(BitConverter.GetBytes((ushort)TotData.TrophyCounterTarget[i]), 0, TotSave.SaveData, offset, 2);
+                    else
+                        Array.Copy(BitConverter.GetBytes((uint)TotData.TrophyCounterTarget[i]), 0, TotSave.SaveData, offset, 4);
+                }
             }
         }
 

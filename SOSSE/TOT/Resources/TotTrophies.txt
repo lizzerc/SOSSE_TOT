@@ -12,13 +12,13 @@ Good Neighbor to Lulukoko (Bronze)
 Lulukoko's Idol (Silver)
 Most Eligible Farmer (Silver)
 Everyone's Favorite (Silver)
-Novice Greeter (Bronze)
-Veteran Greeter (Bronze)
-Master Greeter (Silver)
-Legendary Greeter (Silver)
-Dessie's Supporter (Gold)
-Inari's Devotee (Gold)
-Witchie's Minion (Gold)
+Novice Greeter (Bronze)	0x2F014	100
+Veteran Greeter (Bronze)	0x2F014	300
+Master Greeter (Silver)	0x2F014	500
+Legendary Greeter (Silver)	0x2F014	1000
+Dessie's Supporter (Gold)	0x24372	300	u16
+Inari's Devotee (Gold)	0x2378A	300	u16
+Witchie's Minion (Gold)	0x243CA	300	u16
 Trophy Collector (Gold)
 Trophy Hoarder (Rainbow)
 Trophy Master (Rainbow)
@@ -45,11 +45,11 @@ My First Blue Ribbon (Bronze)	0x2F04C	1
 Favored to Win (Silver)	0x2F04C	10
 Accustomed to Winning (Gold)	0x2F04C	30
 Legendary Champion (Rainbow)	0x2F04C	50
-Westown Crop Master (Silver)
-Tsuyukusa Crop Master (Silver)
-Lulukoko Crop Master (Silver)
-Glorious Farmer (Gold)
-Grand Farmer (Gold)
+Westown Crop Master (Silver)	count:0x2F6B4:83,84,85,87,88,90,89,99,103,106,107,108,109,110,112,118,119,120,123,124,128,129,133,134,145,146,147,149,931	29	likely
+Tsuyukusa Crop Master (Silver)	count:0x2F6B4:82,86,91,92,93,98,100,102,101,104,105,113,114,116,117,121,122,130,131,132,152,153,135,148,154,126,127,125,155,156,157	31	likely
+Lulukoko Crop Master (Silver)	count:0x2F6B4:95,96,97,94,111,115,136,137,138,139,140,141,142,143,144	15	likely
+Glorious Farmer (Gold)	count:0x30864:4,7,8,12,13,20	6
+Grand Farmer (Gold)	count:0x30864:75-99,130-145	41
 Field Crop Novice (Bronze)
 Field Crop Veteran (Silver)
 Field Crop Master (Silver)
@@ -86,21 +86,21 @@ Lumber-Harvesting Novice (Bronze)
 Lumber-Harvesting Veteran (Silver)
 Lumber-Harvesting Master (Silver)
 Lumber-Harvesting Legend (Gold)
-Gold-Crop Novice (Silver)
-Gold-Crop Veteran (Gold)
-Gold-Crop Master (Gold)
-Gold-Crop Legend (Rainbow)
-Giant-Crop Novice (Silver)
-Giant-Crop Veteran (Gold)
-Giant-Crop Master (Gold)
-Giant-Crop Legend (Rainbow)
-Kindred of the Cows (Bronze)
-Kindred of the Sheep (Bronze)
-Kindred of the Birds (Bronze)
-Kindred of the Rabbits (Bronze)
-Kindred of the Alpacas (Bronze)
+Gold-Crop Novice (Silver)	sum:0x30864:4,7,8,12,13,20	10
+Gold-Crop Veteran (Gold)	sum:0x30864:4,7,8,12,13,20	50
+Gold-Crop Master (Gold)	sum:0x30864:4,7,8,12,13,20	100
+Gold-Crop Legend (Rainbow)	sum:0x30864:4,7,8,12,13,20	200
+Giant-Crop Novice (Silver)	sum:0x30864:75-99,130-145	10
+Giant-Crop Veteran (Gold)	sum:0x30864:75-99,130-145	50
+Giant-Crop Master (Gold)	sum:0x30864:75-99,130-145	100
+Giant-Crop Legend (Rainbow)	sum:0x30864:75-99,130-145	200
+Kindred of the Cows (Bronze)	0x2F074	20
+Kindred of the Sheep (Bronze)	0x2F078	20
+Kindred of the Birds (Bronze)	0x2F07C	20
+Kindred of the Rabbits (Bronze)	0x2F080	20
+Kindred of the Alpacas (Bronze)	0x2F084	20
 Master Livestock Raiser (Bronze)
-Master Livestock Breeder (Bronze)
+Master Livestock Breeder (Bronze)	count:0x2F204:0,1,2|3,4,5	5	likely
 Novice Milker (Bronze)
 Veteran Milker (Bronze)
 Master Milker (Silver)
@@ -149,23 +149,23 @@ Legendary Lulukoko Trader (Rainbow)	0x2F010	100000000
 Novice Landscaper (Bronze)
 Veteran Landscaper (Gold)
 Master Landscaper (Rainbow)
-Beginner Vine Grower (Bronze)
-Novice Vine Grower (Bronze)
-Average Vine Grower (Silver)
-Veteran Vine Grower (Silver)
-Legendary Vine Grower (Gold)
-Beginner Shoot Hunter (Bronze)
-Novice Shoot Hunter (Bronze)
-Average Shoot Hunter (Silver)
-Veteran Shoot Hunter (Silver)
-Master Shoot Hunter (Silver)
-Legendary Shoot Hunter (Gold)
-Beginner Syrup Tapper (Bronze)
-Novice Syrup Tapper (Bronze)
-Average Syrup Tapper (Silver)
-Veteran Syrup Tapper (Silver)
-Master Syrup Tapper (Silver)
-Legendary Syrup Tapper (Gold)
+Beginner Vine Grower (Bronze)	0x34F40	1
+Novice Vine Grower (Bronze)	0x34F40	100
+Average Vine Grower (Silver)	0x34F40	300
+Veteran Vine Grower (Silver)	0x34F40	500
+Legendary Vine Grower (Gold)	0x34F40	1200
+Beginner Shoot Hunter (Bronze)	0x2F91C	1
+Novice Shoot Hunter (Bronze)	0x2F91C	10
+Average Shoot Hunter (Silver)	0x2F91C	30
+Veteran Shoot Hunter (Silver)	0x2F91C	50
+Master Shoot Hunter (Silver)	0x2F91C	80
+Legendary Shoot Hunter (Gold)	0x2F91C	150
+Beginner Syrup Tapper (Bronze)	0x2F9AC	1
+Novice Syrup Tapper (Bronze)	0x2F9AC	10
+Average Syrup Tapper (Silver)	0x2F9AC	30
+Veteran Syrup Tapper (Silver)	0x2F9AC	50
+Master Syrup Tapper (Silver)	0x2F9AC	80
+Legendary Syrup Tapper (Gold)	0x2F9AC	150
 Beginner Beekeeper (Bronze)
 Novice Beekeeper (Bronze)
 Average Beekeeper (Silver)
@@ -226,10 +226,10 @@ Novice Feed Maker (Bronze)	0x2F038	50
 Veteran Feed Maker (Bronze)	0x2F038	100
 Master Feed Maker (Silver)	0x2F038	500
 Legendary Feed Maker (Gold)	0x2F038	1000
-On the Road to Riches (Bronze)
-Fiscally Fearsome (Silver)
-My First Million (Gold)
-Multi-Millionaire (Rainbow)
+On the Road to Riches (Bronze)	0x88	50000
+Fiscally Fearsome (Silver)	0x88	100000
+My First Million (Gold)	0x88	500000
+Multi-Millionaire (Rainbow)	0x88	1000000
 Amateur Chef (Bronze)	0x275BC	1
 Fledgling Chef (Bronze)	0x275BC	10
 Short-Order Chef (Bronze)	0x275BC	100
@@ -263,42 +263,42 @@ Al-lure-ing (Bronze)	0x2D9C8	800
 Fish Whisperer (Silver)	0x2D9C8	1300
 Dr. Fishgood (Silver)	0x2D9C8	1900
 Fisher King (Gold)	0x2D9C8	3000
-Novice Fish Collector (Bronze)	0x2F0AC	20
-Veteran Fish Collector (Silver)	0x2F0AC	50
-Master Fish Collector (Gold)
-Novice Large-Fish Collector (Silver)
-Veteran Large-Fish Collector (Gold)
-Master Large-Fish Collector (Rainbow)
+Novice Fish Collector (Bronze)	count16:0x2DA90:0-81,84	20	likely
+Veteran Fish Collector (Silver)	count16:0x2DA90:0-81,84	50	likely
+Master Fish Collector (Gold)	count16:0x2DA90:0-81,84	83	likely
+Novice Large-Fish Collector (Silver)	largefish	20
+Veteran Large-Fish Collector (Gold)	largefish	50
+Master Large-Fish Collector (Rainbow)	largefish	83
 Novice Ore Collector (Bronze)
 Veteran Ore Collector (Silver)
 Master Ore Collector (Gold)
-Novice Miner (Bronze)
-Veteran Miner (Bronze)
-Master Miner (Silver)
-Legendary Miner (Gold)
-Novice Clothing Collector (Bronze)
-Veteran Clothing Collector (Gold)
-Master Clothing Collector (Rainbow)
-Novice Headgear Collector (Bronze)
-Veteran Headgear Collector (Bronze)
-Master Headgear Collector (Gold)
-Novice Eyewear Collector (Bronze)
-Veteran Eyewear Collector (Bronze)
-Master Eyewear Collector (Gold)
-Novice Forager (Bronze)	0x2F044	50
-Veteran Forager (Bronze)	0x2F044	100
-Master Forager (Silver)	0x2F044	500
-Legendary Forager (Gold)	0x2F044	1000
-Entry-Level Employee (Bronze)
-Job Intern (Bronze)
-Job Trainee (Bronze)
-Office Drone (Bronze)
-Cubicle Farm Resident (Bronze)
-Low-Level Management (Bronze)
-Mid-Tier Management (Bronze)
-Executive Manager (Silver)
-Board of Directors (Silver)
-Company President (Gold)
+Novice Miner (Bronze)	0x2F040	100
+Veteran Miner (Bronze)	0x2F040	500
+Master Miner (Silver)	0x2F040	1000
+Legendary Miner (Gold)	0x2F040	2000
+Novice Clothing Collector (Bronze)	wardrobe:0-173	50
+Veteran Clothing Collector (Gold)	wardrobe:0-173	100
+Master Clothing Collector (Rainbow)	wardrobe:0-173	165
+Novice Headgear Collector (Bronze)	wardrobe:174-257	10
+Veteran Headgear Collector (Bronze)	wardrobe:174-257	30
+Master Headgear Collector (Gold)	wardrobe:174-257	74
+Novice Eyewear Collector (Bronze)	wardrobe:258-292	5
+Veteran Eyewear Collector (Bronze)	wardrobe:258-292	10
+Master Eyewear Collector (Gold)	wardrobe:258-292	25
+Novice Forager (Bronze)	type16	50
+Veteran Forager (Bronze)	type16	100
+Master Forager (Silver)	type16	500
+Legendary Forager (Gold)	type16	1000
+Entry-Level Employee (Bronze)	0x2F044	1
+Job Intern (Bronze)	0x2F044	10
+Job Trainee (Bronze)	0x2F044	50
+Office Drone (Bronze)	0x2F044	100
+Cubicle Farm Resident (Bronze)	0x2F044	200
+Low-Level Management (Bronze)	0x2F044	400
+Mid-Tier Management (Bronze)	0x2F044	800
+Executive Manager (Silver)	0x2F044	1300
+Board of Directors (Silver)	0x2F044	1900
+Company President (Gold)	0x2F044	3000
 Spa Novice (Bronze)	0x2F088	1
 Spa Veteran (Bronze)	0x2F088	10
 Spa Master (Silver)	0x2F088	50

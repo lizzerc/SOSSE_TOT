@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace SOSSE.TOT
 {
     /// <summary>
-    /// Records screens: festival and activity counters, count shipped per town, times fished, harvest details
+    /// Records screens: festival and activity counters, count shipped per town, times fished, fish sizes, harvest details
     /// and per-item harvest/produce counts (all u32).
     /// </summary>
     public partial class TotRecordEditingForm : Form
@@ -25,12 +25,24 @@ namespace SOSSE.TOT
             public int Parts = 1;
             // Records that are the sum of other records on the same tab; can't be edited.
             public int[] SumOf;
+            // Records whose meaning isn't confirmed in game; shown but can't be edited.
+            public bool ReadOnly;
+            // Stored as a u16 instead of a u32.
+            public bool U16;
 
             public bool IsSum
             {
                 get
                 {
                     return Parts > 1 || SumOf != null;
+                }
+            }
+
+            public bool Locked
+            {
+                get
+                {
+                    return IsSum || ReadOnly;
                 }
             }
         }
@@ -63,24 +75,43 @@ namespace SOSSE.TOT
         private static readonly Record[] counterRecords = {
             new Record { Name = "Times slept at the inn", Offset = 0x2F08C },
             new Record { Name = "Times cooked", Offset = 0x275BC },
-            new Record { Name = "Loom uses", Offset = 0x2F01C },
-            new Record { Name = "Seed maker uses", Offset = 0x2F020 },
-            new Record { Name = "Dairy maker uses", Offset = 0x2F030 },
-            new Record { Name = "Mill uses (likely)", Offset = 0x2F018 },
-            new Record { Name = "Pot uses (likely)", Offset = 0x2F024 },
-            new Record { Name = "Jar uses (likely)", Offset = 0x2F028 },
-            new Record { Name = "Wine maker uses (likely)", Offset = 0x2F02C },
-            new Record { Name = "Fertilizer maker uses (likely)", Offset = 0x2F034 },
-            new Record { Name = "Feed maker uses (likely)", Offset = 0x2F038 },
-            new Record { Name = "Spa baths (likely)", Offset = 0x2F088 },
-            new Record { Name = "Westown restaurant meals (likely)", Offset = 0x2F090 },
-            new Record { Name = "Teahouse meals (likely)", Offset = 0x2F094 },
-            new Record { Name = "Seaside cafe meals (likely)", Offset = 0x2F098 },
-            new Record { Name = "Wild plants foraged (likely)", Offset = 0x2F044 },
-            new Record { Name = "Fish species caught (likely)", Offset = 0x2F0AC },
-            new Record { Name = "Value shipped to Westown (likely)", Offset = 0x2F008 },
-            new Record { Name = "Value shipped to Tsuyukusa (likely)", Offset = 0x2F00C },
-            new Record { Name = "Value shipped to Lulukoko (likely)", Offset = 0x2F010 }
+            new Record { Name = "Loom items made", Offset = 0x2F01C },
+            new Record { Name = "Seed maker items made", Offset = 0x2F020 },
+            new Record { Name = "Dairy maker items made", Offset = 0x2F030 },
+            new Record { Name = "Cows ever owned", Offset = 0x2F074 },
+            new Record { Name = "Sheep ever owned", Offset = 0x2F078 },
+            new Record { Name = "Birds ever owned", Offset = 0x2F07C },
+            new Record { Name = "Rabbits ever owned", Offset = 0x2F080 },
+            new Record { Name = "Alpacas and llamas ever owned", Offset = 0x2F084 },
+            new Record { Name = "Cow babies born", Offset = 0x2F204 },
+            new Record { Name = "Sheep babies born", Offset = 0x2F208 },
+            new Record { Name = "Llama babies born", Offset = 0x2F210 },
+            new Record { Name = "Rabbit babies born", Offset = 0x2F214 },
+            new Record { Name = "Bird babies born", Offset = 0x2F218 },
+            new Record { Name = "Mill items made", Offset = 0x2F018 },
+            new Record { Name = "Jam pot items made", Offset = 0x2F024 },
+            new Record { Name = "Pickle jar items made", Offset = 0x2F028 },
+            new Record { Name = "Wine maker items made", Offset = 0x2F02C },
+            new Record { Name = "Fertilizer maker items made", Offset = 0x2F034 },
+            new Record { Name = "Feed maker items made", Offset = 0x2F038 },
+            new Record { Name = "Spa baths", Offset = 0x2F088 },
+            new Record { Name = "Westown restaurant meals", Offset = 0x2F090 },
+            new Record { Name = "Teahouse meals", Offset = 0x2F094 },
+            new Record { Name = "Seaside cafe meals", Offset = 0x2F098 },
+            new Record { Name = "Part-time jobs", Offset = 0x2F044 },
+            new Record { Name = "Fish counter (unknown use)", Offset = 0x2F0AC, ReadOnly = true },
+            new Record { Name = "Value shipped to Westown", Offset = 0x2F008 },
+            new Record { Name = "Value shipped to Tsuyukusa", Offset = 0x2F00C },
+            new Record { Name = "Value shipped to Lulukoko", Offset = 0x2F010 },
+            new Record { Name = "Times mined", Offset = 0x2F040 },
+            new Record { Name = "Offerings to Dessie", Offset = 0x24372, U16 = true },
+            new Record { Name = "Offerings to Witchie", Offset = 0x243CA, U16 = true },
+            new Record { Name = "Offerings to Inari", Offset = 0x2378A, U16 = true },
+            new Record { Name = "Vine crops harvested (likely)", Offset = 0x34F40 },
+            new Record { Name = "Giant crop counter 1 (unknown use)", Offset = 0x34F38, ReadOnly = true },
+            new Record { Name = "Giant crop counter 2 (unknown use)", Offset = 0x34F3C, ReadOnly = true },
+            new Record { Name = "Villagers greeted", Offset = 0x2F014 },
+            new Record { Name = "Alpaca babies born", Offset = 0x2F20C }
         };
 
         // Harvest Details screen: each box is the sum of the per-item counts of some item types.
@@ -113,7 +144,27 @@ namespace SOSSE.TOT
             new HarvestCategory { Name = "Other", Types = new int[0] }
         };
         private Record[] harvestDetailRecords;
+        private const int wildPlantType = 16;
+
+        private static int[] itemOffsetsOfType(int itemType)
+        {
+            return Enumerable.Range(0, TotData.ItemNameList.Length).Where(i => TotData.ItemType[i] == itemType)
+                .Select(i => produceCountOffset + 4 * i).ToArray();
+        }
+
+        /// <summary>
+        /// Total harvest count of all items of a type
+        /// </summary>
+        public static ulong HarvestedOfType(int itemType)
+        {
+            TotData.LoadItemData();
+            ulong sum = 0;
+            foreach (int offset in itemOffsetsOfType(itemType))
+                sum += BitConverter.ToUInt32(TotSave.SaveData, offset);
+            return sum;
+        }
         private Record[] produceRecords;
+        private DataGridView fishDataGridView;
 
         public TotRecordEditingForm()
         {
@@ -137,10 +188,14 @@ namespace SOSSE.TOT
             }
             harvestDetailRecords = harvestCategories.Select((c, i) =>
                 new Record { Name = c.Name, SumOf = categoryOffsets[i].ToArray() }).ToArray();
+            // What the Forager trophies count: every wild plant, including those in other boxes above.
+            harvestDetailRecords = harvestDetailRecords.Concat(new[] {
+                new Record { Name = "Wild plants", SumOf = itemOffsetsOfType(wildPlantType) } }).ToArray();
 
             addTab("Festivals", festivalRecords, 180);
             addTab("Count Shipped", shippingRecords, 180);
             addTab("Fishing", fishingRecords, 180);
+            addFishTab();
             addTab("Counters", counterRecords, 260);
             addTab("Harvest Details", harvestDetailRecords, 180);
             addTab("Harvest / Produce", produceRecords, 180);
@@ -173,7 +228,7 @@ namespace SOSSE.TOT
             foreach (Record record in records)
             {
                 int row = dataGridView.Rows.Add(record.Name, readRecord(record));
-                if (record.IsSum)
+                if (record.Locked)
                     TotGrid.LockRow(dataGridView.Rows[row]);
             }
             dataGridView.CellValidating += dataGridView_CellValidating;
@@ -184,10 +239,48 @@ namespace SOSSE.TOT
             recordTabControl.TabPages.Add(tab);
         }
 
+        // Per fish: times caught (not confirmed, so read-only) and record size in cm (u16 each).
+        private void addFishTab()
+        {
+            TotData.LoadFishData();
+            fishDataGridView = new DataGridView();
+            fishDataGridView.Dock = DockStyle.Fill;
+            fishDataGridView.AllowUserToAddRows = false;
+            fishDataGridView.AllowUserToDeleteRows = false;
+            fishDataGridView.AllowUserToResizeRows = false;
+            fishDataGridView.RowHeadersVisible = false;
+            fishDataGridView.EditMode = DataGridViewEditMode.EditOnEnter;
+            fishDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TotGrid.AddTextColumn(fishDataGridView, "Fish", 150, true);
+            DataGridViewTextBoxColumn caughtColumn = TotGrid.AddTextColumn(fishDataGridView, "Caught (likely)", 90, true);
+            caughtColumn.DefaultCellStyle.BackColor = Color.LightGray;
+            TotGrid.AddTextColumn(fishDataGridView, "Record size (cm)", 100, false);
+            for (int i = 0; i < TotData.FishNameList.Length; i++)
+            {
+                int row = fishDataGridView.Rows.Add(TotData.FishNameList[i],
+                    BitConverter.ToUInt16(TotSave.SaveData, TotData.FishCaughtOffset + 2 * i),
+                    BitConverter.ToUInt16(TotSave.SaveData, TotData.FishSizeOffset + 2 * i));
+                // Slots that aren't fish are kept (rows match slots) but hidden and never saved.
+                if (TotData.FishMaxSize[i] <= 0)
+                {
+                    TotGrid.LockRow(fishDataGridView.Rows[row]);
+                    fishDataGridView.Rows[row].Visible = false;
+                }
+            }
+            fishDataGridView.CellValidating += (sender, e) =>
+                TotGrid.ValidateRange(fishDataGridView, e, 2, 0, UInt16.MaxValue);
+
+            TabPage tab = new TabPage("Fish");
+            tab.Controls.Add(fishDataGridView);
+            recordTabControl.TabPages.Add(tab);
+        }
+
         private static ulong readRecord(Record record)
         {
             if (record.SumOf != null)
                 return (ulong)record.SumOf.Sum(offset => (long)BitConverter.ToUInt32(TotSave.SaveData, offset));
+            if (record.U16)
+                return BitConverter.ToUInt16(TotSave.SaveData, record.Offset);
             ulong sum = 0;
             for (int i = 0; i < record.Parts; i++)
                 sum += BitConverter.ToUInt32(TotSave.SaveData, record.Offset + 4 * i);
@@ -221,10 +314,11 @@ namespace SOSSE.TOT
             DataGridView dataGridView = (DataGridView)sender;
             if (e.ColumnIndex != 1 || !dataGridView.IsCurrentCellInEditMode) return;
             DataGridViewCell cell = dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            uint max = ((Record[])dataGridView.Tag)[e.RowIndex].U16 ? UInt16.MaxValue : UInt32.MaxValue;
             uint value;
-            if (!UInt32.TryParse(e.FormattedValue.ToString(), out value))
+            if (!UInt32.TryParse(e.FormattedValue.ToString(), out value) || value > max)
             {
-                cell.ErrorText = "Must be a valid number between 0 and " + UInt32.MaxValue;
+                cell.ErrorText = "Must be a valid number between 0 and " + max;
                 dataGridView.CancelEdit();
             }
             else
@@ -240,16 +334,30 @@ namespace SOSSE.TOT
             {
                 DataGridView dataGridView = (DataGridView)tab.Controls[0];
                 dataGridView.EndEdit();
-                Record[] records = (Record[])dataGridView.Tag;
+                Record[] records = dataGridView.Tag as Record[];
+                if (records == null) continue;
                 for (int i = 0; i < records.Length; i++)
                 {
-                    if (records[i].IsSum) continue;
+                    if (records[i].Locked) continue;
                     uint value;
                     if (!UInt32.TryParse(Convert.ToString(dataGridView.Rows[i].Cells[1].Value), out value))
                         continue;
-                    if (value != BitConverter.ToUInt32(TotSave.SaveData, records[i].Offset))
+                    if (records[i].U16)
+                    {
+                        if (value <= UInt16.MaxValue && value != BitConverter.ToUInt16(TotSave.SaveData, records[i].Offset))
+                            Array.Copy(BitConverter.GetBytes((ushort)value), 0, TotSave.SaveData, records[i].Offset, 2);
+                    }
+                    else if (value != BitConverter.ToUInt32(TotSave.SaveData, records[i].Offset))
                         Array.Copy(BitConverter.GetBytes(value), 0, TotSave.SaveData, records[i].Offset, 4);
                 }
+            }
+            for (int i = 0; i < fishDataGridView.Rows.Count; i++)
+            {
+                ushort size;
+                int offset = TotData.FishSizeOffset + 2 * i;
+                if (TotData.FishMaxSize[i] > 0 && UInt16.TryParse(Convert.ToString(fishDataGridView.Rows[i].Cells[2].Value), out size) &&
+                    size != BitConverter.ToUInt16(TotSave.SaveData, offset))
+                    Array.Copy(BitConverter.GetBytes(size), 0, TotSave.SaveData, offset, 2);
             }
         }
 

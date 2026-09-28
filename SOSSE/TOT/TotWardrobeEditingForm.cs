@@ -72,6 +72,12 @@ namespace SOSSE.TOT
                 int row = wardrobeDataGridView.Rows.Add(type, name, state == owned || state == ownedTailor, status(state));
                 if (state != notOwned && state != owned && state != ownedTailor)
                     TotGrid.LockRow(wardrobeDataGridView.Rows[row]);
+                // Unused placeholders are kept (rows match the wardrobe) but hidden and never changed.
+                if (TotData.IsUnusedWardrobe(wardrobeCount))
+                {
+                    TotGrid.LockRow(wardrobeDataGridView.Rows[row]);
+                    wardrobeDataGridView.Rows[row].Visible = false;
+                }
                 wardrobeCount++;
             }
         }
@@ -90,6 +96,15 @@ namespace SOSSE.TOT
         private static uint getState(int item)
         {
             return BitConverter.ToUInt32(TotSave.SaveData, wardrobeOffset + 8 * item);
+        }
+
+        /// <summary>
+        /// Number of owned items in wardrobe rows first to last that are in the in-game collection list
+        /// </summary>
+        public static int OwnedCount(int first, int last)
+        {
+            return Enumerable.Range(first, last - first + 1).Count(item =>
+                TotData.IsCollectedWardrobe(item) && (getState(item) == owned || getState(item) == ownedTailor));
         }
 
         private void ownAllButton_Click(object sender, EventArgs e)
