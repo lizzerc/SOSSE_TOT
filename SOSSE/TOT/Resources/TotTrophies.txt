@@ -228,8 +228,8 @@ Master Feed Maker (Silver)	0x2F038	500
 Legendary Feed Maker (Gold)	0x2F038	1000
 On the Road to Riches (Bronze)	0x88	50000
 Fiscally Fearsome (Silver)	0x88	100000
-My First Million (Gold)	0x88	5000000
-Multi-Millionaire (Rainbow)	0x88	10000000
+High Roller (Gold)	0x88	5000000
+G Farmer (Rainbow)	0x88	10000000
 Amateur Chef (Bronze)	0x275BC	1
 Fledgling Chef (Bronze)	0x275BC	10
 Short-Order Chef (Bronze)	0x275BC	100
@@ -318,3 +318,4 @@ Teahouse Gold Club Member (Gold)	0x2F094	100
 Seaside Cafe New Visitor (Bronze)	0x2F098	1
 Seaside Cafe Regular (Bronze)	0x2F098	10
 Seaside Cafe Preferred Customer (Silver)	0x2F098	50
+Seaside Cafe Gold Club Member (Gold)	0x2F098	100

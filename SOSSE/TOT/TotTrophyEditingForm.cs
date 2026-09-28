@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace SOSSE.TOT
 {
     /// <summary>
-    /// Trophies: 320 x 3 bits packed from 0x2EF88, read as one little-endian number
+    /// Trophies: 321 x 3 bits packed from 0x2EF88 (the last one in byte 0x2F000), read as one little-endian number
     /// (trophy k = bits 3k to 3k+2). Earning a trophy also raises its counter to the trophy's
     /// target, where the counter is confirmed or highly likely, so that they match.
     /// </summary>
