@@ -10,7 +10,8 @@ using System.Windows.Forms;
 namespace SOSSE.TOT
 {
     /// <summary>
-    /// NPC friendship points (u32 at the start of each NPC record).
+    /// NPC friendship points (u32 at the start of each NPC record). Unused slots and the player's mother
+    /// and sister (not on the relationship screen) are left out.
     /// </summary>
     public partial class TotNPCEditingForm : Form
     {
@@ -21,14 +22,23 @@ namespace SOSSE.TOT
         // Villagers show 5 hearts at 50000; only the spouse goes further (10 hearts at 100000).
         private const uint fiveHearts = 50000;
         private const uint maxPoints = 100000;
+        // Lover record byte that is 4 for the spouse
+        private const int loverStatusOffset = 0x14;
+        private const byte married = 4;
 
         private class NPC
         {
             public string Name;
             public int Offset;
-            // Unused DLC slots and family members are not on the relationship screen.
-            public bool Listed;
-            public bool Editable;
+            public bool Spouse;
+
+            public uint MaxPoints
+            {
+                get
+                {
+                    return Spouse ? maxPoints : fiveHearts;
+                }
+            }
         }
         private List<NPC> npcs;
 
@@ -40,26 +50,21 @@ namespace SOSSE.TOT
             npcs = new List<NPC>();
             for (int i = 0; i < TotData.NPCLoverNameList.Length; i++)
             {
-                bool unused = TotData.NPCLoverNameList[i].StartsWith("(");
-                npcs.Add(new NPC { Name = TotData.NPCLoverNameList[i], Offset = loverOffset + i * loverSize,
-                    Listed = !unused, Editable = !unused });
+                if (TotData.NPCLoverNameList[i].StartsWith("(")) continue;
+                int offset = loverOffset + i * loverSize;
+                npcs.Add(new NPC { Name = TotData.NPCLoverNameList[i], Offset = offset,
+                    Spouse = TotSave.SaveData[offset + loverStatusOffset] == married });
             }
             for (int i = 0; i < TotData.NPCOtherNameList.Length; i++)
             {
-                bool family = i >= TotData.NPCOtherNameList.Length - 3;
-                npcs.Add(new NPC { Name = TotData.NPCOtherNameList[i], Offset = otherOffset + i * otherSize,
-                    Listed = !family, Editable = true });
+                if (TotData.NPCOtherNameList[i] == "Mother" || TotData.NPCOtherNameList[i] == "Sister") continue;
+                npcs.Add(new NPC { Name = TotData.NPCOtherNameList[i], Offset = otherOffset + i * otherSize });
             }
 
             foreach (NPC npc in npcs)
             {
                 uint points = BitConverter.ToUInt32(TotSave.SaveData, npc.Offset);
-                int row = npcDataGridView.Rows.Add(npc.Name, points, hearts(points));
-                if (!npc.Editable)
-                {
-                    npcDataGridView.Rows[row].ReadOnly = true;
-                    npcDataGridView.Rows[row].DefaultCellStyle.BackColor = Color.LightGray;
-                }
+                npcDataGridView.Rows.Add(npc.Spouse ? npc.Name + " (spouse)" : npc.Name, points, hearts(points));
             }
         }
 
@@ -78,11 +83,12 @@ namespace SOSSE.TOT
         {
             if (e.ColumnIndex != pointsColumn.Index || !npcDataGridView.IsCurrentCellInEditMode) return;
             DataGridViewCell cell = npcDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            uint max = npcs[e.RowIndex].MaxPoints;
             uint points;
             bool isValid = UInt32.TryParse(e.FormattedValue.ToString(), out points);
-            if (!isValid || points > maxPoints)
+            if (!isValid || points > max)
             {
-                cell.ErrorText = "Must be a valid number between 0 and " + maxPoints;
+                cell.ErrorText = "Must be a valid number between 0 and " + max;
                 npcDataGridView.CancelEdit();
             }
             else
@@ -102,7 +108,6 @@ namespace SOSSE.TOT
         {
             for (int i = 0; i < npcs.Count; i++)
             {
-                if (!npcs[i].Listed) continue;
                 DataGridViewCell cell = npcDataGridView.Rows[i].Cells[pointsColumn.Index];
                 uint points;
                 if (UInt32.TryParse(Convert.ToString(cell.Value), out points) && points < fiveHearts)
@@ -118,7 +123,6 @@ namespace SOSSE.TOT
             npcDataGridView.EndEdit();
             for (int i = 0; i < npcs.Count; i++)
             {
-                if (!npcs[i].Editable) continue;
                 uint points;
                 if (!UInt32.TryParse(Convert.ToString(npcDataGridView.Rows[i].Cells[pointsColumn.Index].Value), out points))
                     continue;

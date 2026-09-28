@@ -10,8 +10,8 @@ using System.Windows.Forms;
 namespace SOSSE.TOT
 {
     /// <summary>
-    /// Records screens: festival and activity counters, count shipped per town, times fished, fish sizes, harvest details
-    /// and per-item harvest/produce counts (all u32).
+    /// Records screens: festivals, fish sizes, counters (count shipped, fishing, activities and harvest details)
+    /// and product crowns.
     /// </summary>
     public partial class TotRecordEditingForm : Form
     {
@@ -23,10 +23,8 @@ namespace SOSSE.TOT
             public int Offset;
             // Records made of several u32 parts show their sum and can't be edited.
             public int Parts = 1;
-            // Records that are the sum of other records on the same tab; can't be edited.
+            // Records that are the sum of other u32 records; can't be edited.
             public int[] SumOf;
-            // Records whose meaning isn't confirmed in game; shown but can't be edited.
-            public bool ReadOnly;
             // Stored as a u16 instead of a u32.
             public bool U16;
 
@@ -42,7 +40,7 @@ namespace SOSSE.TOT
             {
                 get
                 {
-                    return IsSum || ReadOnly;
+                    return IsSum;
                 }
             }
         }
@@ -57,12 +55,14 @@ namespace SOSSE.TOT
         };
         // Each town's count shipped is the sum of 6 parts; what each part counts is unknown.
         private static readonly Record[] shippingRecords = {
-            new Record { Name = "Westown", Offset = 0x2F100, Parts = 6 },
-            new Record { Name = "Tsuyukusa", Offset = 0x2F118, Parts = 6 },
-            new Record { Name = "Lulukoko", Offset = 0x2F130, Parts = 6 }
+            new Record { Name = "Count shipped to Westown", Offset = 0x2F100, Parts = 6 },
+            new Record { Name = "Count shipped to Tsuyukusa", Offset = 0x2F118, Parts = 6 },
+            new Record { Name = "Count shipped to Lulukoko", Offset = 0x2F130, Parts = 6 },
+            new Record { Name = "Value shipped to Westown", Offset = 0x2F008 },
+            new Record { Name = "Value shipped to Tsuyukusa", Offset = 0x2F00C },
+            new Record { Name = "Value shipped to Lulukoko", Offset = 0x2F010 }
         };
-        // Times Fished on the Records screen is the sum of these two counters. Which one is the
-        // fish trap is inferred from trophy counts.
+        // Times Fished on the Records screen is the sum of these two counters.
         private const int rodCatchOffset = 0x2D9C8;
         private const int fishTrapOffset = 0x2DB64;
         private static readonly Record[] fishingRecords = {
@@ -70,8 +70,7 @@ namespace SOSSE.TOT
             new Record { Name = "Rod catches", Offset = rodCatchOffset },
             new Record { Name = "Fish trap uses", Offset = fishTrapOffset }
         };
-        // Activity counters used by trophies. "(likely)" ones match the trophy thresholds on several saves
-        // but aren't tested in game.
+        // Activity counters used by trophies.
         private static readonly Record[] counterRecords = {
             new Record { Name = "Times slept at the inn", Offset = 0x2F08C },
             new Record { Name = "Times cooked", Offset = 0x275BC },
@@ -99,24 +98,18 @@ namespace SOSSE.TOT
             new Record { Name = "Teahouse meals", Offset = 0x2F094 },
             new Record { Name = "Seaside cafe meals", Offset = 0x2F098 },
             new Record { Name = "Part-time jobs", Offset = 0x2F044 },
-            new Record { Name = "Fish counter (unknown use)", Offset = 0x2F0AC, ReadOnly = true },
-            new Record { Name = "Value shipped to Westown", Offset = 0x2F008 },
-            new Record { Name = "Value shipped to Tsuyukusa", Offset = 0x2F00C },
-            new Record { Name = "Value shipped to Lulukoko", Offset = 0x2F010 },
             new Record { Name = "Times mined", Offset = 0x2F040 },
             new Record { Name = "Offerings to Dessie", Offset = 0x24372, U16 = true },
             new Record { Name = "Offerings to Witchie", Offset = 0x243CA, U16 = true },
             new Record { Name = "Offerings to Inari", Offset = 0x2378A, U16 = true },
-            new Record { Name = "Vine crops harvested (likely)", Offset = 0x34F40 },
-            new Record { Name = "Giant crop counter 1 (unknown use)", Offset = 0x34F38, ReadOnly = true },
-            new Record { Name = "Giant crop counter 2 (unknown use)", Offset = 0x34F3C, ReadOnly = true },
+            new Record { Name = "Vine crops harvested", Offset = 0x34F40 },
             new Record { Name = "Villagers greeted", Offset = 0x2F014 },
             new Record { Name = "Alpaca babies born", Offset = 0x2F20C },
             new Record { Name = "Mushroom Hunter trophy counter", Offset = 0x2F190 },
             new Record { Name = "Item+ Collector trophy counter", Offset = 0x30AC0 }
         };
 
-        // Harvest Details screen: each box is the sum of the per-item counts of some item types.
+        // Harvest Details screen: each box is the sum of the per-item harvest counts of some item types.
         private class HarvestCategory
         {
             public string Name;
@@ -165,18 +158,14 @@ namespace SOSSE.TOT
                 sum += BitConverter.ToUInt32(TotSave.SaveData, offset);
             return sum;
         }
-        private Record[] produceRecords;
         private DataGridView fishDataGridView;
+        private TotCrownEditingForm crownForm;
 
         public TotRecordEditingForm()
         {
             this.Font = SystemFonts.MessageBoxFont;
             InitializeComponent();
             TotData.LoadItemData();
-
-            produceRecords = new Record[TotData.ItemNameList.Length];
-            for (int i = 0; i < produceRecords.Length; i++)
-                produceRecords[i] = new Record { Name = TotData.ItemNameList[i], Offset = produceCountOffset + 4 * i };
 
             // Every item goes in the first category that lists it or its type, else in "Other".
             List<int>[] categoryOffsets = harvestCategories.Select(c => new List<int>()).ToArray();
@@ -189,18 +178,15 @@ namespace SOSSE.TOT
                 categoryOffsets[category].Add(produceCountOffset + 4 * i);
             }
             harvestDetailRecords = harvestCategories.Select((c, i) =>
-                new Record { Name = c.Name, SumOf = categoryOffsets[i].ToArray() }).ToArray();
+                new Record { Name = "Harvest: " + c.Name, SumOf = categoryOffsets[i].ToArray() }).ToArray();
             // What the Forager trophies count: every wild plant, including those in other boxes above.
             harvestDetailRecords = harvestDetailRecords.Concat(new[] {
-                new Record { Name = "Wild plants", SumOf = itemOffsetsOfType(wildPlantType) } }).ToArray();
+                new Record { Name = "Harvest: Wild plants", SumOf = itemOffsetsOfType(wildPlantType) } }).ToArray();
 
             addTab("Festivals", festivalRecords, 180);
-            addTab("Count Shipped", shippingRecords, 180);
-            addTab("Fishing", fishingRecords, 180);
             addFishTab();
-            addTab("Counters", counterRecords, 260);
-            addTab("Harvest Details", harvestDetailRecords, 180);
-            addTab("Harvest / Produce", produceRecords, 180);
+            addTab("Counters", shippingRecords.Concat(fishingRecords).Concat(counterRecords).Concat(harvestDetailRecords).ToArray(), 260);
+            addCrownTab();
         }
 
         private void addTab(string title, Record[] records, int nameWidth)
@@ -241,7 +227,7 @@ namespace SOSSE.TOT
             recordTabControl.TabPages.Add(tab);
         }
 
-        // Per fish: times caught (not confirmed, so read-only) and record size in cm (u16 each).
+        // Per fish: times caught (read-only) and record size in cm (u16 each).
         private void addFishTab()
         {
             TotData.LoadFishData();
@@ -254,7 +240,7 @@ namespace SOSSE.TOT
             fishDataGridView.EditMode = DataGridViewEditMode.EditOnEnter;
             fishDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             TotGrid.AddTextColumn(fishDataGridView, "Fish", 150, true);
-            DataGridViewTextBoxColumn caughtColumn = TotGrid.AddTextColumn(fishDataGridView, "Caught (likely)", 90, true);
+            DataGridViewTextBoxColumn caughtColumn = TotGrid.AddTextColumn(fishDataGridView, "Caught", 90, true);
             caughtColumn.DefaultCellStyle.BackColor = Color.LightGray;
             TotGrid.AddTextColumn(fishDataGridView, "Record size (cm)", 100, false);
             for (int i = 0; i < TotData.FishNameList.Length; i++)
@@ -274,6 +260,22 @@ namespace SOSSE.TOT
 
             TabPage tab = new TabPage("Fish");
             tab.Controls.Add(fishDataGridView);
+            recordTabControl.TabPages.Add(tab);
+        }
+
+        // The product crowns window's controls, shown inside a tab. They keep their layout by moving
+        // to a panel of the window's size, which then fills the tab.
+        private void addCrownTab()
+        {
+            crownForm = new TotCrownEditingForm();
+            Panel panel = new Panel();
+            panel.Size = crownForm.ClientSize;
+            panel.Font = crownForm.Font;
+            foreach (Control control in crownForm.Controls.Cast<Control>().ToArray())
+                panel.Controls.Add(control);
+            panel.Dock = DockStyle.Fill;
+            TabPage tab = new TabPage("Crowns");
+            tab.Controls.Add(panel);
             recordTabControl.TabPages.Add(tab);
         }
 
@@ -298,12 +300,15 @@ namespace SOSSE.TOT
             for (int i = 0; i < records.Length; i++)
             {
                 if (records[i].SumOf == null) continue;
+                // Parts shown on this tab use the value entered; the others come from the save.
                 ulong sum = 0;
-                for (int j = 0; j < records.Length; j++)
+                foreach (int offset in records[i].SumOf)
                 {
+                    int j = Array.FindIndex(records, r => !r.IsSum && !r.U16 && r.Offset == offset);
                     uint value;
-                    if (records[i].SumOf.Contains(records[j].Offset) && !records[j].IsSum &&
-                        UInt32.TryParse(Convert.ToString(dataGridView.Rows[j].Cells[1].Value), out value))
+                    if (j < 0)
+                        sum += BitConverter.ToUInt32(TotSave.SaveData, offset);
+                    else if (UInt32.TryParse(Convert.ToString(dataGridView.Rows[j].Cells[1].Value), out value))
                         sum += value;
                 }
                 if (Convert.ToString(dataGridView.Rows[i].Cells[1].Value) != sum.ToString())
@@ -334,7 +339,8 @@ namespace SOSSE.TOT
         {
             foreach (TabPage tab in recordTabControl.TabPages)
             {
-                DataGridView dataGridView = (DataGridView)tab.Controls[0];
+                DataGridView dataGridView = tab.Controls[0] as DataGridView;
+                if (dataGridView == null) continue;
                 dataGridView.EndEdit();
                 Record[] records = dataGridView.Tag as Record[];
                 if (records == null) continue;
@@ -361,6 +367,7 @@ namespace SOSSE.TOT
                     size != BitConverter.ToUInt16(TotSave.SaveData, offset))
                     Array.Copy(BitConverter.GetBytes(size), 0, TotSave.SaveData, offset, 2);
             }
+            crownForm.SaveCrowns();
         }
 
         private void TotRecordEditingForm_FormClosing(object sender, FormClosingEventArgs e)

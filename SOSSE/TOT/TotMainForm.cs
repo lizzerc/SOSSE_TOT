@@ -33,7 +33,6 @@ namespace SOSSE.TOT
             nicknameTextBox.Enabled = true;
             farmNameTextBox.Enabled = true;
             itemButton.Enabled = true;
-            crownButton.Enabled = true;
             generalButton.Enabled = true;
             animalButton.Enabled = true;
             npcButton.Enabled = true;
@@ -116,11 +115,6 @@ namespace SOSSE.TOT
         private void itemButton_Click(object sender, EventArgs e)
         {
             new TotItemEditingForm().ShowDialog();
-        }
-
-        private void crownButton_Click(object sender, EventArgs e)
-        {
-            new TotCrownEditingForm().ShowDialog();
         }
 
         private void generalButton_Click(object sender, EventArgs e)

@@ -37,7 +37,7 @@
             // 
             this.trophyDataGridView.Location = new System.Drawing.Point(12, 12);
             this.trophyDataGridView.Name = "trophyDataGridView";
-            this.trophyDataGridView.Size = new System.Drawing.Size(490, 400);
+            this.trophyDataGridView.Size = new System.Drawing.Size(350, 400);
             this.trophyDataGridView.TabIndex = 0;
             this.trophyDataGridView.AllowUserToAddRows = false;
             this.trophyDataGridView.AllowUserToDeleteRows = false;
@@ -49,7 +49,7 @@
             // 
             // earnAllButton
             // 
-            this.earnAllButton.Location = new System.Drawing.Point(412, 418);
+            this.earnAllButton.Location = new System.Drawing.Point(272, 418);
             this.earnAllButton.Name = "earnAllButton";
             this.earnAllButton.Size = new System.Drawing.Size(90, 23);
             this.earnAllButton.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(514, 453);
+            this.ClientSize = new System.Drawing.Size(374, 453);
             this.Controls.Add(this.earnAllButton);
             this.Controls.Add(this.trophyDataGridView);
             this.Name = "TotTrophyEditingForm";

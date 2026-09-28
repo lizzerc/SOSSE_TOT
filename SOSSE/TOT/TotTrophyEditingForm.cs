@@ -12,7 +12,7 @@ namespace SOSSE.TOT
     /// <summary>
     /// Trophies: 321 x 3 bits packed from 0x2EF88 (the last one in byte 0x2F000), read as one little-endian number
     /// (trophy k = bits 3k to 3k+2). Earning a trophy also raises its counter to the trophy's
-    /// target, where the counter is confirmed or highly likely, so that they match.
+    /// target, where the counter is known, so that they match.
     /// </summary>
     public partial class TotTrophyEditingForm : Form
     {
@@ -30,45 +30,15 @@ namespace SOSSE.TOT
 
             TotGrid.AddTextColumn(trophyDataGridView, "Trophy", 250, true);
             earnedColumn = TotGrid.AddCheckColumn(trophyDataGridView, "Earned", 60);
-            TotGrid.AddTextColumn(trophyDataGridView, "Counter", 140, true);
 
             for (int i = 0; i < TotData.TrophyNameList.Length; i++)
             {
                 int state = GetState(i);
-                int row = trophyDataGridView.Rows.Add(TotData.TrophyNameList[i], state == earned, counterText(i));
+                int row = trophyDataGridView.Rows.Add(TotData.TrophyNameList[i], state == earned);
                 // Only "earned" and "not earned" are known; other states are kept as they are.
                 if (state != earned && state != notEarned)
                     TotGrid.LockRow(trophyDataGridView.Rows[row]);
             }
-        }
-
-        private static string counterText(int trophy)
-        {
-            int offset = TotData.TrophyCounterOffset[trophy];
-            int itemType = TotData.TrophyCounterItemType[trophy];
-            if (itemType >= 0)
-                return TotRecordEditingForm.HarvestedOfType(itemType) + " / " + TotData.TrophyCounterTarget[trophy];
-            int[] wardrobe = TotData.TrophyCounterWardrobe[trophy];
-            if (wardrobe != null)
-                return TotWardrobeEditingForm.OwnedCount(wardrobe[0], wardrobe[1]) + " / " + TotData.TrophyCounterTarget[trophy] + " (likely)";
-            if (TotData.TrophyCounterIsLargeFish[trophy])
-                return TotData.LargeFishCount() + " / " + TotData.TrophyCounterTarget[trophy] + " (likely)";
-            if (TotData.TrophyCounterSlots[trophy] != null)
-            {
-                ulong sum = 0;
-                foreach (int[] group in TotData.TrophyCounterSlots[trophy])
-                {
-                    uint[] values = group.Select(slotOffset => TotData.TrophyCounterSlotIsU16[trophy]
-                        ? BitConverter.ToUInt16(TotSave.SaveData, slotOffset) : BitConverter.ToUInt32(TotSave.SaveData, slotOffset)).ToArray();
-                    if (TotData.TrophyCounterCountsNonZero[trophy])
-                        sum += values.Any(value => value > 0) ? 1u : 0u;
-                    else
-                        sum += (ulong)values.Sum(value => (long)value);
-                }
-                return sum + " / " + TotData.TrophyCounterTarget[trophy] + (TotData.TrophyCounterIsLikely[trophy] ? " (likely)" : "");
-            }
-            if (offset < 0) return "";
-            return readCounter(trophy) + " / " + TotData.TrophyCounterTarget[trophy];
         }
 
         private static uint readCounter(int trophy)
