@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace SOSSE.TOT
 {
     /// <summary>
-    /// Money, in-game date, stamina and Town Link.
+    /// Money, in-game date and stamina. Town Link has its own window.
     /// </summary>
     public partial class TotGeneralEditingForm : Form
     {
@@ -21,16 +21,6 @@ namespace SOSSE.TOT
         private const int dateOffset = 0x4B68;
         private const int staminaPerHeart = 2000;
         private const int maxHearts = 10;
-        // Town Link: 12-byte records (u32 points, u32 0, u32 rank) for Tsuyukusa, Westown, Lulukoko.
-        private const int westownLinkOffset = 0x365F4;
-        private const int tsuyukusaLinkOffset = 0x365E8;
-        private const int lulukokoLinkOffset = 0x36600;
-        private const int maxLinkPoints = 10000;
-        // Rank 1 = D ... 5 = S
-        private static readonly string[] linkRankList = { "D", "C", "B", "A", "S" };
-        private NumericUpDown[] linkNumericUpDowns;
-        private ComboBox[] linkRankComboBoxes;
-        private int[] linkOffsets;
 
         public TotGeneralEditingForm()
         {
@@ -55,20 +45,6 @@ namespace SOSSE.TOT
             maxStaminaNumericUpDown.Value = Math.Min(BitConverter.ToUInt16(data, maxStaminaOffset), (int)maxStaminaNumericUpDown.Maximum);
             staminaNumericUpDown.Value = Math.Min(BitConverter.ToUInt16(data, staminaOffset), (int)staminaNumericUpDown.Maximum);
             updateHearts();
-
-            linkNumericUpDowns = new[] { westownNumericUpDown, tsuyukusaNumericUpDown, lulukokoNumericUpDown };
-            linkRankComboBoxes = new[] { westownRankComboBox, tsuyukusaRankComboBox, lulukokoRankComboBox };
-            linkOffsets = new[] { westownLinkOffset, tsuyukusaLinkOffset, lulukokoLinkOffset };
-            for (int i = 0; i < linkOffsets.Length; i++)
-            {
-                linkNumericUpDowns[i].Maximum = maxLinkPoints;
-                linkNumericUpDowns[i].Value = Math.Min(BitConverter.ToUInt32(data, linkOffsets[i]), (uint)maxLinkPoints);
-                linkRankComboBoxes[i].Items.AddRange(linkRankList);
-                // A rank outside D-S is shown blank and kept unless changed.
-                uint rank = BitConverter.ToUInt32(data, linkOffsets[i] + 8);
-                if (rank >= 1 && rank <= linkRankList.Length)
-                    linkRankComboBoxes[i].SelectedIndex = (int)rank - 1;
-            }
         }
 
         private void updateHearts()
@@ -119,17 +95,6 @@ namespace SOSSE.TOT
                 writeU16(maxStaminaOffset, (int)maxStaminaNumericUpDown.Value);
             if (staminaNumericUpDown.Value != Math.Min(BitConverter.ToUInt16(TotSave.SaveData, staminaOffset), (int)staminaNumericUpDown.Maximum))
                 writeU16(staminaOffset, (int)staminaNumericUpDown.Value);
-
-            for (int i = 0; i < linkOffsets.Length; i++)
-            {
-                uint points = (uint)linkNumericUpDowns[i].Value;
-                if (points != Math.Min(BitConverter.ToUInt32(TotSave.SaveData, linkOffsets[i]), (uint)maxLinkPoints))
-                    Array.Copy(BitConverter.GetBytes(points), 0, TotSave.SaveData, linkOffsets[i], 4);
-                if (linkRankComboBoxes[i].SelectedIndex < 0) continue;
-                uint rank = (uint)linkRankComboBoxes[i].SelectedIndex + 1;
-                if (rank != BitConverter.ToUInt32(TotSave.SaveData, linkOffsets[i] + 8))
-                    Array.Copy(BitConverter.GetBytes(rank), 0, TotSave.SaveData, linkOffsets[i] + 8, 4);
-            }
         }
 
         private void TotGeneralEditingForm_FormClosing(object sender, FormClosingEventArgs e)

@@ -42,6 +42,7 @@ namespace SOSSE.TOT
             recipeButton.Enabled = true;
             trophyButton.Enabled = true;
             farmCircleButton.Enabled = true;
+            townLinkButton.Enabled = true;
         }
 
         private void openButton_Click(object sender, EventArgs e)
@@ -160,6 +161,11 @@ namespace SOSSE.TOT
         private void farmCircleButton_Click(object sender, EventArgs e)
         {
             new TotFarmCircleEditingForm().ShowDialog();
+        }
+
+        private void townLinkButton_Click(object sender, EventArgs e)
+        {
+            new TotTownLinkEditingForm().ShowDialog();
         }
 
         private void TotMainForm_FormClosing(object sender, FormClosingEventArgs e)
