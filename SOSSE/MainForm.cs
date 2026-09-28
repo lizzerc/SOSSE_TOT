@@ -52,6 +52,7 @@ namespace SOSSE
             npcButton.Enabled = true;
             generalButton.Enabled = true;
             eventButton.Enabled = true;
+            trophyButton.Enabled = true;
         }
 
         private void openButton_Click(object sender, EventArgs e)
@@ -231,6 +232,11 @@ namespace SOSSE
         private void eventButton_Click(object sender, EventArgs e)
         {
             new EventFlagEditingForm().ShowDialog();
+        }
+
+        private void trophyButton_Click(object sender, EventArgs e)
+        {
+            new TrophyEditingForm().ShowDialog();
         }
 
         private void aboutButton_Click(object sender, EventArgs e)
