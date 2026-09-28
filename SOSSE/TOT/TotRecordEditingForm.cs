@@ -111,7 +111,9 @@ namespace SOSSE.TOT
             new Record { Name = "Giant crop counter 1 (unknown use)", Offset = 0x34F38, ReadOnly = true },
             new Record { Name = "Giant crop counter 2 (unknown use)", Offset = 0x34F3C, ReadOnly = true },
             new Record { Name = "Villagers greeted", Offset = 0x2F014 },
-            new Record { Name = "Alpaca babies born", Offset = 0x2F20C }
+            new Record { Name = "Alpaca babies born", Offset = 0x2F20C },
+            new Record { Name = "Mushroom Hunter trophy counter", Offset = 0x2F190 },
+            new Record { Name = "Item+ Collector trophy counter", Offset = 0x30AC0 }
         };
 
         // Harvest Details screen: each box is the sum of the per-item counts of some item types.

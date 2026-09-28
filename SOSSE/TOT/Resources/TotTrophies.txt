@@ -100,7 +100,7 @@ Kindred of the Birds (Bronze)	0x2F07C	20
 Kindred of the Rabbits (Bronze)	0x2F080	20
 Kindred of the Alpacas (Bronze)	0x2F084	20
 Master Livestock Raiser (Bronze)
-Master Livestock Breeder (Bronze)	count:0x2F204:0,1,2|3,4,5	5	likely
+Master Livestock Breeder (Bronze)	count:0x2F204:0-5	5
 Novice Milker (Bronze)
 Veteran Milker (Bronze)
 Master Milker (Silver)
@@ -125,10 +125,10 @@ Novice Llama Wool Collector (Silver)
 Veteran Llama Wool Collector (Silver)
 Master Llama Wool Collector (Gold)
 Legendary Llama Wool Collector (Rainbow)
-Novice Item+ Collector (Silver)
-Veteran Item+ Collector (Gold)
-Master Item+ Collector (Rainbow)
-Legendary Item+ Collector (Rainbow)
+Novice Item+ Collector (Silver)	0x30AC0	100
+Veteran Item+ Collector (Gold)	0x30AC0	500
+Master Item+ Collector (Rainbow)	0x30AC0	1000
+Legendary Item+ Collector (Rainbow)	0x30AC0	2000
 Crazy Pet Person (Bronze)
 Pet Fancier (Silver)
 Pet Trainer (Gold)
@@ -146,9 +146,9 @@ Novice Lulukoko Trader (Bronze)	0x2F010	100000
 Veteran Lulukoko Trader (Silver)	0x2F010	1000000
 Master Lulukoko Trader (Gold)	0x2F010	10000000
 Legendary Lulukoko Trader (Rainbow)	0x2F010	100000000
-Novice Landscaper (Bronze)
-Veteran Landscaper (Gold)
-Master Landscaper (Rainbow)
+Novice Landscaper (Bronze)	count:0x2F28C:0-265	100
+Veteran Landscaper (Gold)	count:0x2F28C:0-265	200
+Master Landscaper (Rainbow)	count:0x2F28C:0-265	266
 Beginner Vine Grower (Bronze)	0x34F40	1
 Novice Vine Grower (Bronze)	0x34F40	100
 Average Vine Grower (Silver)	0x34F40	300
@@ -172,12 +172,12 @@ Average Beekeeper (Silver)
 Veteran Beekeeper (Silver)
 Master Beekeeper (Silver)
 Legendary Beekeeper (Gold)
-Beginner Mushroom Hunter (Bronze)
-Novice Mushroom Hunter (Bronze)
-Average Mushroom Hunter (Silver)
-Veteran Mushroom Hunter (Silver)
-Master Mushroom Hunter (Silver)
-Legendary Mushroom Hunter (Gold)
+Beginner Mushroom Hunter (Bronze)	0x2F190	1
+Novice Mushroom Hunter (Bronze)	0x2F190	15
+Average Mushroom Hunter (Silver)	0x2F190	30
+Veteran Mushroom Hunter (Silver)	0x2F190	50
+Master Mushroom Hunter (Silver)	0x2F190	80
+Legendary Mushroom Hunter (Gold)	0x2F190	150
 Beginner Fish Breeder (Bronze)
 Novice Fish Breeder (Bronze)
 Average Fish Breeder (Silver)
@@ -228,8 +228,8 @@ Master Feed Maker (Silver)	0x2F038	500
 Legendary Feed Maker (Gold)	0x2F038	1000
 On the Road to Riches (Bronze)	0x88	50000
 Fiscally Fearsome (Silver)	0x88	100000
-My First Million (Gold)	0x88	500000
-Multi-Millionaire (Rainbow)	0x88	1000000
+My First Million (Gold)	0x88	5000000
+Multi-Millionaire (Rainbow)	0x88	10000000
 Amateur Chef (Bronze)	0x275BC	1
 Fledgling Chef (Bronze)	0x275BC	10
 Short-Order Chef (Bronze)	0x275BC	100
