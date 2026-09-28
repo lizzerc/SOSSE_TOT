@@ -45,6 +45,7 @@
             this.vendorButton = new System.Windows.Forms.Button();
             this.npcButton = new System.Windows.Forms.Button();
             this.generalButton = new System.Windows.Forms.Button();
+            this.trophyButton = new System.Windows.Forms.Button();
             this.eventButton = new System.Windows.Forms.Button();
             this.aboutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -232,6 +233,17 @@
             this.eventButton.UseVisualStyleBackColor = true;
             this.eventButton.Click += new System.EventHandler(this.eventButton_Click);
             // 
+            // trophyButton
+            // 
+            this.trophyButton.Enabled = false;
+            this.trophyButton.Location = new System.Drawing.Point(12, 165);
+            this.trophyButton.Name = "trophyButton";
+            this.trophyButton.Size = new System.Drawing.Size(75, 23);
+            this.trophyButton.TabIndex = 18;
+            this.trophyButton.Text = "Trophies";
+            this.trophyButton.UseVisualStyleBackColor = true;
+            this.trophyButton.Click += new System.EventHandler(this.trophyButton_Click);
+            // 
             // aboutButton
             // 
             this.aboutButton.Location = new System.Drawing.Point(174, 12);
@@ -247,6 +259,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(261, 200);
+            this.Controls.Add(this.trophyButton);
             this.Controls.Add(this.aboutButton);
             this.Controls.Add(this.eventButton);
             this.Controls.Add(this.generalButton);
@@ -290,6 +303,7 @@
         private System.Windows.Forms.Button vendorButton;
         private System.Windows.Forms.Button npcButton;
         private System.Windows.Forms.Button generalButton;
+        private System.Windows.Forms.Button trophyButton;
         private System.Windows.Forms.Button eventButton;
         private System.Windows.Forms.Button aboutButton;
     }

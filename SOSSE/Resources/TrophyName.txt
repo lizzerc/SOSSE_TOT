@@ -1,0 +1,247 @@
+Good Ol' Country Livin'	0
+Fritz's Stamp of Approval	0
+Giorgio's Stamp of Approval	0
+Elise's Stamp of Approval	0
+Wedding Bells	0
+Birth Certificate	0
+10th Time's the Charm	10
+30 Winters, 30 Springs	30
+Good Neighbor	all
+Conqueror	0
+Trading Post with the Most	0
+Fledgling Farmer	20
+Seasoned Farmer	40
+Grand Farmer	0
+Glorious Farmer	0
+Vegetable-Growing Novice	100
+Vegetable-Growing Veteran	500
+Vegetable-Growing Master	1000
+Fruit-Growing Novice	100
+Fruit-Growing Veteran	500
+Fruit-Growing Master	1000
+Flower-Growing Novice	100
+Flower-Growing Veteran	500
+Flower-Growing Master	1000
+Textile Novice	100
+Textile Veteran	500
+Textile Master	1000
+Grain-Growing Novice	100
+Grain-Growing Veteran	500
+Grain-Growing Master	1000
+Paddy-Growing Novice	100
+Paddy-Growing Veteran	500
+Paddy-Growing Master	1000
+Spice-Growing Novice	100
+Spice-Growing Veteran	500
+Spice-Growing Master	1000
+Tea-Growing Novice	100
+Tea-Growing Veteran	500
+Tea-Growing Master	1000
+Beekeeping Novice	100
+Beekeeping Veteran	500
+Beekeeping Master	1000
+Mushroom-Growing Novice	100
+Mushroom-Growing Veteran	500
+Mushroom-Growing Master	1000
+Kindred of the Cows	20
+Kindred of the Sheep	20
+Kindred of the Alpacas	20
+Master Breeder	0
+Milking Novice	100
+Milking Veteran	500
+Milking Master	1000
+Egg-Gathering Novice	100
+Egg-Gathering Veteran	500
+Egg-Gathering Master	1000
+Wool-Shearing Novice	100
+Wool-Shearing Veteran	500
+Wool-Shearing Master	1000
+Alpaca Wool-Shearing Novice	100
+Alpaca Wool-Shearing Veteran	500
+Alpaca Wool-Shearing Master	1000
+Llama Wool-Shearing Novice	100
+Llama Wool-Shearing Veteran	500
+Llama Wool-Shearing Master	1000
+Zebu-Milking Novice	100
+Zebu-Milking Veteran	500
+Zebu-Milking Master	1000
+Rabbit Fur-Shearing Novice	100
+Rabbit Fur-Shearing Veteran	500
+Rabbit Fur-Shearing Master	1000
+Goat Hair-Shearing Novice	100
+Goat Hair-Shearing Veteran	500
+Goat Hair-Shearing Master	1000
+Camel Hair-Shearing Novice	100
+Camel Hair-Shearing Veteran	500
+Camel Hair-Shearing Master	1000
+Amateur Chef	1
+Fledgling Chef	10
+Short-Order Chef	50
+Buffet Chef	100
+Seasoned Chef	200
+Veteran Chef	400
+Gourmet Chef	800
+Sous Chef	1300
+Executive Chef	1900
+Master Chef	3000
+Novice Recipe Collector	100
+Veteran Recipe Collector	200
+Master Recipe Collector	0
+Amateur Angler	0
+Fledgling Fisher	10
+Fly Fisher	50
+Net Profit	100
+Hot Rod	200
+The Reel Deal	400
+Al-lure-ing	800
+Fish Whisperer	1300
+Dr. Fishgood	1900
+Fisher King	3000
+Novice Fish Collector	20
+Veteran Fish Collector	50
+Master Fish Collector	0
+Fishery Novice	100
+Fishery Veteran	200
+Fishery Master	500
+Amateur Bug Catcher	0
+Larval Stage	10
+Worker Ant	50
+Just Worming Up	100
+Beetle Baiter	200
+Doing What Moth Be Done	400
+Bug Reporter	800
+Exoskeleton Crew	1300
+Entomologist	1900
+Insectoid King	3000
+Novice Insect Collector	30
+Veteran Insect Collector	60
+Master Insect Collector	0
+Novice Decorator	100
+Veteran Decorator	500
+Master Decorator	1000
+Novice Blueprint Collector	100
+Veteran Blueprint Collector	400
+Master Blueprint Collector	0
+Novice Clothing Collector	10
+Veteran Clothing Collector	30
+Master Clothing Collector	0
+Novice Hat Collector	10
+Veteran Hat Collector	30
+Master Hat Collector	0
+Novice Accessory Collector	10
+Veteran Accessory Collector	30
+Master Accessory Collector	0
+Novice Hairstylist	10
+Veteran Hairstylist	30
+Master Hairstylist	50
+Novice Trader	100000
+Veteran Trader	1000000
+Master Trader	10000000
+Novice Quester	50
+Veteran Quester	100
+Master Quester	200
+On the Road to Riches	100000
+Fiscally Fearsome	1000000
+Multi-Millionaire	10000000
+Animal Menagerie	0
+Wild Thing	800
+Safari Novice	10
+Safari Veteran	50
+Safari Master	100
+Harvest Festival 5-Time Winner	5
+Harvest Festival 10-Time Winner	10
+Harvest Festival 30-Time Winner	30
+Fashion Fiesta 5-Time Winner	5
+Fashion Fiesta 10-Time Winner	10
+Fashion Fiesta 30-Time Winner	30
+Livestock Expo 5-Time Winner	5
+Livestock Expo 10-Time Winner	10
+Livestock Expo 30-Time Winner	30
+Cooking Exhibition 5-Time Winner	5
+Cooking Exhibition 10-Time Winner	10
+Cooking Exhibition 30-Time Winner	30
+Pet Promenade 5-Time Winner	5
+Pet Promenade 10-Time Winner	10
+Pet Promenade 30-Time Winner	30
+Dessie's Devotee	500
+Witchie's Devotee	500
+Small Sweetfish Master	15 cm
+Sardine Master	20 cm
+Small Char Master	22 cm
+Pale Chub Master	22 cm
+Willowfish Master	15 cm
+Pike Master	27 cm
+Three-Lips Master	23 cm
+Icefish Master	18 cm
+Bluegill Master	24 cm
+Small Willowfish Master	10 cm
+Small Trout Master	20 cm
+Smelt Master	15 cm
+Killifish Master	14 cm
+Honmoroko Master	30 cm
+Small Cherry Trout Master	30 cm
+Small Crucian Carp Master	30 cm
+Sculpin Master	26 cm
+Small Carp Master	25 cm
+Loach Master	27 cm
+Small Loach Master	20 cm
+Goby Master	24 cm
+Small Goby Master	17 cm
+Pufferfish Master	53 cm
+Mackerel Master	57 cm
+Flying Fish Master	54 cm
+Needlefish Master	58 cm
+Sweetfish Master	59 cm
+Cherry Trout Master	60 cm
+Char Master	60 cm
+Minnow Master	55 cm
+Crucian Carp Master	53 cm
+Black Bass Master	60 cm
+Flounder Master	59 cm
+Large Loach Master	60 cm
+Halibut Master	54 cm
+Sea Bream Master	60 cm
+Carp Master	56 cm
+Conger Eel Master	57 cm
+Bonito Master	93 cm
+Salmon Master	99 cm
+Sea Bass Master	120 cm
+Large Sea Bass Master	150 cm
+Trout Master	98 cm
+Beltfish Master	88 cm
+Large Crucian Carp Master	96 cm
+Longtooth Grouper Master	130 cm
+Snakehead Master	100 cm
+Pollock Master	115 cm
+Tuna Master	230 cm
+Large Trout Master	222 cm
+Ocean Sunfish Master	360 cm
+Moray Eel Master	200 cm
+Large Snakehead Master	325 cm
+Spiny Lobster Master	60 cm
+Tiger Prawn Master	23 cm
+Freshwater Prawn Master	23 cm
+Lake Prawn Master	23 cm
+Marsh Shrimp Master	23 cm
+Steamer Clam Master	20 cm
+Basket Clam Master	20 cm
+Oriental Clam Master	30 cm
+Squid Master	60 cm
+Octopus Master	60 cm
+Horned Turban Master	30 cm
+Red Freshwater Crab Master	25 cm
+Blue Freshwater Crab Master	25 cm
+Alligator Gar Master	326 cm
+Arowana Master	370 cm
+Anglerfish Master	380 cm
+Huchen Master	400 cm
+Eel Master	350 cm
+Marlin Master	524 cm
+Keiji Salmon Master	420 cm
+Mitten Crab Master	60 cm
+Softshelled Turtle Master	60 cm
+Red King Crab Master	130 cm
+Ray Master	140 cm
+Sturgeon Master	553 cm
+Catfish Master	143 cm
+Koi Master	111 cm
