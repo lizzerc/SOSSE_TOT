@@ -25,12 +25,19 @@ namespace SOSSE.TOT
         // Lover record byte that is 4 for the spouse
         private const int loverStatusOffset = 0x14;
         private const byte married = 4;
+        // Marriage candidates (the first 10 lover records): gifts given (u16) and affection (u8, 0-200;
+        // a reverse proposal needs 120).
+        private const int candidateCount = 10;
+        private const int giftsOffset = 0x06;
+        private const int affectionOffset = 0x15;
+        private const int maxAffection = 200;
 
         private class NPC
         {
             public string Name;
             public int Offset;
             public bool Spouse;
+            public bool Candidate;
 
             public uint MaxPoints
             {
@@ -41,11 +48,15 @@ namespace SOSSE.TOT
             }
         }
         private List<NPC> npcs;
+        private DataGridViewTextBoxColumn giftsColumn;
+        private DataGridViewTextBoxColumn affectionColumn;
 
         public TotNPCEditingForm()
         {
             this.Font = SystemFonts.MessageBoxFont;
             InitializeComponent();
+            giftsColumn = TotGrid.AddTextColumn(npcDataGridView, "Gifts", 70, false);
+            affectionColumn = TotGrid.AddTextColumn(npcDataGridView, "Affection", 75, false);
 
             npcs = new List<NPC>();
             for (int i = 0; i < TotData.NPCLoverNameList.Length; i++)
@@ -53,7 +64,7 @@ namespace SOSSE.TOT
                 if (TotData.NPCLoverNameList[i].StartsWith("(")) continue;
                 int offset = loverOffset + i * loverSize;
                 npcs.Add(new NPC { Name = TotData.NPCLoverNameList[i], Offset = offset,
-                    Spouse = TotSave.SaveData[offset + loverStatusOffset] == married });
+                    Spouse = TotSave.SaveData[offset + loverStatusOffset] == married, Candidate = i < candidateCount });
             }
             for (int i = 0; i < TotData.NPCOtherNameList.Length; i++)
             {
@@ -64,8 +75,27 @@ namespace SOSSE.TOT
             foreach (NPC npc in npcs)
             {
                 uint points = BitConverter.ToUInt32(TotSave.SaveData, npc.Offset);
-                npcDataGridView.Rows.Add(npc.Spouse ? npc.Name + " (spouse)" : npc.Name, points, hearts(points));
+                int row = npcDataGridView.Rows.Add(npc.Spouse ? npc.Name + " (spouse)" : npc.Name, points, hearts(points));
+                if (npc.Candidate)
+                {
+                    npcDataGridView.Rows[row].Cells[giftsColumn.Index].Value = BitConverter.ToUInt16(TotSave.SaveData, npc.Offset + giftsOffset);
+                    npcDataGridView.Rows[row].Cells[affectionColumn.Index].Value = TotSave.SaveData[npc.Offset + affectionOffset];
+                }
+                else
+                {
+                    // Only marriage candidates have gifts and affection.
+                    foreach (DataGridViewColumn column in new[] { giftsColumn, affectionColumn })
+                    {
+                        npcDataGridView.Rows[row].Cells[column.Index].ReadOnly = true;
+                        npcDataGridView.Rows[row].Cells[column.Index].Style.BackColor = Color.LightGray;
+                    }
+                }
             }
+            npcDataGridView.CellValidating += (sender, e) =>
+            {
+                TotGrid.ValidateRange(npcDataGridView, e, giftsColumn.Index, 0, UInt16.MaxValue);
+                TotGrid.ValidateRange(npcDataGridView, e, affectionColumn.Index, 0, maxAffection);
+            };
         }
 
         /// <summary>
@@ -128,6 +158,13 @@ namespace SOSSE.TOT
                     continue;
                 if (points != BitConverter.ToUInt32(TotSave.SaveData, npcs[i].Offset))
                     Array.Copy(BitConverter.GetBytes(points), 0, TotSave.SaveData, npcs[i].Offset, 4);
+                if (!npcs[i].Candidate) continue;
+                int gifts, affection;
+                if (TotGrid.TryGetInt(npcDataGridView.Rows[i].Cells[giftsColumn.Index], out gifts) && gifts >= 0 && gifts <= UInt16.MaxValue &&
+                    gifts != BitConverter.ToUInt16(TotSave.SaveData, npcs[i].Offset + giftsOffset))
+                    Array.Copy(BitConverter.GetBytes((ushort)gifts), 0, TotSave.SaveData, npcs[i].Offset + giftsOffset, 2);
+                if (TotGrid.TryGetInt(npcDataGridView.Rows[i].Cells[affectionColumn.Index], out affection) && affection >= 0 && affection <= maxAffection)
+                    TotSave.SaveData[npcs[i].Offset + affectionOffset] = (byte)affection;
             }
         }
 
