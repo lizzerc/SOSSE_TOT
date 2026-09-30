@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace SOSSE.TOT
 {
     /// <summary>
-    /// Money, in-game date and stamina. Town Link has its own window.
+    /// Money, in-game date, stamina and player appearance. Town Link has its own window.
     /// </summary>
     public partial class TotGeneralEditingForm : Form
     {
@@ -21,6 +21,12 @@ namespace SOSSE.TOT
         private const int dateOffset = 0x4B68;
         private const int staminaPerHeart = 2000;
         private const int maxHearts = 10;
+        // Player appearance, one u8 each: eye color, face, skin tone
+        private const int eyeColorOffset = 0x7F;
+        private const int faceOffset = 0x80;
+        private const int skinToneOffset = 0x81;
+        private ComboBox[] appearanceComboBoxes;
+        private int[] appearanceOffsets;
 
         public TotGeneralEditingForm()
         {
@@ -45,6 +51,17 @@ namespace SOSSE.TOT
             maxStaminaNumericUpDown.Value = Math.Min(BitConverter.ToUInt16(data, maxStaminaOffset), (int)maxStaminaNumericUpDown.Maximum);
             staminaNumericUpDown.Value = Math.Min(BitConverter.ToUInt16(data, staminaOffset), (int)staminaNumericUpDown.Maximum);
             updateHearts();
+
+            appearanceComboBoxes = new[] { eyeColorComboBox, faceComboBox, skinToneComboBox };
+            appearanceOffsets = new[] { eyeColorOffset, faceOffset, skinToneOffset };
+            string[][] appearanceLists = { TotData.EyeColorList, TotData.FaceList, TotData.SkinToneList };
+            for (int i = 0; i < appearanceComboBoxes.Length; i++)
+            {
+                appearanceComboBoxes[i].Items.AddRange(appearanceLists[i]);
+                // A value outside the list is shown blank and kept unless changed.
+                if (data[appearanceOffsets[i]] < appearanceLists[i].Length)
+                    appearanceComboBoxes[i].SelectedIndex = data[appearanceOffsets[i]];
+            }
         }
 
         private void updateHearts()
@@ -95,6 +112,10 @@ namespace SOSSE.TOT
                 writeU16(maxStaminaOffset, (int)maxStaminaNumericUpDown.Value);
             if (staminaNumericUpDown.Value != Math.Min(BitConverter.ToUInt16(TotSave.SaveData, staminaOffset), (int)staminaNumericUpDown.Maximum))
                 writeU16(staminaOffset, (int)staminaNumericUpDown.Value);
+
+            for (int i = 0; i < appearanceComboBoxes.Length; i++)
+                if (appearanceComboBoxes[i].SelectedIndex >= 0)
+                    writeU8(appearanceOffsets[i], appearanceComboBoxes[i].SelectedIndex);
         }
 
         private void TotGeneralEditingForm_FormClosing(object sender, FormClosingEventArgs e)

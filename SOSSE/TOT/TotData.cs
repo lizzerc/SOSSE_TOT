@@ -70,6 +70,18 @@ namespace SOSSE.TOT
 
         public static readonly string[] RankList = { "None", "Bronze", "Silver", "Gold", "Rainbow" };
         public static readonly string[] SeasonList = { "Spring", "Summer", "Fall", "Winter" };
+        // Player appearance choices in game order (DataText; the "Extra" placeholders are left out).
+        public static readonly string[] EyeColorList = { "Chocolate Brown", "Natural Black", "Pearl Gray", "Snowy White",
+            "Lavender", "Turquoise", "Cobalt Blue", "Emerald Green", "Apple Green", "Lemon Yellow", "Golden Yellow",
+            "Carrot Orange", "Ruby Red", "Rose Pink", "Pale Pink", "Amethyst", "Yellow/Blue Odd Eye",
+            "Purple/Pink Odd Eye", "White/Gray Odd Eye", "Red/Black Odd Eye" };
+        public static readonly string[] FaceList = { "Natural Look", "Funny Face", "Cool Look", "Droopy-Eyed Face",
+            "Grumpy Face", "Calm Countenance", "Smiley Face", "Big-Eyed Face", "Sweet Face", "Young Face",
+            "Suave Countenance", "Smirking Face", "Freckled Face", "Round Face", "Wild Look", "Natural Look (2)",
+            "Cool Look (2)", "Baby-Face", "Bright-Eyed Face", "Smiley Face (2)", "Calm Countenance (2)",
+            "Alluring Look", "Mischievous Look", "Intelligent Look", "Cutie Pie Face", "Funny Face (2)",
+            "Little Devil Look", "Freckled Face (2)", "Geisha Face", "Exotic Countenance" };
+        public static readonly string[] SkinToneList = { "Peach", "Snow", "Porcelain", "Olive", "Coffee" };
         public static readonly string[] PetAbilityList = { "Herding / Recovery", "Finding Materials",
             "Finding Fish", "Finding Ore", "Finding Plants", "Finding Misc." };
 

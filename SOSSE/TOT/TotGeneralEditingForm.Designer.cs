@@ -46,6 +46,12 @@
             this.maxStaminaLabel = new System.Windows.Forms.Label();
             this.maxStaminaNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.maxStaminaHeartsLabel = new System.Windows.Forms.Label();
+            this.eyeColorLabel = new System.Windows.Forms.Label();
+            this.eyeColorComboBox = new System.Windows.Forms.ComboBox();
+            this.faceLabel = new System.Windows.Forms.Label();
+            this.faceComboBox = new System.Windows.Forms.ComboBox();
+            this.skinToneLabel = new System.Windows.Forms.Label();
+            this.skinToneComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.moneyNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dayNumericUpDown)).BeginInit();
@@ -212,11 +218,68 @@
             this.maxStaminaHeartsLabel.AutoSize = true;
             this.maxStaminaHeartsLabel.Text = "0 hearts";
             // 
+            // eyeColorLabel
+            // 
+            this.eyeColorLabel.Location = new System.Drawing.Point(12, 242);
+            this.eyeColorLabel.Name = "eyeColorLabel";
+            this.eyeColorLabel.Size = new System.Drawing.Size(80, 13);
+            this.eyeColorLabel.TabIndex = 30;
+            this.eyeColorLabel.AutoSize = true;
+            this.eyeColorLabel.Text = "Eye color";
+            // 
+            // eyeColorComboBox
+            // 
+            this.eyeColorComboBox.Location = new System.Drawing.Point(115, 240);
+            this.eyeColorComboBox.Name = "eyeColorComboBox";
+            this.eyeColorComboBox.Size = new System.Drawing.Size(160, 20);
+            this.eyeColorComboBox.TabIndex = 31;
+            this.eyeColorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            // 
+            // faceLabel
+            // 
+            this.faceLabel.Location = new System.Drawing.Point(12, 268);
+            this.faceLabel.Name = "faceLabel";
+            this.faceLabel.Size = new System.Drawing.Size(80, 13);
+            this.faceLabel.TabIndex = 32;
+            this.faceLabel.AutoSize = true;
+            this.faceLabel.Text = "Face";
+            // 
+            // faceComboBox
+            // 
+            this.faceComboBox.Location = new System.Drawing.Point(115, 266);
+            this.faceComboBox.Name = "faceComboBox";
+            this.faceComboBox.Size = new System.Drawing.Size(160, 20);
+            this.faceComboBox.TabIndex = 33;
+            this.faceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            // 
+            // skinToneLabel
+            // 
+            this.skinToneLabel.Location = new System.Drawing.Point(12, 294);
+            this.skinToneLabel.Name = "skinToneLabel";
+            this.skinToneLabel.Size = new System.Drawing.Size(80, 13);
+            this.skinToneLabel.TabIndex = 34;
+            this.skinToneLabel.AutoSize = true;
+            this.skinToneLabel.Text = "Skin tone";
+            // 
+            // skinToneComboBox
+            // 
+            this.skinToneComboBox.Location = new System.Drawing.Point(115, 292);
+            this.skinToneComboBox.Name = "skinToneComboBox";
+            this.skinToneComboBox.Size = new System.Drawing.Size(160, 20);
+            this.skinToneComboBox.TabIndex = 35;
+            this.skinToneComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            // 
             // TotGeneralEditingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(290, 240);
+            this.ClientSize = new System.Drawing.Size(290, 324);
+            this.Controls.Add(this.skinToneComboBox);
+            this.Controls.Add(this.skinToneLabel);
+            this.Controls.Add(this.faceComboBox);
+            this.Controls.Add(this.faceLabel);
+            this.Controls.Add(this.eyeColorComboBox);
+            this.Controls.Add(this.eyeColorLabel);
             this.Controls.Add(this.maxStaminaHeartsLabel);
             this.Controls.Add(this.maxStaminaNumericUpDown);
             this.Controls.Add(this.maxStaminaLabel);
@@ -256,6 +319,12 @@
         #endregion
 
         private System.Windows.Forms.Label moneyLabel;
+        private System.Windows.Forms.Label eyeColorLabel;
+        private System.Windows.Forms.ComboBox eyeColorComboBox;
+        private System.Windows.Forms.Label faceLabel;
+        private System.Windows.Forms.ComboBox faceComboBox;
+        private System.Windows.Forms.Label skinToneLabel;
+        private System.Windows.Forms.ComboBox skinToneComboBox;
         private System.Windows.Forms.NumericUpDown moneyNumericUpDown;
         private System.Windows.Forms.Label yearLabel;
         private System.Windows.Forms.NumericUpDown yearNumericUpDown;
