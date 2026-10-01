@@ -1,19 +1,19 @@
-Calf
-Calf
-Calf
-Calf
-Jersey Calf
-Buffalo Calf
-Lamb
-Suffolk Lamb
-Alpaca Cria
-Br. Alpaca Cria
-Llama Cria
-Baby Angora
-Baby Gr. Angora
-Chick
-Silkie Chick
-Quail Chick
+Cow
+Cow
+Cow
+Cow
+Jersey Cow
+Buffalo
+Sheep
+Suffolk Sheep
+Alpaca
+Br. Alpaca
+Llama
+Angora Rabbit
+Gr. Angora Rabbit
+Chicken
+Silkie
+Quail
 Tosa
 Great Pyrenees
 Bernese
@@ -73,13 +73,13 @@ Long Mane Horse
 Braided Horse
 Mohawked Horse
 Spotted Horse
-Calf
-Calf
-Calf
-Calf
-Calf
-Calf
-Calf
-Calf
-Calf
-Calf
+Cow
+Cow
+Cow
+Cow
+Cow
+Cow
+Cow
+Cow
+Cow
+Cow
