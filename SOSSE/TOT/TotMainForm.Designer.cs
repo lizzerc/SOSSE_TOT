@@ -39,7 +39,6 @@
             this.openButton = new System.Windows.Forms.Button();
             this.saveAsButton = new System.Windows.Forms.Button();
             this.itemButton = new System.Windows.Forms.Button();
-            this.crownButton = new System.Windows.Forms.Button();
             this.generalButton = new System.Windows.Forms.Button();
             this.animalButton = new System.Windows.Forms.Button();
             this.npcButton = new System.Windows.Forms.Button();
@@ -48,6 +47,7 @@
             this.recipeButton = new System.Windows.Forms.Button();
             this.trophyButton = new System.Windows.Forms.Button();
             this.farmCircleButton = new System.Windows.Forms.Button();
+            this.townLinkButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // openButton
@@ -143,29 +143,18 @@
             this.itemButton.Enabled = false;
             this.itemButton.Location = new System.Drawing.Point(12, 137);
             this.itemButton.Name = "itemButton";
-            this.itemButton.Size = new System.Drawing.Size(75, 23);
+            this.itemButton.Size = new System.Drawing.Size(116, 23);
             this.itemButton.TabIndex = 10;
             this.itemButton.Text = "Items";
             this.itemButton.UseVisualStyleBackColor = true;
             this.itemButton.Click += new System.EventHandler(this.itemButton_Click);
             // 
-            // crownButton
-            // 
-            this.crownButton.Enabled = false;
-            this.crownButton.Location = new System.Drawing.Point(93, 137);
-            this.crownButton.Name = "crownButton";
-            this.crownButton.Size = new System.Drawing.Size(75, 23);
-            this.crownButton.TabIndex = 11;
-            this.crownButton.Text = "Crowns";
-            this.crownButton.UseVisualStyleBackColor = true;
-            this.crownButton.Click += new System.EventHandler(this.crownButton_Click);
-            // 
             // generalButton
             // 
             this.generalButton.Enabled = false;
-            this.generalButton.Location = new System.Drawing.Point(174, 137);
+            this.generalButton.Location = new System.Drawing.Point(134, 137);
             this.generalButton.Name = "generalButton";
-            this.generalButton.Size = new System.Drawing.Size(75, 23);
+            this.generalButton.Size = new System.Drawing.Size(115, 23);
             this.generalButton.TabIndex = 12;
             this.generalButton.Text = "General";
             this.generalButton.UseVisualStyleBackColor = true;
@@ -248,11 +237,23 @@
             this.farmCircleButton.UseVisualStyleBackColor = true;
             this.farmCircleButton.Click += new System.EventHandler(this.farmCircleButton_Click);
             // 
+            // townLinkButton
+            // 
+            this.townLinkButton.Enabled = false;
+            this.townLinkButton.Location = new System.Drawing.Point(134, 224);
+            this.townLinkButton.Name = "townLinkButton";
+            this.townLinkButton.Size = new System.Drawing.Size(115, 23);
+            this.townLinkButton.TabIndex = 22;
+            this.townLinkButton.Text = "Town Link";
+            this.townLinkButton.UseVisualStyleBackColor = true;
+            this.townLinkButton.Click += new System.EventHandler(this.townLinkButton_Click);
+            // 
             // TotMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(261, 259);
+            this.Controls.Add(this.townLinkButton);
             this.Controls.Add(this.farmCircleButton);
             this.Controls.Add(this.trophyButton);
             this.Controls.Add(this.recipeButton);
@@ -261,7 +262,6 @@
             this.Controls.Add(this.npcButton);
             this.Controls.Add(this.animalButton);
             this.Controls.Add(this.generalButton);
-            this.Controls.Add(this.crownButton);
             this.Controls.Add(this.itemButton);
             this.Controls.Add(this.saveAsButton);
             this.Controls.Add(this.openButton);
@@ -297,7 +297,6 @@
         private System.Windows.Forms.Button openButton;
         private System.Windows.Forms.Button saveAsButton;
         private System.Windows.Forms.Button itemButton;
-        private System.Windows.Forms.Button crownButton;
         private System.Windows.Forms.Button generalButton;
         private System.Windows.Forms.Button animalButton;
         private System.Windows.Forms.Button npcButton;
@@ -306,5 +305,6 @@
         private System.Windows.Forms.Button recipeButton;
         private System.Windows.Forms.Button trophyButton;
         private System.Windows.Forms.Button farmCircleButton;
+        private System.Windows.Forms.Button townLinkButton;
     }
 }

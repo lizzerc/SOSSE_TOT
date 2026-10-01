@@ -40,7 +40,7 @@
             // 
             this.npcDataGridView.Location = new System.Drawing.Point(12, 12);
             this.npcDataGridView.Name = "npcDataGridView";
-            this.npcDataGridView.Size = new System.Drawing.Size(360, 400);
+            this.npcDataGridView.Size = new System.Drawing.Size(505, 400);
             this.npcDataGridView.TabIndex = 0;
             this.npcDataGridView.AllowUserToAddRows = false;
             this.npcDataGridView.AllowUserToDeleteRows = false;
@@ -78,7 +78,7 @@
             // 
             // allHeartsButton
             // 
-            this.allHeartsButton.Location = new System.Drawing.Point(282, 418);
+            this.allHeartsButton.Location = new System.Drawing.Point(427, 418);
             this.allHeartsButton.Name = "allHeartsButton";
             this.allHeartsButton.Size = new System.Drawing.Size(90, 23);
             this.allHeartsButton.TabIndex = 1;
@@ -91,7 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(384, 453);
+            this.ClientSize = new System.Drawing.Size(529, 453);
             this.Controls.Add(this.allHeartsButton);
             this.Controls.Add(this.npcDataGridView);
             this.Name = "TotNPCEditingForm";

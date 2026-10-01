@@ -46,13 +46,11 @@ namespace SOSSE.TOT
             InitializeComponent();
             TotData.LoadItemData();
 
-            // The unknown container is shown, but not editable.
             containers = new ItemContainer[] {
                 new ItemContainer { Name = "Bag", Offset = 0x1E74C, Count = 100 },
                 new ItemContainer { Name = "Storage Box", Offset = 0x275C4, Count = 900 },
                 new ItemContainer { Name = "Feed Bin", Offset = 0x3351C, Count = 200 },
-                new ItemContainer { Name = "Shipping Bin", Offset = 0x03898, Count = 300 },
-                new ItemContainer { Name = "Unknown (100)", Offset = 0x36BC4, Count = 100, ReadOnly = true }
+                new ItemContainer { Name = "Shipping Bin", Offset = 0x03898, Count = 300 }
             };
 
             LoadItemData();

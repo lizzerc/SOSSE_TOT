@@ -42,9 +42,8 @@ namespace SOSSE.TOT
             initialGlasses = fillComboBox(glassesComboBox, TotData.GlassesNameList, TotSave.SaveData[glassesOffset]);
 
             TotGrid.AddTextColumn(wardrobeDataGridView, "Type", 60, true);
-            TotGrid.AddTextColumn(wardrobeDataGridView, "Item", 190, true);
+            TotGrid.AddTextColumn(wardrobeDataGridView, "Item", 270, true);
             ownedColumn = TotGrid.AddCheckColumn(wardrobeDataGridView, "Owned", 50);
-            TotGrid.AddTextColumn(wardrobeDataGridView, "Status", 90, true);
 
             addItems("Clothes", TotData.ClothesNameList);
             addItems("Hat", TotData.HatNameList);
@@ -69,7 +68,7 @@ namespace SOSSE.TOT
             foreach (string name in names)
             {
                 uint state = getState(wardrobeCount);
-                int row = wardrobeDataGridView.Rows.Add(type, name, state == owned || state == ownedTailor, status(state));
+                int row = wardrobeDataGridView.Rows.Add(type, name, state == owned || state == ownedTailor);
                 if (state != notOwned && state != owned && state != ownedTailor)
                     TotGrid.LockRow(wardrobeDataGridView.Rows[row]);
                 // Unused placeholders are kept (rows match the wardrobe) but hidden and never changed.
@@ -79,17 +78,6 @@ namespace SOSSE.TOT
                     wardrobeDataGridView.Rows[row].Visible = false;
                 }
                 wardrobeCount++;
-            }
-        }
-
-        private static string status(uint state)
-        {
-            switch (state)
-            {
-                case notOwned: return "";
-                case owned: return "Owned";
-                case ownedTailor: return "Made at tailor";
-                default: return "Unknown (" + state + ")";
             }
         }
 

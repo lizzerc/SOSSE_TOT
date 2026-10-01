@@ -46,6 +46,12 @@
             this.maxStaminaLabel = new System.Windows.Forms.Label();
             this.maxStaminaNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.maxStaminaHeartsLabel = new System.Windows.Forms.Label();
+            this.eyeColorLabel = new System.Windows.Forms.Label();
+            this.eyeColorComboBox = new System.Windows.Forms.ComboBox();
+            this.faceLabel = new System.Windows.Forms.Label();
+            this.faceComboBox = new System.Windows.Forms.ComboBox();
+            this.skinToneLabel = new System.Windows.Forms.Label();
+            this.skinToneComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.moneyNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dayNumericUpDown)).BeginInit();
@@ -53,18 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.minuteNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staminaNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxStaminaNumericUpDown)).BeginInit();
-            this.westownLabel = new System.Windows.Forms.Label();
-            this.westownNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.westownRankComboBox = new System.Windows.Forms.ComboBox();
-            this.tsuyukusaLabel = new System.Windows.Forms.Label();
-            this.tsuyukusaNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.tsuyukusaRankComboBox = new System.Windows.Forms.ComboBox();
-            this.lulukokoLabel = new System.Windows.Forms.Label();
-            this.lulukokoNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.lulukokoRankComboBox = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.westownNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tsuyukusaNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lulukokoNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // moneyLabel
@@ -224,98 +218,68 @@
             this.maxStaminaHeartsLabel.AutoSize = true;
             this.maxStaminaHeartsLabel.Text = "0 hearts";
             // 
-            // westownLabel
+            // eyeColorLabel
             // 
-            this.westownLabel.Location = new System.Drawing.Point(12, 242);
-            this.westownLabel.Name = "westownLabel";
-            this.westownLabel.Size = new System.Drawing.Size(80, 13);
-            this.westownLabel.TabIndex = 18;
-            this.westownLabel.AutoSize = true;
-            this.westownLabel.Text = "Westown link";
+            this.eyeColorLabel.Location = new System.Drawing.Point(12, 242);
+            this.eyeColorLabel.Name = "eyeColorLabel";
+            this.eyeColorLabel.Size = new System.Drawing.Size(80, 13);
+            this.eyeColorLabel.TabIndex = 30;
+            this.eyeColorLabel.AutoSize = true;
+            this.eyeColorLabel.Text = "Eye color";
             // 
-            // westownNumericUpDown
+            // eyeColorComboBox
             // 
-            this.westownNumericUpDown.Location = new System.Drawing.Point(115, 240);
-            this.westownNumericUpDown.Name = "westownNumericUpDown";
-            this.westownNumericUpDown.Size = new System.Drawing.Size(80, 20);
-            this.westownNumericUpDown.TabIndex = 19;
-            this.westownNumericUpDown.Increment = new decimal(new int[] { 100, 0, 0, 0 });
+            this.eyeColorComboBox.Location = new System.Drawing.Point(115, 240);
+            this.eyeColorComboBox.Name = "eyeColorComboBox";
+            this.eyeColorComboBox.Size = new System.Drawing.Size(160, 20);
+            this.eyeColorComboBox.TabIndex = 31;
+            this.eyeColorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             // 
-            // westownRankComboBox
+            // faceLabel
             // 
-            this.westownRankComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.westownRankComboBox.FormattingEnabled = true;
-            this.westownRankComboBox.Location = new System.Drawing.Point(201, 239);
-            this.westownRankComboBox.Name = "westownRankComboBox";
-            this.westownRankComboBox.Size = new System.Drawing.Size(77, 21);
-            this.westownRankComboBox.TabIndex = 20;
+            this.faceLabel.Location = new System.Drawing.Point(12, 268);
+            this.faceLabel.Name = "faceLabel";
+            this.faceLabel.Size = new System.Drawing.Size(80, 13);
+            this.faceLabel.TabIndex = 32;
+            this.faceLabel.AutoSize = true;
+            this.faceLabel.Text = "Face";
             // 
-            // tsuyukusaLabel
+            // faceComboBox
             // 
-            this.tsuyukusaLabel.Location = new System.Drawing.Point(12, 268);
-            this.tsuyukusaLabel.Name = "tsuyukusaLabel";
-            this.tsuyukusaLabel.Size = new System.Drawing.Size(80, 13);
-            this.tsuyukusaLabel.TabIndex = 21;
-            this.tsuyukusaLabel.AutoSize = true;
-            this.tsuyukusaLabel.Text = "Tsuyukusa link";
+            this.faceComboBox.Location = new System.Drawing.Point(115, 266);
+            this.faceComboBox.Name = "faceComboBox";
+            this.faceComboBox.Size = new System.Drawing.Size(160, 20);
+            this.faceComboBox.TabIndex = 33;
+            this.faceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             // 
-            // tsuyukusaNumericUpDown
+            // skinToneLabel
             // 
-            this.tsuyukusaNumericUpDown.Location = new System.Drawing.Point(115, 266);
-            this.tsuyukusaNumericUpDown.Name = "tsuyukusaNumericUpDown";
-            this.tsuyukusaNumericUpDown.Size = new System.Drawing.Size(80, 20);
-            this.tsuyukusaNumericUpDown.TabIndex = 22;
-            this.tsuyukusaNumericUpDown.Increment = new decimal(new int[] { 100, 0, 0, 0 });
+            this.skinToneLabel.Location = new System.Drawing.Point(12, 294);
+            this.skinToneLabel.Name = "skinToneLabel";
+            this.skinToneLabel.Size = new System.Drawing.Size(80, 13);
+            this.skinToneLabel.TabIndex = 34;
+            this.skinToneLabel.AutoSize = true;
+            this.skinToneLabel.Text = "Skin tone";
             // 
-            // tsuyukusaRankComboBox
+            // skinToneComboBox
             // 
-            this.tsuyukusaRankComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tsuyukusaRankComboBox.FormattingEnabled = true;
-            this.tsuyukusaRankComboBox.Location = new System.Drawing.Point(201, 265);
-            this.tsuyukusaRankComboBox.Name = "tsuyukusaRankComboBox";
-            this.tsuyukusaRankComboBox.Size = new System.Drawing.Size(77, 21);
-            this.tsuyukusaRankComboBox.TabIndex = 23;
-            // 
-            // lulukokoLabel
-            // 
-            this.lulukokoLabel.Location = new System.Drawing.Point(12, 294);
-            this.lulukokoLabel.Name = "lulukokoLabel";
-            this.lulukokoLabel.Size = new System.Drawing.Size(80, 13);
-            this.lulukokoLabel.TabIndex = 24;
-            this.lulukokoLabel.AutoSize = true;
-            this.lulukokoLabel.Text = "Lulukoko link";
-            // 
-            // lulukokoNumericUpDown
-            // 
-            this.lulukokoNumericUpDown.Location = new System.Drawing.Point(115, 292);
-            this.lulukokoNumericUpDown.Name = "lulukokoNumericUpDown";
-            this.lulukokoNumericUpDown.Size = new System.Drawing.Size(80, 20);
-            this.lulukokoNumericUpDown.TabIndex = 25;
-            this.lulukokoNumericUpDown.Increment = new decimal(new int[] { 100, 0, 0, 0 });
-            // 
-            // lulukokoRankComboBox
-            // 
-            this.lulukokoRankComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.lulukokoRankComboBox.FormattingEnabled = true;
-            this.lulukokoRankComboBox.Location = new System.Drawing.Point(201, 291);
-            this.lulukokoRankComboBox.Name = "lulukokoRankComboBox";
-            this.lulukokoRankComboBox.Size = new System.Drawing.Size(77, 21);
-            this.lulukokoRankComboBox.TabIndex = 26;
+            this.skinToneComboBox.Location = new System.Drawing.Point(115, 292);
+            this.skinToneComboBox.Name = "skinToneComboBox";
+            this.skinToneComboBox.Size = new System.Drawing.Size(160, 20);
+            this.skinToneComboBox.TabIndex = 35;
+            this.skinToneComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             // 
             // TotGeneralEditingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(290, 326);
-            this.Controls.Add(this.lulukokoRankComboBox);
-            this.Controls.Add(this.lulukokoNumericUpDown);
-            this.Controls.Add(this.lulukokoLabel);
-            this.Controls.Add(this.tsuyukusaRankComboBox);
-            this.Controls.Add(this.tsuyukusaNumericUpDown);
-            this.Controls.Add(this.tsuyukusaLabel);
-            this.Controls.Add(this.westownRankComboBox);
-            this.Controls.Add(this.westownNumericUpDown);
-            this.Controls.Add(this.westownLabel);
+            this.ClientSize = new System.Drawing.Size(290, 324);
+            this.Controls.Add(this.skinToneComboBox);
+            this.Controls.Add(this.skinToneLabel);
+            this.Controls.Add(this.faceComboBox);
+            this.Controls.Add(this.faceLabel);
+            this.Controls.Add(this.eyeColorComboBox);
+            this.Controls.Add(this.eyeColorLabel);
             this.Controls.Add(this.maxStaminaHeartsLabel);
             this.Controls.Add(this.maxStaminaNumericUpDown);
             this.Controls.Add(this.maxStaminaLabel);
@@ -347,9 +311,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.minuteNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staminaNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxStaminaNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.westownNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tsuyukusaNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lulukokoNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,6 +319,12 @@
         #endregion
 
         private System.Windows.Forms.Label moneyLabel;
+        private System.Windows.Forms.Label eyeColorLabel;
+        private System.Windows.Forms.ComboBox eyeColorComboBox;
+        private System.Windows.Forms.Label faceLabel;
+        private System.Windows.Forms.ComboBox faceComboBox;
+        private System.Windows.Forms.Label skinToneLabel;
+        private System.Windows.Forms.ComboBox skinToneComboBox;
         private System.Windows.Forms.NumericUpDown moneyNumericUpDown;
         private System.Windows.Forms.Label yearLabel;
         private System.Windows.Forms.NumericUpDown yearNumericUpDown;
@@ -375,14 +342,5 @@
         private System.Windows.Forms.Label maxStaminaLabel;
         private System.Windows.Forms.NumericUpDown maxStaminaNumericUpDown;
         private System.Windows.Forms.Label maxStaminaHeartsLabel;
-        private System.Windows.Forms.Label westownLabel;
-        private System.Windows.Forms.NumericUpDown westownNumericUpDown;
-        private System.Windows.Forms.ComboBox westownRankComboBox;
-        private System.Windows.Forms.Label tsuyukusaLabel;
-        private System.Windows.Forms.NumericUpDown tsuyukusaNumericUpDown;
-        private System.Windows.Forms.ComboBox tsuyukusaRankComboBox;
-        private System.Windows.Forms.Label lulukokoLabel;
-        private System.Windows.Forms.NumericUpDown lulukokoNumericUpDown;
-        private System.Windows.Forms.ComboBox lulukokoRankComboBox;
     }
 }

@@ -181,6 +181,12 @@
     <Compile Include="TOT\TotGeneralEditingForm.Designer.cs">
       <DependentUpon>TotGeneralEditingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TOT\TotTownLinkEditingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOT\TotTownLinkEditingForm.Designer.cs">
+      <DependentUpon>TotTownLinkEditingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TOT\TotNPCEditingForm.cs">
       <SubType>Form</SubType>
     </Compile>
